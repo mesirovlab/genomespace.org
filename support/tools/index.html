@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>GenomeSpace: 
+	  	Tools
+  </title>
+<link href="/assets/site.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/demo_table_jui.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/jquery-ui-1.8.4.custom.css" media="screen" rel="stylesheet" type="text/css"/>
+<script src="/assets/application.js" type="text/javascript"></script>
+<link href="/assets/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+<meta content="authenticity_token" name="csrf-param"/>
+<meta content="IyEgj7ALwOs/VgXORkVvJsTiGvI+SLGtvEAliiFvcqk=" name="csrf-token"/>
+</head>
+<body>
+<div id="page_wrapper">
+<div id="page_content">
+<div id="logo"><a href="/"><img alt="Gslogo" src="/assets/gslogo.png"/></a></div>
+<div id="login_menu"><a href="https://gsui.genomespace.org/jsui/gsui.html">User Login</a>
+</div>
+<ul id="nav">
+<li id="what-is-genomespace"><a href="/what-is-genomespace">What is GenomeSpace?</a>
+</li>
+<li id="tools"><a href="/support/tools">Tools</a>
+</li>
+<li id="recipes"><a href="http://recipes.genomespace.org">Recipes</a></li>
+<li id="documentation"><a href="/documentation">Documentation</a>
+<ul>
+<li><a href="/support/guides/user-guide">User Guide</a>
+<p>Read the detailed guide to the user interface</p>
+</li>
+<li><a href="/support/guides/tool-guide">Tool Guide</a>
+<p>Learn how to access GenomeSpace functionality for each Tool</p>
+</li>
+<li><a href="/faq">FAQ</a>
+<p>See answers to frequently asked questions</p>
+</li>
+<li><a href="/presentations-and-videos">Presentations and Videos</a>
+<p>Access talks by the GenomeSpace community</p>
+</li>
+<li><a href="/support/guides/end-to-end-analyses">End-to-End Analyses</a>
+<p>Provides description for end-to-end analyses.</p>
+</li>
+</ul>
+</li>
+<li id="developers"><a href="/for-developers">Developers</a>
+<ul>
+<li><a href="/what-can-genomespace-do-for-tool-developers">What Can GenomeSpace Do For Tool Developers?</a>
+<p></p>
+</li>
+<li><a href="/adopters">Technical Documentation</a>
+<p></p>
+</li>
+<li><a href="/source-code">Source Code and Distributions</a>
+<p></p>
+</li>
+<li><a href="/developer-support-and-feedback">Developer Support and Feedback</a>
+<p></p>
+</li>
+</ul>
+</li>
+<li id="support"><a href="/support">Support</a>
+</li>
+<li id="about"><a href="/about">About</a>
+</li>
+<li class="search">
+<div id="search_box">
+<form accept-charset="UTF-8" action="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"/></div>
+<input class="search" id="search" name="search" type="text"/>
+<input class="searchBtn" type="submit"/>
+</form> </div>
+</li>
+</ul>
+<script type="text/javascript">
+//<![CDATA[
+
+		// grab page category and use to highlight correct menu item.  if none present, parse url to find where the user is.
+		var category = "";
+		if ( !category ){
+			url_parts = $(location).attr('pathname').split("/");
+			url_string = url_parts[1] + "/" + url_parts[2]
+			if (url_string == "support/tools"){
+				category = "tools"
+			}
+			else if (url_string == "support/guides"){
+				url_parts[3] == "recipes" ? category = "recipes" : category = "documentation"
+			}
+			else if (url_parts[1] == "genomespace-recipes")
+			{
+                category = "gsrecipes"
+            }
+			else if (url_string == "support/api"){
+				category = "developers"
+			}
+			else if ((url_string == "register/undefined") || (url_string == "request_invite/undefined")) {
+				category = "what-is-genomespace"
+			}
+			else if (url_string == "/undefined") {
+				category = ""
+			}
+			else if (url_string == "support/undefined") {
+				category = "support"
+			}
+		}
+		$("#" + category).addClass("current");
+
+
+//]]>
+</script>
+<div id="content_panel">
+<table width="100%"><tr>
+<td id="main_content">
+<div id="notice"></div>
+<div id="alert"></div>
+<h1>GenomeSpace Tools and Data Sources</h1>
+<p>GenomeSpace hosts a variety of tools and data sources that provide a wide spectrum of genomic analysis and bioinformatics capabilities. If you would like to add your tool to the GenomeSpace community, see our <a href="/for-developers">developer information</a> or <a href="/support#contact">contact us</a>.</p>
+<table id="tools_table">
+<thead>
+<tr>
+<th>Tool</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tool_odd">
+<td><h3><a href="/support/tools/arrayexpress" title="GenomeSpace help page for ArrayExpress">ArrayExpress</a></h3></td>
+<td>
+	The ArrayExpress Archive is a database of functional genomics data; it stores microarray and high-throughput sequencing (HTS) data that are described and archived according to the community guidelines for microarray (MIAME) and HTS (MINSEQE) data.</td>
+</tr>
+<tr class="tool_even">
+<td><h3><a href="/support/tools/cancer_cell_line_encyclopedia" title="GenomeSpace help page for Cancer Cell Line Encyclopedia">Cancer Cell Line Encyclopedia</a></h3></td>
+<td>
+	Datasets from the Cancer Cell Line Encyclopedia (CCLE) project are now linked to GenomeSpace. The CCLE project aims to characterize the genetics and pharmacology of a large panel of human cancer models and to develop integrated computational analyses that link pharmacologic sensitivities to genomic patterns. In addition to the pharmacologic analysis and annotations for about 1000 cell lines, data include DNA copy number, mRNA expression, Oncomap 3.0 mutation, and hybrid capture mutation analyses. The project is ongoing and datasets may be released before publication.</td>
+</tr>
+<tr class="tool_odd">
+<td><h3><a href="/support/tools/cbioportal" title="GenomeSpace help page for cBioPortal">cBioPortal</a></h3></td>
+<td>
+	The cBioPortal for Cancer Genomics provides visualization, analysis and download of large-scale cancer genomics data sets.</td>
+</tr>
+<tr class="tool_even">
+<td><h3><a href="/support/tools/cistrome" title="GenomeSpace help page for Cistrome">Cistrome</a></h3></td>
+<td>
+	A cistrome is defined as the set of cis-acting targets of a trans-acting factor on a genome scale. The Cistrome project integrates ChIP-chip/seq data for a cistrome with standard analysis pipelines, while  providing users with a user-friendly, powerful, flexible web interface with which they can access the data and pipelines.<br/>
+<br/>
+	In addition to the standard Galaxy functions, Cistrome has 29 ChIP-chip- and ChIP-seq-specific tools in three major categories, from preliminary peak calling and correlation analyses, to downstream genome feature association, gene expression analyses, and motif discovery.</td>
+</tr>
+<tr class="tool_odd">
+<td><h3><a href="/support/tools/cytoscape" title="GenomeSpace help page for Cytoscape">Cytoscape</a></h3></td>
+<td>
+	Cytoscape is an open-source bioinformatics software platform for visualizing molecular interaction networks and biological pathways, and integrating these networks with annotations, gene expression profiles, and other state data.   Cytoscape core distribution provides a basic set of features for data integration and visualization.  Additional features are available as plugins.  Plugins are available for network and molecular profiling analyses, new layouts, additional file format support, scripting, and connection with databases.  Plugins may be developed by anyone using the Cytoscape open API based on Java™ technology and plugin community development is encouraged. Most of the plugins are freely available.</td>
+</tr>
+<tr class="tool_even">
+<td><h3><a href="/support/tools/firebrowse" title="GenomeSpace help page for FireBrowse">FireBrowse</a></h3></td>
+<td>
+<a href="http://firebrowse.org/" target="new">FireBrowse</a> is a companion portal to the Broad Institute GDAC Firehose analysis pipeline, and was developed to cull and analyze data generated by <a href="http://cancergenome.nih.gov/" target="new">The Cancer Genome Atlas (TCGA)</a>, which characterizes and identifies genomic patterns in human cancer models. Backed by a powerful compute infrastructure, programming interface, online reports and modern graphical tools, FireBrowse provides a simple yet capable means of visually and programmatically exploring one of the most comprehensive and deeply-characterized open cancer datasets in the world. FireBrowse provides access to a variety of cancer genomics data, such as clinical annotations, DNA copy number, miR, miRseq, mRNA and mRNAseq; as well as a comprehensive suite of more than 100 interdependent analyses of those data, including: correlations, clustering, and <a href="http://www.ncbi.nlm.nih.gov/pubmed/21527027" target="new">GISTIC</a> and <a href="http://www.ncbi.nlm.nih.gov/pubmed/23770567" target="new">MutSigCV</a>.</td>
+</tr>
+<tr class="tool_odd">
+<td><h3><a href="/support/tools/galaxy" title="GenomeSpace help page for Galaxy">Galaxy</a></h3></td>
+<td>
+	The Galaxy project is an open, web-based platform for performing accessible, reproducible, and transparent biomedical research. Complete computational analyses can be built, saved, rerun, modified, and shared. Galaxy is available as a <a href="http://usegalaxy.org">free public web server</a>; as open-source software that can be installed and customized to address specific needs; as a virtual machine that can be installed on the cloud; and on many specialized public web servers at user sites.</td>
+</tr>
+<tr class="tool_even">
+<td><h3><a href="/support/tools/genepattern" title="GenomeSpace help page for GenePattern">GenePattern</a></h3></td>
+<td>
+	GenePattern is a powerful genomic analysis platform that provides access to hundreds of tools for gene expression analysis, proteomics, SNP analysis, flow cytometry, RNA-seq analysis, and common data processing tasks. A web-based interface provides easy access to these tools and allows the creation of multi-step analysis pipelines that enable reproducible in silico research.</td>
+</tr>
+<tr class="tool_odd">
+<td><h3><a href="/support/tools/genomica" title="GenomeSpace help page for Genomica">Genomica</a></h3></td>
+<td>
+	Genomica is an analysis and visualization tool for genomic data, which can integrate gene expression data, DNA sequence data, and gene and experiment annotation information. Using Genomica, you can do the following:</td>
+</tr>
+<tr class="tool_even">
+<td><h3><a href="/support/tools/geworkbench" title="GenomeSpace help page for geWorkbench">geWorkbench</a></h3></td>
+<td>
+	geWorkbench (<u>ge</u>nomics <u>Workbench</u>) is an open source Java desktop application that provides access to an integrated suite of tools for the analysis and visualization of data from a wide range of genomics domains (gene expression, sequence, protein structure, and systems biology). More than 70 distinct plug-in modules are currently available, implementing both classical analyses (several variants of clustering, classification, homology detection, etc.) as well as state-of-the-art algorithms for the reverse engineering of regulatory networks and for protein structure prediction, among many others. geWorkbench leverages standards-based middleware technologies to provide seamless access to remote data, annotation, and computational servers, thus enabling researchers with limited local resources to benefit from available public infrastructure.</td>
+</tr>
+<tr class="tool_odd">
+<td><h3><a href="/support/tools/gitools" title="GenomeSpace help page for Gitools">Gitools</a></h3></td>
+<td>
+	Gitools is a framework for analysis and visualization of genomic data using interactive heatmaps that also allows data to be imported from various sources, including Biomart, Ensembl, IntOGen, and GenomeSpace.</td>
+</tr>
+<tr class="tool_even">
+<td><h3><a href="/support/tools/igv" title="GenomeSpace help page for IGV">IGV</a></h3></td>
+<td>
+	The Integrative Genomics Viewer (IGV) is a light-weight, high-performance visualization tool that enables intuitive real-time exploration of diverse, large-scale genomic data sets on standard desktop computers. It supports flexible integration of a wide variety of data types including aligned sequence reads, mutations, copy number, RNA interference screens, gene expression, methylation, and genomic annotations. IGV makes use of efficient, multi-resolution file formats to enable real-time exploration of arbitrarily large data sets over all resolution scales, while consuming minimal resources on the client computer.  Navigation through a data set is similar to that of Google Maps, allowing the user to zoom and pan seamlessly across the genome at any level of detail from whole genome to base pair.</td>
+</tr>
+<tr class="tool_odd">
+<td><h3><a href="/support/tools/isacreator" title="GenomeSpace help page for ISAcreator">ISAcreator</a></h3></td>
+<td>
+	The open source ISA metadata tracking tools help to manage an increasingly diverse set of life science, environmental, and biomedical experiments that employ one or a combination of technologies.</td>
+</tr>
+<tr class="tool_even">
+<td><h3><a href="/support/tools/msigdb_online_tools" title="GenomeSpace help page for MSigDB Online Tools">MSigDB Online Tools</a></h3></td>
+<td>
+	The Molecular Signatures Database (MSigDB) is a large curated collection of annotated gene sets.  It has some accompanying online tools, including one that allows you to compute the overlap between your own gene set and the MSigDB gene sets.  When gene sets share genes, examination of how they overlap can highlight common processes, pathways, and underlying biological themes. This tool evaluates the overlap of a user-provided gene set, and an estimate of the statistical significance, with as many MSigDB collections as you choose.</td>
+</tr>
+<tr class="tool_odd">
+<td><h3><a href="/support/tools/multiple_myeloma_genomics_portal" title="GenomeSpace help page for Multiple Myeloma Genomics Portal">Multiple Myeloma Genomics Portal</a></h3></td>
+<td>
+	Datasets on the Multiple Myeloma Genomics Portal are now linked to GenomeSpace. The portal itself provides access to and limited analysis of multiple myeloma datasets. These include the Multiple Myeloma Research Consortium funded reference aCGH and gene expression data and additional public multiple myeloma datasets. The portal is updated with new data as they become available.</td>
+</tr>
+<tr class="tool_even">
+<td><h3><a href="/support/tools/project_achilles" title="GenomeSpace help page for Project Achilles">Project Achilles</a></h3></td>
+<td>
+	Datasets from Project Achilles are now linked to GenomeSpace. Project Achilles is creating a genome-wide catalog of tumor dependencies, to identify vulnerabilities associated with genetic and epigenetic alterations. Individual genes in hundreds of genomically characterized cancer cell lines are silenced using a genome-wide, pooled shRNA library. Genes that affect cell survival are identified using advanced computational methods, including <a href="http://www.broadinstitute.org/cancer/ataris" target="_blank">ATARiS</a> (Analytic Technique for Assessment of RNAi by Similarity). The publicly available 2011 v2.0 analysis is on 102 cell lines that include 25 ovarian, 18 colon, 13 pancreatic, 9 esophageal, 8 non-small-cell lung cancer (NSCLC), and 6 glioblastoma cancer cell lines. Release of v2.4 analyzing 216 cell lines is scheduled.</td>
+</tr>
+<tr class="tool_odd">
+<td><h3><a href="/support/tools/reactome" title="GenomeSpace help page for Reactome">Reactome</a></h3></td>
+<td>
+	Reactome is a free, open-source, curated and peer reviewed pathway database. Our goal is to provide intuitive bioinformatics tools for the visualization, interpretation and analysis of pathway knowledge to support basic research, genome analysis, modeling, systems biology and education.</td>
+</tr>
+<tr class="tool_even">
+<td><h3><a href="/support/tools/synapse" title="GenomeSpace help page for Synapse">Synapse</a></h3></td>
+<td>
+	Synapse, from Sage Bionetworks, is an open source, web-based platform designed to facilitate collaboration within and among scientific teams, access to large-scale analysis-ready genomics data sets, and integration with analysis tools and programming environments.  The portal allows users to define their own online project spaces to which they can post content (data, code, analysis history and project summaries) and document their work online immediately upon production. Project owners are able to control access to their own projects: users can share projects initially with only defined collaborators or make them publicly available. The platform supports a public API and integration with R, Python, Java, and command-line clients, allowing analysts to work directly with Synapse data and code using their existing tools.</td>
+</tr>
+<tr class="tool_odd">
+<td><h3><a href="/support/tools/trinity" title="GenomeSpace help page for Trinity">Trinity</a></h3></td>
+<td>
+<span style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 12.8px; line-height: normal;">The Trinity Cancer Transcriptome Analysis Toolkit (CTAT) aims to provide tools for leveraging RNA-Seq to gain insights into the biology of cancer transcriptomes. Bioinformatics tool support is provided for mutation detection, fusion transcript identification, and de novo transcriptome assembly.</span></td>
+</tr>
+<tr class="tool_even">
+<td><h3><a href="/support/tools/ucsc_table_browser" title="GenomeSpace help page for UCSC Table Browser">UCSC Table Browser</a></h3></td>
+<td>
+	The UCSC Genome Browser website contains the reference sequence and working draft assemblies for a large collection of genomes. The Table Browser provides convenient access to the underlying database, allowing you to retrieve the data associated with an annotation track (a means of organizing a particular set of information, such as known genes, predicted genes, ESTs, mRNAs, CpG islands, assembly gaps and coverage, or chromosomal bands) in text format, to calculate intersections between tracks, and to retrieve DNA sequence covered by a track.</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr></table>
+</div>
+</div>
+<div id="footer">
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+	$(document).ready(function() {
+		$("a.toggle_link").click(function() {
+			var image = $(this).children("img");
+			$(image).attr("src", $(image).attr("src") == "/assets/plus.png" ? "/assets/minus.png" : "/assets/plus.png");
+		});
+	});
+
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54489169-1', 'auto');
+  ga('send', 'pageview');
+
+
+//]]>
+</script></div></body>
+</html>

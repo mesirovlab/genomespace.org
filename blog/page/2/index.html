@@ -1,0 +1,412 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>GenomeSpace: 
+	  	Blog
+  </title>
+<link href="/assets/site.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/demo_table_jui.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/jquery-ui-1.8.4.custom.css" media="screen" rel="stylesheet" type="text/css"/>
+<script src="/assets/application.js" type="text/javascript"></script>
+<link href="/assets/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+<meta content="authenticity_token" name="csrf-param"/>
+<meta content="rcO2qR26u6w/1BdvwgdPWS3Y6MZKgrEYQfN9HP8Gnd8=" name="csrf-token"/>
+</head>
+<body>
+<div id="page_wrapper">
+<div id="page_content">
+<div id="logo"><a href="/"><img alt="Gslogo" src="/assets/gslogo.png"/></a></div>
+<div id="login_menu"><a href="https://gsui.genomespace.org/jsui/gsui.html">User Login</a>
+</div>
+<ul id="nav">
+<li id="what-is-genomespace"><a href="/what-is-genomespace">What is GenomeSpace?</a>
+</li>
+<li id="tools"><a href="/support/tools">Tools</a>
+</li>
+<li id="recipes"><a href="http://recipes.genomespace.org">Recipes</a></li>
+<li id="documentation"><a href="/documentation">Documentation</a>
+<ul>
+<li><a href="/support/guides/user-guide">User Guide</a>
+<p>Read the detailed guide to the user interface</p>
+</li>
+<li><a href="/support/guides/tool-guide">Tool Guide</a>
+<p>Learn how to access GenomeSpace functionality for each Tool</p>
+</li>
+<li><a href="/faq">FAQ</a>
+<p>See answers to frequently asked questions</p>
+</li>
+<li><a href="/presentations-and-videos">Presentations and Videos</a>
+<p>Access talks by the GenomeSpace community</p>
+</li>
+<li><a href="/support/guides/end-to-end-analyses">End-to-End Analyses</a>
+<p>Provides description for end-to-end analyses.</p>
+</li>
+</ul>
+</li>
+<li id="developers"><a href="/for-developers">Developers</a>
+<ul>
+<li><a href="/what-can-genomespace-do-for-tool-developers">What Can GenomeSpace Do For Tool Developers?</a>
+<p></p>
+</li>
+<li><a href="/adopters">Technical Documentation</a>
+<p></p>
+</li>
+<li><a href="/source-code">Source Code and Distributions</a>
+<p></p>
+</li>
+<li><a href="/developer-support-and-feedback">Developer Support and Feedback</a>
+<p></p>
+</li>
+</ul>
+</li>
+<li id="support"><a href="/support">Support</a>
+</li>
+<li id="about"><a href="/about">About</a>
+</li>
+<li class="search">
+<div id="search_box">
+<form accept-charset="UTF-8" action="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"/></div>
+<input class="search" id="search" name="search" type="text"/>
+<input class="searchBtn" type="submit"/>
+</form> </div>
+</li>
+</ul>
+<script type="text/javascript">
+//<![CDATA[
+
+		// grab page category and use to highlight correct menu item.  if none present, parse url to find where the user is.
+		var category = "";
+		if ( !category ){
+			url_parts = $(location).attr('pathname').split("/");
+			url_string = url_parts[1] + "/" + url_parts[2]
+			if (url_string == "support/tools"){
+				category = "tools"
+			}
+			else if (url_string == "support/guides"){
+				url_parts[3] == "recipes" ? category = "recipes" : category = "documentation"
+			}
+			else if (url_parts[1] == "genomespace-recipes")
+			{
+                category = "gsrecipes"
+            }
+			else if (url_string == "support/api"){
+				category = "developers"
+			}
+			else if ((url_string == "register/undefined") || (url_string == "request_invite/undefined")) {
+				category = "what-is-genomespace"
+			}
+			else if (url_string == "/undefined") {
+				category = ""
+			}
+			else if (url_string == "support/undefined") {
+				category = "support"
+			}
+		}
+		$("#" + category).addClass("current");
+
+
+//]]>
+</script>
+<div id="content_panel">
+<table width="100%"><tr>
+<td id="main_content">
+<div id="notice"></div>
+<div id="alert"></div>
+<h1>New data source: the cBioPortal for cancer genomics</h1>
+<p class="byline">Posted by Ted Liefeld, Benjamin Gross on Wednesday, December 10, 2014 at 11:13AM</p>
+<br/><p class="byline">Last updated on Monday, November 02, 2015 at 11:12AM</p>
+<p>
+	GenomeSpace is proud to announce the addition of another new data source to the GenomeSpace tool catalog: the <a href="http://www.cbioportal.org/public-portal">cBioPortal</a> for cancer genomics from the <a href="http://www.mskcc.org">Memorial Sloan Kettering Cancer Center</a>. See the <a href="http://genomespace.org/support/guides/loading-data/sections/load-data-from-the-cbioportal-to-genomespace">Loading Data from cBioPortal to GenomeSpace</a> recipe to learn how to send your cBio query results to your GenomeSpace account.</p>
+<p>
+	The cBioPortal for Cancer Genomics provides visualization, analysis and download of large-scale cancer genomics data sets such as The Cancer Genome Atlas (TCGA).</p>
+<p>
+	 </p>
+<h1>The GenomeSpace Web Development Kit</h1>
+<p class="byline">Posted by Ted Liefeld on Tuesday, December 02, 2014 at 10:45AM</p>
+<br/><p class="byline">Last updated on Thursday, December 18, 2014 at 07:19AM</p>
+<p>
+<span style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(255, 255, 255);">Tool Developers: We are glad to announce the release of our GenomeSpace Web Development Kit (WDK), which allows web applications to easily save files to GenomeSpace. Applications can either provide URLs or send file contents to GenomeSpace in a POST, to be saved as a file. The WDK supports launching a GenomeSpace tool on a file or URL, so with minimal modification any web application can send data into the universe of GenomeSpace tools for analysis.<span class="Apple-converted-space"> </span></span><a href="http://gsui.genomespace.org/jsui/jsCDK/Demo.html" style="color: rgb(17, 85, 204); font-family: arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);" target="_blank">Click here</a><span style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(255, 255, 255);"><span class="Apple-converted-space"> </span>to see code samples, documentation, and a live demo to add this functionality to a website.</span></p>
+<h3>
+	Launching a GenomeSpace tool</h3>
+<p>
+	When users launch a WDK on a URL, they will see the following window. GenomeSpace authentication is handled in this window, obviating the need for web applications to integrate into GenomeSpace single sign-on.</p>
+<p>
+<img alt="" src="/uploaded/content_gslaunch1.png" style="width: 600px; height: 269px;"/></p>
+<p>
+	Selecting a tool in the toolbar will launch the tool allowing the user to analyze the file. Please note that the current implementation does not yet support automatic format conversion. This will be added shortly.</p>
+<p>
+	For more use cases and example code, see the <a href="http://gsui.genomespace.org/jsui/jsCDK/Demo.html">live demo page</a>.</p>
+<p>
+	 </p>
+<h1>Connecting GenomeSpace to Google Drive</h1>
+<p class="byline">Posted by Ted Liefeld, Marco Ocana on Tuesday, September 09, 2014 at 09:23AM</p>
+<br/><p class="byline">Last updated on Monday, November 02, 2015 at 11:03AM</p>
+<p>
+	The GenomeSpace team is pleased to announce that you can now connect your GenomeSpace account to your <a href="http://drive.google.com">Google Drive</a> account. This gives you an additional option for accessing and analyzing files you have stored in the cloud.</p>
+<p>
+	Instructions to connect are detailed in screenshots below. Briefly, to connect your GenomeSpace and Google Drive accounts:</p>
+<ol>
+<li>
+		Select <em>Connect&gt;Google Drive</em> in the menu bar and click <em>Submit</em>.</li>
+<li>
+		Tell Google that GenomeSpace is allowed to access your files.</li>
+</ol>
+<p>
+	Approving access creates a new folder in Google Drive named "GenomeSpacePublic". GenomeSpace will operate exclusively on files and folders within GenomeSpacePublic, ignoring everything else in Google Drive. Place any data files you want to access from GenomeSpace tools under this folder.</p>
+<p>
+<strong>Please be aware the GenomeSpacePublic folder is created with "Public on the web" Google Drive permissions.</strong> This permission level allows anyone to access the contents of the folder via search results or the web address. If you have sensitive data that you would like to use from GenomeSpace data tools, we recommend you place it under your GenomeSpace home directory, in a GenomeSpace-mounted Dropbox account, or in an Amazon S3 bucket.</p>
+<h3 class="incomplete">
+<span style="color:#000000;">Detailed instructions to connect GenomeSpace with Google Drive</span></h3>
+<p>
+	First, select <em>Connect&gt;Google Drive</em> in the menu bar.</p>
+<p>
+<img alt="" src="/uploaded/content_gd1.png" style="width: 484px; height: 187px;"/></p>
+<p>
+	Next, select the privileges GenomeSpace can have in Google Drive. This can be <em>Read only</em>, but choose <em>Read and Write</em> if you want GenomeSpace to be able to send files into your Google Drive folders.</p>
+<p>
+<img alt="" src="/uploaded/content_newgd4.png" style="width: 450px; height: 360px;"/></p>
+<p>
+	When you click <em>Submit</em> in this dialog, a new window will open to the Google Drive site for the next step.  Note that if you have a popup blocker enabled on your browser, you have to allow this popup window to be opened.</p>
+<p>
+	If you are not already logged in to Google, the Google window will ask you to login.</p>
+<p>
+<img alt="" src="/uploaded/content_gd3.png" style="width: 325px; height: 386px; border-width: 1px; border-style: solid;"/></p>
+<p>
+	 </p>
+<p>
+	Google then asks you to confirm that you want to allow GenomeSpace access your Google account.  Click <em>Accept</em>.</p>
+<p>
+<img alt="" src="/uploaded/content_gd4.png" style="width: 688px; height: 281px; border-width: 1px; border-style: solid;"/></p>
+<p>
+<span style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); display: inline !important; float: none;">When you allow GenomeSpace access to your Google Drive account, GenomeSpace will connect to Google Drive and create a new folder in your GenomeSpace home directory.</span></p>
+<p>
+<img alt="" src="/uploaded/content_newgd2.png" style="width: 300px; height: 171px;"/></p>
+<p>
+<img alt="" src="/uploaded/content_gd6.png" style="width: 800px; height: 307px; border-width: 1px; border-style: solid;"/></p>
+<p>
+	After this, you can copy files between GenomeSpace and Google Drive and send files directly from Google Drive to any of the GenomeSpace tools. </p>
+<p>
+	If you want to disconnect Google Drive from GenomeSpace, right-click on the Google Drive folder and select <em>Disconnect</em>.</p>
+<p>
+	For information on how to connect to your Dropbox account, refer to the <a href="http://www.genomespace.org/support/guides/user-guide/sections/connect-storage">Adding Dropbox page of the User Guide</a>.</p>
+<p>
+	For information on how to connect to Amazon S3 buckets, refer to the <a href="http://www.genomespace.org/support/guides/user-guide/sections/connect-s3-bucket">Adding an Amazon S3 Bucket page of the User Guide</a>.</p>
+<h1>Recursively downloading files from GenomeSpace</h1>
+<p class="byline">Posted by Ted Liefeld on Friday, September 05, 2014 at 09:08AM</p>
+<p>
+	Recently a GenomeSpace user asked us how to recursively download all of the files in a directory.  In this case, recursively means that they wanted to get everything from a folder, its subfolders, and their subfolders all the way down.  The GenomeSpace UI itself will allow you to download every file in a directory,  <span style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(255, 255, 255);">but it does not go into the subfolders within a directory - you still have to go to each of them one at a time. </span></p>
+<p>
+	To make this easier we created an application you can use to log in to GenomeSpace, select a top level GenomeSpace directory where you want to start the download, and it will walk down the directory tree, <span style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(255, 255, 255);">copying the entire file and directory structure to your computer.</span></p>
+<p>
+	You can download this application from the <a href="https://gsui.genomespace.org:8444/jsui/gsui.html?pathOrUrl=/Home/Public/SharedData/Utilities/RecursiveDownloader">SharedData/Utilities/GSRecursiveDownloader</a> folder on GenomeSpace.</p>
+<p>
+	To use it, follow these steps;</p>
+<ol>
+<li>
+		Download  <a href="https://dm.genomespace.org/datamanager/file/Home/Public/SharedData/Utilities/RecursiveDownloader/GSRecursiveDownloader.zip">SharedData/Utilities/GSRecursiveDownloader/GSRecursiveDownloader.zip</a></li>
+<li>
+		Unzip this file on your computer where you want the files downloaded to.</li>
+<li>
+		Double-click the GSRecursiveDownloader.jar file
+		<ul>
+<li>
+				On a Mac, you may need to right-click, select 'open' and tell the OS it's OK to run</li>
+<li>
+				Alternatively run  "java -jar GSRecursiveDownloader.jar" and you will be able to see the progress of the downloads.</li>
+</ul>
+</li>
+<li>
+		Login to GenomeSpace</li>
+<li>
+		Select the top level directory you want to copy</li>
+<li>
+		Click the 'Save From" button.</li>
+</ol>
+<p>
+	Thats it!</p>
+<p>
+<img alt="" src="/uploaded/content_downloader.png" style="width: 300px; height: 242px;"/></p>
+<p>
+	 </p>
+<h1>New Tool: Reactome</h1>
+<p class="byline">Posted by Ted Liefeld on Monday, June 02, 2014 at 08:33AM</p>
+<br/><p class="byline">Last updated on Tuesday, June 03, 2014 at 07:40AM</p>
+<p>
+	GenomeSpace is proud to announce the addition of another new tool to the GenomeSpace tool bar: <a href="http://www.reactome.org/">Reactome</a>, from the <a href="http://oicr.on.ca/" style="color: rgb(17, 85, 204);" target="_blank">Ontario Institue for Cancer Research (OICR). </a></p>
+<p>
+<strong>REACTOME is an open-source, open access, manually curated and peer-reviewed pathway database. </strong>Pathway annotations are authored by expert biologists, in collaboration with Reactome editorial staff and cross-referenced to many bioinformatics databases. These include <a href="http://www.ncbi.nlm.nih.gov/gene">NCBI Gene</a>, <a href="http://www.ensembl.org/">Ensembl</a> and <a href="http://www.uniprot.org/">UniProt</a> databases, the <a href="http://genome.ucsc.edu/">UCSC </a>and <a href="http://www.hapmap.org/">HapMap</a> Genome Browsers, the KEGG <a href="http://www.genome.jp/dbget-bin/www_bfind?compound">Compound </a>and <a href="http://www.ebi.ac.uk/chebi/init.do">ChEBI</a> small molecule databases, <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?CMD=&amp;DB=PubMed">PubMed,</a> and <a href="http://www.geneontology.org/">Gene Ontology</a>.</p>
+<h1>GenomeSpace Storage</h1>
+<p class="byline">Posted by Ted Liefeld on Friday, May 02, 2014 at 02:41PM</p>
+<br/><p class="byline">Last updated on Monday, November 02, 2015 at 11:42AM</p>
+<p>
+	The GenomeSpace team is happy to announce that we have increased the storage quota for all GenomeSpace users to 30GB. </p>
+<p>
+	You can now also check how much storage you are using on GenomeSpace on the profile dialog.  You can get to this from the 'profile' menu item near your username on the top right corner of the screen.</p>
+<p>
+<img alt="" src="/uploaded/content_profile1.png" style="width: 271px; height: 188px;"/></p>
+<p>
+	The profile dialog will display how much storage you are using:</p>
+<p>
+<img alt="" src="/uploaded/content_profile2.png" style="width: 536px; height: 280px;"/></p>
+<p>
+	If you need more than 30GB to store the data you want accessible to the GenomeSpace tools, you can also keep data files in your <a href="http://genomespace.org/support/guides/user-guide/sections/connect-storage#connect-dropbox">Dropbox</a> or on <a href="http://www.genomespace.org/support/guides/user-guide/sections/connect-s3-bucket">Amazon S3 buckets</a> that you own.  If you need to exceed your quota for only a short term, you can contact us to request a temporary exception as well.</p>
+<p>
+	 </p>
+<p>
+	 </p>
+<h1>GenomeSpace now supports compression and decompression of your files in the cloud</h1>
+<p class="byline">Posted by Ted Liefeld, Marco Ocana on Friday, April 18, 2014 at 10:26AM</p>
+<br/><p class="byline">Last updated on Tuesday, April 22, 2014 at 10:09AM</p>
+<p>
+	In response to user requests, the GenomeSpace development team has added the ability to compress and decompress files and folders that are on your GenomeSpace storage. We are initially supporting <strong>.zip</strong>, <strong>.tar</strong>, and <strong>.tar.gz</strong> formats.</p>
+<h3>
+	Creating an archive</h3>
+<p>
+	To create an archive means to compress one or more files and folders. To start, simply select one or more files and folders in the GenomeSpace User Interface.  You will see the new menu item, 'Create Archive' on both the popup (right click) and on the main File menus. If you include a folder to be compressed, the created archive will include all the contents of that folder. When the archive is created it copies the files into that archive, so your originals will be safe and unmodified by the archive creation.</p>
+<p>
+<img alt="" src="/uploaded/content_zip1.png" style="width: 561px; height: 323px;"/>            <img alt="" src="/uploaded/content_zip2.png" style="width: 180px; height: 369px;"/></p>
+<p>
+	Selecting either of these menu items will open up the 'Create File Archive' dialog box. Here you can select the type of compression to be used; .zip, .tar or .tar.gz and you can also choose the directory and filename for the new archive file.</p>
+<p>
+<img alt="" src="/uploaded/content_zip3.png" style="width: 800px; height: 375px;"/></p>
+<p>
+	As the archive creation is taking place, a notification message<img alt="" src="/uploaded/content_zip5.png" style="width: 119px; height: 30px;"/> will appear at the bottom of the GenomeSpace User Interface (GSUI) showing the progress.  Once it is complete, the notification will turn grey  <img alt="" src="/uploaded/content_zip4.png" style="width: 131px; height: 28px;"/> and you can click on it to have the GSUI navigate directly to the new archive. Should an error occur, the notification will turn red <img alt="" height="32" src="/uploaded/content_zip6.png" width="108"/>and clicking on it will open a detailed message detailing the nature of the error.</p>
+<h3>
+	Expanding an archive</h3>
+<p>
+	Expanding (decompressing) an archive also begins from the file and/or popup menus.  To start select the archive that you wish to decompress and then select the 'Expand Archive' menu as seen here. This menu item only shows up for files with the .zip, .tar and .tar.gz file extensions.</p>
+<p>
+<img alt="" src="/uploaded/content_zip7.png" style="width: 261px; height: 331px;"/><img alt="" src="/uploaded/content_zip8.png" style="width: 193px; height: 382px;"/></p>
+<p>
+	As with the compression, this will create a notifier at the bottom of the page to show you the status of the expansion<img alt="" src="/uploaded/content_zip9.png" style="width: 98px; height: 25px;"/>which will turn grey when complete <img alt="" src="/uploaded/content_zip4.png" style="width: 128px; height: 25px;"/>, or red should an error occur <img alt="" src="/uploaded/content_zip6.png" style="width: 107px; height: 32px;"/>. Clicking on the notification after it has completed will navigate the GSUI to the newly created file or folders that have been extracted from the archive.</p>
+<p>
+	That's it, please let us know if there are other features you would like to see added to GenomeSpace.</p>
+<p>
+	 </p>
+<p>
+	 </p>
+<p>
+	 </p>
+<p>
+	 </p>
+<h1>Unable to launch Desktop Tools</h1>
+<p class="byline">Posted by Barbara Hill Meyers on Tuesday, February 25, 2014 at 01:53PM</p>
+<p>
+	We have recently heard from users that, with the recent Java and browser updates, GenomeSpace desktop tools (such as Genomica and IGV) are being blocked from running in browsers.</p>
+<p>
+	You may have seen a window such as the one below after attempting to launch one of these tools:</p>
+<p>
+<em>(The image below is from Firefox 27.0.1 running on Windows 7 64-bit)</em></p>
+<p>
+<img alt="" src="/uploaded/content_firefoxblocked.png" style="width: 699px; height: 339px;"/></p>
+<p>
+	To resolve this issue, in any browser, you will need to turn off the pop-up blocker for GenomeSpace.</p>
+<p>
+<strong>For Firefox</strong>:</p>
+<p>
+	On Windows or Mac, if you get the window you see above, click <em>Options </em>(Windows) or <em>Preferences </em>(Mac) and "Allow pop-ups from gsui.genomespace.org". You will then need to close that window and launch the tool again. From there the behavior should be as expected.</p>
+<p>
+	If you did not get that window or it disappears before you can click on the <em>Options </em>or <em>Preferences </em>button:</p>
+<ol>
+<li>
+		Go to the Firefox menu (upper left of the browser window (Windows) or Nav (Mac)) and select <em>Options</em> (Windows) or <em>Preferences </em>(Mac)</li>
+<li>
+		Go to the <em>Content</em> tab and click <em>Exceptions. </em><br/>
+<img alt="" src="/uploaded/content_ffexceptions.png" style="width: 536px; height: 488px;"/></li>
+<li>
+		You can now edit the list of sites allowed to open pop-up windows from your browser. The address to enter for GenomeSpace is "gsui.genomespace.org"</li>
+<li>
+		Close all the <em>Preferences </em>or <em>Options</em> windows and relaunch the tool.</li>
+</ol>
+<p>
+<strong>For Chrome:</strong></p>
+<p>
+	You will likely only see the error window for a short period of time and will then need to manually add "gsui.genomespace.org" to the exception list, following the instructions <a href="https://support.google.com/chrome/answer/95472?hl=en" target="_blank">here</a></p>
+<p>
+<strong>For Safari:</strong></p>
+<p>
+	As with Chrome, you will likely only see the error window for a short period of time. If pop-ups are blocked, nothing else will happen. If pop-ups are not blocked, you should see another browser window open and the jnlp file will be downloaded, per usual.</p>
+<p>
+	To disable pop-up blocking in Safari:</p>
+<ol>
+<li>
+		From the <em>Safari</em> menu select <em>Preferences.</em></li>
+<li>
+		Select the <em>Security</em> tab and un-check the <em>Block pop-up windows</em> box to enable pop-up windows</li>
+<li>
+		Close the <em>Preferences </em>window and relaunch the tool</li>
+</ol>
+<p>
+	Note that even after you have done this it may appear that nothing has changed; The error window may appear, a second browser window may be opened, but it may seem that nothing was downloaded. To check this, click on the download icon in the upper left of the Safari browser window.</p>
+<p>
+<img alt="" src="/uploaded/content_download_click1_safari.jpg" style="width: 402px; height: 92px;"/></p>
+<p>
+	You should see the launch file for the tool you have selected.</p>
+<p>
+	 </p>
+<p>
+	Please email us if these tips do not serve to resolve any issues you are having with the launching of GenomeSpace desktop tools.</p>
+<p>
+<a href="mailto:gs-help@broadinstitute.org">gs-help (at) broadinstitute.org</a></p>
+<p>
+	 </p>
+<h1>File Upload changes</h1>
+<p class="byline">Posted by Ted Liefeld on Tuesday, February 11, 2014 at 08:41AM</p>
+<p>
+	Recently a few members of the GenomeSpace community noticed that there was no way to know if a file upload was working or not after they had dragegd and dropped a file on a GenomeSpace folder.  Turns out they had found a bug in the system.  While an upload indicator was appearning for really large files, the notification system for smaller files was ... broken. We have now fixed the file upload notifications so that you can see indication of an upload in progress no matter what the size of the file (or files).</p>
+<p>
+	The upload indicator can be seen near the top right corner of your screen.  If an upload is in progress it will be animated like this <img alt="" src="/uploaded/content_upload_icon.gif" style="width: 16px; height: 16px;"/> and once the upload is complete the animation will stop.  Clicking on the icon will bring up the 'Recent Uploads' dialog box that shows you the progress of the upload.</p>
+<p>
+<img alt="" src="/uploaded/content_gsupload.png" style="width: 800px; height: 178px;"/></p>
+<p>
+	We are working on making upload progress more visible and you should see more improvements in this part of the GenomeSpace UI shortly.</p>
+<h1>GenomeSpace server and support coverage December 23 to January 2</h1>
+<p class="byline">Posted by The GenomeSpace Team on Thursday, December 19, 2013 at 02:41PM</p>
+<p style="margin: 1em 0px; color: rgb(51, 51, 51); font-family: Arial, Helvetica, sans-serif; line-height: 16.796875px;">
+	From December 21 to January 1, the <a href="http://broadinstitute.org" style="color: rgb(85, 85, 85); text-decoration: none;" target="_blank">GenomeSpace team will be unavailable due to the year-end closing of the Broad Institute</a>.  During this time, the GenomeSpace server will remain up and fully functional. We will be monitoring this daily and, should anything happen to disrupt service, we will work to resolve any issues within 24 hrs. However, due to the holiday closing, please be aware that:</p>
+<ul style="color: rgb(0, 0, 0); font-family: Arial, Verdana, Helvetica, sans-serif; font-size: 12px;">
+<li style="margin: 1em 0px; color: rgb(51, 51, 51); font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16.796875px;">
+		GenomeSpace staff will not be reachable by phone or responding to email. This includes our help system, Twitter, and Facebook.</li>
+<li style="margin: 1em 0px; color: rgb(51, 51, 51); font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16.796875px;">
+		Emails (including help tickets) and phone calls will be responded to as quickly as possible, once we return to the office on Jan 2, 2014.</li>
+</ul>
+<p style="margin: 1em 0px; color: rgb(51, 51, 51); font-family: Arial, Helvetica, sans-serif; line-height: 16.796875px;">
+	If you have any questions, please feel free to <a href="http://genomespace.org/support" style="color: rgb(85, 85, 85); text-decoration: none;">contact us</a>.</p>
+<div class="center">Displaying results <strong>11 - 20</strong> of <strong>58</strong> in total<br/>
+<div class="pagination"><a class="previous_page" href="/blog/" rel="prev start">← Previous</a> <a href="/blog/" rel="prev start">1</a> <em class="current">2</em> <a href="/blog/page/3" rel="next">3</a> <a href="/blog/page/4">4</a> <a href="/blog/page/5">5</a> <a href="/blog/page/6">6</a> <a class="next_page" href="/blog/page/3" rel="next">Next →</a></div></div>
+</td>
+</tr></table>
+</div>
+</div>
+<div id="footer">
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+	$(document).ready(function() {
+		$("a.toggle_link").click(function() {
+			var image = $(this).children("img");
+			$(image).attr("src", $(image).attr("src") == "/assets/plus.png" ? "/assets/minus.png" : "/assets/plus.png");
+		});
+	});
+
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54489169-1', 'auto');
+  ga('send', 'pageview');
+
+
+//]]>
+</script></div></body>
+</html>

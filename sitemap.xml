@@ -1,0 +1,1102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>http://genomespace.org/</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/what-is-genomespace</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/tools</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/documentation</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/user-guide</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/tool-guide</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/faq</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/presentations-and-videos</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/end-to-end-analyses</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/for-developers</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/what-can-genomespace-do-for-tool-developers</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/adopters</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/source-code</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/developer-support-and-feedback</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/about</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/news/the-genomespace-project-is-ending</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/news/webinar-recording-available</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/news/</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2016/10/07/genomespace-orientation-webinar</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2016/07/20/webinar-recording-available</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/calendar</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/what-can-genomespace-do-for-you</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/tools/arrayexpress</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/tools/cancer_cell_line_encyclopedia</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/tools/cbioportal</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/tools/cistrome</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/tools/cytoscape</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/tools/firebrowse</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/tools/galaxy</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/tools/genepattern</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/tools/genomica</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/tools/geworkbench</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/tools/gitools</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/tools/igv</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/tools/isacreator</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/tools/msigdb_online_tools</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/tools/multiple_myeloma_genomics_portal</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/tools/project_achilles</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/tools/reactome</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/tools/synapse</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/tools/trinity</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/tools/ucsc_table_browser</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/user-guide/sections/quickstart</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/user-guide/sections/overview</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/user-guide/sections/register</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/user-guide/sections/UI</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/user-guide/sections/customizing</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/user-guide/sections/connect-storage</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/user-guide/sections/connect-s3-bucket</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/user-guide/sections/manage-files-folders</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/user-guide/sections/share-data</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/user-guide/sections/preview-heatmap</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/user-guide/sections/tag-search</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/user-guide/sections/manage-groups-tools</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/user-guide/sections/run-an-analysis</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/user-guide/sections/convert-file-formats</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/user-guide/sections/extract-file-rows-columns</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/user-guide/sections/export-external-site-files-to-genomespace</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/user-guide/sections/recipe-demo-datasets</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/user-guide/sections/wdk-launch-on-file-or-url</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/user-guide/print</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/loading-data/</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/moving-data/</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/tool-guide/sections/tool-guide-intro</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/tool-guide/sections/arrayexpress-GS-capabilities</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/tool-guide/sections/cbioportal-GS-capabilities</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/tool-guide/sections/cistrome-GS-capabilities</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/tool-guide/sections/cytoscape-GS-capabilities</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/tool-guide/sections/cytoscape_3-GS-capabilities</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/tool-guide/sections/firebrowse-GS-capabilities</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/tool-guide/sections/galaxy-GS-capabilities</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/tool-guide/sections/genepattern-GS-capabilities</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/tool-guide/sections/genomica-GS-capabilities</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/tool-guide/sections/geworkbench-GS-capabilities</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/tool-guide/sections/gitools-GS-capabilities</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/tool-guide/sections/igv-gs-capabilities</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/tool-guide/sections/isacreator</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/tool-guide/sections/msigdb-online-tools</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/tool-guide/sections/ucsc_genome_browser-GS-capabilities</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/tool-guide/sections/tool-term-glossary</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/tool-guide/sections/trinity-GS-capabilities</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/tool-guide/print</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/attachments/2013-03-19_genomespace_fged_seattle.pdf</loc>
+  <lastmod>2016-07-22T20:34:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/end-to-end-analyses/sections/dbp-list</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/end-to-end-analyses/sections/dbp-gene-networks-in-cancer</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/end-to-end-analyses/print</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/attachments/genomespace_architecture_upd.pdf</loc>
+  <lastmod>2016-07-22T20:33:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/api/genomespace-enablement-of-tools</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/api/openid-requirements</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/api/re-launch-avoidance-jrac--beta-1-0</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/api/cdk</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/api/restful-access-to-atm</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/api/restful-access-to-dm</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/api/restful-access-to-identity-server</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/news</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/sag</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/news/genomespace-at-ismb-bosc-2016</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/news/recipe-webinar-on-may-6-2016</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/news/genomespace-paper-published-in-nature-methods</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/news/contribute-a-recipe</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/news/gene-networks-in-cancer</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/dbp-gene-networks-in-cancer</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/news/genomespace-at-ashg-2015-baltimore</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/news/genomespace-at-the-3rd-cegs-computational-workshop</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/news/genomespace-at-aacr-2015-philadelphia</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/news?page=2</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/news?page=3</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2016/04/01/new-tool-firebrowse</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2016/03/10/webinar-recording-available</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2016-03-09-recipe-resource-maintenance</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2016/02/18/orientation-webinars</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2016/02/01/announcing-the-new-genomespace-recipe-resource</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2015/03/04/new-format-converters-in-genomespace</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2015/03/03/cytoscape-updated-to-version-3-2-1</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2015/01/30/geworkbench-2-6-0-released</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog?page=2</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog?page=3</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog?page=4</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog?page=5</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog?page=6</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/recipes/sections/load-data-from-arrayexpress-to-genomespace</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/recipes/sections/send-data-from-arrayexpress-to-gitools</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/recipes/sections/load-data-from-the-cbioportal-to-genomespace</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/recipes/sections/send-data-from-galaxy-to-igv</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/recipes/sections/send-data-from-genomica-to-genepattern</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/recipes/sections/send-data-from-genepattern-to-igv</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/recipes/sections/pathway-enrichment-analysis-with-reactome</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/recipes/sections/get-gene-list-from-reactome-pathway</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/recipes/sections/load-data-from-synapse-to-genomespace</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/loading-data/sections/introduction</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/loading-data/sections/upload-data-to-genomespace</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/loading-data/sections/load-data-from-arrayexpress-to-genomespace</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/loading-data/sections/load-data-from-the-cbioportal-to-genomespace</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/loading-data/sections/load-geo-data-from-insilico-db-to-genomespace</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/loading-data/sections/load-data-from-ucsc-genome-browser-to-genomespace</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/loading-data/sections/load-data-from-synapse-to-genomespace</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/loading-data/sections/load-a-gene-list-from-reactome-pathway-into-genomespace</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/loading-data/sections/pathway-enrichment-analysis-with-reactome</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/loading-data/print</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/moving-data/sections/introduction</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/moving-data/sections/send-data-from-genomespace-to-a-tool</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/moving-data/sections/send-data-from-arrayexpress-to-gitools</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/moving-data/sections/send-data-from-galaxy-to-igv</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/moving-data/sections/send-data-from-genepattern-to-igv</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/moving-data/sections/send-data-from-genomica-to-genepattern</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/guides/moving-data/print</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/api/cdk-beta-2-0</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/news/genomespace-at-the-2nd-cegs-computational-workshop</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/news/genomespace-at-ismb2014-boston</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/news/genomespace-at-aacr-san-diego</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/news/genomespace-website-offline-oct-17-20</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/news/genomespace-at-the-network-biology-symposium-cytoscape-workshop</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/news/genomespace-at-ismb-2013-berlin</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/news/genomespace-at-bosc-broad-interoperability-hackathon</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/news/genomespace-at-the-9th-annual-cytoscape-workshop</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/news/genomespace-moved-to-genepattern-s-production-servers</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/news/genomespace-at-fged</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/news?page=1</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/news/genomespace-moving-to-galaxy-s-production-servers</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/news/genomespace-at-bioconference-list</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/news/genomespace-at-bosc-2012</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/news/genomespace-on-openhelix</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/news/genomespace-press</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/news/genomespace-at-bioitworld</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/news/genomespace-at-ismb-2012</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2014/12/10/new-data-source-the-cbioportal-for-cancer-genomics</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2014/12/02/the-genomespace-web-development-kit</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2014/09/09/connecting-genomespace-to-google-drive</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2014/09/05/recursively-downloading-files-from-genomespace</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2014/06/02/new-tool-reactome</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2014/05/02/genomespace-storage</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2014/04/18/genomespace-now-supports-de-compression</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2014/02/25/unable-to-launch-desktop-tools</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2014/02/11/file-upload-changes</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2013/12/19/genomespace-server-and-support-coverage-december-23-to-january-2</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog?page=1</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2013/12/16/the-genomespace-toolbar-and-new-tool-catalog</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2013/11/20/genomespace-openid-authentication-for-ruby-on-rails-with-devise</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2013/11/04/toolbar-enhancements</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2013/09/30/the-cancer-cell-line-encyclopedia-portal-now-exports-to-genomespace</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2013/09/05/multiple-myeloma-genomics-portal-now-exports-to-genomespace</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2013/08/29/new-feature-heatmap-previews</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2013/08/28/sharing-just-got-easier</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2013/08/06/private-tools-now-shareable-with-multiple-groups</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2013/07/31/file-tagging-and-search</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2013/06/19/connecting-genomespace-to-dropbox</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2013/06/19/genomespace-ui-enhancements</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2013/05/02/uploading-files</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2013/04/08/new-feature-drag-and-drop-to-copy-files-and-folders</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2013/02/05/new-tool-gitools</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2013/02/04/genomespace-ui-updated</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2012/11/30/new-feature-mounting-amazon-aws-s3-buckets</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2012/11/29/having-trouble-with-dialog-boxes-in-genomespace-</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2012/11/29/public-data-tcga-ovarian</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2012/11/19/public-data-tcga-colon-and-rectal-cancer</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2012/11/14/calling-the-genomespace-api-from-python</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2012/11/07/public-data-tcga-breast-cancer</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2012/11/07/genomespace-ui-changes-summary-november-2012</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2012/11/02/public-data-tcga-squamous-cell-lung-cancer</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2012/11/02/prototype-lightweight-web-site-integration-with-genomespace</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2012/11/01/new-feature-tool-tagging-and-search</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2012/10/19/new-feature-extracting-subsetting-columns-from-a-file</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2012/10/18/new-geatures-file-subsetting-and-links-to-parent-directories</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2012/10/05/new-tool-geworkbench</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2012/10/01/adding-private-tools-part-2</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2012/10/01/public-data-a-differentiation-map-of-hematopoiesis-</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2012/09/21/public-data-project-achilles</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2012/09/21/msigdb-has-moved-</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2012/09/12/opening-the-gsui-at-a-particular-directory</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2012/08/27/adding-private-tools</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2012/06/22/new-feature-customizing-your-toolbar</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2012/06/07/sharing-files-in-genomespace</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2012/05/14/genomespace-and-single-sign-on</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/blog/2012/05/10/safari-uploads-are-disabled</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://genomespace.org/support/api/restful-access-to-dm-beta-2-0</loc>
+  <lastmod>2020-09-18T21:51:34+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+
+
+</urlset>

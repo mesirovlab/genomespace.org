@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>GenomeSpace: 
+	  	Tools
+  </title>
+<link href="/assets/site.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/demo_table_jui.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/jquery-ui-1.8.4.custom.css" media="screen" rel="stylesheet" type="text/css"/>
+<script src="/assets/application.js" type="text/javascript"></script>
+<link href="/assets/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+<meta content="authenticity_token" name="csrf-param"/>
+<meta content="YSkwwasC4czO2hOWmpICtvXbPPa+q5EZFg/bVtYX4NU=" name="csrf-token"/>
+</head>
+<body>
+<div id="page_wrapper">
+<div id="page_content">
+<div id="logo"><a href="/"><img alt="Gslogo" src="/assets/gslogo.png"/></a></div>
+<div id="login_menu"><a href="https://gsui.genomespace.org/jsui/gsui.html">User Login</a>
+</div>
+<ul id="nav">
+<li id="what-is-genomespace"><a href="/what-is-genomespace">What is GenomeSpace?</a>
+</li>
+<li id="tools"><a href="/support/tools">Tools</a>
+</li>
+<li id="recipes"><a href="http://recipes.genomespace.org">Recipes</a></li>
+<li id="documentation"><a href="/documentation">Documentation</a>
+<ul>
+<li><a href="/support/guides/user-guide">User Guide</a>
+<p>Read the detailed guide to the user interface</p>
+</li>
+<li><a href="/support/guides/tool-guide">Tool Guide</a>
+<p>Learn how to access GenomeSpace functionality for each Tool</p>
+</li>
+<li><a href="/faq">FAQ</a>
+<p>See answers to frequently asked questions</p>
+</li>
+<li><a href="/presentations-and-videos">Presentations and Videos</a>
+<p>Access talks by the GenomeSpace community</p>
+</li>
+<li><a href="/support/guides/end-to-end-analyses">End-to-End Analyses</a>
+<p>Provides description for end-to-end analyses.</p>
+</li>
+</ul>
+</li>
+<li id="developers"><a href="/for-developers">Developers</a>
+<ul>
+<li><a href="/what-can-genomespace-do-for-tool-developers">What Can GenomeSpace Do For Tool Developers?</a>
+<p></p>
+</li>
+<li><a href="/adopters">Technical Documentation</a>
+<p></p>
+</li>
+<li><a href="/source-code">Source Code and Distributions</a>
+<p></p>
+</li>
+<li><a href="/developer-support-and-feedback">Developer Support and Feedback</a>
+<p></p>
+</li>
+</ul>
+</li>
+<li id="support"><a href="/support">Support</a>
+</li>
+<li id="about"><a href="/about">About</a>
+</li>
+<li class="search">
+<div id="search_box">
+<form accept-charset="UTF-8" action="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"/></div>
+<input class="search" id="search" name="search" type="text"/>
+<input class="searchBtn" type="submit"/>
+</form> </div>
+</li>
+</ul>
+<script type="text/javascript">
+//<![CDATA[
+
+		// grab page category and use to highlight correct menu item.  if none present, parse url to find where the user is.
+		var category = "";
+		if ( !category ){
+			url_parts = $(location).attr('pathname').split("/");
+			url_string = url_parts[1] + "/" + url_parts[2]
+			if (url_string == "support/tools"){
+				category = "tools"
+			}
+			else if (url_string == "support/guides"){
+				url_parts[3] == "recipes" ? category = "recipes" : category = "documentation"
+			}
+			else if (url_parts[1] == "genomespace-recipes")
+			{
+                category = "gsrecipes"
+            }
+			else if (url_string == "support/api"){
+				category = "developers"
+			}
+			else if ((url_string == "register/undefined") || (url_string == "request_invite/undefined")) {
+				category = "what-is-genomespace"
+			}
+			else if (url_string == "/undefined") {
+				category = ""
+			}
+			else if (url_string == "support/undefined") {
+				category = "support"
+			}
+		}
+		$("#" + category).addClass("current");
+
+
+//]]>
+</script>
+<div id="content_panel">
+<table width="100%"><tr>
+<td id="main_content">
+<div id="notice"></div>
+<div id="alert"></div>
+<h1>GenomeSpace Tools and Data Sources</h1>
+<h2>GenePattern
+	</h2>
+<p>Project Website: <a href="http://www.genepattern.org">http://www.genepattern.org</a></p>
+<p>
+	GenePattern is a powerful genomic analysis platform that provides access to hundreds of tools for gene expression analysis, proteomics, SNP analysis, flow cytometry, RNA-seq analysis, and common data processing tasks. A web-based interface provides easy access to these tools and allows the creation of multi-step analysis pipelines that enable reproducible in silico research.</p>
+<h2>
+	Modules</h2>
+<p>
+	The categories of analysis modules in GenePattern include:</p>
+<ul>
+<li>
+		Clustering</li>
+<li>
+		Flow Cytometry</li>
+<li>
+		Gene List Selection</li>
+<li>
+		Pathway Analysis</li>
+<li>
+		Prediction</li>
+<li>
+		Projection</li>
+<li>
+		Proteomics</li>
+<li>
+		RNA-seq</li>
+<li>
+		SNP Analysis</li>
+<li>
+		Sequence Analysis</li>
+<li>
+		Survival Analysis</li>
+</ul>
+<p>
+	There are also a number of preprocessing and utility modules for data handling, and visualization modules that display analysis results graphically and allow you to manipulate that view interactively.</p>
+<p>
+	GenePattern provides a simple application interface that gives users access to computational analysis methods and tools, regardless of their computational experience. GenePattern also provides a programmatic interface that makes those analysis modules available to computational biologists and developers from Java, MATLAB, and R.</p>
+<p>
+	Modules developed and tested by the GenePattern development team are available on the Broad Institute public repository. Modules developed by GenePattern users are available on<a href="http://gparc.org"> GParc, the GenePattern Archive.</a></p>
+<h2>
+	Suites</h2>
+<p>
+	Suites group modules and pipelines into convenient packages.  They can provide an easy list of frequently accessed modules and a convenient way of collecting a set of modules and pipelines to be shared with other GenePattern users.</p>
+<h2>
+	Pipelines</h2>
+<p>
+	GenePattern pipelines combine analysis modules, visualization modules, and other pipelines into a single, reusable workflow. Pipelines can be defined to analyze a particular dataset; for example, you might create a pipeline to reproduce published analysis results. Or they can be parameterized, which allows the person running the pipeline to provide datasets and other analysis variables. Often a pipeline runs a progressive series of analyses, where the output from one analysis is used as input for the next.</p>
+<p>
+	Pipelines allow you to capture, automate, and share the complex series of steps required to analyze genomic data. By providing a way to create and distribute an entire computational analysis methodology in a single executable script, pipelines enable a form of <em>in silico</em> reproducible research. </p>
+<p>
+	Pipelines capture computational analysis methods, modules and/or other pipelines, and their parameters. They allow you to "chain" methods together by using the output of one as the input of another. You can use a simple form-based interface to build a pipeline from scratch, or have GenePattern work backward from an analysis results file to create a pipeline that contains the analysis methods used to generate that file. You can create a pipeline to reproduce an exact set of events, or parameterize the pipeline to run an analysis methodology against variable data</p>
+<h3>Help Links</h3>
+<p><a href="http://www.genepattern.org">GenePattern Website</a></p>
+<p><a href="https://groups.google.com/forum/?utm_medium=email&amp;utm_source=footer#!forum/genepattern-help">GenePattern User Forum </a></p>
+<p><a href="/support/guides/tool-guide/sections/genepattern-GS-capabilities">GenomeSpace functionality in GenePattern</a></p>
+<h3>Recipes</h3>
+<p><a href="/support/guides/moving-data/sections/send-data-from-genomica-to-genepattern">Send Data from Genomica to GenePattern</a></p>
+<p><a href="/support/guides/moving-data/sections/send-data-from-genepattern-to-igv">Send Data from GenePattern to IGV</a></p>
+<hr/>
+<p><a href="/support/tools">Back</a></p>
+</td>
+</tr></table>
+</div>
+</div>
+<div id="footer">
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+	$(document).ready(function() {
+		$("a.toggle_link").click(function() {
+			var image = $(this).children("img");
+			$(image).attr("src", $(image).attr("src") == "/assets/plus.png" ? "/assets/minus.png" : "/assets/plus.png");
+		});
+	});
+
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54489169-1', 'auto');
+  ga('send', 'pageview');
+
+
+//]]>
+</script></div></body>
+</html>

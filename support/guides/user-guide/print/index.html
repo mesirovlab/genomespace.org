@@ -1,0 +1,3319 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>User Guide</title>
+<link href="/assets/site.css" media="all" rel="stylesheet" type="text/css"/>
+</head>
+<body style="background-image: none;">
+<h1>User Guide</h1>
+<h2>Highlights &amp; Quickstart</h2>
+<p>
+	GenomeSpace bridges the gaps between <a href="http://www.genomespace.org/support/tools">GenomeSpace-enabled bioinformatics tools</a>, making it possible for you to move data smoothly between these tools, leveraging the available analyses and visualizations in each resource. GenomeSpace allows you to store your data files in the cloud and provides necessary file format transformations whenever you select an analysis or visualization within one of the tools.</p>
+<ul>
+<li>
+<a href="http://www.genomespace.org/support/tools"><strong>Tools</strong></a> are applications that allow users to either perform analyses on or visualize data.  You can send files to these applications from GenomeSpace and save files from those applications to GenomeSpace.</li>
+<li>
+<a href="http://www.genomespace.org/support/tools"><strong>Data sources</strong></a> are repositories of data files that are linked to GenomeSpace. Those with access to the data can use GenomeSpace as a conduit to further analyze the provided data. Data sources may additionally provide analysis tools within their site for analysis of their data but not of outside data. Data sources are also listed under the <em>Tools </em>menu and are referred to grouped as tools.</li>
+<li>
+<a href="http://recipes.genomespace.org/"><strong>Recipes</strong></a> are step-by-step instructions of two types: (1) they outline how to perform tasks in GenomeSpace such as loading or moving data, and (2) show how to perform specific integrative bioinformatic data analyses using GenomeSpace tools.</li>
+</ul>
+<p>
+	Highlights of GenomeSpace functionality are outlined below with related links. Details follow in this User Guide.</p>
+<ul>
+<li>
+<strong>A conduit for multi-tool bioinformatic analyses</strong>
+<ul>
+<li>
+				launch tools on files or access files from analysis tools as outlined in <a href="http://genomespace.org/support/guides/loading-data/">Loading data into GenomeSpace</a></li>
+<li>
+				move and easily convert your files to the necessary formats using built-in scripts as outlined in <a href="http://genomespace.org/support/guides/moving-data/">Moving data between tools via GenomeSpace</a></li>
+<li>
+				follow step-by-step <a href="http://recipes.genomespace.org/">Recipes</a> for examples of integrative analyses</li>
+</ul>
+</li>
+<li>
+<strong>A file management hub </strong>
+<ul>
+<li>
+				30 GB personal storage included with account</li>
+<li>
+				Access files stored in Dropbox, Amazon S3, or Google Drive from any GenomeSpace-enabled tool.</li>
+</ul>
+</li>
+<li>
+<strong>An environment facilitating collaborative research</strong>
+<ul>
+<li>
+				intuitive file sharing to individuals, groups, and the public</li>
+<li>
+				share private tools with groups</li>
+</ul>
+</li>
+<li>
+<strong>A data access resource</strong>
+<ul>
+<li>
+				explore and access data provided by data sources listed under the <a href="http://www.genomespace.org/support/tools">Tools</a> menu</li>
+<li>
+				access data via mounted Amazon S3 bucket, such as from the public <em>1000 Genomes Project</em> and the <em>Human Microbiome Project</em>.</li>
+<li>
+				import data via URL from public servers such as the Gene Expression Omnibus (GEO)</li>
+<li>
+				test example analysis workflows using data under <a href="https://gsui.genomespace.org/jsui/gsui.html?pathOrUrl=/Home/Public/SharedData/Demos">Public/SharedData/Demos</a></li>
+</ul>
+</li>
+</ul>
+<p>
+	GenomeSpace also includes the ability to link your GenomeSpace login to user accounts in tools allowing easy single sign-on access. Learn how to link accounts in the <a href="http://www.genomespace.org/support/guides/tool-guide">Tool Guide</a>. For more on the concepts and team behind GenomeSpace see <a href="http://www.genomespace.org/what-is-genomespace">What Is GenomeSpace?</a> and check out our <a href="http://www.genomespace.org/presentations-and-videos">Presentations and Videos</a>. Tool and data portal developers interested in GenomeSpace-enabling their projects should see <a href="http://www.genomespace.org/for-developers">Resources for Developers</a>. For troubleshooting questions, see the <a href="http://www.genomespace.org/faq" target="_self">FAQ</a>. For additional questions and to provide feedback, please post to the <a href="http://www.genomespace.org/support">forum</a> or contact <a href="mailto:%67%73-%68%65%6c%70@%62%72%6f%61%64%69%6e%73%74%69%74%75%74%65.%6f%72%67">gs-help@broadinstitute.org</a>.</p>
+<p>
+	For questions about specific tools we refer you to the help available at the tool websites, the <a href="https://www.biostars.org/" target="_blank">Biostars</a> forum, and the <a href="http://seqanswers.com/" target="_blank">SeqAnswers</a> forum.</p>
+<p>
+	 </p>
+<h2>
+<a name="quickstart"></a>Quickstart to the User Interface</h2>
+<p>
+	Here we outline the main elements of the user interface to help you get started. More detailed instructions follow within this User Guide.</p>
+<p>
+	When you log in to your GenomeSpace account, you will be redirected from the home page to the user interface shown below (<strong>Screenshot</strong> 2015.02.06)</p>
+<p>
+<img alt="" src="/uploaded/content_sl_ug_highlights.png" style="width: 100%; height: 100%;"/></p>
+<ol>
+<li>
+<strong>User account</strong> profile, history, and logout</li>
+<li>
+<strong>Menu bar</strong> for management, analysis, and information. Many functions are also accessible by alternate methods, i.e. by right-click menu.
+		<ul>
+<li>
+<em>File </em>and <em>View</em> menu to manage files and folders</li>
+<li>
+<em>Connect</em> menu to link Dropbox, Amazon S3, and Google Drive accounts for access from your GenomeSpace account</li>
+<li>
+<em>Launch</em> menu to open a specific tool, either by going to the tool's website or by opening the desktop application using Java</li>
+<li>
+<em>Manage</em> menu to add and edit your groups and private tools</li>
+<li>
+<em>Recipes</em> menu to view GenomeSpace recipes in a new browser tab</li>
+<li>
+<em>Help</em> menu to view the User Guide and other helpful information</li>
+</ul>
+</li>
+<li>
+<strong>Tool bar</strong> for launching GenomeSpace tools and data sources.
+		<ul>
+<li>
+				Wide arrows <img alt="" src="/uploaded/content_sl_ug_widearrow.png" style="width: 10px; height: 20px;"/>at edges of toolbar scroll to next set of tools</li>
+<li>
+				Hover mouse over tool icon and click small downward triangle <img alt="" src="/uploaded/content_sl_ug_downwardtriangle.png" style="width: 13px; height: 15px;"/> that appears to access menu of specific tool functions and information</li>
+<li>
+				Click directly on a tool icon to launch the tool</li>
+<li>
+				Click blue plus button <img alt="" src="/uploaded/content_cat1.png" style="width: 20px; height: 18px;"/> to open the tool catalog to customize the toolbar</li>
+<li>
+				Click small selector buttons at bottom of toolbar <img alt="" src="/uploaded/content_sl_ug_dots.png" style="width: 77px; height: 15px;"/> to display your customized alternate toolbars</li>
+</ul>
+</li>
+<li>
+<strong>Left directories panel</strong> gives an overview of directories and lists your GenomeSpace user folder, <em>Shared to</em> folder containing items from other users, and the<em> Public</em> folder containing items shared to all users.
+		<ul>
+<li>
+				This window also displays any connected storage such as Dropbox &amp; Google Drive and mounted Amazon S3 buckets.</li>
+<li>
+				Click on a folder to expand.</li>
+<li>
+				To indicate an item is shared, folder and file icons display people icons. Sharing to select users displays one <img alt="" src="/uploaded/content_screenshot_2015-01-26_21_14_01.png" style="width: 24px; height: 21px;"/>, while public sharing displays three <img alt="" src="/uploaded/content_screenshot_2015-01-26_21_14_12.png" style="width: 22px; height: 19px;"/>.</li>
+<li>
+				Access action options for folders from the <em>File</em> menu or from the pop-up menu called by right-clicking on a folder.</li>
+</ul>
+</li>
+<li>
+		The <strong>main files area </strong>lists files and folders within a selected folder.
+		<ul>
+<li>
+				Clickable file path breadcrumb at top for easy navigation.</li>
+<li>
+				Refresh the browser window to update file listings when returning to GenomeSpace from tools.</li>
+<li>
+				Access action options for files and folders from the <em>File</em> menu or from the pop-up menu called by right-clicking on an item.</li>
+</ul>
+</li>
+<li>
+		When you log in, <strong>dialog boxes</strong> and other elements occasionally appear.
+		<ul>
+<li>
+				Your feedback in the survey box helps improve and maintain funding for GenomeSpace</li>
+<li>
+				A <em>What's New</em> box highlighting news and updates to the system via blog are posted as we make changes</li>
+<li>
+				New tools in the tool catalog are marked by a red circled number next to the tool catalog button  </li>
+</ul>
+</li>
+<li>
+		A <strong>search field</strong> that matches file, directory, and tool names, descriptions, and tags.
+		<ul>
+<li>
+				Results for files and tools are listed separately with file hits displayed first. Click on <em>Tools (#)</em> at top of area to switch display results.</li>
+<li>
+				Searching is insensitive to case and matches strings within words</li>
+</ul>
+</li>
+</ol>
+<p>
+	 </p>
+<h2>
+<a name="quickstartanalysis"></a>Quickstart an analysis</h2>
+<p>
+	First, <strong>make files available to GenomeSpace</strong> with one of the following methods.</p>
+<ul>
+<li>
+		drag-drop data files from your desktop into your user folder in the browser</li>
+<li>
+		import files by URL from the menu <em>File</em>&gt;<em>Import from URL</em></li>
+<li>
+		send files from a GenomeSpace-enabled tool to your GenomeSpace account</li>
+<li>
+		mount Dropbox, Amazon S3, or Google Drive files using <em>Connect</em> from the menu bar</li>
+</ul>
+<p>
+	When you launch a tool on a file, file formats are converted automatically. Additionally convert the format of a selected file using <em>File</em> menu&gt;<em>Convert</em>.</p>
+<p>
+<strong>Launch a tool </strong>to analyze files using one of the following methods.</p>
+<ul>
+<li>
+		drag-drop the file(s) onto a tool in the toolbar</li>
+<li>
+		select the file(s) and go to menu<em> Launch</em> and select a specific tool</li>
+<li>
+		select file(s) then click on the tool in the toolbar</li>
+<li>
+		select file(s) then click on the files and select a tool from the pop-up menu</li>
+</ul>
+<hr/>
+<h2>Overview of User Guide</h2>
+<p>
+<strong>This User Guide incorporates information up to the January 2015 blog posts</strong> and details GenomeSpace functionality. Sections are organized as reflected in the left navigation menu and the outline below. For instructions on accessing GenomeSpace functionality for a specific tool, see the <a href="http://www.genomespace.org/support/guides/tool-guide" target="_self">Tool Guide</a>. Please read the <em>Highlights &amp; Quickstart</em> section for an introduction before reading the detailed User Guide.</p>
+<p>
+<strong>The User Guide provides descriptions of GenomeSpace functionality in a two-pronged manner</strong>: (i) a visually-oriented approach in <em>User Interface</em> and subsections and (ii) a task-centric approach in the remainder of the guide. Thus, some instructions are repeated on these pages although they may be presented differently. As we make improvements to the site, accompanying screenshots in our guides inevitably become snapshots of past versions of GenomeSpace and may not correspond exactly to what you see in your current instance of GenomeSpace. However, these minor differences should not detract from the instructions and the overarching functionalities provided by GenomeSpace.</p>
+<p>
+	If you need additional clarification, please post to the <a href="http://www.genomespace.org/support">forum</a> or let us know at <a href="mailto:%67%73-%68%65%6c%70@%62%72%6f%61%64%69%6e%73%74%69%74%75%74%65.%6f%72%67">gs-help@broadinstitute.org</a>. We are a small team and rely on your feedback for improvement.</p>
+<table border="1" cellpadding="1" cellspacing="1" height="673" width="650">
+<tbody>
+<tr>
+<td style="text-align: center;">
+				 </td>
+<td style="text-align: center;">
+<strong>instructions last updated</strong></td>
+<td style="text-align: center;">
+<strong>screenshots last updated</strong></td>
+</tr>
+<tr>
+<td>
+<ol>
+<li>
+						Highlights and Quickstart</li>
+</ol>
+</td>
+<td>
+<ul>
+<li>
+						January 2015</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>
+						January 2015</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+<ol start="2">
+<li>
+						Registering and Login</li>
+</ol>
+</td>
+<td>
+<ul>
+<li>
+						January 2015</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>
+						January 2015</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+<ol start="3">
+<li>
+						User interface in detail
+						<ul>
+<li>
+								Customizing the user interface, the tool catalog, and tool tags</li>
+</ul>
+</li>
+</ol>
+</td>
+<td style="text-align: center;">
+<ul>
+<li style="text-align: left;">
+						January 2015</li>
+<li style="text-align: left;">
+						January 2015</li>
+</ul>
+</td>
+<td style="text-align: center;">
+<ul>
+<li style="text-align: left;">
+						January 2015</li>
+<li style="text-align: left;">
+						January 2015</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+<ol start="4">
+<li>
+						Connect Dropbox and Google Drive Storage
+						<ul>
+<li>
+								Connect Amazon S3 Bucket</li>
+</ul>
+</li>
+</ol>
+</td>
+<td style="text-align: center;">
+<ul>
+<li style="text-align: left;">
+						January 2015</li>
+<li style="text-align: left;">
+						January 2015</li>
+</ul>
+</td>
+<td style="text-align: center;">
+<ul>
+<li style="text-align: left;">
+						January 2015</li>
+<li style="text-align: left;">
+						&lt;2014</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+<ol start="5">
+<li>
+						Manage files and folders
+						<ul>
+<li>
+								Share data</li>
+<li>
+								Preview &amp; Heatmap</li>
+<li>
+								Tag &amp; Search</li>
+</ul>
+</li>
+</ol>
+</td>
+<td style="text-align: center;">
+<ul>
+<li style="text-align: left;">
+						January 2015</li>
+<li style="text-align: left;">
+						January 2015</li>
+<li style="text-align: left;">
+						January 2015</li>
+<li style="text-align: left;">
+						January 2015</li>
+</ul>
+</td>
+<td style="text-align: center;">
+<ul>
+<li style="text-align: left;">
+						January 2015</li>
+<li style="text-align: left;">
+						February 2015</li>
+<li style="text-align: left;">
+						January 2015</li>
+<li style="text-align: left;">
+						January 2015</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+<ol start="6">
+<li>
+						Manage groups and tools</li>
+</ol>
+</td>
+<td style="text-align: center;">
+<ul>
+<li style="text-align: left;">
+						February 2015</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>
+						February, 2015</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+<ol start="7">
+<li>
+						Run an analysis
+						<ul>
+<li>
+								Convert file formats</li>
+<li>
+								Extract file rows and columns</li>
+<li>
+								Export external site files to GenomeSpace</li>
+<li>
+								Recipe demo datasets</li>
+<li>
+								WDK launch on file or URL</li>
+</ul>
+</li>
+</ol>
+</td>
+<td>
+<ul>
+<li>
+						February 2015</li>
+<li>
+						February 2015</li>
+<li>
+						February 2015</li>
+<li>
+						February 2015</li>
+<li>
+						February 2015</li>
+<li>
+						February 2015</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>
+						February 2015</li>
+<li>
+						February 2015</li>
+<li>
+						February 2015</li>
+<li>
+						February 2015</li>
+<li>
+						February 2015</li>
+<li>
+						February 2015</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+	 </p>
+<hr/>
+<h2>Registering &amp; Login</h2>
+<h2>
+	Registering is simple</h2>
+<p>
+	Click the <em>Register </em>button<em> </em>on<a href="http://www.GenomeSpace.org"> www.GenomeSpace.org</a> or go to the <a href="http://www.genomespace.org/register" target="_blank">registration page</a> directly (<strong>Screenshot</strong> 2015.1.15).</p>
+<p>
+<img alt="" src="/uploaded/content_ugui_register.png" style="width: 700px; height: 266px;"/></p>
+<ol>
+<li>
+		Choose a username and provide your email address.</li>
+<li>
+		Choose a password and confirm.</li>
+<li>
+		Click <em>Register</em>.</li>
+<li>
+		Follow instructions sent to your email to complete the registration. Email links are valid for 24 hours.</li>
+</ol>
+<p>
+	 </p>
+<h2>
+<a name="login"></a>Log in to GenomeSpace and linked tools using one ID</h2>
+<p>
+	Log in using your username and password on <a href="http://www.GenomeSpace.org">www.GenomeSpace.org</a> or on <a href="http://gsui.GenomeSpace.org">gsui.GenomeSpace.org</a>. Once logged in, first time users will see a welcome dialog with a tip to get started.</p>
+<ul>
+<li>
+		Use the <em>Forgot your password? </em>link to retrieve your password using either your username or email. GenomeSpace sends a temporary password to your email.</li>
+</ul>
+<p>
+	GenomeSpace login uses <a href="http://openid.net/get-an-openid/what-is-openid/" target="_blank">OpenID</a> which allows use of your GenomeSpace username and password to log in to GenomeSpace-linked tools. For many tools this requires linking the accounts beforehand as outlined for specific tools in the <a href="http://www.genomespace.org/support/guides/tool-guide">Tool Guide</a>. These tools will recognize your GenomeSpace username once you are already logged in to GenomeSpace. If you start from a specific tool website before logging in to GenomeSpace, you will need to enter your GenomeSpace credentials at the tool website to access GenomeSpace functionality for the tool.</p>
+<ul>
+<li>
+		It is possible to log in to a tool website without GenomeSpace credentials, using your tool-specific login information. In this case, GenomeSpace functionality for the tool is inactive. To avoid this, be sure to look for the <em>OpenID Login</em> field for a tool and select <em>GenomeSpace</em> authentication.</li>
+<li>
+		Not all tools use OpenID. Some tools require independent account verification.  </li>
+</ul>
+<hr/>
+<h2>User Interface</h2>
+<p>
+	This section provides details on the user interface elements numbered in the <strong>screenshot</strong> below (2015.02.06). For a brief overview of the user interface, see <a href="http://www.genomespace.org/support/guides/user-guide/sections/quickstart#quickstart">Highlights &amp; Quickstart</a>.</p>
+<p>
+	The following links jump to the sections on this page and reference numbered elements in the screenshot.</p>
+<ul>
+<li>
+<a href="#directories">Access directories panel (1) and file panel (2) options via File menu (3) and right-click pop-up menu (5)</a></li>
+<li>
+<a href="#files">Additional options for files </a><a href="#files">(2) </a><a href="#files">from the File menu (3) and right-click pop-up menu (5)</a></li>
+<li>
+<a href="#menubar">Other Menu bar functions (3)</a></li>
+<li>
+<a href="#toolbar">Launch tools from the Toolbar (4) or left-click pop-up menu (5)</a></li>
+<li>
+<a href="#searchbar">Find files, folders, or tools using the Search bar (6)</a></li>
+<li>
+<a href="#profile">Log out with your User Profile (7)</a></li>
+</ul>
+<p>
+<img alt="" src="/uploaded/content_sl_ug_userinterface.png" style="width: 100%; height: 100%;"/></p>
+<ol>
+<li>
+		Left <a href="#directories"><strong>directories panel</strong></a> gives overview of folders
+		<ul>
+<li>
+				Lists your GenomeSpace user folder at the top, and includes a <em>Shared to</em> folder containing items shared to you, and the <em>Public</em> folder containing items shared to all users.</li>
+<li>
+				Also displays any connected storage such as Dropbox and Google Drives and mounted Amazon S3 buckets, e.g. <em>s3:1000genomes</em>.</li>
+</ul>
+</li>
+<li>
+		Main <a href="#files"><strong>files panel</strong></a> lists files and folders within a selected folder
+		<ul>
+<li>
+				Sort items by clicking on headers, e.g. <em>Last Modified</em>.</li>
+<li>
+				Breadcrumb list at top, e.g. <em>Home&gt;SpaceCadet&gt;<span style="color:#0000ff;">TCGA_GDAC_BladderCancer</span></em>, tells you which folder contents are displayed in blue and is clickable for backward navigation.</li>
+</ul>
+</li>
+<li>
+<a href="#menubar"><strong>Menu bar</strong></a> organizes functions for managing files and groups, launching tools, connecting additional storage, accessing Recipes, and help items, e.g. viewing the status of the server system.</li>
+<li>
+<a href="#toolbar"><strong>Toolbar</strong></a> displays tool and data sources as interactive icons that launch the tool.
+		<ul>
+<li>
+				Click wide arrows at edge of toolbar <img alt="" src="/uploaded/content_sl_ug_widearrow.png" style="width: 10px; height: 20px;"/>, here displayed on the right, to scroll to next set of tools.</li>
+<li>
+				Click on a tool icon to launch the tool. See <a href="http://www.genomespace.org/faq#FAQ2.2" target="_self">FAQ2.2</a> for help launching desktop tools.</li>
+<li>
+				Hover mouse over an icon for tool description and click on the small arrow <img alt="" src="/uploaded/content_sl_ug_downwardtriangle.png" style="width: 13px; height: 15px;"/> that appears to access the tool-specific menu.</li>
+<li>
+				Customize your toolbar from the tool catalog by clicking on the blue plus button <img alt="" src="/uploaded/content_sl_ug_blueplusbutton.png" style="width: 15px; height: 15px;"/> at the left.</li>
+<li>
+				Display alternate toolbar views by clicking on the dots <img alt="" src="/uploaded/content_sl_ug_dots.png" style="width: 77px; height: 15px;"/> centered at the bottom of the toolbar.</li>
+</ul>
+</li>
+<li>
+		Pop-up menu gives you access to a number of menu bar functions.
+		<ul>
+<li>
+<strong><a href="#directories">Right-click pop-up menu</a></strong> (shown) gives <em>File</em> menu options.</li>
+<li>
+				Normal or <strong><a href="#toolbar">left-click pop-up menu</a></strong> (not shown) allows you to select a tool to launch on the file.</li>
+</ul>
+</li>
+<li>
+		The <a href="#searchbar"><strong>search bar</strong></a> matches to the names, descriptions, tags, and tag-associated descriptors of tools, files, and folders.</li>
+<li>
+		The <a href="#profile"><strong>user profile</strong></a> name is displayed in the upper right corner. Click for profile information, history, and to log out.</li>
+</ol>
+<p>
+	 </p>
+<h2>
+<a name="directories"></a>Access directories panel (1) and file panel (2) options via <em>File</em> menu (3) and right-click pop-up menu (5)</h2>
+<p>
+	Use the directories panel (1) to navigate your directories structure and click on a folder to display contents in the main files panel (2).</p>
+<p>
+	The main files panel provides a better access point to perform actions on both subfolders and files. A subset of these actions are available to perform on subfolders from the directories panel which only lists folders.</p>
+<p>
+	Within the main files panel, sort how items are listed by clicking on column headers, e.g. <em>Last Modified</em>, and also navigate backwards up the displayed directory structure by clicking on folder names in the breadcrumb list at top. E.g. clicking on <em>SpaceCadet</em> in the breadcrumb <em>Up to: Home&gt;SpaceCadet&gt;<span style="color:#0000ff;">TCGA_GDAC_BladderCancer</span></em> will switch to display the subfolder <em>SpaceCadet</em> from contents of folder shown in blue.</p>
+<hr/>
+<h3>
+<strong>For each file or folder, whether in the directories panel or in the main files panel, three alternate management actions are available:</strong></h3>
+<ol>
+<li>
+<strong>Right-click and select option from <em>pop-up</em> menu (5)</strong>
+<ul>
+<li>
+				for the directories panel, also click on downward right triangle</li>
+</ul>
+</li>
+<li>
+<strong>Select folder or file(s), see items highlighted, and go to the menu bar (3)&gt; <em>File</em> for options.</strong>
+<ul>
+<li>
+				for the main files panel, check the box left of the file/folder</li>
+</ul>
+</li>
+<li>
+<strong>Drag-drop</strong>
+<ul>
+<li>
+				Drag-drop desktop file(s) to a folder either in the directories panel (1) or in the files panel (2).</li>
+<li>
+				Select folder or file(s) and drag-drop to different areas to move to a new directory (1) or to launch specific tools on the files (4).</li>
+</ul>
+</li>
+</ol>
+<p>
+	Options may or may not be available depending on the read and write permissions granted at the initial mounting of the directories. For example, the <em>Shared to</em> folder containing items shared to you by other users and the <em>Public</em> folder containing items shared to all users may limit your access to contained files as read only or read and write permission. Increased sharing changes the folder icon to show one to three green people.</p>
+<p>
+	The difference between the<em> File </em>menu and the <em>pop-up</em> menu option is that <em>File</em> menu options remain static, with inaccessible options dimmed in gray, while the <em>pop-up</em> menu displays only available actions for the folder or file type. Additionally, actions for multiple files should be accessed from the <em>File </em>menu. <em>Pop-up</em> menu actions are usually only on the moused over item. </p>
+<hr/>
+<h3>
+<strong>The options available from the various menus are summarized in the table below and are divided roughly by private versus shared or public directory types. </strong></h3>
+<p>
+	Certain menu options, such as <em>Import from URL</em>, are only available from one menu, in this example the <em>File</em> menu.</p>
+<table border="1" cellpadding="1" cellspacing="1" height="865" style="width: 700px;" width="723">
+<tbody>
+<tr>
+<td colspan="2" style="text-align: center;">
+<strong>Private storage: User folder &amp; subfolders, Dropbox folder, and Read/Write S3 Bucket</strong></td>
+</tr>
+<tr>
+<td>
+				Upload</td>
+<td>
+<ul>
+<li>
+						This menu item gives a reminder message to upload files by dragging and dropping them onto the destination folder in the directories or files and subdirectories panels.</li>
+<li>
+						For step-by-step instructions see the <a href="http://www.genomespace.org/support/guides/recipes/sections/upload-data-to-genomespace" target="_self">Upload Data to GenomeSpace</a> recipe.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+					Import from URL</p>
+<p>
+					(<em>File</em> menu only)</p>
+</td>
+<td>
+<ul>
+<li>
+						Enter or drag-drop the file URL in the provided textbox.</li>
+<li>
+						Select the destination folder from the provided directory structure.</li>
+<li>
+						Edit the name of the imported file.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+				Create subdirectory</td>
+<td>
+<ul>
+<li>
+						Creates a subfolder within the selected directory. Enter a name for the subfolder.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+				View file/directory link</td>
+<td>
+<ul>
+<li>
+						Displays the highlighted URL address of the file/folder that you can copy by keyboard shortcut or right-click menu.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+				Sharing</td>
+<td>
+<ul>
+<li>
+						View and edit the share setting for the file/folder with individual users, groups, or the public.
+						<ul>
+<li>
+								To create groups, see instructions for <em>Manage&gt;Groups</em> below.</li>
+</ul>
+</li>
+<li>
+						To confirm a username exists, click on the magnifying glass (<strong>Screenshot, circled in red</strong>).</li>
+<li>
+						Revoke permissions by clicking on the red <span style="color:#ff0000;"><strong>X</strong></span> next to the shared user/group name.</li>
+<li>
+						Checking <em>Allow public access</em> for a file/folder places an alias of the file/folder in the <em>Public</em> directory within a folder with your username. Within your user directory, the file/folder icon displays green people (<img alt="" src="/uploaded/content_screenshot_2015-01-23_10_28_23.png" style="width: 20px; height: 23px;"/><img alt="" src="/uploaded/content_screenshot_2015-01-23_10_28_10.png" style="width: 24px; height: 22px;"/>) to indicate public sharing.</li>
+<li>
+						Read more in the <a href="http://www.genomespace.org/support/guides/user-guide/sections/share-data" target="_self">Share Data</a> section.</li>
+</ul>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_shl_ug_sharing.png" style="width: 400px; height: 187px;"/></p>
+</td>
+</tr>
+<tr>
+<td>
+				Tags</td>
+<td>
+<ul>
+<li>
+						Add or remove tags to file(s)/folders.</li>
+<li>
+						Folder tags apply only to the folder and not to contents.</li>
+<li>
+						The <a href="http://www.genomespace.org/support/guides/user-guide/sections/UI#searchbar">search bar</a> matches search terms within the file name and tags, tool name, tool description, tool tags and tag descriptions.</li>
+<li>
+						To tag tools, see <a href="http://www.genomespace.org/support/guides/user-guide/sections/customizing" target="_self">Customizing the interface</a>.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+				Create/Expand Archive</td>
+<td>
+<ul>
+<li>
+						Compress or expand file/folder in ZIP, TAR.GZ, or TAR format with option to edit name. At the directory level, ZIP and TAR.GZ compression are recommended.</li>
+<li>
+						Archiving creates a secondary compressed file and leaves the original file/folder intact.</li>
+<li>
+						Similarly, expanding an archive creates a secondary expanded folder and leaves the archived files intact.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+				Rename</td>
+<td>
+<ul>
+<li>
+						The original file/folder name is displayed for editing.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+				Copy/Move</td>
+<td>
+<ul>
+<li>
+						Select the destination folder for the copied or moved file/folder.</li>
+<li>
+						Edit the file/folder name. An error occurs if a file/folder of the same name already exists in the destination folder so be sure to edit the name if copying to the same folder.</li>
+<li>
+						Progress is shown at the bottom of the browser and a dialog box informs you of completion.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+				Delete</td>
+<td>
+<ul>
+<li>
+						Delete file(s) or a folder with contents from the main files &amp; subdirectories area.<em> </em></li>
+<li>
+						To delete from the directories panel, the folder must be empty.</li>
+<li>
+						Refresh your browser window to reflect the change.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+				Disconnect (Dropbox &amp; S3)</td>
+<td>
+<ul>
+<li>
+						Disconnects linked account. Browser refreshes automatically to reflect change.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: center;">
+<strong><strong>Public storage: GoogleDrive folder, </strong>Shared to folder, Public folder</strong>,<strong> and Public Amazon S3 buckets</strong></td>
+</tr>
+<tr>
+<td>
+				View file/directory link</td>
+<td>
+<ul>
+<li>
+						Displays the highlighted URL address of the file/folder that you can copy by keyboard shortcut or right-click menu.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+				Sharing</td>
+<td>
+<ul>
+<li>
+						View the share setting for the file/folder. These folders do not allow editing of share settings.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+				Create/Expand Archive</td>
+<td>
+<ul>
+<li>
+						Archive a file or folder and its contents or expand an archive <em>to the User directory</em>. Move the archived file or expanded folder to the desired linked account afterwards.</li>
+<li>
+						Supported compression formats are ZIP, TAR.GZ, and TAR and you can edit the name of the resulting file/folder.</li>
+<li>
+						Archiving creates a secondary compressed file and leaves the original file/folder intact.</li>
+<li>
+						Similarly, expanding an archive creates a secondary expanded folder and leaves the archived files intact.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+				Copy/Move</td>
+<td>
+<ul>
+<li>
+						Select the destination folder for the copied or moved file/folder.</li>
+<li>
+						Edit the file/folder name. An error occurs if a file/folder of the same name already exists in the destination folder so be sure to edit the name if copying to the same folder.</li>
+<li>
+						Progress is shown at the bottom of the browser and a dialog box informs you of completion.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+				Disconnect (S3 and GoogleDrive)</td>
+<td>
+<ul>
+<li>
+						Disconnects linked account. Browser refreshes automatically to reflect change.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+	 </p>
+<h2>
+<a name="files"></a>Additional options for files (2) from the <em>File</em> menu (3) and right-click pop-up menu (5)</h2>
+<p>
+	In addition to the options listed in the previous section, the <em>File </em>menu (3) and right-click pop-up menu (5) allow for specific functions on data files in the main files panel (2) and are listed in the table below. These options work on specific data file formats.</p>
+<table border="1" cellpadding="1" cellspacing="1" height="206" width="700">
+<tbody>
+<tr>
+<td>
+				Preview</td>
+<td>
+<ul>
+<li>
+						View the selected text-based file up to the first 5 kilobytes in a new window.</li>
+<li>
+						Depending on file type, you may see an additional tab labeled <em>Heatmap</em>. Click to switch to Heatmap view created by <a href="http://jheatmap.github.io/jheatmap/" target="_blank">jHeatmap</a>. If the file is large, the heatmap may take a while to load.
+						<ul>
+<li>
+								Scroll within the heatmap to zoom view.</li>
+<li>
+								Click on a datapoint in the heatmap for column, row, and value.</li>
+</ul>
+</li>
+<li>
+						Read more in the <a href="http://www.genomespace.org/support/guides/user-guide/sections/preview-heatmap" target="_self">Preview &amp; Heatmap</a> section.</li>
+</ul>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_shl_ug_preview.png" style="width: 500px; height: 189px;"/></p>
+</td>
+</tr>
+<tr>
+<td>
+				Extract rows &amp; columns</td>
+<td>
+<ul>
+<li>
+						Create a new file containing selected columns and selected consecutive rows.</li>
+</ul>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_screenshot_2015-01-21_15_14_06.png" style="width: 500px; height: 175px;"/></p>
+<ul>
+<li>
+						View the selected text-based file up to the first ten rows in spreadsheet format.</li>
+<li>
+						Use the <em>Save as</em> field to change the file name. GenomeSpace automatically appends the term <em>.slice </em>between the original file name and extension.</li>
+<li>
+						Select consecutive rows by entering start row and end row numbers. Leave end row field blank to include all remaining rows.</li>
+<li>
+						Select tab, comma, space, or semicolon delimiter with option to treat consecutive delimiters as one.</li>
+<li>
+						Select columns by checking boxes at top of columns. Scroll bar at bottom to display additional columns.</li>
+<li>
+						Click on <em>Toggle all columns</em> to invert selections.</li>
+<li>
+						See the <a href="http://www.genomespace.org/support/guides/user-guide/sections/extract-file-rows-columns" target="_self">Extract file rows &amp; columns</a> section for additional details.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+				Convert</td>
+<td>
+<ul>
+<li>
+						Convert files into data formats used by popular bioinformatic tools. Within your account, go to <em>Help&gt;Fomat Converters</em> to see the most current list of supported conversions. For more instruction see <a href="http://www.genomespace.org/support/guides/user-guide/sections/convert-file-formats" target="_self">Convert file formats</a>.</li>
+<li>
+						Select a single file and <em>Convert</em>.</li>
+<li>
+						Select the conversion format from the drop-down menu.</li>
+<li>
+<em>Download</em> to your desktop or save to your GenomeSpace account by selecting <em>Convert on Server</em>.</li>
+<li>
+						The original file remains intact and the converted file saves as a new file.</li>
+<li>
+						Some tools will automatically convert compatible formats for you when launched on files.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+				Download</td>
+<td>
+<ul>
+<li>
+						Download files to your local machine.</li>
+<li>
+						For multiple files, check the files and use<em> File </em>menu&gt;<em>Download</em>.</li>
+<li>
+						Alternatively for a single file, you can right-click on the item and select <em>Download</em>.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+				Open Parent Folder (search results only)</td>
+<td>
+<ul>
+<li>
+						Opens the folder the search result item is found in.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+	 </p>
+<h2>
+<a name="menubar"></a>Other Menu bar functions (3)</h2>
+<p>
+	The options provided by the menu bar (3) are listed in the table below.</p>
+<table border="1" cellpadding="1" cellspacing="1" height="178" width="700">
+<tbody>
+<tr>
+<td>
+				File</td>
+<td>
+<p>
+<em>See the two previous sections above for details.</em></p>
+</td>
+</tr>
+<tr>
+<td>
+				Launch</td>
+<td>
+<ul>
+<li>
+						Launch a selected tool or data source. If you have selected a file, you can launch a tool on that file.</li>
+<li>
+						The drop-down menu lists <em>all </em>available tools and data sources alphabetically described in <a href="http://www.genomespace.org/support/tools" target="_self">Tools</a>.</li>
+<li>
+						Alternatively, drag-drop selected files on the tool displayed in the Toolbar.</li>
+<li>
+						For step-by-step instructions see the <a href="http://www.genomespace.org/support/guides/recipes/sections/send-data-from-genomespace-to-a-tool" target="_self">Send Data from GenomeSpace to a Tool</a> recipe.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+				View</td>
+<td>
+<ul>
+<li>
+<em>Refresh current directory</em> refreshes the directory currently in your view.
+						<ul>
+<li>
+								The alternative browser refresh resets the directory view</li>
+</ul>
+</li>
+<li>
+<em>Recent uploads</em> displays files most recently queued for upload to your GenomeSpace User account.
+						<ul>
+<li>
+								This differs from the <em>User&gt;History </em>list</li>
+</ul>
+</li>
+<li>
+<em>Customize toolbar </em>displays the same toolbar manager as clicking the blue + button on the left of the toolbar. Using the displayed toolbar catalog, add or remove tools, tag tools, and search tools. You can  rearrange the display order of tools either in the catalog or directly on the toolbar. For more details, see <a href="http://www.genomespace.org/support/guides/user-guide/sections/customizing" target="_self">Customizing the interface</a>.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+				Connect</td>
+<td>
+<ul>
+<li>
+<a href="https://www.dropbox.com/plans" target="_blank"><em>Dropbox</em></a><em> </em>(links take you to service provider websites)</li>
+<li>
+<a href="http://aws.amazon.com/s3/" target="_blank"><em>Amazon S3</em></a> (1) <a href="http://aws.amazon.com/public-data-sets/" target="_blank">public S3 data buckets</a> on the <em>Public S3 Bucket</em> tab and (2) <a href="http://aws.amazon.com/s3/pricing/" target="_blank">private S3 buckets</a> from the <em>Read/Write S3 Bucket </em>tab.</li>
+<li>
+<a href="https://support.google.com/drive/answer/2375123?hl=en" target="_blank"><em>Google Drive</em></a></li>
+</ul>
+<p>
+					Connection to these three commercial cloud storage systems are supported for access from GenomeSpace and enabled tools. Select the storage to connect from the menu and the permissions granted, <em>read only </em>or r<em>ead and write</em>, and follow directions from the service provider. Once connected, drives appear as folders in the left directories panel (1). You can connect multiple drives at a time.</p>
+<ol>
+<li>
+						For Amazon public S3 data buckets, enter the bucket name in lowercase, e.g. <em>1000genomes </em>or <em>human-microbiome-project</em>.</li>
+<li>
+						Connecting a private Amazon S3 bucket is a multistep process to verify you have access to the <a href="http://aws.amazon.com/s3/" target="_blank">Amazon Web Services (AWS)</a> account.
+						<ul>
+<li>
+								Read only or read &amp; write permissions are granted by the bucket owner. To enable writing to a bucket from a browser, from your <a href="https://console.aws.amazon.com/s3/home?region=us-west-2#" target="_blank">AWS console</a>, select the S3 bucket <em>Properties</em>&gt;<em>Permissions</em>&gt;<em>Add CORS Configuration</em>. Copy-paste the following custom script over the sample CORS configuration and save.</li>
+</ul>
+</li>
+</ol>
+<pre style="margin-left: 80px;">
+<span style="color:#696969;">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/"&gt;
+    &lt;CORSRule&gt;
+        &lt;AllowedOrigin&gt;*&lt;/AllowedOrigin&gt;
+        &lt;AllowedMethod&gt;PUT&lt;/AllowedMethod&gt;
+        &lt;AllowedMethod&gt;POST&lt;/AllowedMethod&gt;
+        &lt;AllowedHeader&gt;*&lt;/AllowedHeader&gt;
+    &lt;/CORSRule&gt;
+    &lt;CORSRule&gt;
+        &lt;AllowedOrigin&gt;*&lt;/AllowedOrigin&gt;
+        &lt;AllowedMethod&gt;GET&lt;/AllowedMethod&gt;
+    &lt;/CORSRule&gt;
+&lt;/CORSConfiguration&gt;
+</span></pre>
+<ul style="margin-left: 40px; list-style-type: circle;">
+<li>
+						Follow the connection instructions provided by GenomeSpace using the provided links to specific AWS console pages to perform steps.</li>
+<li>
+						Note that leading or trailing spaces in textboxes, leftover from copy-pasting, will give errors in connecting the bucket. Go back to each field and remove the spaces and submit again.</li>
+</ul>
+<p>
+					One advantage of accessing data in these drives from your GenomeSpace account is that GenomeSpace links preserve 3-letter file format extensions required by many bioinformatic tools to recognize file types, e.g. the <em>IGV </em>tool, which may not be the case when the files are accessed directly from the connected storage system.</p>
+</td>
+</tr>
+<tr>
+<td>
+				Manage</td>
+<td>
+<ul>
+<li>
+						Select <em>Groups</em> to create groups of GenomeSpace users.
+						<ul>
+<li>
+								Select a group under <em>Group Names</em> to view, edit members, or delete the group.</li>
+<li>
+								Members with administrator priviliges are shown with a red icon and other members in blue.</li>
+</ul>
+</li>
+<li>
+<em>Private Tools</em> opens a window that allows you to add private tools to your toolbar or to share with your groups.
+						<ul>
+<li>
+								Press <em>Add new</em> and fill in the form.</li>
+<li>
+								To display more instruction, click the ? icon on the right.</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+				Recipes</td>
+<td>
+<ul>
+<li>
+						View GenomeSpace <a href="http://recipes.genomespace.org" target="_self">Recipes</a> of which there are three groups in a new browser tab:
+						<ul>
+<li>
+								Loading data into GenomeSpace</li>
+<li>
+								Moving data between tools via GenomeSpace</li>
+<li>
+								Analyzing data with GenomeSpace tools</li>
+</ul>
+</li>
+<li>
+						Recipes are step-by-step instructions of two types: (1) they outline how to perform tasks in GenomeSpace such as loading or moving data, and (2) show how to perform specific integrative bioinformatic data analyses using GenomeSpace tools.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+				Help</td>
+<td>
+<p>
+					Menu items link to the following:</p>
+<ul>
+<li>
+						User Guide (<em>GenomeSpace Help</em>)</li>
+<li>
+						Tools listing (<em>Tool Help</em>) where you can find support information by clicking on a specific tool</li>
+<li>
+						a popup box listing supported <em>Format Conversions</em></li>
+<li>
+<em>System Status</em> page to check for changes in the system that impact using GenomeSpace</li>
+<li>
+						GenomeSpace <em>Support</em> page for our help email, links to forums, and to sign up for email lists.</li>
+<li>
+<em>What's new</em> popup box featuring news highlights and excerpts and links to the blog</li>
+<li>
+						email the GenomeSpace team (<em>Contact us</em>) opens your desktops default email app</li>
+<li>
+<em>About</em> GenomeSpace gives information about the origin, funders, and participating labs of GenomeSpace.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+	 </p>
+<h2>
+<a name="toolbar"></a>Launch tools from the Toolbar (4) or left-click pop-up menu (5)</h2>
+<p>
+<img alt="" src="/uploaded/content_shl_ug_toolbar.png" style="width: 700px; height: 175px;"/></p>
+<p>
+	Each GenomeSpace tool and data source is represented on the Toolbar with an icon and in the <em>Launch</em> menu as part of a list. Additionally, normal or left-clicking on a file displays a pop-up menu of tools that when selected will launch on the file. The <a href="http://www.genomespace.org/support/tools" target="_self">Tools</a> page describes each of the tools and data sources.</p>
+<ol>
+<li>
+		Scroll to view next set of tools by clicking the wide arrows <img alt="" src="/uploaded/content_sl_ug_widearrow.png" style="width: 10px; height: 20px;"/>at either edge of the toolbar.
+		<ul>
+<li>
+				These buttons also work on touchscreens such as from a tablet or smartphone.</li>
+</ul>
+</li>
+<li>
+		Hover mouse over a tool and click on the small downward triangle <img alt="" src="/uploaded/content_sl_ug_downwardtriangle.png" style="width: 13px; height: 15px;"/> that appears to access specific functions from a menu listed in the table below. Additional menu options are available for private tools you administer. See <a href="http://genomespace.org/support/guides/user-guide/sections/manage-groups-tools#privatetools" target="_self">Managing Private Tools</a> for details on these.
+		<ul>
+<li>
+<table border="1" cellpadding="1" cellspacing="1" height="221" width="600">
+<tbody>
+<tr>
+<td>
+								Launch</td>
+<td>
+<ul>
+<li>
+										Launches the tool.</li>
+<li>
+										Alternatively, click directly on a tool icon to launch the tool or data source.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+								Launch on file</td>
+<td>
+<ul>
+<li>
+										Launch the tool on preselected files.</li>
+<li>
+										The dialog box allows removal and addition of selections before launching the tool via drag-drop.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+								Help</td>
+<td>
+<ul>
+<li>
+										Opens the <a href="http://www.genomespace.org/support/tools" target="_self">Tools</a> page. Select the specific tool you need help on to view tool-specific support information.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+								Details</td>
+<td>
+<ul>
+<li>
+										Describes the tool and displays editable tags. Tool description is the same that appears when you hover mouse over tool icon.</li>
+<li>
+										View, add, and edit tool tags shared by users as detailed in <a href="http://www.genomespace.org/support/guides/user-guide/sections/customizing#tooltags" target="_self">Customizing the interface</a>. The <a href="#searchbar">search bar</a> matches to terms within tool names, descriptions, tags, and tag descriptors.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+								Hide</td>
+<td>
+<ul>
+<li>
+										Remove a tool from the current toolbar. Add back the tool using the tool catalog as detailed in <a href="http://www.genomespace.org/support/guides/user-guide/sections/customizing" target="_self">Customizing the interface</a>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+		Click the blue plus icon <img alt="" src="/uploaded/content_sl_ug_blueplusbutton.png" style="width: 15px; height: 15px;"/> or go to <em>View</em> menu &gt; <em>Customize toolbar</em> to display the tool catalog. For details on the tool catalog, see <a href="http://www.genomespace.org/support/guides/user-guide/sections/customizing" target="_self">Customizing the interface</a>.</li>
+<li>
+		Click on small selector buttons <img alt="" src="/uploaded/content_sl_ug_dots.png" style="width: 77px; height: 15px;"/> at the bottom of the toolbar to display alternative views of the toolbar. These alternate views are user-defined by customizing the toolbar.
+		<ul>
+<li>
+				When you start, the <em>Default</em> toolbar shows all available tools.</li>
+<li>
+				New tools added to GenomeSpace after your account is activated can be viewed and added to the toolbar via the tool catalog.</li>
+</ul>
+</li>
+</ol>
+<p>
+	 </p>
+<h2>
+<a name="searchbar"></a>Find files, folders, or tools using the Search bar (6)</h2>
+<p>
+<img alt="" src="/uploaded/content_shl_ug_searchbar.png" style="width: 700px; height: 251px;"/></p>
+<ol>
+<li>
+		Type into the search field to match terms to file/folder names, tool names, tool descriptions, all tags, and tag-associated descriptors.
+		<ul>
+<li>
+				Searching is case-insensitive and matches strings within words.</li>
+<li>
+				Items separated by comma or space search for matches containing any of the search terms.
+				<ul>
+<li>
+						For space separated terms, hits are listed in order of matches to search terms. In other words, hits with matches to the most search terms are listed first then hits with matches to fewer search terms are listed next.</li>
+<li>
+						The order of the comma-separated search hits reflect directory structure.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+		Results for <em>Files</em> and <em>Tools</em> are listed separately with files hits displayed first.
+		<ul>
+<li>
+				Click on the Tools (#) link to switch display results.</li>
+<li>
+				Click the return arrow to go back to the directory displayed before searching. </li>
+<li>
+				For <em>Files</em> results, hover mouse over a result to see the location of the hit in your directories.</li>
+<li>
+				For <em>Files</em> results, right-click on a result for pop-up menu options, which include <em>Open Parent Folder</em>.</li>
+<li>
+				For <em>Tools</em> results, hover mouse over a tag to display the tag-associated descriptor
+				<ul>
+<li>
+						In the screenshot example below, the search term <em>geo</em> (<strong>boxed</strong>) is found in the tag-associated descriptor (<strong>circled</strong>).</li>
+</ul>
+</li>
+<li>
+				For <em>Tools</em>, click on the downward triangle next to the tool icon for the tool-specific pop-up menu.</li>
+</ul>
+</li>
+</ol>
+<p>
+<img alt="" src="/uploaded/content_shl_ug_search3.png" style="width: 700px; height: 198px;"/></p>
+<p>
+	 </p>
+<h2>
+<a name="profile"></a>Log out with your User Profile (7)</h2>
+<p>
+<img alt="" src="/uploaded/content_shl_ug_user.png" style="width: 700px; height: 66px;"/></p>
+<p>
+	Clicking your username or the <img alt="" src="/uploaded/content_gsug_personicon.jpg" style="width: 15px; height: 17px;"/> icon gives you the following menu of options.</p>
+<table border="1" cellpadding="1" cellspacing="1" height="276" width="700">
+<tbody>
+<tr>
+<td>
+				Profile</td>
+<td>
+<ul>
+<li>
+						Change the associated email address</li>
+<li>
+						Change account password</li>
+<li>
+						Make your user name unsearchable by others or searchable (default)</li>
+<li>
+						Check the amount of storage you are using against the quota</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+				History</td>
+<td>
+<ul>
+<li>
+						Search and view your account activity log by date range</li>
+<li>
+						Toggle and sort column headers of time, action, and files</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+				Logout</td>
+<td>
+<ul>
+<li>
+						Logs you out of your GenomeSpace account.</li>
+<li>
+						To open multiple different accounts at the same time from the same machine, use a private instance of the browser or different browsers, i.e. Firefox and Chrome.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+	 </p>
+<hr/>
+<h2>Customize the interface, the tool catalog &amp; tool tags</h2>
+<p>
+	You can customize within GenomeSpace at two conceptual levels that are reflected in the toolbar.</p>
+<ol>
+<li>
+		The visual interface you encounter when you sign in to your account.
+		<ul>
+<li>
+				For example, display only the limited subset of tools you use on a daily basis in your toolbar.</li>
+</ul>
+</li>
+<li>
+		In functionality.
+		<ul>
+<li>
+				In analyses by private tools that propogate to shared users. For example, add a private tool that runs your preferred analysis algorithm and is shared only with members of your laboratory. See <a href="http://www.genomespace.org/support/guides/user-guide/sections/manage-groups-tools" target="_self">Manage Groups &amp; Tools</a> for details.</li>
+<li>
+				In the user interface by annotations of tools that propogate to shared users. For example, add a tag and tag descriptor to a public tool, such as <em>IGV</em>, which will be seen and can be searched against by all GenomeSpace users.</li>
+</ul>
+</li>
+</ol>
+<p>
+	Customization settings will persist such that whenever you log in to GenomeSpace, the toolbar will display according to your last set preferences.</p>
+<p>
+	Access user interface customization options (i) directly from the browser interface and (ii) more extensively from the tool catalog. Each approach has unique customization options as well as some duplicated options (<strong>asterisked in table</strong>) and are described in detail in the following sections. This page describes only customization related to the user interface. For information on adding and editing private tools, see <a href="http://www.genomespace.org/support/guides/user-guide/sections/manage-groups-tools" target="_self">Manage Groups &amp; Tools</a>.</p>
+<table border="1" cellpadding="1" cellspacing="1" height="53" width="700">
+<tbody>
+<tr>
+<td>
+				(i) browser interface</td>
+<td>
+<ul>
+<li>
+						Reorder tools, hide* tools, and resize the toolbar.</li>
+<li>
+						To view and edit tags and tag descriptors for any tool, click the downward triangle next to the tool and select <em>Details</em><strong>**</strong> from the menu.</li>
+<li>
+						To edit a private tool you administer, click the downward triangle next to the tool and select <em>Edit</em>*** from the menu. Alternatively, from the menu bar, select <em>Manage&gt;Private tools</em> to add, delete, or modify/edit<strong>***</strong> a private tool you administer. See <a href="http://www.genomespace.org/support/guides/user-guide/sections/manage-groups-tools" target="_self">Manage Groups &amp; Tools</a> for details.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+				(ii) tool catalog</td>
+<td>
+<ul>
+<li>
+						Add and customize alternate toolbar displays.</li>
+<li>
+						Remove/hide<strong>*</strong> or add tools to a toolbar.</li>
+<li>
+						From a tool's panel, select <em>More details</em><strong>**</strong> to view and edit tags and tag descriptors.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<h2>
+	 </h2>
+<h2>
+	Customize the toolbar from the user interface</h2>
+<p>
+<img alt="" src="/uploaded/content_shl_ug_ordertools.png" style="width: 500px; height: 199px;"/></p>
+<ul>
+<li>
+<strong>Reorder tools</strong> by drag-dropping them along the toolbar (<strong>Screenshot</strong>).</li>
+<li>
+<strong>To remove a tool</strong>, hover mouse over a tool and click on small downward triangle that appears to the right of the tool, and select <em>Hide</em> from the menu.</li>
+<li>
+<strong>Adjust the height of the toolbar</strong>, with tool icons sizing accordingly, by dragging by mouse the bottom edge of the toolbar upwards or downwards.
+		<ul>
+<li>
+				As you hover the mouse over the bottom of the toolbar, between the gray and white edge, the pointer will display as a downward arrow.</li>
+<li>
+				Click and drag the downward arrow to adjust the height of the toolbar.</li>
+<li>
+				At the narrowest height, tool names disappear and only the icons display.</li>
+</ul>
+</li>
+</ul>
+<p>
+	 </p>
+<h2>
+<a name="toolcatalog"></a>Customize the toolbar from the tool catalog</h2>
+<p>
+<img alt="" src="/uploaded/content_shl_ug_toolcatalog2.png" style="width: 700px; height: 102px;"/></p>
+<p>
+	Open the tool catalog by clicking the <img alt="" src="/uploaded/content_cat1.png" style="width: 20px; height: 18px;"/> button on the left of the toolbar (<strong>circled in red in Screenshot</strong>). The tool catalog will display akin to the screenshot below.</p>
+<p>
+<img alt="" src="/uploaded/content_shl_ug_toolcata.png" style="width: 700px; height: 404px;"/></p>
+<ol>
+<li>
+		Press the blue + or – button to open or close the tool catalog.
+		<ul>
+<li>
+				Alternatively, from the menu bar, select <em>View&gt;Customize toolbar</em> to open the tool catalog.</li>
+</ul>
+</li>
+<li>
+		Click on small selector button corresponding to toolbar you wish to edit.
+		<ul>
+<li>
+				The displayed toolbar's name appears to the left of the selector buttons.</li>
+<li>
+				Adding additional toolbars adds selector buttons here.</li>
+</ul>
+</li>
+<li>
+		Order the tool catalog tool panels by selecting an option from the dropdown menu.
+		<ul>
+<li>
+				By date starts with the newest tool first. This is the default display order.</li>
+<li>
+				By name is alphabetically descending.</li>
+<li>
+				On current toolbar puts all the tools absent from the toolbar first, then alphabetically by name.</li>
+</ul>
+</li>
+<li>
+		Display filtered tool catalog tool panels by typing match terms in the search field.
+		<ul>
+<li>
+				Search is against tool name, tool tags, tool description, and tool tag-associated descriptors.</li>
+</ul>
+</li>
+<li>
+		Add a new toolbar by clicking <em>Add new toolbar</em>.
+		<ul>
+<li>
+				Edit a toolbar name by hovering mouse over the name and typing.</li>
+<li>
+				Selecting a toolbar here also switches the tool catalog display to reflect its contents.</li>
+<li>
+				Change the color representing the toolbar by clicking on the downward arrow and selecting a color.</li>
+<li>
+				Delete a toolbar by clicking the red <span style="color:#ff0000;"><strong>X</strong></span> next to the toolbar name.</li>
+</ul>
+</li>
+<li>
+		In the main tool catalog, for the selected toolbar, tool panels with green circled checkmarks are displayed in your toolbar while those without are not.
+		<ul>
+<li>
+				In the example, <em>Cytoscape 3 </em>is checked but the original <em>Cytoscape</em> is not. This is reflected in the toolbar.</li>
+<li>
+				Hover mouse over tool panel for a brief description, options for more details, to add the tool, or to remove the tool from the specific toolbar.</li>
+<li>
+				The <em>more details </em>link gives a description of the tool, date added, URL address, and lists the tags. Additionally, special requirements and help URL links may be listed. For the most current information on a tool, use the links on the <a href="http://www.genomespace.org/support/tools" target="_self">Tools</a> page.</li>
+</ul>
+</li>
+</ol>
+<p>
+	 </p>
+<h2>
+<a name="tooltag"></a>Add and edit searchable tool tags and tag descriptors</h2>
+<p>
+<img alt="" src="/uploaded/content_shl_ug_tooltags.png" style="width: 700px; height: 353px;"/></p>
+<p>
+	Searches from the main searchbar or tool catalog searchbar match to tool names, tool descriptions, tags, and tag descriptors. Searches are case-insensitive.</p>
+<p>
+	You can add your own tool tags and tag descriptors for any tool. These are viewable by anyone with access to the tool. You can delete or edit tags and tag descriptors only for tags you had added. You cannot remove tags placed by another user.</p>
+<ol>
+<li>
+		Within the tool catalog, hover mouse over a tool panel and select <em>more details</em>.
+		<ul>
+<li>
+				Alternatively, from the toolbar, click the downward triangle next to the tool and select <em>Details</em> from the menu.</li>
+</ul>
+</li>
+<li>
+		Information about the tool is displayed including tool description and tags (circled). Click <em>add/edit tags</em>.</li>
+<li>
+		Hover mouse over a tag to display the tag-associated tag descriptor in a yellow box.</li>
+<li>
+		Add a new tag and associated descriptor by typing into the <em>tag</em> and <em>description</em> fields. Press <em>Apply Tag</em>.</li>
+<li>
+		To edit an existing tag, click on the tag to display its information within the fields. Edit the fields and click <em>Apply Tag</em> to save.</li>
+</ol>
+<hr/>
+<h2>Connect Storage</h2>
+<p>
+	You can add external storage from public Amazon S3 buckets, your own Amazon S3 buckets, your Dropbox, and your Google Drive to your GenomeSpace user account. You can connect multiple storage drives to a single user account.</p>
+<ul>
+<li>
+		From the menu bar, select <em>Connect</em> and the drive you want to connect.</li>
+<li>
+		In order to disconnect a drive, right-click the drive from the left directories panel and select <em>Disconnect </em>from the pop-up menu.</li>
+</ul>
+<p>
+	Contents of connected drives become available to GenomeSpace tools. Refer to provider websites for details on the functionality of each drive. This page details how to connect a Dropbox drive and a Google Drive. For Amazon S3 Buckets, see <a href="http://www.genomespace.org/support/guides/user-guide/sections/connect-s3-bucket" target="_self">Connect S3 Bucket</a>.</p>
+<p>
+<a name="connect-dropbox"> </a></p>
+<h2>
+	Connect Dropbox</h2>
+<ol>
+<li>
+		Select <em>Connect&gt;Dropbox</em>.</li>
+<li>
+		Select <em>Read only</em> or <em>Read and Write</em>, and click <em>Submit</em>.</li>
+<li>
+		When you click <em>Submit</em> in this dialog, a new window will open to the Dropbox site.
+		<ul>
+<li>
+				You must disable popup blockers on your browser for the next step.</li>
+</ul>
+</li>
+<li>
+		If you are not already logged in to Dropbox, the Dropbox window will ask you to login.</li>
+<li>
+		Dropbox will then ask you to confirm that you want to allow GenomeSpace to access your Dropbox account. Click <em>Allow</em>.</li>
+<li>
+		A new folder named <em>dropbox:[user]</em> appears in the left directories panel.</li>
+</ol>
+<h2>
+	 </h2>
+<h2>
+	Connect Google Drive</h2>
+<ol>
+<li>
+		Select <em>Connect&gt;Google Drive</em> in the menu bar and click <em>Submit</em>.</li>
+<li>
+		Select the privileges GenomeSpace can have in Google Drive<em>: Read only</em> or <em>Read and Write</em> if you want GenomeSpace to be able to send files into Google Drive.
+		<ul>
+<li>
+				You must disable popup blockers on your browser for the next step.</li>
+</ul>
+</li>
+<li>
+		Tell Google that GenomeSpace is allowed to access your files. A new window opens to the Google Drive site.</li>
+<li>
+		If you are not already logged in to Google, a window will ask you to login.</li>
+<li>
+		Confirm GenomeSpace is allowed access to your Google account and click <em>Accept</em>.</li>
+<li>
+		GenomeSpace creates a new folder within your Google Drive, in the left directories panel, labeled <em>GenomeSpacePublic</em>.</li>
+</ol>
+<p>
+	GenomeSpace will operate exclusively on files and folders within <em>GenomeSpacePublic</em>. Place any data files you want to access from GenomeSpace tools under this folder.</p>
+<p style="margin-left: 40px;">
+<strong>The <em>GenomeSpacePublic</em> folder is created with <em>Public on the web</em> Google Drive permissions.</strong> This permission level allows anyone to access the contents of the folder via search results or the web address. If you have sensitive data that you would like to use from GenomeSpace data tools, we recommend you place it under your GenomeSpace home directory, in a GenomeSpace-mounted Dropbox account, or in an Amazon S3 bucket.</p>
+<hr/>
+<h2>Connect S3 Bucket</h2>
+<p>
+	You can connect public and private <a href="http://aws.amazon.com/s3/" target="_blank">Amazon S3 Buckets</a>, and instructions for mounting both categories of buckets are outlined on this page.</p>
+<p>
+	You can connect multiple S3 Buckets simultaneously to your GenomeSpace account.</p>
+<ul>
+<li>
+		Public buckets require only the name of the bucket to mount it. </li>
+<li>
+		Connecting private buckets, or those with limited non-public accessibility, involves several steps and requires an <a href="http://aws.amazon.com/" target="_blank">Amazon AWS account</a> with an S3 Bucket and bucket permissions edited to share with GenomeSpace. Bucket permissions are either read-only or read-and-write. Once a bucket has been mounted in GenomeSpace, you can share it with other GenomeSpace users using the standard GenomeSpace sharing dialogs.</li>
+</ul>
+<p>
+	 </p>
+<h2>
+	Mount a Public Amazon S3 Bucket</h2>
+<p>
+	A publicly accessible Amazon S3 Bucket has its permissions set to allow public access to anyone without authentication. Public buckets may be mounted only with <em>read </em>permissions in GenomeSpace and means you cannot write files back to them. This is to prevent users from accidentally saving files to Amazon S3 Buckets that they do not control.</p>
+<ol>
+<li>
+		Select <em>Connect&gt;Amazon S3 Bucket</em>. This will open the <em>Mount Cloud Storage</em> dialog box (<strong>Screenshot </strong>2013).</li>
+<li>
+		Select the <em>Public S3 Bucket</em> tab.</li>
+<li>
+		Enter the name of the publicly accessible bucket in the field.
+		<ul>
+<li>
+				In the <strong>screenshot</strong> example, we used the <em>1000genomes</em> bucket.</li>
+<li>
+				Bucket names are always all lowercase.</li>
+</ul>
+</li>
+<li>
+		Click <em>Submit</em>.  In less than a minute, the directory view refreshes with the new bucket mounted under your <em>Home</em> directory, e.g. <em>s3:1000genomes</em>.  You can now read files from this bucket as you would any other files in GenomeSpace and share it <em>read-only</em> to other GenomeSpace users.</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_mountpublic_ex1000g.jpg" style="width: 300px; height: 176px;"/></p>
+<p>
+	See <a href="https://aws.amazon.com/datasets" target="_blank">aws.amazon.com</a> for the comprehensive list of public S3 datasets. Of note are two projects, the <a href="http://aws.amazon.com/datasets/4383">1000 Genomes Project</a> and the <a href="http://aws.amazon.com/datasets/1903160021374413">Human Microbiome Project</a>. To find a specific S3 Bucket input name, click on the specific dataset and look for a URL address such as &lt;https://s3-us-west-2.amazonaws.com/human-microbiome-project&gt;. For this example, input <em>human-microbiome-project</em> as the S3 Bucket name to mount the data. Some datasets do not provide their bucket name on the website as they require human subjects protection approval, copying the data to your own drive prior to access, or access from specific geographic regions, i.e. from northeastern USA. Contact the provider for more information.</p>
+<p style="margin-left: 40px;">
+	 </p>
+<h2>
+	Mount a Private Read/Write Amazon S3 Bucket</h2>
+<p>
+	Connecting a private Amazon S3 bucket is a multistep process to verify you have access to the <a href="http://aws.amazon.com/s3/" target="_blank">Amazon Web Services (AWS)</a> account. GenomeSpace opens a wizard to guide you through the connection procedure. Buckets with default AWS settings will be <em>read-only</em>. Special instructions to edit your bucket permissions to read-<em>and-write</em> are at the end of this section.</p>
+<ol>
+<li>
+		Sign in to your <a href="https://www.amazon.com/ap/signin?openid.assoc_handle=aws&amp;openid.return_to=https%3A%2F%2Fsignin.aws.amazon.com%2Foauth%3Fresponse_type%3Dcode%26client_id%3Darn%253Aaws%253Aiam%253A%253A015428540659%253Auser%252Fhomepage%26redirect_uri%3Dhttps%253A%252F%252Fus-west-2.console.aws.amazon.com%252Fconsole%252Fhome%253Fregion%253Dus-west-2%2526state%253DhashArgs%252523%2526isauthcode%253Dtrue%26noAuthCookie%3Dtrue&amp;openid.mode=checkid_setup&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;action=&amp;disableCorpSignUp=&amp;clientContext=&amp;marketPlaceId=&amp;poolName=&amp;authCookies=&amp;pageId=aws.ssop&amp;siteState=unregistered%2Cen_us&amp;accountStatusPolicy=P1&amp;sso=&amp;openid.pape.preferred_auth_policies=MultifactorPhysical&amp;openid.pape.max_auth_age=120&amp;openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0&amp;server=%2Fap%2Fsignin%3Fie%3DUTF8&amp;accountPoolAlias=&amp;forceMobileApp=0&amp;forceMobileLayout=0" target="_blank">Amazon AWS management console</a>. </li>
+<li>
+		Within your GenomeSpace account, Select <em>Connect&gt;Amazon S3 Bucket</em>. This will open the <em>Connect to Amazon S3 Buckets</em> dialog box.</li>
+<li>
+		Select the <em>Read/Write S3 Bucket</em> tab.</li>
+<li>
+		Click the <em>Begin</em> button and <strong>follow the guided instructions in the wizard </strong>that opens (<strong>Screenshot</strong> 2013).
+		<ul>
+<li>
+				Wizard section headings are in gray. Click on the section heading to expand the section.</li>
+<li>
+				Click on a previous section heading to go back and edit inputs. </li>
+<li>
+				For your convenience, we have provided clickable URL links to the relevant AWS Console pages and these are underlined.</li>
+</ul>
+</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" height="344" src="/uploaded/content_mount_priv_s3_2_1.png" width="650"/></p>
+<h4>
+	Supplemental clarification to the wizard instructions</h4>
+<ul>
+<li>
+		When the wizard opens, it should look like the <strong>Screenshot</strong> above. GenomeSpace automatically generates an AWS username under a <em>Pending</em> status. You will copy the AWS username to paste when you create the AWS sub-user account. If the creation date and time do not correspond to the current date and time, then it is from a previous session. Delete the account by clicking the red <strong><span style="color:#ff0000;">x</span></strong> and click <em>Create another pending account</em> to generate a fresh AWS username.</li>
+<li>
+		If you encounter errors, go back to sections by clicking on section headers and remove any leading or trailing spaces in the input textboxes and submit again.</li>
+<li value="2">
+		When creating the custom policy, copy-paste the GenomeSpace provided policy document that is in JSON, a computer language with a lot of whitespace, brackets {, and quotes ". JSON is sensitive to misplaced extra spaces.</li>
+<li>
+		You will see an <em>AWS credentials verified successfully </em>notification when the connection is successful.</li>
+<li value="2">
+<em>Read-only</em> is the default AWS setting for S3 Buckets connected to GenomeSpace even if you select <em>Read and Write</em> permissions from the GenomeSpace wizard. The bucket owner can grant <em>read-and-write</em> permissions under S3 bucket <em>Properties</em>&gt;<em>Permissions</em>&gt;<em>Add CORS Configuration</em>. Copy-paste the following custom script over the sample CORS configuration and save.</li>
+</ul>
+<pre style="margin-left: 80px;">
+<span style="color:#696969;">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/"&gt;
+    &lt;CORSRule&gt;
+        &lt;AllowedOrigin&gt;*&lt;/AllowedOrigin&gt;
+        &lt;AllowedMethod&gt;PUT&lt;/AllowedMethod&gt;
+        &lt;AllowedMethod&gt;POST&lt;/AllowedMethod&gt;
+        &lt;AllowedHeader&gt;*&lt;/AllowedHeader&gt;
+    &lt;/CORSRule&gt;
+    &lt;CORSRule&gt;
+        &lt;AllowedOrigin&gt;*&lt;/AllowedOrigin&gt;
+        &lt;AllowedMethod&gt;GET&lt;/AllowedMethod&gt;
+    &lt;/CORSRule&gt;
+&lt;/CORSConfiguration&gt;</span>
+</pre>
+<p>
+	Amazon AWS is constantly updating their services. If you find our instructions no longer work, please let us know as soon as possible at <a href="mailto:gs-help@broadinstitute.org?subject=Connection%20to%20private%20AWS%20S3%20bucket">gs-help@broadinstitute.org</a>.</p>
+<hr/>
+<h2>Manage files &amp; folders</h2>
+<p>
+	The<em> </em>left directories panel and main files panels show the contents of your account folders. From here, you can manipulate your data files in a number of ways detailed extensively in the <a href="http://www.genomespace.org/support/guides/user-guide/sections/UI" target="_self">User Interface</a> section or broadly and selectively on this page. More specialized file management features, <a href="http://www.genomespace.org/support/guides/user-guide/sections/share-data" target="_self">Share data</a>, <a href="http://www.genomespace.org/support/guides/user-guide/sections/preview-heatmap" target="_self">Preview &amp; Heatmap</a>, and <a href="http://www.genomespace.org/support/guides/user-guide/sections/tag-search" target="_self">Tag &amp; Search</a>, follow in separate pages.</p>
+<table border="1" cellpadding="1" cellspacing="1" height="286" width="700">
+<tbody>
+<tr>
+<td>
+<h4 style="text-align: center;">
+					Manage folders</h4>
+</td>
+<td>
+<p>
+					You can manage your folders by clicking the triangle next to a directory name, by right-clicking on the folder, or by selecting a folder and using the <em>File</em> menu:</p>
+<ul>
+<li>
+						Upload files from your local machine or import by URL address into a folder</li>
+<li>
+						Create subdirectories</li>
+<li>
+						View the URL link to the folder</li>
+<li>
+						Share the folder with colleagues or the public</li>
+<li>
+						Tag, rename, copy, or move a folder</li>
+<li>
+						Create an archive of a folder</li>
+<li>
+						Delete a folder and all its contents (from main files panel)</li>
+<li>
+						Connect or disconnect storage devices which appear as directories</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+<h4 style="text-align: center;">
+					Manage files</h4>
+</td>
+<td>
+<p>
+					You can also manage individual files by right-clicking the file name or by using the <em>File</em> menu for selected multiple files:</p>
+<ul>
+<li>
+						Preview text-based files and heatmaps for select file formats</li>
+<li>
+						Extract rows and columns from a tab- or comma-delimited file and save to a new file</li>
+<li>
+						Convert the file to another file format</li>
+<li>
+						Download the file to your local machine</li>
+<li>
+						View the URL link to the file</li>
+<li>
+						Share the file with colleagues or the public</li>
+<li>
+						Tag, rename, copy, or move the file</li>
+<li>
+						Delete the file</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>
+	 </h3>
+<h2>
+<a name="uploadfiles"></a>Store files on your GenomeSpace account</h2>
+<p>
+	To store a file in your account, import by (i) drag-drop or (ii) URL address. For drag-drop import of individual files ~1GB or larger, we recommend using Firefox over Chrome as explained in <a href="http://www.genomespace.org/faq#faq1.3" target="_self">FAQ1.3</a>. Additionally, consider accessing files via a linked external storage drive containing the files as outlined in <a href="http://www.genomespace.org/support/guides/user-guide/sections/connect-storage" target="_self">Connect Storage</a> and <a href="http://www.genomespace.org/support/guides/user-guide/sections/connect-s3-bucket" target="_self">Connect S3 Bucket</a>.</p>
+<table border="1" cellpadding="1" cellspacing="1" height="955" width="700">
+<tbody>
+<tr>
+<td>
+<strong>(i) drag-drop <strong>file </strong>import </strong></td>
+<td>
+<p>
+					Drag-and-drop the file from your desktop to the target GenomeSpace directory.</p>
+<ul>
+<li>
+						Make sure to use a compatible browser as defined in <a href="http://www.genomespace.org/faq#FAQ1.3" target="_self">FAQ1.3</a>.</li>
+<li>
+<a name="javauploader"></a>An older feature, the <em>Java Uploader</em>, is no longer supported.</li>
+</ul>
+<p>
+<img alt="" src="/uploaded/content_shl_mng_upload.png" style="width: 600px; height: 185px;"/></p>
+<p>
+					Two indicators show the upload progress of a drag-and-drop file (<strong>Screenshot</strong>):</p>
+<ol>
+<li>
+						Animated arrow by your user name <img alt="" src="/uploaded/content_upload_icon.gif" style="width: 20px; height: 20px;"/></li>
+<li>
+						Percentage progress bar at the bottom of the browser window</li>
+</ol>
+<p>
+					Clicking on either of these brings up a dialog box with more details on the progress of the file upload (<strong>inset</strong>).</p>
+<ul>
+<li>
+						This dialog box can also be viewed from the <em>View</em> menu&gt;<em>Recent uploads</em>.</li>
+<li>
+						Clicking on the link either under the <em>Filename</em> or <em>Destination</em> columns opens the directory containing the file.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+<strong>(ii) URL address file import</strong></td>
+<td>
+<p>
+<img alt="" src="/uploaded/content_shl_mng_importurl3.png" style="width: 600px; height: 248px;"/></p>
+<ol>
+<li>
+						Go to <em>File</em> menu and select <em>Import from URL</em>. Provide the URL address in the textbox by typing, pasting, or drag-dropping the URL. Press <em>Go</em>. (<strong>Screenshot </strong>above 2015.1.27)</li>
+<li>
+						In the dialog box that appears, select the destination folder for the import and optionally edit the file name. Press <em>Submit</em>.</li>
+<li>
+						A third dialog box shows import is ongoing and closes once complete.</li>
+<li>
+						To view history of uploads, click on your user name and select <em>History</em> from the menu (<strong>Screenshot </strong>below 2015.1.27).</li>
+<li>
+						The History dialog box appears (<strong>boxed red</strong>) and marks uploads as <em>Upload</em> in the second column.</li>
+</ol>
+<p>
+<img alt="" src="/uploaded/content_shl_mng_importurl2.png" style="width: 600px; height: 198px;"/></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+	 </p>
+<h2>
+	Each GenomeSpace account has 30GB of storage</h2>
+<p>
+	The 30GB storage quota took effect in the summer of 2014. You can check how much storage you are using by clicking on your user account name in the upper-right and selecting <em>Profile</em> from the menu. The storage used is circled in the <strong>screenshot</strong> below. </p>
+<ul>
+<li>
+		When you are over the quota, you are reminded to reduce storage each time you log in.</li>
+<li>
+		Any attached storage, e.g. Dropbox, S3 bucket, or Google Drive, does not count towards the quota. For more details, see <a href="http://www.genomespace.org/support/guides/user-guide/sections/connect-storage" target="_self">Connect Storage</a> and <a href="http://www.genomespace.org/support/guides/user-guide/sections/connect-s3-bucket" target="_self">Connect S3 Bucket</a>.</li>
+<li>
+		If your project requires additional storage, specify your needs to <a href="mailto:gs-help@broadinstitute.org?subject=Need%20more%20storage%20">gs-help@broadinstitute.org</a>.</li>
+</ul>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_shl_mng_quota.png" style="width: 300px; height: 149px;"/></p>
+<p>
+	GenomeSpace allows you to store your data securely in the Amazon Elastic Compute Cloud (<a href="http://aws.amazon.com/ec2/" target="_blank">Amazon EC2</a>), which is a web service that provides resizable compute capacity in the cloud.</p>
+<h2>
+	 </h2>
+<h2>
+	Archive files to reduce storage</h2>
+<p>
+	When planning your analyses, note if your bioinformatic tools accept input of compressed formats so you can plan your storage needs efficiently. A number of tools take specific compressed formats as input into their offered bioinformatic algorithms. You can thus store files in a compressed or archived format without loss of utility and increase your available storage.</p>
+<p>
+	You can perform additional compression for archiving purposes directly in GenomeSpace. GenomeSpace supports in-browser archiving and expansion of <a href="http://superuser.com/questions/173756/which-is-more-efficient-tar-or-zip-compression-what-is-the-difference-between" target="_blank">ZIP, TAR.GZ (TGZ), and TAR formats</a>.</p>
+<ul>
+<li>
+		Please let us know of additional compression formats that would aid in your research.</li>
+<li>
+		Because BAM (binary of SAM) format files are already compressed to binary format, additional compression may be negligible depending on the extent of duplicated reads and whether they are marked.</li>
+</ul>
+<p>
+	When archiving files and folders or expanding archived files in GenomeSpace, original files and folders remain intact and you can remove these separately. For larger footprint folders, we recommend archiving contents in smaller groupings. Follow instructions below starting with steps outlined in the table.</p>
+<table border="1" cellpadding="1" cellspacing="1" height="73" width="700">
+<tbody>
+<tr>
+<td style="text-align: center;">
+				 </td>
+<td style="text-align: center;">
+<strong>a single item</strong></td>
+<td style="text-align: center;">
+<strong>multiple files</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">
+<strong>Archive files and folders</strong></td>
+<td style="text-align: center;">
+<ul>
+<li style="text-align: left;">
+						right-click the item and select <em>Create Archive</em> from the pop-up menu</li>
+<li style="text-align: left;">
+						an archived file with the same name, with option to edit, is created</li>
+</ul>
+</td>
+<td style="text-align: center;">
+<ul>
+<li style="text-align: left;">
+						check the files and select <em>File</em> menu&gt;<em>Create Archive</em></li>
+<li style="text-align: left;">
+						creates a single archived file, named archive with option to edit name, containing the multiple files</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td style="text-align: center;">
+<strong>Expand archived file</strong></td>
+<td style="text-align: center;">
+<ul>
+<li style="text-align: left;">
+						right-click the item and select <em>Expand Archive</em> from the pop-up menu, or check the file and select <em>File</em> menu&gt;<em>Expand Archive</em></li>
+<li style="text-align: left;">
+						A folder with the same name is created and contains the expanded contents</li>
+</ul>
+</td>
+<td style="text-align: center;">
+<ul>
+<li style="text-align: left;">
+<em>not supported</em></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+	When you archive, a dialog box appears (<strong>screenshot below</strong>).</p>
+<ol>
+<li>
+		Select preferred archive format ZIP, TAR.GZ or TAR.</li>
+<li>
+		Confirm files to be archived and remove undesired files by clicking on the red <span style="color:#ff0000;">x</span>.</li>
+<li>
+		Edit archive file name and location and press <em>Create Archive</em>.
+		<ul>
+<li>
+				Available locations are your GenomeSpace user folder and subfolders, linked Dropbox, and linked Read/Write S3 buckets.</li>
+</ul>
+</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_shl_mng_archive2.png" style="width: 500px; height: 234px;"/></p>
+<ul>
+<li>
+		The progress of archiving, and similarly for expansion, is shown with a green percentage bar <img alt="" src="/uploaded/content_zip5.png" style="width: 79px; height: 20px;"/>at the bottom of the browser window.</li>
+<li>
+		Once complete, the notification turns gray <img alt="" src="/uploaded/content_zip4.png" style="width: 82px; height: 16px;"/>. Clicking on the notification opens the folder containing the new archive file.</li>
+<li>
+		The notification turns red <img alt="" src="/uploaded/content_zip6.png" style="width: 70px; height: 21px;"/> if an error occurs.</li>
+</ul>
+<h2>
+	 </h2>
+<h2>
+	Download files to your local machine</h2>
+<p>
+	Two features of GenomeSpace obviate the need for direct file downloads from the GenomeSpace interface.</p>
+<p style="margin-left: 40px;">
+	One is the ability to link cloud storage devices, i.e. Dropbox, Amazon S3 Buckets, and Google Drive, to your GenomeSpace account. These devices already provide backup of your files in their architecture and in the case of Dropbox and Google Drive allow syncing to your local machine. Meaning you can access the contents of these drives from your desktop file manager even when offline.</p>
+<p style="margin-left: 40px;">
+	Second is the move by bioinformatic tools, especially those GenomeSpace-enabled, to provide online access to their analyses and the ability of the analysis tool to access data in your GenomeSpace account or via URL address. For tools that are not GenomeSpace-enabled, you can change the share setting of files and folders within your account to <em>Public</em> to allow URL web access to the data without authentication. GenomeSpace is particularly useful when the bioinformatic tool requires URL addresses to preserve file extensions. A URL link for the same file from your Dropbox or Google Drive account will not preserve such file extensions. For example, when providing the <em>Integrative Genomics Viewer</em> (<em>IGV</em>) tool a URL address of a file, it can process the GenomeSpace generated URL link to a file within a linked Dropbox account. Lastly, GenomeSpace allows you to share data in your account with the public and with colleagues either within the GenomeSpace environment or by shared URL link as detailed in <a href="http://www.genomespace.org/support/guides/user-guide/sections/share-data" target="_self">Share data</a>.</p>
+<p>
+	If your required file manipulations necessitate downloading and then reuploading the transformed data into GenomeSpace, we would like to hear about it. Posting to our <a href="http://www.genomespace.org/support" target="_self">forum</a> may inform you of tools that can accomplish what you need online or lead us to offer these file manipulation features within the GenomeSpace environment.</p>
+<p>
+	To download files from GenomeSpace:</p>
+<ul>
+<li>
+		For multiple files, check the files and select <em>File</em> menu&gt;<em>Download</em>.
+		<ul>
+<li>
+				Alternatively for a single file, right-click on the item and select <em>Download</em> from the pop-up menu.</li>
+</ul>
+</li>
+<li>
+		To download all files in a folder, open the folder to display contents in the main files panel. Check the box next to the column headers to select all the files and then select <em>File</em> menu&gt;<em>Download. </em></li>
+<li>
+		Download of an entire directory and its directory structure is not supported.</li>
+</ul>
+<p>
+	The download protocol for your specific browser activates and notifies you of the download. To <strong>check your download history</strong>, follow these steps:</p>
+<ul>
+<li>
+		Click on your user name in the upper-right corner and select <em>History</em> from the menu.</li>
+<li>
+		Be sure the date range reflects the date of the download or edit the date range and press <em>Refresh</em>.</li>
+<li>
+		Downloads are marked as <em>Read</em> in the second column under <em>action</em>.</li>
+</ul>
+<p>
+	Although no longer supported, we previously offered a folder downloader, called the recursive downloader, in September of 2014, in the blogpost <a href="http://www.genomespace.org/blog/2014/09/05/recursively-downloading-files-from-genomespace" target="_self">Recursively downloading files from GenomeSpace</a>.</p>
+<h2>
+	 </h2>
+<h2>
+	Move and copy files within your directory structure</h2>
+<p>
+	Copy and move functions are provided together and have the following constraints.</p>
+<ul>
+<li>
+		Duplicate item names are not allowed in a single folder. Edit item names within the Copy/Move dialog box.</li>
+<li>
+		Copy from any type of directory to directories for which you have read/write permission.</li>
+<li>
+		Move to and from directories for which you have read/write permission.
+		<ul>
+<li>
+				Attempted moves from write-only directories to read/write folders will automatically default to a copy function.</li>
+</ul>
+</li>
+</ul>
+<table border="1" cellpadding="1" cellspacing="1" height="153" width="700">
+<tbody>
+<tr>
+<td style="text-align: center;">
+<strong>move files or folders</strong></td>
+<td>
+<ul>
+<li>
+						Drag-drop the file/folder into another directory in either the main files panel or the left directories panel.</li>
+<li>
+						Right-click the file/folder name and select <em>Copy/</em><em>Move</em> from the pop-up menu. Select the destination then click <em>Move</em>.</li>
+<li>
+						Check the file(s)/folder and select <em>File</em> menu&gt;<em>Copy/Move</em>. Select the destination then click <em>Move</em>.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td style="text-align: center;">
+<strong>copy files</strong></td>
+<td>
+<ul>
+<li>
+						Press and hold down the <strong>shortcut*</strong> key on your keyboard while dragging-and-dropping the file into the directory in which you want a copy. Select the destination then click <em>Copy</em>.
+						<ul>
+<li>
+<strong>*PC users </strong>use CTRL, SHIFT, or ALT</li>
+<li>
+<strong>*Mac users</strong> use OPTION or SHIFT</li>
+</ul>
+</li>
+<li>
+						Right-click the file name and select <em>Copy/</em><em>Move</em> from the pop-up menu.</li>
+<li>
+						Check the file(s)/folder and select <em>File</em> menu&gt;<em>Copy/Move</em>. Select the destination then click <em>Copy</em>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+	The <strong>screenshot </strong>below gives an example of a copy/move.</p>
+<p>
+<img alt="" src="/uploaded/content_shl_mng_copymove.png" style="width: 700px; height: 351px;"/></p>
+<ol>
+<li>
+		Check to select file(s).</li>
+<li>
+		Go to <em>File</em> menu&gt;<em>Copy/Move</em>.</li>
+<li>
+		In the dialog box that appears, select the destination folder in the directory structure.</li>
+<li>
+		Also edit the file name. Duplicate file names are not allowed in the same folder.</li>
+<li>
+		Click either <em>Copy</em> or <em>Move</em>.
+		<ul>
+<li>
+				Progress of copying and moving is shown by a percentage progress bar <img alt="" src="/uploaded/content_screenshot_2015-01-28_13_07_57.png" style="width: 119px; height: 18px;"/> at the bottom of the browser.</li>
+<li>
+				Hovering mouse over the progress bar displays the destination file path in a yellow box.</li>
+</ul>
+</li>
+<li>
+		A new dialog box informs you the process is complete.</li>
+</ol>
+<hr/>
+<h2>Share data</h2>
+<p>
+	Share data within your GenomeSpace account in two ways.</p>
+<ol>
+<li>
+		With other GenomeSpace users by sharing or URL address as detailed in the sections on this page.</li>
+<li>
+		With all others by providing URL links to the data. Generate URL links within your GenomeSpace account or within a connected storage account, e.g. Dropbox or Google Drive.</li>
+</ol>
+<hr/>
+<p>
+	When sharing with other GenomeSpace users, you can search for their user name with a partial name or by email address by clicking on the provided <img alt="" src="/uploaded/content_shl_magnify.png" style="width: 16px; height: 15px;"/> magnifying icon within dialog boxes. <strong>If a user has opted-out of being in username searches, then you must know their exact username to share with them.</strong> If you wish to opt out of username searches, click on your username in the upper-right and clear the checkbox next to <em>Include me in user searches</em>.</p>
+<hr/>
+<p>
+	When sharing URL links, considerations differ whether the link is for tool access or for download purposes.</p>
+<p style="margin-left: 40px;">
+<strong>For tool access</strong>. If you are providing a URL link for bioinformatic tool access, i.e. visualization, then be sure to check that the tool accepts the generated URL address.</p>
+<ul>
+<li style="margin-left: 40px;">
+		A URL address generated within GenomeSpace for a file within a connected storage account will differ from the URL address to the same file generated from the storage account. GenomeSpace preserves 3-letter file extensions required by many bioinformatic tools to recognize and process data while commercial storage accounts may not.</li>
+</ul>
+<p style="margin-left: 40px;">
+<strong>For download</strong>. File download links are viable with public data. A public share setting allows anyone with the URL address to access the data. If this is a concern consider the following.</p>
+<ul>
+<li style="margin-left: 40px;">
+		Longer link addresses, with random strings of text, provide better security.</li>
+<li style="margin-left: 40px;">
+		You can reset to a restrictive share setting after your colleagues have downloaded the data.</li>
+<li style="margin-left: 40px;">
+		It's easy to invite your colleagues to join GenomeSpace. Click the <em>Invite a collaborator</em> button next to the GenomeSpace logo (<strong>Screenshot</strong>).</li>
+</ul>
+<p style="margin-left: 80px;">
+<img alt="" src="/uploaded/content_shl_ug_invite.png" style="width: 300px; height: 46px;"/></p>
+<p>
+	 </p>
+<h2>
+	Get to the share options for your file or folder</h2>
+<p>
+	You can view the share settings for files and folders within any directory.</p>
+<table border="1" cellpadding="1" cellspacing="1" height="126" width="700">
+<tbody>
+<tr>
+<td style="text-align: center;">
+<strong>folder sharing</strong></td>
+<td>
+<ul>
+<li>
+						Click the triangle next to the directory name or right-click and select <em>Sharing</em> in the left directories panel.</li>
+<li>
+						Select the folder from the main files panel and go to <em>File</em> menu&gt;<em>Sharing</em>.</li>
+<li>
+						Right-click folder from the main files panel and select <em>Sharing</em> from the pop-up menu.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td style="text-align: center;">
+<strong>file sharing</strong></td>
+<td>
+<ul>
+<li>
+						Select the file checkbox and go to <em>File</em> menu&gt;<em>Sharing</em>.</li>
+<li>
+						Right-click file and select <em>Sharing</em> from the pop-up menu.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+	The <em>Sharing &amp; Permissions </em>dialog box (<strong>Screenshot</strong>) will list the file or folder name, the owner, users with which the item is shared with including the owner, the level of privilege for each user, and a button to edit the share setting (<strong>#1</strong>).</p>
+<h2>
+<img alt="" src="/uploaded/content_shl_ug_share1.png" style="width: 300px; height: 265px;"/></h2>
+<h2>
+	 </h2>
+<h2>
+	Change sharing &amp; permissions</h2>
+<p>
+	You can change share settings for a file or folder within directories for which you have read/write permission. Currently these include your user folder and subfolders, connected Dropbox, and Read/Write S3 Buckets. The two levels of permission are <strong>read-only </strong>(<em>Read</em>) which allows copying, and <strong>read-write-delete </strong>(<em>Write &amp; Delete</em> in the dialog but otherwise known as <em>Read &amp; Write</em>).</p>
+<p style="margin-left: 40px;">
+	If you grant permissions to a folder, all the files and subfolders in that folder inherit those permissions. In this way you can make your entire <em>User</em> directory writable by a colleague. You cannot remove inherited permissions. Remove permissions from the original top-level folder to which they were applied.</p>
+<ol>
+<li>
+		Bring up the <em>Sharing &amp; Permissions</em> dialog box as outlined in the previous section. Click the <em>Edit Sharing</em> button.</li>
+<li>
+		The <em>Edit Sharing &amp; Permissions</em> dialog box displays (<strong>Screenshot </strong>2015.02.06).
+		<ul>
+<li>
+				Remove permissions for a shared user (KevinSpacey in example) by clicking on the red <strong><span style="color:#ff0000;">x</span></strong> next to the permission, <em>Read </em>or <em>Write &amp; Delete</em>.</li>
+<li>
+				Removing a read permission automatically removes extant write &amp; delete permission.</li>
+</ul>
+</li>
+<li>
+		Share with another GenomeSpace user by typing in the username and set permission settings.
+		<ul>
+<li>
+				To look up a user name by partial name or complete email address, click the magnifying glass <img alt="" src="/uploaded/content_shl_magnify.png" style="width: 16px; height: 15px;"/>.</li>
+</ul>
+</li>
+<li>
+		Share with a group of GenomeSpace users.
+		<ul>
+<li>
+				From the dropdown menu, select which groups to show. Those defined by you (<em>my groups</em>) or by other GenomeSpace users (<em>all groups</em>).</li>
+<li>
+				Select a group from the second dropdown menu and set permission settings.</li>
+<li>
+				Click the gear icon <img alt="" src="/uploaded/content_shl_gearicon.png" style="width: 17px; height: 18px;"/> to manage your groups as detailed in <a href="http://www.genomespace.org/support/guides/user-guide/sections/manage-groups-tools" target="_self">Manage Groups &amp; Tools</a>.</li>
+</ul>
+</li>
+<li>
+		Share with all GenomeSpace users (<em>Share with Public</em>) by checking the square box next to <em>Allow public access</em>. Set permissions.</li>
+<li>
+		Email a message, typed in the field, to the user or group members to which you shared the item.
+		<ul>
+<li>
+				For items made public, no message is sent.</li>
+</ul>
+</li>
+<li>
+		To save changes, click the <em>Grant Permissions</em> button and see changes reflected in the dialog box.</li>
+</ol>
+<p>
+<img alt="" src="/uploaded/content_sl_ug_share_email.png" style="width: 100%; height: 100%;"/></p>
+<p>
+	 </p>
+<h2>
+	Find shared items in the <em>Shared To</em> and <em>Public</em> folders</h2>
+<p>
+	Depending on the share setting, shared items appear in two locations.</p>
+<p style="margin-left: 40px;">
+<strong>Items you share with others </strong>remain in their original directory stucture in your account. In addition, if you've made something public, it will appear in a folder with your user name in the <em>Public</em> folder in the left directories panel.</p>
+<p style="margin-left: 40px;">
+<strong>An item shared to you</strong> selectively by another user will appear in a <em>Shared to [your user name]</em> folder in the left directories panel. Items made public by other users appear in the <em>Public</em> folder in subfolders organized by user name.</p>
+<ul>
+<li style="margin-left: 40px;">
+		Click on the <em>Filename </em>column header to sort these folders alphabetically.</li>
+<li style="margin-left: 40px;">
+		Within the <em>Public</em> folder is a <em>SharedData</em> subfolder containing items shared by the GenomeSpace team, including demo data used in Recipes and presentations from workshops. See <a href="http://www.genomespace.org/support/guides/user-guide/sections/recipe-demo-datasets" target="_self">Recipe demo datasets</a> for more information.</li>
+</ul>
+<p>
+	 </p>
+<h2>
+	Create a link that opens a particular directory</h2>
+<p>
+	Right-clicking a file and selecting <em>View file link</em> from the pop-up menu displays the URL address of the file. The structure of the folder path is preserved in the URL address so you can append a given address by editing the text with the file path of the new folder. Users with share permission to the folder can use the link to access the shared data.</p>
+<p>
+	When sharing data with other GenomeSpace users, or perhaps for your own convenience, create a URL that will open the shared folder within a permitted user account. For example, in the following URL address, the section that follows [?pathOrUrl=] shows the directory path and opens the <em>SharedData</em> folder within the <em>Public </em>directory:</p>
+<ul>
+<li style="margin-left: 40px;">
+<a href="http://gsui.genomespace.org/jsui/?pathOrUrl=/Home/Public/SharedData/" target="_blank">http://gsui.genomespace.org/jsui/?pathOrUrl=<span style="color:#ff0000;">/Home/Public/SharedData/</span></a></li>
+</ul>
+<p>
+	 </p>
+<p>
+	 </p>
+<hr/>
+<h2>Preview &amp; Heatmap</h2>
+<p>
+	For a given file, access the<em> Preview</em> function from the <em>File </em>menu or right-click pop-up menu. You can preview any plain text based or binary file and, depending on file data type, a heatmap of the entire dataset in the secondary <em>Heatmap</em> tab (<strong>Screenshot</strong>). GenomeSpace automatically converts binary text to plain text in the Preview pane.</p>
+<p>
+<strong>Previews </strong>are up to the first 5 kilobytes.</p>
+<ul>
+<li>
+		Use the horizontal scroll bar to view columns across the file.</li>
+<li>
+		Alternatively, preview in a spread-sheet format, up to the first ten rows of a delimited file, with <em><a href="http://www.genomespace.org/support/guides/user-guide/sections/extract-file-rows-columns" target="_self">Extract Rows &amp; Columns</a>.</em></li>
+<li>
+		SAM files will show the header section and some lines of reads.</li>
+<li>
+		Display of BAM files, although binary formats of SAM, are not currently supported.</li>
+</ul>
+<p>
+<strong>Heatmaps </strong>are created by <a href="http://jheatmap.github.io/jheatmap/" target="_blank">jHeatmap</a> and are possible for gct matrix format files or a format that can be converted to GCT, such as GXP and Genomica tab formatted files.</p>
+<ul>
+<li>
+		The colors are row normalized.</li>
+<li>
+		The blue-to-white-to-red heatmap scale matches lower to higher values, respectively.</li>
+<li>
+<a href="http://www.broadinstitute.org/cancer/software/genepattern/gp_guides/file-formats/sections/gct" target="_blank">GCT file formats</a> provide two columns to describe probes or targets, and the Heatmap preview allows selection of either column to display on the y-axis from a drop-down menu.</li>
+<li>
+		Mouse-scroll within the heatmap to zoom view.</li>
+<li>
+		Click on a datapoint in the heatmap for column, row, and value.</li>
+</ul>
+<p>
+	Depending on the dataset size, the heatmap may require some moments to load. Try mouse clicking or scrolling within the heatmap area to display a portion of the heatmap. Files ~5MB should display immediately. Related, depending on your browser memory settings, extremely large files may fail to display. If you see a blank outline, please let us know at <a href="mailto:gs-help@broadinstitute.org?subject=Heatmap%20preview%20giving%20blank%20outline">gs-help@broadinstitute.org</a> so we can determine the source of error.</p>
+<p>
+<img alt="" src="/uploaded/content_shl_ug_preview.png" style="width: 700px; height: 264px;"/></p>
+<p style="margin-left: 40px;">
+	 </p>
+<p style="margin-left: 40px;">
+	 </p>
+<hr/>
+<h2>Tag &amp; Search</h2>
+<p>
+	To help manage, add tags to files, folders, and tools. For example, you can add any number of tags to your files to describe them so that it's easy to find all of the files belonging to a particular project. This page covers tagging of files and folders and searching in general. Tool tagging and tool catalog searching is described in <a href="http://www.genomespace.org/support/guides/user-guide/sections/customizing#tooltag" target="_self">Customizing the interface</a>.</p>
+<p>
+	Tags are displayed in the main files panel under the <em>Tags</em> column. Tags are visible to GenomeSpace users to which the tagged items have been shared.</p>
+<h2>
+	 </h2>
+<h2>
+	Add or remove tags to files and folders</h2>
+<ol>
+<li>
+		Right-click on a file or folder and select <em>Tags</em> from the pop-up menu.
+		<ul>
+<li>
+				Alternatively, and for multiple items, check to select the items and go to <em>File</em> menu&gt;<em>Tags</em>.</li>
+</ul>
+</li>
+<li>
+		An <em>Edit File Tags</em> dialog box opens. The selected files are displayed alongside common current tags. Type the text for the tag in the field and press <em>Add Tag</em>.
+		<ul>
+<li>
+				Add multiple tags at once by comma-separating them.</li>
+</ul>
+</li>
+<li>
+		The tags are applied and this is reflected in the updated dialog box.</li>
+<li>
+		To remove a tag, click the red <span style="color:#ff0000;"><strong>x</strong></span> next the the tag name.</li>
+<li>
+		Close the dialog box to see your main files panel view refresh to display the tags under the <em>Tags</em> column.</li>
+</ol>
+<h2>
+	 </h2>
+<h2>
+	Search for files, folders, and tools</h2>
+<p>
+	Type into the search field (<strong>Screenshot, 1</strong>) to match terms to file/folder names, tool names, tool descriptions, all tags, and tool tag-associated descriptors.</p>
+<ul>
+<li>
+		Searching is case-insensitive and matches strings within words.</li>
+<li>
+		Constrain search terms by adding a percent sign at the start or end of a search string.
+		<ul>
+<li>
+				E.g. <em>%.bai </em>searches for files with .bai extensions or <em>srr%</em> searches only for files starting with the string SRR.</li>
+<li>
+				A % wildcard cannot be used in the middle of a search string.</li>
+</ul>
+</li>
+<li>
+		Items separated by comma or space search for matches containing any of the search terms.
+		<ul>
+<li>
+				For space separated terms, hits are listed in order of matches to search terms. In other words, hits with matches to the most search terms are listed first then hits with matches to fewer search terms are listed next in descending order.</li>
+<li>
+				The order of the comma-separated search hits reflects directory structure.</li>
+</ul>
+</li>
+</ul>
+<p>
+<img alt="" src="/uploaded/content_shl_ug_searchbar.png" style="width: 700px; height: 251px;"/></p>
+<p>
+	Results for <em>Files</em> and <em>Tools</em> are listed separately with files hits displayed first (<strong>Screenshot, 2</strong>).</p>
+<ul>
+<li>
+		Click on the Tools (#) link to switch display results.</li>
+<li>
+		Click the return arrow to go back to the directory displayed before searching. </li>
+<li>
+		For <em>Files</em>, hover mouse over a result to see the location of the hit in your directories.</li>
+<li>
+		For <em>Files</em>, right-click on a result for pop-up menu options, which include <em>Open Parent Folder</em>.</li>
+<li>
+		For <em>Tools</em>, hover mouse over a tag to display the tag-associated descriptor as shown in <a href="http://www.genomespace.org/support/guides/user-guide/sections/customizing#tooltag" target="_self">Customizing the interface</a>.</li>
+<li>
+		For <em>Tools</em>, click on the downward triangle next to the tool icon for the tool-specific pop-up menu.</li>
+</ul>
+<hr/>
+<h2>Manage groups &amp; tools</h2>
+<p>
+	The menu bar's <em>Manage</em> menu allows you to manage either <em>Groups</em> or <em>Private Tools</em>. This includes creating, editing and deleting groups and private tools.</p>
+<p style="margin-left: 40px;">
+<strong>Groups</strong> are GenomeSpace user lists much like a group email list that become available from drop-down menus when sharing files, folders, and private tools. You have the option of viewing <em>my groups</em> and <em>all groups</em>. <em>My groups</em> are groups in which you are a member and <em>all groups</em> are groups defined by other GenomeSpace users of which you are not a member. When you create a group, you automatically become a member and the administrator of the group.</p>
+<p style="margin-left: 40px;">
+<strong>Private tools</strong> are your own private instances of GenomeSpace-enabled tools that are sharable with groups. This may be a local instance of GenePattern, Galaxy, or any other GenomeSpace-enabled tool. Private tools show up in the tool catalog and from there you can add them to a toolbar for one-click launches. To GenomeSpace-enable your tool, developers see <a href="http://www.genomespace.org/support/api/genomespace-enablement-of-tools" target="_self">Adding a Tool to GenomeSpace</a> in the Developer's guide.</p>
+<h2>
+	 </h2>
+<h2>
+<a name="managegroups"></a>Manage Groups</h2>
+<p>
+	Click on the <em>Manage</em> menu and select <em>Groups</em>. The <em>Manage User Groups</em> dialog displays (<strong>Screenshot</strong> 2015.1.30). For a given group, all members can view members but only those with administrative privileges can edit or delete the group. When viewing a group for which you are not an admin, disabled button options turn gray.</p>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_shl_ug_groups.png" style="width: 400px; height: 363px;"/></p>
+<ol>
+<li>
+		Groups in which you are a member display under <em>Group Names</em>. Click on a group to select.
+		<ul>
+<li>
+				Click <em>Delete Selected Group</em> button to delete the group (admins only).</li>
+</ul>
+</li>
+<li>
+		The selected group's description and members display.
+		<ul>
+<li>
+				Members with administrative priviledges have red icons next to their name while those that do not are labeled with a blue icon.</li>
+<li>
+				Remove a member by clicking on the red <strong><span style="color:#ff0000;">x</span></strong> next to their name (admins only).</li>
+</ul>
+</li>
+<li>
+		Add a member to the selected group by entering the username in the text field and clicking <em>Add user to [group name]</em> button (admins only).
+		<ul>
+<li>
+				If a member has a searchable name, as described in <a href="http://www.genomespace.org/support/guides/user-guide/sections/share-data" target="_self">Share Data</a>, then you can search for them with a partial username or an email address by clicking on the magnifying glass icon <img alt="" src="/uploaded/content_shl_magnify.png" style="width: 16px; height: 15px;"/>.  Otherwise, you must know the exact username.</li>
+<li>
+				Make a user a group administrator by checking <em>User can administer group</em>.</li>
+</ul>
+</li>
+<li>
+		Create a new group by inputing a <em>Group name</em> and group <em>Description</em> in the text fields. Click the <em>Add New Group</em> button.
+		<ul>
+<li>
+				To allow non-member GenomeSpace users to view members of a group, check the box. This is a future feature.</li>
+</ul>
+</li>
+</ol>
+<p>
+	 </p>
+<h2>
+<a name="privatetools"> Manage Private Tools</a></h2>
+<p></p>
+<p>You can add any GenomeSpace-enabled tool to your GenomeSpace toolbar as a private instance. For example, you can add your private GenePattern or Galaxy server as a private tool.</p>
+<p></p>
+<ul>
+<li>
+		You and groups you share it with can see and use this instance.</li>
+<li>
+		Private tools show up in the tool catalog for addition to a toolbar. From the tool catalog, add the tool to your toolbar as outlined in <a href="http://www.genomespace.org/support/guides/user-guide/sections/customizing" target="_self">Customizing the interface</a>.</li>
+</ul>
+<p>
+	To manage private tools, select <em>Manage&gt;Private Tools</em>. The <em>Manage My Tools</em> dialog box displays and lists private tools you administer. Only tools you have added can be edited or deleted by you.</p>
+<ul>
+<li>
+		To delete a listed tool, click the red <strong><span style="color:#ff0000;">x</span></strong> next to the tool name.</li>
+<li>
+		To modify a listed tool, click the <em>Modify</em> link in line with the tool name. An <em>Edit</em> dialog appears.</li>
+<li>
+		To add a new private tool, click the <em>Add new</em> button. An <em>Add a new private tool</em> dialog appears.</li>
+</ul>
+<p>
+	The <em>Edit</em> and <em>Add a new private tool</em> dialog boxes have the same input fields. Edit or fill out the parameters summarized in the table below and press <em>Save</em>. To display instructions within the dialog box, click the blue quesiton mark ? button.</p>
+<table border="1" cellpadding="1" cellspacing="1" height="366" width="650">
+<tbody>
+<tr>
+<td style="text-align: center;">
+<p>
+<strong>Field </strong></p>
+<p>
+<strong><span style="font-size:10px;">(<span style="color: rgb(255, 0, 0);">* </span>required)</span></strong></p>
+</td>
+<td style="text-align: center;">
+<strong>Description</strong></td>
+</tr>
+<tr>
+<td>
+				Name<span style="color:#ff0000;">*</span></td>
+<td>
+<ul>
+<li>
+						Tool name</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+				Description</td>
+<td>
+<ul>
+<li>
+						Optional description</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+				Tool Provider<span style="color:#ff0000;">*</span></td>
+<td>
+<ul>
+<li>
+						Institution, group, or user providing the tool</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+				Base URL<span style="color:#ff0000;">*</span></td>
+<td>
+<ul>
+<li>
+						The page in the web-based application that will be launched or the URL of a JNLP launch file for desktop applications. For example, a GenePattern server might have the base URL &lt;<span style="font-family:courier new,courier,monospace;">http://gpdev.broadinstitute.org/gp/pages/genomespace/receiveFile.jsf</span>&gt;.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+				Help URL</td>
+<td>
+<ul>
+<li>
+						Optional tool documentation web address</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+				File Parameter</td>
+<td>
+<ul>
+<li>
+						Optional parameter to pass GenomeSpace file URLs to the tool when launched. Without this GenomeSpace cannot pass a file to your tool.</li>
+<li>
+						We recommend as a minimum that you add the ability to transfer data between your tool and GenomeSpace.</li>
+<li>
+						The <em>File Parameter</em> name is added to the<em> Base URL</em> for the call. File parameters are defined by the application you are adding. If you do not know the file parameter, contact the help desk for the tool you are adding.</li>
+<li>
+						Check the <em>Allow multiple files</em> box to allow multiple files to be passed to the tool at once. Specify a <em>Multiple file Delimiter</em> to separate the multiple file URLs. </li>
+<li>
+						Select as many as apply from the list file formats your tool natively accepts. Files in these selected formats are sent directly to the tool and GenomeSpace will not ask to convert them.</li>
+<li>
+						If another compatible format is selected, meaning the conversion between formats is supported, GenomeSpace will automatically convert when a file is sent to the tool. See <em>Help</em> menu&gt;<em>Format Converters</em> for supported conversions.</li>
+<li>
+						If your tool's accepted format is not listed, contact <a href="mailto:gs-help@broadinstitute.org?subject=please%20add%20file%20format%20for%20my%20private%20tool">gs-help@broadinstitute.org</a> to request the addition.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+				Icon</td>
+<td>
+<ul>
+<li>
+						Optional custom icon to display in the tool catalog and toolbar for the tool. By default, a GenomeSpace icon is provided.</li>
+<li>
+						Use GIF, JPG, or PNG files.</li>
+<li>
+						Icon is scaled to 44x44 or less pixels within GenomeSpace. </li>
+<li>
+						Sharing the tool adds people icons to the tool icon.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+				Share with groups</td>
+<td>
+<ul>
+<li>
+						Optionally share your private tool with your groups. Your groups are groups in which you are a member.</li>
+<li>
+						Shared group users will be able to see and launch the tool, but cannot edit or delete it.</li>
+<li>
+						Click the wrench icon <img alt="" src="/uploaded/content_shl_gearicon.png" style="width: 14px; height: 15px;"/> to create or edit user groups as described in the preceding section.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+	 </p>
+<h4>
+<strong>Additional considerations</strong></h4>
+<ol>
+<li>
+		All tools need to be web-launchable. Desktop applications like Excel cannot be handled at this time. If your tool is a Java-based application, it must be implemented as a Java Web start jnlp file.</li>
+<li>
+		If GenomeSpace-enabled, the tool should point to the GenomeSpace production environment as detailed in the <a href="http://www.genomespace.org/adopters">technical documentation</a>.</li>
+<li>
+		Some GenomeSpace tools have instructions in their help for managing private instances in GenomeSpace. For example, Galaxy on their <a href="http://wiki.galaxyproject.org/Admin/Config/GenomeSpace">Customizing Galaxy's GenomeSpace Integration</a> help page.</li>
+<li>
+		You may not share tools with the gs-public group via this mechanism. If you'd like to make your tool available to all members of the GS community, contact the development team at <a href="mailto:gs-help@broadinstitute.org?subject=Make%20my%20private%20tool%20public">gs-help@broadinstitute.org</a>.</li>
+<li>
+		If you are using a private tool and would like to see it use more GenomeSpace features, please let us know and we will try to work with the developers to have it added.</li>
+</ol>
+<hr/>
+<h2>Run an Analysis</h2>
+<p>
+	This page gives an overview on how to make data files available to GenomeSpace and send these files to a tool for analysis. When you launch a tool on a file, if needed and supported, file formats are converted automatically. To see supported conversions and to manually convert files, see <a href="http://www.genomespace.org/support/guides/user-guide/sections/convert-file-formats" target="_self">Convert file formats</a>.</p>
+<p>
+	The following pages provide step-by-step instructions on the titled topics:</p>
+<ul>
+<li>
+<a href="http://www.genomespace.org/support/guides/recipes/sections/loading-data-into-genomespace" target="_self">Loading data into GenomeSpace</a></li>
+<li>
+<a href="http://www.genomespace.org/support/guides/recipes/sections/moving-data-between-tools-via-genomespace" target="_self">Moving data between tools via GenomeSpace</a></li>
+<li>
+		Example integrative analyses using GenomeSpace tools in <a href="http://recipes.genomespace.org" target="_self">Analysis Recipes</a>.
+		<ul>
+<li>
+				With corresponding <a href="http://www.genomespace.org/support/guides/user-guide/sections/recipe-demo-datasets" target="_self">example datasets</a> (link to curation) found in <a href="https://gsui.genomespace.org/jsui/gsui.html?pathOrUrl=/Home/Public/SharedData/Demos" target="_blank">/Public/SharedData/Demos</a> (link to data).</li>
+</ul>
+</li>
+<li>
+		Tool-specific functions in the <a href="http://www.genomespace.org/support/guides/tool-guide" target="_self">Tool Guide</a> such as moving data files between the tool and GenomeSpace.</li>
+</ul>
+<p>
+	The following daughter pages cover additional analysis related topics:</p>
+<ul>
+<li>
+<a href="http://www.genomespace.org/support/guides/user-guide/sections/convert-file-formats" target="_self">Convert file formats</a></li>
+<li>
+<a href="http://www.genomespace.org/support/guides/user-guide/sections/extract-file-rows-columns" target="_self">Extract file rows and columns</a></li>
+<li>
+<a href="http://www.genomespace.org/support/guides/user-guide/sections/export-external-site-files-to-genomespace" target="_self">Export external site files to GenomeSpace</a></li>
+<li>
+<a href="http://www.genomespace.org/support/guides/user-guide/sections/recipe-demo-datasets" target="_self">Recipe demo datasets</a></li>
+<li>
+<a href="http://www.genomespace.org/support/guides/user-guide/sections/wdk-launch-on-file-or-url" target="_self">WDK launch on file or URL</a></li>
+</ul>
+<p>
+	If you have trouble launching desktop tools, see <a href="http://www.genomespace.org/faq#FAQ2.2" target="_self">FAQ2.2</a>.</p>
+<h2>
+	 </h2>
+<h2>
+	Load data files</h2>
+<p>
+	Make files available to GenomeSpace with one of the following methods. The second column provides links to detailed instruction.</p>
+<table border="1" cellpadding="1" cellspacing="1" height="139" width="700">
+<tbody>
+<tr>
+<td>
+				Drag-drop data files from your desktop into your user folder in the browser</td>
+<td>
+<ul>
+<li>
+						For files ~1 GB or larger, use updated versions of browsers for reasons explained in <a href="http://www.genomespace.org/faq#FAQ1.3" target="_self">FAQ1.3</a></li>
+<li>
+						See <a href="http://www.genomespace.org/support/guides/user-guide/sections/manage-files-folders#uploadfiles">Store files on your GenomeSpace account</a> section of <em>Manage files &amp; folders</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+				Import files by URL from the menu <em>File</em>&gt;<em>Import from URL</em></td>
+<td>
+<ul>
+<li>
+						See <a href="http://www.genomespace.org/support/guides/user-guide/sections/manage-files-folders#uploadfiles">Store files on your GenomeSpace account</a> section of <em>Manage files &amp; folders</em></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+				Send files from a GenomeSpace-enabled tool to your GenomeSpace account</td>
+<td>
+<ul>
+<li>
+						See <a href="http://www.genomespace.org/support/guides/user-guide/sections/export-external-site-files-to-genomespace" target="_self">Export external site files to GenomeSpace</a></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+				Mount Dropbox, Amazon S3, or Google Drive files using <em>Connect</em> from the menu bar</td>
+<td>
+<ul>
+<li>
+						See <a href="http://www.genomespace.org/support/guides/user-guide/sections/connect-storage" target="_self">Connect Storage</a></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="margin-left: 40px;">
+	 </p>
+<h2>
+	Send data to a specific tool from GenomeSpace</h2>
+<p>
+	Launch a tool to analyze files using one of the following methods.</p>
+<ul>
+<li>
+		drag-drop the file(s) onto a tool in the toolbar</li>
+<li>
+		select the file(s) and go to menu<em> Launch</em> and select a specific tool</li>
+<li>
+		select file(s) then click on the tool in the toolbar</li>
+<li>
+		select file(s) then click on the files and select a tool from the pop-up menu</li>
+</ul>
+<p>
+	The <em>Launch</em> dialog box opens (<strong>Screenshot</strong> 2015.2.4).</p>
+<p>
+<img alt="" src="/uploaded/content_sl_ug_launch.png" style="width: 400px; height: 176px;"/></p>
+<ul>
+<li>
+		Currently selected files are listed with the option to remove each by clicking the <em>remove </em>button.</li>
+<li>
+		You can also add files by drag-dropping them from your main files panel to the target area indicated by the green plus <span style="font-size:18px;"><span style="color: rgb(0, 128, 0);"><strong>+</strong></span></span>.</li>
+<li>
+		Click <em>Launch</em> to send the selected files to the tool.</li>
+<li>
+		Follow additional steps presented by the tool.</li>
+</ul>
+<p>
+	See <a href="http://www.genomespace.org/support/guides/user-guide/sections/UI#toolbar" target="_self">User Interface</a> for a description of the toolbar and the <a href="http://www.genomespace.org/support/guides/tool-guide" target="_self">Tool Guide</a> for tool specific instructions.</p>
+<hr/>
+<h2>Convert file formats</h2>
+<p>
+	GenomeSpace contains built-in file converters for frictionlessly moving your files from one tool to another and these are described in the three sections below. By no means do the given lists encompass all the accepted file formats used by the tools.</p>
+<p>
+	Please let us know of additional file conversions that would be helpful to your work, or if you have a converter you would like to contribute to GenomeSpace, at <a href="mailto:gs-help@broadinstitute.org" style="text-decoration: underline; color: rgb(74, 142, 204); ">gs-help@broadinstitute.org</a>.</p>
+<hr/>
+<p>
+<strong><a name="rename"></a>Rename the file extension.</strong> A number of formats are based on the plain text format and you can convert these to a TXT file simply by renaming the file extension.</p>
+<p style="margin-left: 40px;">
+	To rename a file, either:</p>
+<ul>
+<li style="margin-left: 40px;">
+		Right-click on the file and select <em>Rename</em> from the pop-up menu.</li>
+<li style="margin-left: 40px;">
+		Check to select the file and select <em>File</em> menu&gt;<em>Rename</em>.</li>
+</ul>
+<p style="margin-left: 40px;">
+	Edit the original file name and extension in the display and click <em>Rename</em> to save.</p>
+<p>
+	The converse requires additional consideration. You can transvert a plain text file to a tool-specific format by renaming the extension <em>if the file is of a supported data type and has the required attributes of the format.</em></p>
+<ul style="list-style-type: circle;">
+<li>
+		Supported data types and required attributes are described in detail for file formats at their respective websites. These required attributes may include specific usage for select cells such as specific headings, unique sample and probe identifiers<em>, </em>etc.</li>
+<li>
+		One example attribute is the delimiter. For example, GenePattern's <a href="http://www.broadinstitute.org/cancer/software/genepattern/gp_guides/file-formats/sections/gct" target="_self">GCT format</a> data are tab-delimited and GenePattern's <a href="http://www.broadinstitute.org/cancer/software/genepattern/gp_guides/file-formats/sections/cls" target="_self">CLS format</a> labels are space-delimited.</li>
+<li>
+<em>A file must conform to the required attributes for a true conversion. </em>A file with the extension but without the required attributes results in a tool error.</li>
+<li>
+		Transversion may be useful to take advantage of certain GenomeSpace features, such as <a href="http://www.genomespace.org/support/guides/user-guide/sections/preview-heatmap" target="_self">Heatmap previews</a>, which are only available to GCT, GXP and Genomica TAB files.</li>
+<li>
+		Note rich text format TXT is noncomparable to plain text TXT. Mac users needing help on creating plain text files, see <a href="http://www.broadinstitute.org/software/igv/makemergedBAM#createplaintext">this external site</a>.</li>
+</ul>
+<hr/>
+<p>
+	 </p>
+<h2>
+	Convert a file format</h2>
+<p>
+	In sending files to different tools, you may automatically invoke a file conversion. Each tool handles these conversions differently, and may offer you options within the tool's user interface, or may convert the file behind the scenes. The option to manually convert the file will not be available if there is no converter for that format. The next section on this page lists available converters.</p>
+<p>
+	Manually convert file formats within GenomeSpace by:</p>
+<ul>
+<li>
+		Right-clicking the file and selecting <em>Convert</em>.</li>
+<li>
+		Checking a single file and selecting <em>File</em> menu<em>&gt;Convert.</em></li>
+</ul>
+<p>
+	This opens the <em>Convert File Format</em> dialog box.</p>
+<ul>
+<li>
+		Multiple converters for a file type are presented in a drop-down menu. Select the destination format from this menu.</li>
+<li>
+		To convert and download the file, click <em>Download</em>.</li>
+<li>
+		To convert and save in the same folder, click <em>Convert on Server</em>.</li>
+</ul>
+<p>
+	 </p>
+<h2>
+	Available Converters</h2>
+<p>
+	For the most current list of file converters, on the menu bar select <em>Help&gt;</em><em>Format Converters</em>. Hovering over formats in the new dialog displays brief descriptions of the format. Similarly, links in the table below take you to the next section where each format is described.</p>
+<p>
+	The <em>nowhitespace</em> converter for TXT files is for developer testing only. To convert TXT files, see <a href="#rename" target="_self">Convert by renaming the file extension</a>.</p>
+<table border="1" cellpadding="3" cellspacing="1" style="width: 500px; border-collapse: collapse;">
+<tbody>
+<tr>
+<td style="background-color: rgb(255, 255, 204);">
+<strong>From format</strong></td>
+<td style="background-color: rgb(255, 255, 204);">
+<strong>To format</strong></td>
+</tr>
+<tr>
+<td>
+<a href="#adj">ADJ</a></td>
+<td>
+<a href="#xgmml">XGMML</a></td>
+</tr>
+<tr>
+<td>
+<a href="#attr">ATTR</a> (Cytoscape)</td>
+<td>
+<a href="#attrgm">ATTR (Cytoscape GeneMania)</a></td>
+</tr>
+<tr>
+<td colspan="1" rowspan="2">
+<a href="#CDT">CDT</a></td>
+<td>
+<a href="#GCT">GCT</a> (GenePattern)</td>
+</tr>
+<tr>
+<td>
+<a href="#tab">TAB</a> (Genomica)</td>
+</tr>
+<tr>
+<td rowspan="5">
+<a href="#gct">GCT</a></td>
+<td>
+<a href="#attr">ATTR</a> (Cytoscape)</td>
+</tr>
+<tr>
+<td>
+<a href="#gxp">GXP</a></td>
+</tr>
+<tr>
+<td>
+<a href="#tab">TAB</a> (Genomica)</td>
+</tr>
+<tr>
+<td>
+<p>
+					geneset.<a href="#tab">TAB</a></p>
+<p>
+					The input is a dataset with expression values for genes or probes, but the output lists just the probes.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="#exp">EXP</a> (geWorkbench Affymetrix EXPeriment file)</td>
+</tr>
+<tr>
+<td>
+<a href="#gmt">GMT</a></td>
+<td>
+<a href="#tab">TAB</a> (Genomica)</td>
+</tr>
+<tr>
+<td>
+<a href="#gxp">GXP</a></td>
+<td>
+<a href="#gct">GCT</a></td>
+</tr>
+<tr>
+<td>
+<a href="#LST">LST</a></td>
+<td>
+<p>
+					geneset.<a href="#tab">TAB</a> (Genomica)</p>
+<p>
+					A single column indicating a geneset is added and includes all genes from the LST file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="#odf">ODF</a></td>
+<td>
+<a href="#attr">ATTR</a> (Cytoscape)</td>
+</tr>
+<tr>
+<td rowspan="2">
+<a href="#reg2target">REG2TARGET</a></td>
+<td>
+<p>
+					geneset.<a href="#tab">TAB</a></p>
+<p>
+					The input is a file that maps regulators to target genes, but the output lists just the probes.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="#gmt">GMT</a></td>
+</tr>
+<tr>
+<td rowspan="3">
+<a href="#res">RES</a></td>
+<td>
+<a href="#gxp">GXP</a></td>
+</tr>
+<tr>
+<td>
+<a href="#tab">TAB</a> (Genomica)</td>
+</tr>
+<tr>
+<td>
+<p>
+					geneset.<a href="#tab">TAB</a></p>
+<p>
+					The input is a dataset with expression values for genes or probes, but the output lists just the probes.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="#tab">TAB</a> (Genomica)</td>
+<td>
+<a href="#gct">GCT</a></td>
+</tr>
+</tbody>
+</table>
+<p>
+	 </p>
+<h2>
+	Descriptions of file formats for which converters are available</h2>
+<table border="1" cellpadding="3" cellspacing="1" style="width: 686px; height: 269px; border-collapse: collapse;">
+<tbody>
+<tr>
+<td style="background-color: rgb(255, 255, 204);">
+<strong>Format extension</strong></td>
+<td style="background-color: rgb(255, 255, 204);">
+<strong>Primary tool</strong></td>
+<td style="background-color: rgb(255, 255, 204);">
+<strong>Description</strong></td>
+</tr>
+<tr>
+<td>
+<strong><a name="adj"></a>ADJ</strong></td>
+<td>
+				GenePattern ARACNE module</td>
+<td>
+				Adjacency file, tab-delimited. Used by the ARACNE module in GenePattern. The ARACNE module is an algorithm that reverse engineers a gene regulatory network from microarray gene expression data. Further information on this file format can be found <a href="http://www.broadinstitute.org/webservices/gpModuleRepository/download/prod/module/?file=/ARACNE/broad.mit.edu:cancer.software.genepattern.module.analysis/00090/2/ARACNE.pdf">here</a> (PDF).</td>
+</tr>
+<tr>
+<td>
+<strong><a name="attr"></a>ATTR (Cytoscape)</strong></td>
+<td>
+				Cytoscape</td>
+<td>
+				Cytoscape format that describes node and edge attributes. Further information on this file format can be found <a href="http://cytoscape.org/manual/Cytoscape2_6Manual.html#Cytoscape%20Attribute%20File%20Format">here</a>.</td>
+</tr>
+<tr>
+<td>
+<strong><a name="attrgm"></a>ATTR (Cytoscape GeneMania)</strong></td>
+<td>
+				Cytoscape GeneMania plugin</td>
+<td>
+				Cytoscape attribute format for GeneMania networks. See <a href="http://www.genemania.org/plugin/">this page</a> for more information about the GeneMania plugin for Cytoscape.</td>
+</tr>
+<tr>
+<td>
+<a name="CDT"></a><strong>CDT</strong></td>
+<td>
+				GenePattern's HierarchicalClustering module</td>
+<td>
+				CDT (<b>c</b>lustered <b>d</b>ata <b>t</b>able) files are created by GenePattern's HierarchicalClustering module. The CDT file reorders the original input data based on the clustering. An additional column or row is added and depends on if clustering was performed on genes or arrays. The additional column or row contains a unique identifier for each row or column that is linked to the description of the tree structure in the GTR or ATR file that is also output by the module. For details on the format, see <a href="http://www.broadinstitute.org/cancer/software/genepattern/file-formats-guide#CDT" target="_self">here</a>.</td>
+</tr>
+<tr>
+<td>
+<strong><a name="exp"></a>EXP</strong></td>
+<td>
+				geWorkbench</td>
+<td>
+				The geWorkbench native tab-delimited format for saving microarray data, providing a way to include both the data matrix for a group of arrays and various set labels grouping these arrays in the same file. Further information on this file format can be found <a href="http://wiki.c2b2.columbia.edu/workbench/index.php/File_Formats#Affymetrix_File_Matrix_Format_.28geWorkbench_.22.exp.22_format.29">here</a>.</td>
+</tr>
+<tr>
+<td>
+<strong><a name="gct"></a>GCT</strong></td>
+<td>
+				GenePattern</td>
+<td>
+				A tab-delimited file format that describes an expression dataset. Further information on the file format can be found <a href="http://www.broadinstitute.org/cancer/software/genepattern/file-formats-guide#GCT">here</a>.</td>
+</tr>
+<tr>
+<td>
+<strong><a name="gmt"></a>GMT</strong></td>
+<td>
+				GenePattern GSEA module</td>
+<td>
+				Tab-delimited file format that describes gene sets. Each row represents a gene set. Further information on this file format can be found <a href="http://www.broadinstitute.org/cancer/software/genepattern/file-formats-guide#GMT">here</a>.</td>
+</tr>
+<tr>
+<td>
+<strong><a name="gxp"></a>GXP</strong></td>
+<td>
+				Genomica</td>
+<td>
+				Genomica proprietary expression file format. This file format can be used to store the results of complex analyses, and a single GXP file can store multiple annotation files and analyses. It presents the same data as <a href="#tab">TAB</a> format but is not tab-delimited. More information is detailed <a href="http://genomica.weizmann.ac.il/Tutorial/load_expression_data.html" target="_blank">here</a>.</td>
+</tr>
+<tr>
+<td>
+<a name="LST"></a><strong>LST</strong></td>
+<td>
+				Genomica</td>
+<td>
+<div>
+					Genomica outputs lists of genes as an LST format file. It contains the list of genes and descriptions given in the first two columns of <a href="#gxp">GXP</a> or <a href="#tab">TAB</a> files but not expression data. Gene symbols are in square brackets, followed by the identifier and description as shown in the lower-right quadrant of the figure <a href="http://genomica.weizmann.ac.il/Tutorial/load_expression_data.html" target="_blank">here</a>.</div>
+</td>
+</tr>
+<tr>
+<td>
+<strong><a name="odf"></a>ODF</strong></td>
+<td>
+				GenePattern</td>
+<td>
+				The Output Description Format (ODF) is similar to the RES or GCT file formats for gene expression datasets. The main difference is in the header; the body of data still contains the expression level values for each gene in each sample. Further information on the file format can be found <a href="http://www.broadinstitute.org/cancer/software/genepattern/file-formats-guide#ODF">here</a>.</td>
+</tr>
+<tr>
+<td>
+<strong><a name="reg2target"></a>REG2TARGET</strong></td>
+<td>
+				 </td>
+<td>
+				A two-column format that contains the mapping between regulators (column 1) and target genes (column 2).</td>
+</tr>
+<tr>
+<td>
+<strong><a name="res"></a>RES</strong></td>
+<td>
+				GenePattern</td>
+<td>
+<p>
+					A tab-delimited file format that describes an expression dataset. Unlike the GCT file format, the RES file format contains labels for each gene's absent (A) versus present (P) calls, as generated by Affymetrix's GeneChip software and does not allow missing expression values.  Further information on the file format can be found <a href="http://www.broadinstitute.org/cancer/software/genepattern/file-formats-guide#RES">here</a>. </p>
+</td>
+</tr>
+<tr>
+<td>
+<strong><a name="tab"></a>TAB</strong></td>
+<td>
+				Genomica</td>
+<td>
+<p>
+					Tab-delimited text file that contains gene expression data. It presents the same data as the <a href="#gxp">GXP</a> format. The first row is a header row, where the names of the arrays or experiments are specified from the third column onwards. Column one lists gene symbols and column two gives the name and description of the probe separated by space-hyphen-space " - ". Remaining columns give expression data for each gene across experiments.</p>
+<p>
+					The <strong>geneset.TAB</strong> format contains just the list of probes from a TAB file. This format is different from the <a href="#LST">LST</a> format in that it omits the column of descriptions and adds columns that define gene sets, marked by 1 if a gene is included and 0 if it is not.</p>
+</td>
+</tr>
+<tr>
+<td>
+<strong><a name="xgmml"></a>XGMML</strong></td>
+<td>
+				Cytoscape</td>
+<td>
+				eXtensible Graph Markup and Modeling Language file. These files contain network data and node/edge/network attributes. Further information on the file format can be found <a href="https://en.wikipedia.org/wiki/XGMML">here</a>. </td>
+</tr>
+</tbody>
+</table>
+<p>
+	 </p>
+<hr/>
+<h2>Extract file rows &amp; columns</h2>
+<p>
+	Create a new file containing selected columns and consecutive rows on the GenomeSpace server from a delimited data file. This obviates the need for you to download a file and perform the operation in a spreadsheet program and upload the new file.</p>
+<p>
+	To access this feature you can either:</p>
+<ul>
+<li>
+		Right-click on a file and select <em>Extract rows/cols</em> from the pop-up menu</li>
+<li>
+		Check to select a single file then select <em>File </em>menu<em>&gt;Extract rows and columns</em>.</li>
+</ul>
+<p>
+	This opens the <em>Extract rows and columns</em> dialog (<strong>Screenshot</strong> 2015.1.21). Make selections within the dialog and click <em>Save</em> for a new file.</p>
+<p>
+<img alt="" src="/uploaded/content_screenshot_2015-01-21_15_14_06.png" style="width: 700px; height: 245px;"/></p>
+<ol>
+<li>
+		Select tab, comma, space, or semicolon delimiter from the drop-down menu.
+		<ul>
+<li>
+				Display updates automatically.</li>
+<li>
+				Check <em>treat consecutive delimiters as one</em> to skip empty fields between delimiters and to place filled fields adjacently. This can shift data cells in undesired ways. For example, for a GCT file with empty <em>Description</em> fields, checking this box will shift data fields into the <em>Description</em> column (<strong>Screenshot below</strong> 2015.2.3).</li>
+</ul>
+</li>
+<li>
+		View the selected text-based file up to the first ten rows in spreadsheet format.
+		<ul>
+<li>
+				When less rows are shown, up to the first 50 kb of the selected file is displayed.</li>
+</ul>
+</li>
+<li>
+		Select consecutive rows by entering start row and end row numbers. Leave end row field blank to include all remaining rows.
+		<ul>
+<li>
+				Use the bolded row numbers on the left as reference.</li>
+</ul>
+</li>
+<li>
+		Select columns by checking boxes at the top of columns. Scroll horizontal bar at bottom to display additional columns.
+		<ul>
+<li>
+				When selected, column text changes from gray to black and is highlighted.</li>
+<li>
+				Unselected column text remains gray with white backgrounds.</li>
+</ul>
+</li>
+<li>
+		Click on <em>Toggle all columns</em> to invert selections.
+		<ul>
+<li>
+				This is useful when selecting the majority of columns as it allows you to uncheck the fewer undesired columns.</li>
+</ul>
+</li>
+<li>
+		Use the <em>Save as</em> field to change the file name. GenomeSpace automatically appends the term <span style="font-family:courier new,courier,monospace;">.slice </span>between the original file name and extension.
+		<ul>
+<li>
+				If you are removing header lines, consider editing the file extension to match the new format.</li>
+</ul>
+</li>
+<li>
+		Press <em>Save</em> to create the new file in the same folder as the original file.</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_shl_extractundesirable.png" style="width: 500px; height: 265px;"/></p>
+<hr/>
+<h2>Export external site files to GenomeSpace</h2>
+<p>
+	Certain GenomeSpace-enabled data portals, listed under <a href="http://www.genomespace.org/support/tools" target="_self">Tools</a>, allow direct export of their data to GenomeSpace to facilitate analysis of the data with other bioinformatic tools. These portals use a GenomeSpace <a href="http://www.genomespace.org/lightweight-data-source-integration-for-websites" target="_self">lightweight data integration library</a> (link for developers), which means you need to sign in to your separate account with the portal in order to access its data in any manner, including export.</p>
+<p>
+	Currently, data portals that offer direct export of their data to GenomeSpace include:</p>
+<ul>
+<li>
+		The <a href="http://www.genomespace.org/support/tools/cancer_cell_line_encyclopedia" target="_self">Cancer Cell Line Encyclopedia (CCLE)</a> as detailed in the <a href="http://www.genomespace.org/blog/2013/09/30/the-cancer-cell-line-encyclopedia-portal-now-exports-to-genomespace" target="_self">blogpost of September 30, 2013</a>.</li>
+<li>
+		The <a href="http://www.genomespace.org/support/tools/multiple_myeloma_genomics_portal" target="_self">Multiple Myeloma Genomics Portal</a> as detailed in the <a href="http://www.genomespace.org/blog/2013/09/05/multiple-myeloma-genomics-portal-now-exports-to-genomespace" target="_self">blogpost of September 24, 2013</a>.</li>
+<li>
+<a href="http://www.genomespace.org/support/tools/project_achilles" target="_self">Project Achilles</a></li>
+<li>
+<a href="http://www.genomespace.org/support/tools/insilico_db" target="_self">InSilicoDB</a> for certain datasets</li>
+<li>
+<a href="http://www.genomespace.org/support/tools/cbioportal" target="_self">cBioPortal</a></li>
+<li>
+<a href="http://www.genomespace.org/support/tools/project_achilles" target="_self">ArrayExpress</a></li>
+</ul>
+<p>
+	In general, a data portal will have a menu to browse data. For example, for the two first data portals above, access data from the menu bar <em>Browse</em>&gt;<em>Data</em>. When data are listed at the file level, look for the small GenomeSpace icon <img alt="" src="/uploaded/content_sl_gsicon.png" style="width: 33px; height: 20px;"/> next to each file name or at the bottom of the curation table. Clicking on the icon launches the GenomeSpace import dialog window.</p>
+<ul>
+<li>
+		If prompted, login or register for GenomeSpace.</li>
+<li>
+		Select the directory to save the file to and optionally rename the file.</li>
+<li>
+		Click <em>Submit. </em></li>
+<li>
+		Analyze the data from GenomeSpace.</li>
+</ul>
+<hr/>
+<h2>Recipe demo datasets</h2>
+<p class="completed">
+	The scale of genomic data is growing and to minimize the duplication of resources spent to obtain and store data of interest to the wider scientific community, providing data server access is becoming more common. In addition to the specialized data portals provided under GenomeSpace Tools, GenomeSpace enables use of other public data resources. If a public data resource provides URL addresses for data files, then you can easily access the files from your GenomeSpace account. On this page we list the example datasets used in the <a href="http://recipes.genomespace.org" target="_self">Analysis Recipes</a> as well as provide links to alternative datasets that showcase GenomeSpace functionality.</p>
+<h3 class="completed">
+	GenomeSpace Public Folder Datasets</h3>
+<p>
+	The Public folder in your left directories panel contains user specific public data and a folder titled <em>SharedData</em>. Example datasets used in GenomeSpace Recipes are stored in the <em>Demos </em>subfolder of the <em>SharedData</em> folder. Here we briefly describe each shared dataset. Find more information about each dataset on the corresponding Recipe page, provided as links in the table below.</p>
+<ul>
+<li>
+		Link to open the Demos folder:<a href="https://gsui.genomespace.org/jsui/gsui.html?pathOrUrl=/Home/Public/SharedData/Demos" target="_blank"> /Home/Public/SharedData/Demos</a></li>
+<li>
+		Some Recipes use data from other sources and do not have a corresponding shared dataset.</li>
+<li>
+		Some datasets were used in past workshops and do not have a corresponding recipe or a corresponding presentation. These will be removed from the SharedData folder in the upcoming months as we organize these datasets.</li>
+</ul>
+<h4>
+<strong>Table matching <a href="https://gsui.genomespace.org/jsui/gsui.html?pathOrUrl=/Home/Public/SharedData/Demos" target="_blank">/Home/Public/SharedData/Demos</a> subfolders to Analysis Recipes as of February 3, 2015</strong></h4>
+<table border="1" cellpadding="1" cellspacing="1" height="640" width="700">
+<tbody>
+<tr>
+<td style="text-align: center; background-color: rgb(255, 255, 204);">
+<strong>Folder</strong></td>
+<td style="text-align: center; background-color: rgb(255, 255, 204);">
+				 </td>
+<td style="text-align: center; background-color: rgb(255, 255, 204);">
+<strong>Corresponding <a href="http://recipes.genomespace.org" target="_self">Analysis Recipe</a></strong></td>
+</tr>
+<tr>
+<td>
+				Analysis Recipe 1</td>
+<td>
+<ul>
+<li>
+						Normals_Leu</li>
+</ul>
+</td>
+<td>
+<p>
+<a href="http://recipes.genomespace.org/view/2" target="_self">Find subnetworks of differentially expressed genes and identify associated biological functions</a></p>
+</td>
+</tr>
+<tr>
+<td>
+				Analysis Recipe 2</td>
+<td>
+<ul>
+<li>
+						SFP1KO and WT</li>
+</ul>
+</td>
+<td>
+<p>
+<a href="http://recipes.genomespace.org/view/6" target="_self">Find differentially expressed genes in RNA-Seq data</a></p>
+</td>
+</tr>
+<tr>
+<td style="background-color: rgb(153, 153, 153);">
+				Analysis Recipe 3</td>
+<td style="background-color: rgb(153, 153, 153);">
+<ul>
+<li>
+						Gistic_regions.bed</li>
+</ul>
+</td>
+<td style="background-color: rgb(153, 153, 153);">
+<p>
+<em>Obsolete. The files relevant to this recipe are now in folder </em>Analysis Recipe 7<em>.</em></p>
+</td>
+</tr>
+<tr>
+<td>
+				Analysis Recipe 4</td>
+<td>
+<ul>
+<li>
+						RNA_seq</li>
+</ul>
+</td>
+<td>
+<p>
+<a href="http://recipes.genomespace.org/view/7" target="_self">Identify and visualize expressed transcripts in RNA-Seq data</a></p>
+</td>
+</tr>
+<tr>
+<td>
+				Analysis Recipe 5</td>
+<td>
+<ul>
+<li>
+						GISTIC_regions.bed</li>
+<li>
+						USCS_hg18_entrex.bed</li>
+<li>
+						mrna_orig.gct</li>
+</ul>
+</td>
+<td>
+<p>
+<a href="http://recipes.genomespace.org/view/10" target="_self">Build and visualize a module network using putative aberrant regions and expression data</a></p>
+</td>
+</tr>
+<tr>
+<td>
+				Analysis Recipe 6</td>
+<td>
+<ul>
+<li>
+						test_reads.r1.fastq</li>
+<li>
+						test_reads.r2.fastq</li>
+</ul>
+</td>
+<td>
+<p>
+<a href="http://recipes.genomespace.org/view/17" target="_self">Identify and annotate coding variants from exome sequencing data</a></p>
+</td>
+</tr>
+<tr>
+<td>
+				Analysis Recipe 7</td>
+<td>
+<ul>
+<li>
+						GISTIC_CNV</li>
+</ul>
+</td>
+<td>
+<p>
+<a href="http://recipes.genomespace.org/view/9" target="_self">Identify biological functions for genes in copy number variation regions</a></p>
+</td>
+</tr>
+<tr>
+<td style="background-color: rgb(204, 204, 204);">
+				CEGS</td>
+<td style="background-color: rgb(204, 204, 204);">
+<ul>
+<li>
+						K562 and others</li>
+</ul>
+</td>
+<td style="background-color: rgb(204, 204, 204);">
+<p>
+<em>None.</em> See presentations in <a href="https://gsui.genomespace.org/jsui/gsui.html?pathOrUrl=/Home/Public/SharedData/Presentations/Old/CEGS_Sept 23_2014" target="_blank">/Home/Public/SharedData/Presentations/Old/CEGS_Sept 23_2014</a> for demonstrations using these datasets.</p>
+</td>
+</tr>
+<tr>
+<td style="background-color: rgb(153, 153, 153);">
+				SAG_meeting</td>
+<td style="background-color: rgb(153, 153, 153);">
+<ul>
+<li>
+						K562</li>
+</ul>
+</td>
+<td style="background-color: rgb(153, 153, 153);">
+<p>
+<em>None and obsolete. The demonstration relevant to this dataset is described for the </em>CEGS folder<em>.  </em></p>
+</td>
+</tr>
+<tr>
+<td style="background-color: rgb(204, 204, 204);">
+				SampleData</td>
+<td style="background-color: rgb(204, 204, 204);">
+<ul>
+<li>
+						all_aml</li>
+<li>
+						glucocorticoid_receptor</li>
+<li>
+						mTor_network</li>
+</ul>
+</td>
+<td style="background-color: rgb(204, 204, 204);">
+<p>
+<em>None</em></p>
+</td>
+</tr>
+<tr>
+<td style="background-color: rgb(204, 204, 204);">
+				Scenario</td>
+<td style="background-color: rgb(204, 204, 204);">
+<ul>
+<li>
+						TF</li>
+</ul>
+</td>
+<td style="background-color: rgb(204, 204, 204);">
+<p>
+<em>None</em></p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="3">
+				Vizbi</td>
+<td>
+<ul>
+<li>
+						Recipe2</li>
+</ul>
+</td>
+<td>
+<p>
+<a href="http://recipes.genomespace.org/view/5" target="_self">Preprocess and quality check RNA-Seq data</a></p>
+</td>
+</tr>
+<tr>
+<td style="background-color: rgb(204, 204, 204);">
+<ul>
+<li>
+						Recipe1</li>
+</ul>
+</td>
+<td style="background-color: rgb(204, 204, 204);">
+<p>
+<em>None</em></p>
+</td>
+</tr>
+<tr>
+<td style="background-color: rgb(204, 204, 204);">
+<ul>
+<li>
+						Exercise1</li>
+</ul>
+</td>
+<td style="background-color: rgb(204, 204, 204);">
+<p>
+<em>None</em></p>
+</td>
+</tr>
+<tr>
+<td>
+<em>None</em></td>
+<td>
+<ul>
+<li>
+<em>Expression data from </em>InSilicoDB</li>
+</ul>
+</td>
+<td>
+<p>
+<a href="http://recipes.genomespace.org/view/8" target="_self">Identify an up- or down-regulated pathway from expression data</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<ul>
+</ul>
+<h3 class="completed">
+	 </h3>
+<h3 class="completed">
+	Amazon S3 Public Datasets</h3>
+<p>
+	See <a href="https://aws.amazon.com/datasets" target="_blank">aws.amazon.com</a> for the comprehensive list of public S3 datasets. Of note because of their scale are two projects, the <a href="http://aws.amazon.com/datasets/4383">1000 Genomes Project</a> and the <a href="http://aws.amazon.com/datasets/1903160021374413">Human Microbiome Project</a>. The User Guide details how to <a href="http://www.genomespace.org/support/guides/user-guide/sections/connect-s3-bucket" target="_self">Connect an S3 Bucket</a> to your GenomeSpace account.</p>
+<h3 class="completed">
+	 </h3>
+<h3 class="completed">
+	Other Public Datasets</h3>
+<p>
+	Please let us know of other public datasets GenomeSpace should link to. We refer you to curations on the following websites listing other public datasets.</p>
+<ul>
+<li>
+		NCBI: <a href="http://www.ncbi.nlm.nih.gov/guide/all/">http://www.ncbi.nlm.nih.gov/guide/all/</a></li>
+<li>
+		Public Data Commons hosted on the OSCD: <a href="https://www.opensciencedatacloud.org/publicdata/">https://www.opensciencedatacloud.org/publicdata/</a></li>
+<li>
+		Quora forum post: <a href="http://www.quora.com/Where-can-I-find-large-datasets-open-to-the-public">http://www.quora.com/Where-can-I-find-large-datasets-open-to-the-public </a></li>
+</ul>
+<hr/>
+<h2>WDK launch on file or URL</h2>
+<p>
+	WDK stands for Web Development Kit. This feature was introduced in the <a href="http://www.genomespace.org/blog/2014/12/02/the-genomespace-web-development-kit" target="_self">Blogpost from December 18, 2014</a>, which is of more interest to developers.</p>
+<p>
+	Users need only know that private tools or tools that are not present in the GenomeSpace tool catalog may use this feature to allow you to save their data to your GenomeSpace account and even allow you to select a GenomeSpace Tool to launch on the data. GenomeSpace will prompt you to sign in to your account before saving files.</p>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_sl_ug_wdk1.png" style="width: 301px; height: 300px;"/></p>
+<ol>
+<li>
+		When you upload a file, the <em>Upload URL to GenomeSpace </em>dialog box appears (<strong>Screenshot </strong>above, 2015.2.4).
+		<ul>
+<li>
+				Select the a directory location that the file will be saved within.</li>
+<li>
+				Optionally edit the name of the file.</li>
+<li>
+				Click <em>Submit</em>.</li>
+</ul>
+</li>
+<li>
+		Once the file is uploaded, if the feature includes launching a tool, then the <em>Launch GenomeSpace Tool on URL</em> dialog appears (<strong>Screenshot </strong>below, 2015.2.4).
+		<ul>
+<li>
+				Use the scroll button at the edge of the toolbar to see the next set of available tools.</li>
+<li>
+				Click on a tool to launch it on the data.</li>
+</ul>
+</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_sl_ug_wdk2.png" style="width: 468px; height: 250px;"/></p>
+<p>
+	 </p>
+<p>
+	 </p>
+<hr/>
+</body>
+</html>

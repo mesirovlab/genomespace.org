@@ -1,0 +1,650 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>GenomeSpace: 
+	  	Blog
+  </title>
+<link href="/assets/site.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/demo_table_jui.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/jquery-ui-1.8.4.custom.css" media="screen" rel="stylesheet" type="text/css"/>
+<script src="/assets/application.js" type="text/javascript"></script>
+<link href="/assets/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+<meta content="authenticity_token" name="csrf-param"/>
+<meta content="hdFDz3YRRKLKy0UrioudTYim3TaTzCfAo3XI2XT2Nd4=" name="csrf-token"/>
+</head>
+<body>
+<div id="page_wrapper">
+<div id="page_content">
+<div id="logo"><a href="/"><img alt="Gslogo" src="/assets/gslogo.png"/></a></div>
+<div id="login_menu"><a href="https://gsui.genomespace.org/jsui/gsui.html">User Login</a>
+</div>
+<ul id="nav">
+<li id="what-is-genomespace"><a href="/what-is-genomespace">What is GenomeSpace?</a>
+</li>
+<li id="tools"><a href="/support/tools">Tools</a>
+</li>
+<li id="recipes"><a href="http://recipes.genomespace.org">Recipes</a></li>
+<li id="documentation"><a href="/documentation">Documentation</a>
+<ul>
+<li><a href="/support/guides/user-guide">User Guide</a>
+<p>Read the detailed guide to the user interface</p>
+</li>
+<li><a href="/support/guides/tool-guide">Tool Guide</a>
+<p>Learn how to access GenomeSpace functionality for each Tool</p>
+</li>
+<li><a href="/faq">FAQ</a>
+<p>See answers to frequently asked questions</p>
+</li>
+<li><a href="/presentations-and-videos">Presentations and Videos</a>
+<p>Access talks by the GenomeSpace community</p>
+</li>
+<li><a href="/support/guides/end-to-end-analyses">End-to-End Analyses</a>
+<p>Provides description for end-to-end analyses.</p>
+</li>
+</ul>
+</li>
+<li id="developers"><a href="/for-developers">Developers</a>
+<ul>
+<li><a href="/what-can-genomespace-do-for-tool-developers">What Can GenomeSpace Do For Tool Developers?</a>
+<p></p>
+</li>
+<li><a href="/adopters">Technical Documentation</a>
+<p></p>
+</li>
+<li><a href="/source-code">Source Code and Distributions</a>
+<p></p>
+</li>
+<li><a href="/developer-support-and-feedback">Developer Support and Feedback</a>
+<p></p>
+</li>
+</ul>
+</li>
+<li id="support"><a href="/support">Support</a>
+</li>
+<li id="about"><a href="/about">About</a>
+</li>
+<li class="search">
+<div id="search_box">
+<form accept-charset="UTF-8" action="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"/></div>
+<input class="search" id="search" name="search" type="text"/>
+<input class="searchBtn" type="submit"/>
+</form> </div>
+</li>
+</ul>
+<script type="text/javascript">
+//<![CDATA[
+
+		// grab page category and use to highlight correct menu item.  if none present, parse url to find where the user is.
+		var category = "";
+		if ( !category ){
+			url_parts = $(location).attr('pathname').split("/");
+			url_string = url_parts[1] + "/" + url_parts[2]
+			if (url_string == "support/tools"){
+				category = "tools"
+			}
+			else if (url_string == "support/guides"){
+				url_parts[3] == "recipes" ? category = "recipes" : category = "documentation"
+			}
+			else if (url_parts[1] == "genomespace-recipes")
+			{
+                category = "gsrecipes"
+            }
+			else if (url_string == "support/api"){
+				category = "developers"
+			}
+			else if ((url_string == "register/undefined") || (url_string == "request_invite/undefined")) {
+				category = "what-is-genomespace"
+			}
+			else if (url_string == "/undefined") {
+				category = ""
+			}
+			else if (url_string == "support/undefined") {
+				category = "support"
+			}
+		}
+		$("#" + category).addClass("current");
+
+
+//]]>
+</script>
+<div id="content_panel">
+<table width="100%"><tr>
+<td id="main_content">
+<div id="notice"></div>
+<div id="alert"></div>
+<h1>The GenomeSpace Toolbar and new Tool Catalog</h1>
+<p class="byline">Posted by Ted Liefeld on Monday, December 16, 2013 at 11:58AM</p>
+<br/><p class="byline">Last updated on Wednesday, December 18, 2013 at 01:23PM</p>
+<p>
+	As the number of tools available in GenomeSpace grows it has become clear that having a single toolbar on the GenomeSpace User Interface (GSUI) is no longer sufficient. So, to make it easier to deal with the ever-increasing collection of GenomeSpace tools, we have added a few new features to the GSUI; including multiple toolbars, and a new tool catalog to help you arrange and manage your tools and toolbars.</p>
+<h3>
+	The Toolbar</h3>
+<p>
+	The new toolbar looks like this:</p>
+<p>
+<img alt="" src="/uploaded/content_tb2.png" style="width: 800px; height: 149px;"/></p>
+<p>
+	Some of the changes to note include:</p>
+<ol>
+<li>
+		The <img alt="" src="/uploaded/content_cat1.png" style="width: 20px; height: 18px;"/> icon opens up the new tool catalog (more on that below).</li>
+<li>
+		We have added toolbar selector buttons and a label that lets you see which toolbar is currently in use. In the picture above the 'Default' toolbar is selected. I have also created two other toolbars that I can select by clicking on the colored buttons.</li>
+<li>
+		The toolbar scrollbar (that used to be along the bottom of the tools) has been replaced with '&lt;' and '&gt;' buttons at either end of the scrollbar to let you scroll through your tools if they cannot fit all on one screen. The buttons are only displayed if there is something in that direction to scroll to (which is why you only see one on the right in the figure above). </li>
+</ol>
+<p>
+	To reorder the tools in a toolbar, simply drag and drop them within the toolbar. Also, as with the old toolbar, you can make the icons smaller by grabbing the bottom edge of the toolbar and dragging upwards as described in the previous <a href="http://www.genomespace.org/blog/2013/11/04/toolbar-enhancements">Toolbar Enhancements blog post</a>. The new scrollbar buttons also work on touchscreens for those of you accessing GenomeSpace from a tablet or smartphone.</p>
+<h3>
+	The Tool Catalog</h3>
+<p>
+	To open the tool catalog, click on the <img alt="" src="/uploaded/content_cat1.png" style="width: 20px; height: 18px;"/> button.</p>
+<p>
+	 </p>
+<p>
+<img alt="" src="/uploaded/content_cat8.png" style="width: 800px; height: 426px;"/></p>
+<p>
+	In the catalog itself (on the left in the image above) you will see all the tools available to you in GenomeSpace. This includes those made available by the GenomeSpace team, as well as any private tools that other users have shared with you. If a tool is on your currently selected toolbar, it will display a checkmark at the top right corner.</p>
+<p>
+	On the right under <strong>Select Toolbar</strong> in the image above, is the list of toolbars you have created.  Everyone will start with one called 'Default', but you can rename it, by clicking on the toolbar name, and create others. You can also change the color assigned to a toolbar's button using the color picker beside the name. Finally you can delete a toolbar by clicking the red 'x' next to it; though you must always have at least one toolbar. You can change the current toolbar by clicking on the row with its name or by clicking its matching button (i.e. the colored dots).</p>
+<p>
+	You can sort the tools using the 'Order by' control above the catalog.  Tools can be sorted by:</p>
+<ul>
+<li>
+		Name - alphabetically descending.</li>
+<li>
+		Date Available - starting with the newest tools first.</li>
+<li>
+		on current toolbar - put all the tools not on the toolbar first, then alphabetic by name.</li>
+</ul>
+<p>
+	You can also search for tools using the search box provided. This will search through tool names, descriptions, and tags, and display only those that match in the catalog.</p>
+<p>
+	To see the description of a tool you may be interested in, or to add/remove it from the current toolbar, simply mouse over the tool card in the catalog.</p>
+<p>
+<img alt="" src="/uploaded/content_cat3.png" style="width: 215px; height: 216px;"/><img alt="" src="/uploaded/content_cat7.png" style="width: 211px; height: 206px;"/></p>
+<p>
+	Clicking on the Add or Remove buttons will (suprisingly) add or remove this tool from your currently selected toolbar. You can see more information about the tool by clicking on the '<span style="color:#0000ff;"><u>more details...'</u></span> link.  For example, for InSilicoDB you would see the following:</p>
+<p>
+<img alt="" src="/uploaded/content_cat6_details.png" style="width: 665px; height: 450px;"/></p>
+<p>
+	This shows you the tool's name, author, date added to GenomeSpace, the URL to access the tool directly, and also any tags that have been added to the tool in GenomeSpace. In the example above you see a tag called 'junit_tag_1376940073705' that was added by our automated build and test system. In the released version of GenomeSpace the tags typically reflect capabilities the tool has.</p>
+<p>
+	In some cases, a tool may have a special note attached to it. In these cases you will see an additional link called 'Special Requirements' that looks like this<img alt="" src="/uploaded/content_cat4.png" style="width: 220px; height: 214px;"/></p>
+<p>
+	Clicking on this link will bring up details you may need to know before using this tool.</p>
+<p>
+<img alt="" src="/uploaded/content_cat5_sr.png" style="width: 367px; height: 161px;"/></p>
+<p>
+	 </p>
+<h1>GenomeSpace OpenID Authentication for Ruby on Rails with Devise</h1>
+<p class="byline">Posted by Jon Bistline on Wednesday, November 20, 2013 at 05:30PM</p>
+<br/><p class="byline">Last updated on Friday, December 06, 2013 at 10:30AM</p>
+<p>
+	For those of you that are Ruby on Rails developers, you're most likely already familiar with <a href="https://github.com/plataformatec/devise">Devise</a>. It's a fantastically simple and flexible way to add password- and token-based authentication to your Rails application.  What you may not know is that there is a companion gem called '<a href="https://github.com/nbudin/devise_openid_authenticatable">devise_openid_authenticatable</a>' that extends Devise's authentication strategies to include OpenID.  This post will show you how you can implement this to authenticate your application against the GenomeSpace OpenID server.</p>
+<h3>
+	Setup</h3>
+<p>
+	For this example, we're using Rails 3.2.12 and Ruby 1.9.2. You can use newer versions of Ruby, but I don't recommend using Rails 4 for this - there are issues with OpenID and the CSRF authenticity token in Rails that causes authentication to fail unless you completely disable it, which is less than ideal if this application is going to be public.</p>
+<p>
+	Once you've created your application, you'll need to add these 3 gems to your Gemfile:</p>
+<div class="pre_wrapper">
+<pre>
+gem 'devise'
+gem 'devise_openid_authenticatable'
+gem 'warden'</pre>
+</div>
+<p>
+	After that, create a User model in the standard fashion (see the Devise <a href="https://github.com/plataformatec/devise#getting-started">documentation</a> for more information).  If this is a new application you've created, you also need to set up a simple controller with an index method to give Devise somewhere to redirect to once we've authenticated.  Here's a quick example:</p>
+<div class="pre_wrapper">
+<p>
+<strong>From the command line:</strong></p>
+<pre>
+rails g controller home index</pre>
+<p>
+<strong>Add this line to app/controllers/home_controller.rb</strong></p>
+<pre>
+before_filter :authenticate_user!</pre>
+<p>
+<strong>Finally, edit your config/routes.rb:</strong></p>
+<pre>
+devise_for :users
+get "home/index"
+root to: "home#index"</pre>
+</div>
+<p>
+	It would also be a good idea at this point to read our <a href="http://www.genomespace.org/support/api/openid-requirements">OpenID Requirements</a> documentation as well so that you're familiar with the concepts before moving forward.</p>
+<h3>
+	The User Model</h3>
+<p>
+	Once you've created your user model, you're going to want to edit it so that it only tries to authenticate against OpenID. To do this:</p>
+<ol>
+<li>
+		Remove the <span style="font-family: 'courier new', courier, monospace; ">:encrypted_password</span> column from your User model and add <span style="font-family: 'courier new', courier, monospace; ">:username</span>, <span style="font-family: 'courier new', courier, monospace; ">:token</span> and <span style="font-family: 'courier new', courier, monospace; ">:identity_url</span> fields.  The easiest way to do this is via migrations (see below for more details).</li>
+<li>
+		Change your devise declaration to be <span style="font-family:courier new,courier,monospace;">:openid_authenticatable</span> instead of <span style="font-family:courier new,courier,monospace;">:database_authenticatable</span> or <span style="font-family:courier new,courier,monospace;">:token_authenticatable</span>.  Other Devise properties can configured as you like (such as :<span style="font-family:courier new,courier,monospace;">trackable</span>, <span style="font-family:courier new,courier,monospace;">:rememberable</span>, etc.)</li>
+<li>
+		Set up your <span style="font-family:courier new,courier,monospace;">attr_accessible</span> declaration to include these new fields: <span style="font-family:courier new,courier,monospace;">attr_accessible :identity_url, :email, :username, :token</span></li>
+</ol>
+<div class="pre_wrapper">
+<p>
+<strong>1. Migration to add necessary fields:</strong></p>
+<pre>
+class AddOpenIDFieldsToUsers &lt; ActiveRecord::Migration
+  def up
+    add_column :users, :identity_url, :string
+    add_column :users, :username, :string 
+    add_column :users, :token, :string
+    remove_column :users, :encrypted_password 
+  end
+  def down
+    remove_column :users, :identity_url
+    remove_column :users, :username
+    remove_column :users, :token
+    add_column :users, :encrypted_password, :string
+  end
+end</pre>
+<p>
+<strong>2, 3. Edits to app/models/user.rb</strong></p>
+<pre>
+class User &lt; ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # :token_authenticatable, :database_authenticatable, :confirmable, :lockable, :timeoutable, :omniauthable, 
+  # :registerable, :recoverable, :rememberable, :trackable, :validatable         </pre>
+<pre>
+  devise  :openid_authenticatable, :trackable
+		
+  # Setup accessible (or protected) attributes for your model
+  attr_accessible :identity_url, :email, :username, :token
+</pre>
+</div>
+<h3>
+	GenomeSpace OpenID Parameters &amp; Forms</h3>
+<p>
+	The next thing that you'll need to do is set up the proper GenomeSpace OpenID parameters inside you User model.  This is done via a custom extension (option #3 from our <a href="http://www.genomespace.org/support/api/openid-requirements">OpenID Requirements</a> documentation).  To set this up, you need to do 2 things:</p>
+<ol>
+<li>
+		Render the standard Devise views and edit the devise/sessions/new.html.erb form to use GenomeSpace's OpenID URL (obtained here: <a href="http://www.genomespace.org/sites/genomespacefiles/config/serverurl.properties">http://www.genomespace.org/sites/genomespacefiles/config/serverurl.properties</a>).  You can render all of Devise's forms with this command: <span style="font-family:courier new,courier,monospace;">rails g devise:views</span></li>
+<li>
+		Implement the following methods inside your User model
+		<ol start="1" style="list-style-type: lower-roman; ">
+<li>
+				self.openid_required_fields</li>
+<li>
+				self.build_from_identity_url(identity_url)</li>
+<li>
+				openid_fields=(fields)</li>
+</ol>
+</li>
+</ol>
+<p>
+<strong>1. app/views/devise/sessions/new.html.erb:</strong></p>
+<div class="pre_wrapper">
+<pre>
+&lt;%= form_for(resource, :as =&gt; resource_name, :url =&gt; session_path(resource_name)) do |f| %&gt;
+  &lt;%= f.hidden_field :identity_url, value: "https://identity.genomespace.org/identityServer/xrd.jsp" %&gt;
+  &lt;%= f.submit "Sign in using GenomeSpace" %&gt;
+&lt;% end %&gt;</pre>
+</div>
+<p>
+	In our login form (above), you can see that we've removed the standard username/password fields and instead added a hidden field that points directly at GenomeSpace's OpenID URL.  This way, when the user clicks the "Login with GenomeSpace" button, they are redirected to our GenomeSpace login page, which will then return back to your Rails application once the login is successfully completed.</p>
+<p>
+<strong>2. Implement required OpenID User methods (inside app/models/user.rb</strong>):</p>
+<div class="pre_wrapper">
+<pre>
+def self.openid_required_fields
+  ["gender", "nickname", "email"]
+end 
+  
+def self.build_from_identity_url(identity_url)
+  User.new(:identity_url =&gt; identity_url)
+end
+  
+def openid_fields=(fields)
+  fields.each do |key, value|
+    # Some AX providers can return multiple values per key
+    if value.is_a? Array
+      value = value.first
+    end
+  
+    case key.to_s
+    when "nickname"
+      self.username = value
+    when "email"
+      self.email = value
+    when "gender"
+      self.token = value
+    else
+      logger.error "Unknown OpenID field: #{key}"
+    end
+  end
+end 
+</pre>
+</div>
+<p>
+	These 3 methods will provide the necessary functionality so the devise_openid_authenticatable can map the fields from GenomeSpace's OpenID server to the instance of the User model you're working with.  Here's a brief overview of what each method is doing:</p>
+<p>
+<em>i. self.openid_required_fields</em></p>
+<p>
+	This is an array of required fields for any successful authentication response.  We're providing the SReg names for fields here even though we're using the custom extension as this is what is returned from GenomeSpace (more on this later).  Specifically, we're saying that GenomeSpace must provide the gender and nickname fields in it's response.  We'll map these fields to our User model later.</p>
+<p>
+<em>ii. self.build_from_identity_url(identity_url)</em></p>
+<p>
+	This method automatically creates your User record once we've successfully logged in and records it in the database.  The :identity_url is your GenomeSpace OpenID unique identifier, and takes the following format: https://identity.genomespace.org/identityServer/xrd/[YOUR GENOMESPACE USERNAME].  We need this method so that we can record our other OpenID fields somewhere later on.</p>
+<p>
+<em>iii. openid_fields=(fields)</em></p>
+<p>
+	This is where the real heavy lifting happens.  In this <strong>instance</strong> method (as opposed to the above <strong>class</strong> methods), once we have a valid User instance, we can then take the response from OpenID and parse out the various fields that we said we needed.  It takes a hash from devise_openid_authenticatable (<strong>fields</strong>) and maps each field to what we want.  Specifically, it takes the SReg names for the values we requested and maps them inside the case statement to the User columns we created earlier.</p>
+<h3>
+	Handling the Custom Extension Response</h3>
+<p>
+	You might think you're done at this point, but there is one last thing we need to do.  Even though we're using the custom extension, devise_openid_authenticatable can only send the request as either SimpleRegistration (SReg) or AttributeExchange (AX).  This was why we specified the SReg names for the parameters in our required fields rather than the custom GenomeSpace fields.  We need this because otherwise the fields aren't "signed" when they're returned, and devise_openid_authenticatable won't parse any unsigned fields.  So we need to tell devise_openid_authenticatable how to handle this custom case.  It requires a one-line fix to the source code for the gem.  To do this:</p>
+<ol>
+<li>
+		Vendor all of your gems for your app with: <span style="font-family:courier new,courier,monospace;">bundle install --deployment</span></li>
+<li>
+		Edit the <span style="font-family:courier new,courier,monospace;">fields</span> method inside <span style="font-family:courier new,courier,monospace;">strategy.rb</span> (located at vendor/gems/.../devise_openid_authenticatable/lib/devise_openid_authenticatable/strategy.rb)</li>
+</ol>
+<p>
+	Once you've vendored all of your gems (it is possible to only vendor the devise_openid_authenticatable gem, but I don't recommend it - it's much simpler to vendor them all), find the <span style="font-family:courier new,courier,monospace;">strategy.rb</span> file inside the <span style="font-family:courier new,courier,monospace;">lib/devise_openid_authenticatable</span> folder of the gem.  Navigate down to the <span style="font-family: 'courier new', courier, monospace; ">fields</span> method (it should be around line 100) and look for the following line:</p>
+<pre>
+if ns_alias.to_s == "sreg"</pre>
+<p>
+	And change the line to read like so:</p>
+<pre>
+if ns_alias.to_s == "sreg" || ns_alias.to_s == "ext1"</pre>
+<p>
+	The reason we're doing this again is because of the response that comes back from GenomeSpace.  If you refer back to the GenomeSpace <a href="http://www.genomespace.org/support/api/openid-requirements">OpenID Requirements</a> documentation, you'll notice that using the custom extension sets the namespace to "ext1" instead of "sreg".  Since the <span style="font-family:courier new,courier,monospace;">fields</span> method parses the values returned by from OpenID by namespace, if we don't tell it how to handle this special namespace your username, email and token values won't get recorded.</p>
+<p>
+	That's it - you've now got a simple Rails application that can authenticate against GenomeSpace's OpenID server.</p>
+<h1>Toolbar enhancements</h1>
+<p class="byline">Posted by Ted Liefeld on Monday, November 04, 2013 at 10:17AM</p>
+<br/><p class="byline">Last updated on Tuesday, November 05, 2013 at 07:21AM</p>
+<p>
+	It has long been possible to <a href="http://www.genomespace.org/blog/2012/06/22/new-feature-customizing-your-toolbar" target="_blank">customize your GenomeSpace toolbar</a> by adding, reordering or hiding tools.  This has now gotten a little easier with the changes that we've just released.</p>
+<h3>
+	1. Reordering the tools in your toolbar</h3>
+<p>
+	You have always been able to reorder tools in your toolbar from the View&gt;&gt;Customize Toolbar menu but you can now also accomplish this just by dragging and dropping the tools within the toolbar itself. Simply click and hold on a tool's icon and drag it to the left or right to change its place in the toolbar order.</p>
+<p>
+<img alt="" src="/uploaded/content_home.png" style="width: 800px; height: 207px;"/></p>
+<h3>
+	2. Hiding tools you don't use</h3>
+<p>
+	As with the reordering, you could previously do this from the View&gt;&gt;CustomizeToolbar menu, but you can now also hide a tool by clicking on the tool's dropdown menu and then selecting the 'Hide' option.  If it is a private tool that you have permission to edit, you will also see an 'Edit' menu item here to allow you to change the tools properties.</p>
+<p>
+<img alt="" src="/uploaded/content_hide.png" style="width: 800px; height: 224px;"/></p>
+<h3>
+	3. Finding new (or hidden) tools</h3>
+<p>
+	If you have hidden a tool or want to find out what else is available and not showing on your toolbar, use the View&gt;&gt;CustomizeToolbar menu item.  This will bring up the toolbar dialog which will show you the currently hidden tools in the panel on the right.  You can also use this dialog to reorder or hide tools by dragging and dropping them within or between the shown/hidden tool lists.</p>
+<p>
+<img alt="" src="/uploaded/content_findhidden.png" style="width: 400px; height: 345px;"/></p>
+<p>
+	 </p>
+<h3>
+	4. Resizing your toolbar</h3>
+<p>
+	Finally, you can now also resize the toolbar to give your files more space in the browser window.  To do this simply click on the handle along the bottom edge of the toolbar slider and drag it upwards.  Once the icons get smaller than about 50% it will also hide the tool names to leave even more space for your files.</p>
+<p>
+<img alt="" src="/uploaded/content_shrink3.png" style="width: 800px; height: 183px;"/></p>
+<p>
+	 </p>
+<h1>The Cancer Cell Line Encyclopedia Portal now exports to GenomeSpace</h1>
+<p class="byline">Posted by Ted Liefeld on Monday, September 30, 2013 at 09:36AM</p>
+<p>
+	The <a href="http://www.broadinstitute.org/ccle">Cancer Cell Line Encyclopedia portal (CCLE)</a> can now export data directly to GenomeSpace to facilitate its analysis in any of the GenomeSpace tools.</p>
+<p>
+	The <b><a href="http://www.broadinstitute.org/ccle" target="_blank">Cancer Cell Line Encyclopedia</a></b> provides public access to genomic data, analysis and visualization for about 1000 cell lines.</p>
+<p>
+	Since the CCLE is using the GenomeSpace <a _cke_saved_href="http://http://www.genomespace.org/blog/2012/11/02/prototype-lightweight-web-site-integration-with-genomespace" class="attach_prototype-lightweight-web-site-integration-with-genomespace" href="javascript:void(0)/*141*/" title="prototype-lightweight-web-site-integration-with-genomespace">lightweight data integration library</a>, you will still need a separate account on the CCLE in order to access the data it contains.  </p>
+<p>
+	Sending data from the CCLE to GenomeSpace starts by going to the Browse &gt; Data menu from any page.</p>
+<p>
+	 </p>
+<p>
+<img alt="" src="/uploaded/content_ccle1.png" style="width: 800px; height: 295px;"/></p>
+<p>
+	 </p>
+<p>
+	Once on the data page, a GenomeSpace icon has been added beside each file name. </p>
+<p>
+	 </p>
+<p>
+<img alt="" src="/uploaded/content_ccle2.png" style="width: 800px; height: 491px;"/></p>
+<p>
+	Clicking on this icon will launch the GenomeSpace import dialog window. From there you can login to GenomeSpace if necessary (or register for GenomeSpace), select the directory you want to save the file to, and optionally rename the file.</p>
+<p>
+<img alt="" src="/uploaded/content_ccle3.png" style="width: 400px; height: 400px;"/></p>
+<p>
+	Once you hit the submit button, the file will be automatically copied from the Cancer Cell Line Encyclopedia portal into your GenomeSpace directory.  From here you can then analyze the data using the usual GenomeSpace mechanisms.</p>
+<h1>Multiple Myeloma Genomics Portal now exports to GenomeSpace</h1>
+<p class="byline">Posted by Ted Liefeld on Thursday, September 05, 2013 at 10:09AM</p>
+<br/><p class="byline">Last updated on Tuesday, September 24, 2013 at 10:19AM</p>
+<p>
+	The <a href="http://www.broadinstitute.org/mmgp">Multiple Myeloma Genomics Portal (MMGP)</a> can now export data directly to GenomeSpace to facilitate its analysis in any of the GenomeSpace tools.</p>
+<p>
+	The Multiple Myeloma Genomics Portal (MMGP) provides access to significant multiple myeloma datasets. These include the Multiple Myeloma Reseach Foundation-funded reference aCGH, mutation and gene expression data as well as 8 other additional public multiple myeloma datasets.</p>
+<p>
+	Since the MMGP is using the GenomeSpace <a _cke_saved_href="http://http://www.genomespace.org/blog/2012/11/02/prototype-lightweight-web-site-integration-with-genomespace" class="attach_prototype-lightweight-web-site-integration-with-genomespace" href="javascript:void(0)/*141*/" title="prototype-lightweight-web-site-integration-with-genomespace">lightweight data integration library</a>, you will still need a separate account on the MMGP in order to access the data it contains.  </p>
+<p>
+	Sending data from the MMGP to GenomeSpace starts by going to the Browse &gt; Data menu from any page.</p>
+<p>
+	 </p>
+<p>
+<img alt="" src="/uploaded/content_mmgp0.png" style="width: 800px; height: 441px;"/></p>
+<p>
+	 </p>
+<p>
+	Once on the data page, a GenomeSpace icon has been added beside each file name. </p>
+<p>
+	 </p>
+<p>
+<img alt="" src="/uploaded/content_mmgp1.png" style="width: 800px; height: 341px;"/></p>
+<p>
+	Clicking on this icon will launch the GenomeSpace import dialog window. From there you can login to GenomeSpace if necessary (or register for GenomeSpace), select the directory you want to save the file to, and optionally rename the file.</p>
+<p>
+<img alt="" src="/uploaded/content_mmgp2.png" style="width: 400px; height: 363px;"/></p>
+<p>
+	Once you hit the submit button, the file will be automatically copied from the Multiple Myeloma Genomics portal into your GenomeSpace directory.  From here you can then analyze the data using the usual GenomeSpace mechanisms.</p>
+<h1>New Feature: Heatmap previews</h1>
+<p class="byline">Posted by Ted Liefeld on Thursday, August 29, 2013 at 11:45AM</p>
+<br/><p class="byline">Last updated on Wednesday, September 04, 2013 at 09:40AM</p>
+<p>
+	For those of you frequently working with data in the gct matrix format, or a format that can be converted to gct (currently gxp and Genomica tab formatted files) it is now possible to visualize your files as heatmaps directly within the GenomeSpace user interface.</p>
+<p>
+	To start, select the file preview for a file.</p>
+<p>
+<img alt="" src="/uploaded/content_hm6.png" style="width: 486px; height: 244px;"/></p>
+<p>
+	This will open the standard preview dialog.  If it is possible to visualize this file as a heatmap. you will se a 'Heatmap' tab beside the 'Preview' tab.</p>
+<p>
+<img alt="" src="/uploaded/content_hm4.png" style="width: 800px; height: 218px;"/></p>
+<p>
+	Clicking on this tab will display your data as a heatmap.</p>
+<p>
+<img alt="" src="/uploaded/content_hm5.png" style="width: 800px; height: 597px;"/></p>
+<p>
+	Some notes:</p>
+<ul>
+<li>
+		Currently this works only for gct, gxp and Genomica tab formatted files.  If you would like this to be available for other formats, pelase contact us.</li>
+<li>
+		Unlike the Preview tab, which displays the first 5000 bytes of the file, the Heatmap will load the entire file into your browser. For large files it may be slow or limited by the memory available on your computer.</li>
+<li>
+		The colors are row normalized. Provision to alter the color map or add sample annotations may come later.</li>
+<li>
+		This is implemented using the excellent <a href="http://jheatmap.github.io/jheatmap/">jheatmap</a> javascript library.</li>
+</ul>
+<h1>Sharing just got easier</h1>
+<p class="byline">Posted by Ted Liefeld on Wednesday, August 28, 2013 at 11:39AM</p>
+<br/><p class="byline">Last updated on Friday, August 30, 2013 at 11:11AM</p>
+<p>
+	When GenomeSpace was first released, to share a file (or a private tool) you needed to know your collaborator's username which often involved emailing them to ask them what it was. GenomeSpace now supports looking up other GenomeSpace users by their email address or by partial username matching. So if you have your collaborator's email address, you can now look up their username when you are</p>
+<ul>
+<li>
+		sharing a file</li>
+<li>
+		sharing a private tool</li>
+<li>
+		managing a user group</li>
+</ul>
+<p>
+	When you click on the username text field in the dialog boxes for any of the above, you will now see the 'find user' dialog appear.  Simply enter either an email address or a partial username and the GenomeSpace User Interface will find your collaborator's username for you and fill it in in the form.</p>
+<p>
+<img alt="" src="/uploaded/content_finduser.png" style="width: 800px; height: 362px;"/></p>
+<p>
+	 </p>
+<p>
+	For those of you who would prefer not to let other GenomeSpace users find you via your email address (or partial username matching) you can opt-out of being in the search results from your GenomeSpace profile dialog.  Other users will then have to know your exact username in order to share tools or files with you.</p>
+<p>
+<img alt="" src="/uploaded/content_profile2b.png" style="width: 239px; height: 159px;"/></p>
+<p>
+<img alt="" src="/uploaded/content_profile1a.png" style="width: 477px; height: 226px;"/></p>
+<p>
+	 </p>
+<h1>Private Tools - now shareable with multiple groups</h1>
+<p class="byline">Posted by Ted Liefeld on Tuesday, August 06, 2013 at 12:47PM</p>
+<br/><p class="byline">Last updated on Friday, August 09, 2013 at 08:34AM</p>
+<p>
+	The GenomeSpace team has updated the servers and GSUI to allow you to now share your 'private' tools to multiple user groups at the same time. <a href="http://www.genomespace.org/blog/2012/10/01/adding-private-tools-part-2"> Click here to see the original post about adding private tools to your GenomeSpace toolbar</a>.</p>
+<p>
+	The only change is at the bottom of the dialog where the list of groups the tool is hared to is located.  The new interface looks like this with the changed region highlighted by a red box;</p>
+<p>
+<img alt="" src="/uploaded/content_toolsdialog.png" style="width: 684px; height: 714px;"/></p>
+<p>
+	In this example, the tool is shared with the two groups 'GS-Developers' and 'Test1'.  To add a group, select its name from the '---Select a Group---' dropdown and click the 'add' button. To remove a group from the list simply click the red '<span style="color:#ff0000;"><strong>x</strong></span>' beside its name.  For either adding or removing you must also then 'Save' your changes with the 'Save' button.</p>
+<p>
+	Hopefully this will make it easier than ever to share your tools with your coworkers.</p>
+<h1>File Tagging and Search</h1>
+<p class="byline">Posted by Ted Liefeld on Wednesday, July 31, 2013 at 11:19AM</p>
+<br/><p class="byline">Last updated on Tuesday, August 06, 2013 at 10:19AM</p>
+<p>
+	We are pleased to announce that we have added the ability to 'tag' your files to GenomeSpace.  With this feature you can add any number of tags to your GenomeSpace files to provide another way to organize them or to make it easy to find all of the files belonging to a particular project.</p>
+<h3>
+	Adding Tags to a File</h3>
+<p>
+	To add a tag to a file, simply right click on a file and select 'tags' from the context menu. To add tags to many files at once, check the files in the file browser and then select Tags from the File menu.  This will open up the file tagging dialog.</p>
+<p>
+<img alt="" src="/uploaded/content_opentag1.png" style="width: 306px; height: 245px;"/>       <img alt="" src="/uploaded/content_opentag2.png" style="width: 550px; height: 251px;"/></p>
+<p>
+	Start typing the text for your tag in the field provided. </p>
+<p>
+<img alt="" src="/uploaded/content_tagdialog2.png" style="width: 500px; height: 199px;"/></p>
+<p>
+	When you hit the 'Enter' key, the tags will be created and added to the file(s). To add multiple tags at one time, simply put a comma "," at the end of each tag.</p>
+<p>
+<img alt="" src="/uploaded/content_tagdialog3.png" style="width: 500px; height: 219px;"/></p>
+<p>
+	Once you close the dialog, the tags will be displayed in your file view like this.</p>
+<p>
+<img alt="" src="/uploaded/content_tags6.png" style="width: 600px; height: 107px;"/></p>
+<h3>
+	Removing tags</h3>
+<p>
+	To remove a tag, open the file tagging dialog as before on one or more files, and click the red 'x' next to the tag name.  The tag will then be deleted from the selected files.</p>
+<h3>
+	File Search</h3>
+<p>
+	Along with the file tags, we have also added a file search capability to GenomeSpace.  To use it simply type the search term you want in the search box at the top right corner of the GenomeSpace User Interface Window. </p>
+<p>
+<img alt="" src="/uploaded/content_tags7.png" style="width: 500px; height: 226px;"/></p>
+<p>
+	Search automatically searchs for files based on the tags and the file name.  Search results are seperated between files and tools and are displayed in place of the usual directory view.  To return to the directory view click on the '<span style="color:#4b0082;">Return to file list</span>' link.</p>
+<p>
+<img alt="" src="/uploaded/content_searchresult.png" style="width: 700px; height: 259px;"/></p>
+<p>
+	Search is always case insensitive and automatically adds wildcards to the front and end of the term you typed.  So if you search for for 'FOO' you would get any files with FOO, foo, FoO etc anywhere in the filename or in a tag.  You can constrain the search to filenames and tags starting or ending with a particular string by adding a percent sign '%' at the start or end of the search string. e.g.  use '%.bai' to seach for files with the '.bai' extension or 'SFPK%' to search only for files starting with the String 'SFKP'.  Unfortunately, you cannot at the moment use the '%' wildcard in the middle of the search string.</p>
+<p>
+	Files in search results will display their path if you hover the mouse over them.  You can also go directly to the containing folders from the file context menus.</p>
+<p>
+<img alt="" src="/uploaded/content_backtoparent.png" style="width: 535px; height: 199px;"/></p>
+<p>
+	Please let us know if you have any suggestions for how to make this more useful for you and your team.</p>
+<p>
+	 </p>
+<p>
+	 </p>
+<h1>Connecting GenomeSpace to Dropbox</h1>
+<p class="byline">Posted by Ted Liefeld on Wednesday, June 19, 2013 at 09:55AM</p>
+<br/><p class="byline">Last updated on Monday, November 02, 2015 at 11:06AM</p>
+<p>
+	GenomeSpace is pleased to announce that you can now connect to your <a href="https://www.dropbox.com/">Dropbox</a> files via your GenomeSpace account, giving you an additonal option for accessing and analyzing the files you have stored in the cloud.</p>
+<p>
+	Connecting your GenomeSpace account to your Dropbox account takes just two steps:</p>
+<ol>
+<li>
+		Select <em>Connect&gt;Dropbox</em> in the menu bar and click <em>Submit</em>.</li>
+<li>
+		Tell Dropbox that GenomeSpace is allowed to access your files.</li>
+</ol>
+<p>
+	This is what these steps look like: First, select <em>Connect&gt;Dropbox</em> in the menu bar.</p>
+<p>
+<img alt="" src="/uploaded/content_connectmenu.png" style="width: 417px; height: 212px;"/></p>
+<p>
+	Next, select the privileges GenomeSpace can have in Dropbox. This can be <em>Read only</em>, but choose <em>Read and Write</em> if you want GenomeSpace to be able to send files into your Dropbox folders.</p>
+<p>
+<img alt="" src="/uploaded/content_dbdialog1.png" style="width: 800px; height: 383px;"/></p>
+<p>
+	When you click <em>Submit</em> in this dialog, a new window will open to the Dropbox site for the next step.  Note that if you have a popup blocker enabled on your browser, you have to allow this popup window to be opened.</p>
+<p>
+	If you are not already logged in to Dropbox, the Dropbox window will ask you to login.</p>
+<p>
+<img alt="" height="413" src="/uploaded/content_dblogin.png" width="600"/></p>
+<p>
+	 </p>
+<p>
+	Dropbox will then ask you to confirm that you want to allow GenomeSpace to access your Dropbox account.  Click <em>Allow</em>.</p>
+<p>
+<img alt="" height="412" src="/uploaded/content_dbconnect.png" width="600"/></p>
+<p>
+<span style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); display: inline !important; float: none;">When you allow GenomeSpace to access your Dropbox account, GenomeSpace will connect to Dropbox and create a new folder in your GenomeSpace home directory.</span></p>
+<p>
+<img alt="" src="/uploaded/content_dbconnectdone1.png" style="width: 800px; height: 368px;"/></p>
+<p>
+<img alt="" src="/uploaded/content_dbmounted.png" style="width: 628px; height: 421px;"/></p>
+<p>
+	After this, you can copy files between GenomeSpace and Dropbox and send files directly from Dropbox to any of the GenomeSpace tools. </p>
+<p>
+	If you want to disconnect Dropbox from GenomeSpace, right-click on the Dropbox folder and select <em>Disconnect</em>.</p>
+<p>
+	For information on how to connect to Amazon S3 buckets, refer to the <a href="http://www.genomespace.org/support/guides/user-guide/sections/connect-s3-bucket">Adding an Amazon S3 Bucket page of the User Guide</a>.</p>
+<div class="center">Displaying results <strong>21 - 30</strong> of <strong>58</strong> in total<br/>
+<div class="pagination"><a class="previous_page" href="/blog/page/2" rel="prev">← Previous</a> <a href="/blog/" rel="start">1</a> <a href="/blog/page/2" rel="prev">2</a> <em class="current">3</em> <a href="/blog/page/4" rel="next">4</a> <a href="/blog/page/5">5</a> <a href="/blog/page/6">6</a> <a class="next_page" href="/blog/page/4" rel="next">Next →</a></div></div>
+</td>
+</tr></table>
+</div>
+</div>
+<div id="footer">
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+	$(document).ready(function() {
+		$("a.toggle_link").click(function() {
+			var image = $(this).children("img");
+			$(image).attr("src", $(image).attr("src") == "/assets/plus.png" ? "/assets/minus.png" : "/assets/plus.png");
+		});
+	});
+
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54489169-1', 'auto');
+  ga('send', 'pageview');
+
+
+//]]>
+</script></div></body>
+</html>

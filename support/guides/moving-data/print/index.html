@@ -1,0 +1,424 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Moving Data Between Tools via GenomeSpace</title>
+<link href="/assets/site.css" media="all" rel="stylesheet" type="text/css"/>
+</head>
+<body style="background-image: none;">
+<h1>Moving Data Between Tools via GenomeSpace</h1>
+<h2>Introduction</h2>
+<p>
+	This guide is an overview of how to send data from one GenomeSpace-enabled tool to another GenomeSpace-enabled tool. This guide describes methods for moving data around using GenomeSpace, and is not meant to be comprehensive documentation for the given tools. For more information on each tool, see <a href="/support/tools">the list of GenomeSpace tools and the help links provided on each tool's page</a>.</p>
+<p>
+	If you are having problems launching certain desktop tools, which depend on the Java Network Launch Protocol (JNLP), see <a href="http://www.genomespace.org/faq#FAQ2.2" target="_self">FAQ2.2</a> for solutions. These solutions were updated February of 2015, and should take you about five minutes to incorporate. They involve adjusting your browser pop-up blocker and system's Java security exception site list.</p>
+<p>
+	 </p>
+<p style="color: rgb(51, 51, 51);">
+	For tool-specific documentation, check out the main Tool Guide:</p>
+<p style="color: rgb(51, 51, 51);">
+<strong style="font-size: 18px;"><a href="http://genomespace.org/support/guides/tool-guide">Tool Guide</a></strong></p>
+<hr/>
+<h2>Send Data from GenomeSpace to a Tool</h2>
+<p>
+<img alt="" src="/uploaded/content_content_gs_to_any_small.png?1337703619" style="width: 293px; height: 109px;"/></p>
+<p>
+	The GenomeSpace tools are analytical applications that are set up to receive data files from GenomeSpace.  (As opposed to GenomeSpace data sources, which only export data files TO GenomeSpace.)</p>
+<p>
+	 </p>
+<div>
+<h3>
+		1. Direct your file to a tool.</h3>
+</div>
+<p style="margin-left: 40px;">
+	There are several methods for sending files to a tool:</p>
+<p style="margin-left: 40px;">
+	You can left-click the file and select the tool to which you want to send it.</p>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_gsug_clickfiletosend.jpg?1339089216" style="width: 256px; height: 170px;"/></p>
+<p style="margin-left: 40px;">
+<strong>OR</strong></p>
+<p style="margin-left: 40px;">
+	You can select the file checkbox and select <em>Launch&gt;[Tool]</em>.</p>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_gsug_menutosend.jpg?1339090532" style="width: 375px; height: 154px;"/></p>
+<p style="margin-left: 40px;">
+<strong>OR</strong></p>
+<p style="margin-left: 40px;">
+	You can select the file checkbox and click the tool button.</p>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_gsug_toolbuttontosend.jpg?1339090674" style="width: 484px; height: 188px;"/></p>
+<p style="margin-left: 40px;">
+<strong>OR</strong></p>
+<p style="margin-left: 40px;">
+	You can select the file checkbox, click the triangle next to the tool, and select <em>Launch on File</em>.</p>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_gsug_toolbuttonmenutosend.jpg?1339090705" style="width: 367px; height: 173px;"/></p>
+<p style="margin-left: 40px;">
+<strong>OR</strong></p>
+<p style="margin-left: 40px;">
+	You can drag the file to the tool button.</p>
+<p>
+	 </p>
+<div>
+<h3>
+		2. Are there more files you want to send?</h3>
+</div>
+<p style="margin-left: 40px;">
+	All of these options will open a dialog box with a target field.  Drag other files you want to send to the tool to the target field.</p>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_gsug_launchmorefiles.jpg?1334693450" style="width: 350px; height: 222px;"/></p>
+<p>
+	 </p>
+<div>
+<h3>
+		3. Click <em>Launch</em>.</h3>
+</div>
+<p>
+	 </p>
+<hr/>
+<h2>Send Data from ArrayExpress to Gitools</h2>
+<p>
+<img alt="" src="/uploaded/content_array_express_new_to_gitools.png" style="width: 293px; height: 108px; "/></p>
+<div>
+<h3>
+		1. Load data from ArrayExpress to GenomeSpace.</h3>
+</div>
+<ol start="1" style="list-style-type: lower-alpha;">
+<li>
+<div class="recipe_step">
+			Open (and log into, if needed) GenomeSpace.</div>
+</li>
+<li>
+<div class="recipe_step">
+			Launch ArrayExpress from GenomeSpace by clicking the ArrayExpress icon in the toolbar.</div>
+</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_array_express_new_gsui.png" style="width: 118px; height: 100px; "/></p>
+<ol start="3" style="list-style-type: lower-alpha;">
+<li>
+<div class="recipe_step">
+			Search for ArrayExpress experiment data with gene expression data. As an example, we will search for a GEO glioblastoma dataset with the accession number GSE14805.</div>
+</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_ae_search.png" style="width: 473px; height: 65px; border-width: 1px; border-style: solid; "/></p>
+<ol start="4" style="list-style-type: lower-alpha;">
+<li>
+<div class="recipe_step">
+			Open your selected experiment by clicking the experiment accession number.</div>
+</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_ae_results.png" style="width: 253px; height: 77px; border-width: 1px; border-style: solid; "/></p>
+<ol start="5" style="list-style-type: lower-alpha;">
+<li>
+<div class="recipe_step">
+			Click the <em>Send [experiment accession] data to GenomeSpace</em> link.</div>
+</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_ae_upload_to_gs_link.png" style="width: 394px; height: 58px; border-width: 1px; border-style: solid; "/></p>
+<ol start="6" style="list-style-type: lower-alpha;">
+<li>
+<div class="recipe_step">
+			In the upload window, all of this experiment's files will be selected; you should clear the checkboxes for any files you do not want to upload to GenomeSpace. When all the experiment files you want to upload are correctly selected, click <em>Upload</em>.</div>
+</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_ae_upload_to_gs_confirm.png" style="width: 641px; height: 130px; border-width: 1px; border-style: solid; "/></p>
+<ol start="7" style="list-style-type: lower-alpha;">
+<li>
+<div class="recipe_step">
+			When all your files are uploaded to GenomeSpace, you can click the <em>follow this link to open GenomeSpace UI</em> link to go to your GenomeSpace.</div>
+</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_ae_upload_to_gs_completed.png" style="width: 641px; height: 131px; border-width: 1px; border-style: solid; "/></p>
+<div>
+<h3>
+		2. Create a GCT file from your ArrayExpress data in GenePattern.</h3>
+</div>
+<ol start="1" style="list-style-type: lower-alpha;">
+<li>
+<div class="recipe_step">
+			Launch GenePattern from GenomeSpace by clicking the GenePattern icon in the toolbar.</div>
+</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_gp_toolbar.jpg" style="width: 116px; height: 102px;"/></p>
+<ol start="2" style="list-style-type: lower-alpha;">
+<li>
+<div class="recipe_step">
+			If needed, click <em>Sign in Using GenomeSpace</em>.</div>
+</li>
+<li>
+<div class="recipe_step">
+			In the <i>Modules &amp; Pipelines</i> search box, start typing <span style="font-family:courier new,courier,monospace;">ExpressionFileCreator</span>, and click the name when it appears in the options dropdown under the box.</div>
+</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_recipe_gp_efc.jpg?1359406053" style="width: 241px; height: 73px;"/></p>
+<ol start="4" style="list-style-type: lower-alpha;">
+<li>
+<div class="recipe_step">
+			Click the <em>GenomeSpace</em> tab on the right side of the screen and navigate to the ArrayExpress data files you just saved to your GenomeSpace directory.</div>
+</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_recipe_gp_gstab.jpg?1359406153" style="width: 300px; height: 265px;"/></p>
+<ol start="5" style="list-style-type: lower-alpha;">
+<li>
+<div class="recipe_step">
+			Under the<em><span style="font-family:arial,helvetica,sans-serif;"> input file</span></em> parameter in the center pane, select the <i>Specify URL</i> radio button, then drag your expression dataset ZIP file (containing CEL files) from the <em>GenomeSpace</em> tab and drop the file into the <em>input file </em>parameter field.  In the case of our example, this is the <span style="font-family:courier new,courier,monospace;">E-GEOD-14805.raw.1.zip</span> file.</div>
+</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_recipe_gp_efc_file.jpg?1359406510" style="width: 499px; height: 129px;"/></p>
+<ol start="6" style="list-style-type: lower-alpha;">
+<li>
+<div class="recipe_step">
+			In the <em>method</em> parameter, select <em>MAS5</em>.</div>
+</li>
+<li>
+<div class="recipe_step">
+			In the <em>value to scale to</em>, enter <em>2</em>.</div>
+</li>
+<li>
+<div class="recipe_step">
+			Click <em>Run</em>.</div>
+</li>
+<li>
+<div class="recipe_step">
+			When the job finishes running, click the blue down-arrow next to the resulting GCT file and select <em>Save to GenomeSpace</em>.</div>
+</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_recipe_gp_efc_savetogs.jpg?1359406918" style="width: 350px; height: 183px;"/></p>
+<ol start="10" style="list-style-type: lower-alpha;">
+<li>
+<div class="recipe_step">
+			Select a GenomeSpace directory in which to save the file and click <em>Select</em>.</div>
+</li>
+</ol>
+<div>
+<h3>
+		3. Visualize the GCT file in Gitools.</h3>
+</div>
+<ol start="1" style="list-style-type: lower-alpha;">
+<li>
+<div class="recipe_step">
+			Select the GCT file in GenomeSpace.</div>
+</li>
+<li>
+<div class="recipe_step">
+			Click the down-arrow next to the Gitools icon in the toolbar and select <em>Launch on File</em>.</div>
+</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_recipe_gs_sendto_gitools.jpg?1359418209" style="width: 450px; height: 233px;"/></p>
+<ol start="3" style="list-style-type: lower-alpha;">
+<li>
+<div class="recipe_step">
+			In the dialog box, click <em>Launch</em>.</div>
+</li>
+<li>
+<div class="recipe_step">
+			In the Gitools heatmap, if you are using the example data or your own data file that has expression values rather than logarithmic values, you will need to adjust the properties.  Click the <em>Properties</em> tab and the <em>Cell</em> tab. Under <em>Scale,</em> set the <em>Min</em> value to 0, the <em>Mid</em> value to 150, and the <em>Max</em> value to 300. Click the box for <em>Mid</em> and select black as the color.</div>
+</li>
+</ol>
+<p style="margin-left: 40px;">
+	This will result in a heatmap resembling the following:</p>
+<p style="margin-left: 40px;">
+<img alt="" height="515" src="/uploaded/content_recipe_git_heatmap.jpg?1359498072" width="676"/></p>
+<p>
+	 </p>
+<hr/>
+<h2>Send Data from Galaxy to IGV</h2>
+<p>
+<img alt="" src="/uploaded/content_galaxy_to_igv_small.png" style="width: 293px; height: 109px;"/></p>
+<p>
+	If GenomeSpace does not know how to convert a file you are sending, it will display the <img alt="" src="/uploaded/content_incomp_file_icon.jpg" style="width: 16px; height: 22px;"/> icon next to the file name. You can still send the file, but the receiving tool may not be able to accept it.</p>
+<div>
+<h3>
+		1. Send your file from Galaxy to GenomeSpace.</h3>
+</div>
+<ol start="1" style="list-style-type: lower-alpha;">
+<li>
+<div class="recipe_step">
+			In Galaxy, select <em>Send Data</em> under Tools.</div>
+</li>
+<li>
+<div class="recipe_step">
+			Select <em>GenomeSpace Exporter</em> under the Send Data section.</div>
+</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_recipe_galaxysenddata.jpg?1335632490" style="width: 200px; height: 244px;"/></p>
+<ol start="3" style="list-style-type: lower-alpha;">
+<li>
+<div class="recipe_step">
+			Select the dataset you want to send in the drop-down menu.</div>
+</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_recipe_galaxypickdata.jpg?1335632671" style="width: 250px; height: 214px;"/></p>
+<ol start="4" style="list-style-type: lower-alpha;">
+<li>
+<div class="recipe_step">
+			Select the GenomeSpace directory to which you want to send the file.</div>
+</li>
+<li>
+<div class="recipe_step">
+			Name the file if you want (including the extension); otherwise, the name will be autogenerated.</div>
+</li>
+<li>
+<div class="recipe_step">
+			Click <em>Execute</em>.</div>
+</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_recipe_galaxypicktarget.jpg?1339688193" style="width: 300px; height: 365px;"/></p>
+<div>
+<h3>
+		2. Send file from GenomeSpace to IGV.</h3>
+</div>
+<ol start="1" style="list-style-type: lower-alpha;">
+<li>
+<div class="recipe_step">
+			In GenomeSpace, left-click the file you just sent from Galaxy.</div>
+</li>
+<li>
+<div class="recipe_step">
+			Select <em>IGV</em>.</div>
+</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_recipe_galaxytogstoigv.jpg?1335634346" style="width: 250px; height: 302px;"/></p>
+<ol start="3" style="list-style-type: lower-alpha;">
+<li>
+<div class="recipe_step">
+			Click <em>Launch</em>.</div>
+</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_recipe_launchigv.jpg?1335634380" style="width: 300px; height: 191px;"/></p>
+<hr/>
+<h2>Send Data from GenePattern to IGV</h2>
+<p>
+<img alt="" src="/uploaded/content_gp_to_igv_small.png" style="width: 293px; height: 109px;"/></p>
+<p>
+	If GenomeSpace does not know how to convert a file you are sending, it will display the <img alt="" src="/uploaded/content_incomp_file_icon.jpg" style="width: 16px; height: 22px;"/> icon next to the file name. You can still send the file, but the receiving tool may not be able to accept it.</p>
+<div>
+<h3>
+		1. Send your file from GenePattern to GenomeSpace.</h3>
+</div>
+<ol start="1" style="list-style-type: lower-alpha;">
+<li>
+<div class="recipe_step">
+			In GenePattern, click the down arrow next to the job results file you want to send to IGV.</div>
+</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_recipe_gpdownarrow.jpg?1339531628" style="width: 266px; height: 90px;"/></p>
+<ol start="2" style="list-style-type: lower-alpha;">
+<li>
+<div class="recipe_step">
+			In the menu within the drop-down menu, select the location in your GenomeSpace directory structure in which you'd like to save the file and click <em>Save</em>.</div>
+</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_recipe_gpsaveto.jpg?1339531641" style="width: 283px; height: 178px;"/></p>
+<div>
+<h3>
+		2. Send your file from <strong>GenomeSpace</strong> to IGV.</h3>
+</div>
+<ol start="1" style="list-style-type: lower-alpha;">
+<li>
+<div class="recipe_step">
+			Left-click on the file you just uploaded to GenomeSpaceand select<em> IGV.</em></div>
+</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_recipe_sendtoigv.jpg?1339532279" style="width: 275px; height: 333px;"/></p>
+<ol start="2" style="list-style-type: lower-alpha;">
+<li>
+<div class="recipe_step">
+			In the dialog box that appears, click <em>Launch</em>.</div>
+</li>
+</ol>
+<p style="margin-left: 40px;">
+<em><img alt="IGV launch dialog" src="/uploaded/content_igvlaunch.png?1335560084" style="width: 409px; height: 260px;"/></em><br/>
+	 </p>
+<hr/>
+<h2>Send Data from Genomica to GenePattern</h2>
+<p>
+<img alt="" src="/uploaded/content_genomica_to_gp_small.png" style="width: 293px; height: 109px;"/></p>
+<p>
+	If GenomeSpace does not know how to convert a file you are sending, it will display the <img alt="" src="/uploaded/content_incomp_file_icon.jpg" style="width: 16px; height: 22px;"/> icon next to the file name. You can still send the file, but the receiving tool may not be able to accept it.</p>
+<div>
+<h3>
+		1. Send your file from Genomica to GenomeSpace.</h3>
+</div>
+<ol start="1" style="list-style-type: lower-alpha;">
+<li>
+<div class="recipe_step">
+			Select <em>GenomeSpace&gt;Save to GenomeSpace</em>.</div>
+</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_recipe_genomicasavetogs.jpg?1335816967" style="width: 375px; height: 274px;"/></p>
+<ol start="2" style="list-style-type: lower-alpha;">
+<li>
+<div class="recipe_step">
+			In the file browser, select the GenomeSpace directory where you want the data file to be saved, enter a file name, and click <em>Save As</em>.</div>
+</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_recipe_genomicabrowsesavegs.jpg?1335817002" style="width: 400px; height: 355px;"/></p>
+<div>
+<h3>
+		2. Send file from GenomeSpace to GenePattern.</h3>
+</div>
+<ol start="1" style="list-style-type: lower-alpha;">
+<li>
+<div class="recipe_step">
+			Left-click on the file you just uploaded from Genomica and select <em>GenePattern</em>. </div>
+</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_recipe_gs_sendto_gp.jpg?1335900680" style="width: 225px; height: 173px;"/></p>
+<ol start="2" style="list-style-type: lower-alpha;">
+<li>
+<div class="recipe_step">
+			In the dialog box, click <em>Launch</em>.</div>
+</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_recipe_launchtogp.jpg?1335900717" style="width: 350px; height: 220px;"/></p>
+<div>
+<h3>
+		3. Save the file in GenePattern.</h3>
+</div>
+<ol start="1" style="list-style-type: lower-alpha;">
+<li>
+<div class="recipe_step">
+			Click <em>Sign in Using GenomeSpace</em>.</div>
+</li>
+<li>
+<div class="recipe_step">
+			You will be presented with the choice <em>Save a Copy: Upload Directory.</em></div>
+</li>
+<li>
+<div class="recipe_step">
+			Click <em>Submit</em>.  You can now use this file from your GenePattern <em>Uploads</em> tab.</div>
+<ul>
+<li>
+				OR, where it says <em>Send to Module as</em>, you can select a module from the drop-down menu and click <em>Submit</em>.  This will add the file to the appropriate parameter field in the selected module.<br/>
+				 </li>
+</ul>
+</li>
+</ol>
+<hr/>
+</body>
+</html>

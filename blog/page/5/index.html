@@ -1,0 +1,412 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>GenomeSpace: 
+	  	Blog
+  </title>
+<link href="/assets/site.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/demo_table_jui.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/jquery-ui-1.8.4.custom.css" media="screen" rel="stylesheet" type="text/css"/>
+<script src="/assets/application.js" type="text/javascript"></script>
+<link href="/assets/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+<meta content="authenticity_token" name="csrf-param"/>
+<meta content="VOA0F0zo+50+lyH/3zWX8fTDXx/VR9NhnYW6jQqsdu8=" name="csrf-token"/>
+</head>
+<body>
+<div id="page_wrapper">
+<div id="page_content">
+<div id="logo"><a href="/"><img alt="Gslogo" src="/assets/gslogo.png"/></a></div>
+<div id="login_menu"><a href="https://gsui.genomespace.org/jsui/gsui.html">User Login</a>
+</div>
+<ul id="nav">
+<li id="what-is-genomespace"><a href="/what-is-genomespace">What is GenomeSpace?</a>
+</li>
+<li id="tools"><a href="/support/tools">Tools</a>
+</li>
+<li id="recipes"><a href="http://recipes.genomespace.org">Recipes</a></li>
+<li id="documentation"><a href="/documentation">Documentation</a>
+<ul>
+<li><a href="/support/guides/user-guide">User Guide</a>
+<p>Read the detailed guide to the user interface</p>
+</li>
+<li><a href="/support/guides/tool-guide">Tool Guide</a>
+<p>Learn how to access GenomeSpace functionality for each Tool</p>
+</li>
+<li><a href="/faq">FAQ</a>
+<p>See answers to frequently asked questions</p>
+</li>
+<li><a href="/presentations-and-videos">Presentations and Videos</a>
+<p>Access talks by the GenomeSpace community</p>
+</li>
+<li><a href="/support/guides/end-to-end-analyses">End-to-End Analyses</a>
+<p>Provides description for end-to-end analyses.</p>
+</li>
+</ul>
+</li>
+<li id="developers"><a href="/for-developers">Developers</a>
+<ul>
+<li><a href="/what-can-genomespace-do-for-tool-developers">What Can GenomeSpace Do For Tool Developers?</a>
+<p></p>
+</li>
+<li><a href="/adopters">Technical Documentation</a>
+<p></p>
+</li>
+<li><a href="/source-code">Source Code and Distributions</a>
+<p></p>
+</li>
+<li><a href="/developer-support-and-feedback">Developer Support and Feedback</a>
+<p></p>
+</li>
+</ul>
+</li>
+<li id="support"><a href="/support">Support</a>
+</li>
+<li id="about"><a href="/about">About</a>
+</li>
+<li class="search">
+<div id="search_box">
+<form accept-charset="UTF-8" action="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"/></div>
+<input class="search" id="search" name="search" type="text"/>
+<input class="searchBtn" type="submit"/>
+</form> </div>
+</li>
+</ul>
+<script type="text/javascript">
+//<![CDATA[
+
+		// grab page category and use to highlight correct menu item.  if none present, parse url to find where the user is.
+		var category = "";
+		if ( !category ){
+			url_parts = $(location).attr('pathname').split("/");
+			url_string = url_parts[1] + "/" + url_parts[2]
+			if (url_string == "support/tools"){
+				category = "tools"
+			}
+			else if (url_string == "support/guides"){
+				url_parts[3] == "recipes" ? category = "recipes" : category = "documentation"
+			}
+			else if (url_parts[1] == "genomespace-recipes")
+			{
+                category = "gsrecipes"
+            }
+			else if (url_string == "support/api"){
+				category = "developers"
+			}
+			else if ((url_string == "register/undefined") || (url_string == "request_invite/undefined")) {
+				category = "what-is-genomespace"
+			}
+			else if (url_string == "/undefined") {
+				category = ""
+			}
+			else if (url_string == "support/undefined") {
+				category = "support"
+			}
+		}
+		$("#" + category).addClass("current");
+
+
+//]]>
+</script>
+<div id="content_panel">
+<table width="100%"><tr>
+<td id="main_content">
+<div id="notice"></div>
+<div id="alert"></div>
+<h1>Public Data: TCGA Breast Cancer</h1>
+<p class="byline">Posted by Ted Liefeld on Wednesday, November 07, 2012 at 02:29PM</p>
+<br/><p class="byline">Last updated on Tuesday, November 13, 2012 at 06:32AM</p>
+<p>
+	We are pleased to announce that data from the following paper have been made available on GenomeSpace: </p>
+<p>
+<a href="http://dx.doi.org/10.1038/nature11412">The Cancer Genome Atlas Network.  Comprehensive molecular portraits of human breast tumors,  <em>Nature</em>, 2012;490:61-70. [doi:10.1038/nature11412]</a></p>
+<p>
+	The GenomeSpace mirror of this dataset includes all public level 3 and level 4 data from <a href="https://tcga-data.nci.nih.gov/docs/publications/brca_2012/">https://tcga-data.nci.nih.gov/docs/publications/brca_2012/</a>. </p>
+<p>
+	You can access the data in GenomeSpace at the path <a href="https://gsui.genomespace.org/jsui/gsui.html?pathOrUrl=/Public/SharedData/Datasets/TCGA/Breast%20Cancer" style="text-decoration: underline; color: rgb(74, 142, 204); ">/Public/SharedData/Datasets/TCGA/Breast Cancer/</a>.  (This requires a GenomeSpace login. If you don't have one, it's <a href="https://identity.genomespace.org:8444/identityServer/registration.html?openId.return_to=%27https://gsui.genomespace.org/jsui/openIdClient?is_cancel=true&amp;openid.rpnonce=2012-02-28T18%3A40%3A23Z0&amp;openid.rpsig=upskiGzwmYpAQd6cBIT%2FeLXunKMWkcoD6ca17n6kgbM%3D%27" style="text-decoration: underline; color: rgb(74, 142, 204); ">easy to register</a>.)</p>
+<h3>
+	Abstract:</h3>
+<p>
+	We analyzed primary breast cancers by genomic DNA copy number arrays, DNA methylation, exome sequencing, mRNA arrays, microRNA sequencing, and reverse phase protein arrays. Our ability to integrate information across platforms provided key insights into previously-defined gene expression subtypes and demonstrated the existence of four main breast cancer classes when combining data from five platforms, each of which shows significant molecular heterogeneity. Somatic mutations in only three genes (TP53, PIK3CA and GATA3) occurred at &gt; 10% incidence across all breast cancers; however, there were numerous subtype-associated and novel gene mutations including the enrichment of specific mutations in GATA3, PIK3CA, and MAP3K1 with the Luminal A subtype. We identified two novel protein expression-defined subgroups, possibly contributed by stromal/microenvironmental elements, and integrated analyses identified specific signaling pathways dominant in each molecular subtype including a HER2/p-HER2/HER1/p-HER1 signature within the HER2-Enriched expression subtype. Comparison of Basal-like breast tumors with high-grade Serous Ovarian tumors showed many molecular commonalities, suggesting a related etiology and similar therapeutic opportunities. The biologic finding of the four main breast cancer subtypes caused by different subsets of genetic and epigenetic abnormalities raises the hypothesis that much of the clinically observable plasticity and heterogeneity occurs within, and not across, these major biologic subtypes of breast cancer.</p>
+<h1>GenomeSpace UI Changes Summary, November 2012</h1>
+<p class="byline">Posted by Ted Liefeld on Wednesday, November 07, 2012 at 09:08AM</p>
+<br/><p class="byline">Last updated on Friday, November 16, 2012 at 08:44AM</p>
+<p>
+	Over the last several months there have been numerous changes and updates to GenomeSpace, not all of which received their own blog posts.  Below is a summary of many of the more interesting recent changes.</p>
+<h3>
+<em>System</em> Menu Renamed <em>Manage</em></h3>
+<p>
+<img alt="" src="/uploaded/content_newui_manage.png" style="width: 294px; height: 28px;"/></p>
+<p>
+	The <em>System</em> menu has been renamed <em>Manage</em>.  New menu items have been added to the <em>Manage</em> menu to permit searching for a tool and mounting storage options external to GenomeSpace (currently your own or public Amazon S3 buckets with more options to come in the future).</p>
+<h3>
+	Tools and Data Sources Combined</h3>
+<p>
+<img alt="" src="/uploaded/content_newui_toolslider.png" style="width: 620px; height: 199px;"/></p>
+<p>
+	Formerly, the analysis tools and datasources were kept in separate lists at the top of your page.  We have changed GenomeSpace to keep these in a single list now and have added a slider to allow you to navigate between them when there are too many to fit on the screen.</p>
+<h3>
+	Drag-and-Drop Move of Multiple Files</h3>
+<p>
+<img alt="" src="/uploaded/content_newui_drag.png" style="width: 534px; height: 254px;"/></p>
+<p>
+	If you select multiple files using the checkboxes, you may now drag-and-drop to move them all to a new directory.  Previously, only the one file you were dragging would be moved, not all selected files.</p>
+<h3>
+	Launch Tools on External URLs</h3>
+<p>
+<img alt="" src="/uploaded/content_newui_drop.png" style="width: 294px; height: 262px;"/></p>
+<p>
+	You can now drag a URL from your browser and drop it onto the dropzone in the tool launch dialog to launch a GenomeSpace tool on that URL.  This allows you to launch GenomeSpace tools on URLs from any web site, not just GenomeSpace.</p>
+<h3>
+<em>Help</em> Menu Additions</h3>
+<p>
+	We have added links to the GenomeSpace support page and an email link (<em>Contact us</em>) to the <em>Help</em> menu to make it easier for you to get help with the GSUI or the GenomeSpace tools.</p>
+<h3>
+	Previous blog posts about GSUI Features</h3>
+<ul>
+<li>
+<a href="http://www.genomespace.org/blog/2012/11/02/prototype-lightweight-web-site-integration-with-genomespace">Prototype: Lightweight web site integration with GenomeSpace</a></li>
+<li>
+<a href="http://www.genomespace.org/blog/2012/11/01/new-feature-tool-tagging-and-search">New Feature: Tool tagging and search</a></li>
+<li>
+<a href="http://www.genomespace.org/blog/2012/10/19/new-feature-extracting-subsetting-columns-from-a-file">New Feature: Extracting rows and columns from a file</a></li>
+<li>
+<a href="http://www.genomespace.org/blog/2012/10/18/new-geatures-file-subsetting-and-links-to-parent-directories">New Feature: Links to parent directories</a></li>
+<li>
+<a href="http://www.genomespace.org/blog/2012/09/12/opening-the-gsui-at-a-particular-directory">Opening the GSUI at a particular directory</a></li>
+<li>
+<a href="http://www.genomespace.org/blog/2012/10/01/adding-private-tools-part-2">Adding Private Tools</a></li>
+</ul>
+<h1>Public Data: TCGA Squamous Cell Lung Cancer</h1>
+<p class="byline">Posted by Ted Liefeld on Friday, November 02, 2012 at 01:33PM</p>
+<br/><p class="byline">Last updated on Tuesday, November 06, 2012 at 02:22PM</p>
+<p>
+	We are pleased to announce that data from the following paper have been made available on GenomeSpace: <a href="http://www.nature.com/nature/journal/v489/n7417/full/nature11404.html">The Cancer Genome Atlas Research Network. Comprehensive genomic characterization of squamous cell lung cancers. <em>Nature</em>. 2012;489:519–525</a>.  </p>
+<p>
+	The GenomeSpace mirror of this dataset includes all public level 3 and level 4 data from <a href="https://tcga-data.nci.nih.gov/docs/publications/lusc_2012/" style="text-decoration: underline; color: rgb(74, 142, 204); ">https://tcga-data.nci.nih.gov/docs/publications/lusc_2012/</a>.  </p>
+<p>
+	You can access the data in GenomeSpace at the path <a href="https://gsui.genomespace.org/jsui/gsui.html?pathOrUrl=/Public/SharedData/Datasets/TCGA/Squamous%20Cell%20Lung%20Cancer" style="text-decoration: underline; color: rgb(74, 142, 204); ">/Public/SharedData/Datasets/TCGA/Squamous Cell Lung Cancer/</a>.  (This requires a GenomeSpace login.  If you don't have one, it's <a href="https://identity.genomespace.org:8444/identityServer/registration.html?openId.return_to=%27https://gsui.genomespace.org/jsui/openIdClient?is_cancel=true&amp;openid.rpnonce=2012-02-28T18%3A40%3A23Z0&amp;openid.rpsig=upskiGzwmYpAQd6cBIT%2FeLXunKMWkcoD6ca17n6kgbM%3D%27" style="text-decoration: underline; color: rgb(74, 142, 204); ">easy to register</a>.)</p>
+<h3>
+	Abstract</h3>
+<p>
+	Lung squamous cell carcinoma is a common type of lung cancer, causing approximately 400,000 deaths per year worldwide. Genomic alterations in squamous cell lung cancers have not been comprehensively characterized, and no molecularly targeted agents have been specifically developed for its treatment. As part of The Cancer Genome Atlas, we profile 178 lung squamous cell carcinomas to provide a comprehensive landscape of genomic and epigenomic alterations. We show that the tumour type is characterized by complex genomic alterations, with a mean of 360 exonic mutations, 165 genomic rearrangements, and 323 segments of copy number alteration per tumour. We find statistically recurrent mutations in 11 genes, including mutation of TP53 in nearly all specimens. Previously unreported loss-of-function mutations are seen in the HLA-A class I major histocompatibility gene. Significantly altered pathways included NFE2L2 and KEAP1 in 34%, squamous differentiation genes in 44%, phosphatidylinositol-3-OH kinase pathway genes in 47%, and CDKN2A and RB1 in 72% of tumours. We identified a potential therapeutic target in most tumours, offering new avenues of investigation for the treatment of squamous cell lung cancers.</p>
+<h1>Prototype: Lightweight web site integration with GenomeSpace</h1>
+<p class="byline">Posted by Ted Liefeld on Friday, November 02, 2012 at 12:59PM</p>
+<br/><p class="byline">Last updated on Tuesday, November 06, 2012 at 02:22PM</p>
+<p>
+	The GenomeSpace team has created a prototype interface to allow web applications to easily send files available at publicly accessible URLs to a GenomeSpace User's Home directory without the need to integrate with the CDK or otherwise directly use the API.  To find out how to use this, please see the <a href="http://www.genomespace.org/lightweight-data-source-integration-for-websites">lightweight data source integration documentation</a>. Please note that this is still a prototype and the exact details of this API may change in the future.</p>
+<h1>New Feature: Tool tagging and search<</h1>
+<p class="byline">Posted by Ted Liefeld on Thursday, November 01, 2012 at 01:30PM</p>
+<br/><p class="byline">Last updated on Friday, November 02, 2012 at 09:15AM</p>
+<p>
+	The GenomeSpace team is pleased to announce the addition of tool tagging and search to GenomeSpace.</p>
+<p>
+	These new features allow anyone in the GenomeSpace community to publicly or privately annotate tools to reflect their capabilities and use, and to search through ones own and public annotations to find tools with particular annotations, names, creators, or descriptions.</p>
+<h3>
+	Tagging a Tool</h3>
+<p>
+	To tag a tool, you start by opening the tool's drop-down in the tool bar.  Select <em>Tags</em> to view the current tags on a tool. </p>
+<p>
+<img alt="" src="/uploaded/content_tag_post1.png" style="width: 206px; height: 215px;"/></p>
+<p>
+	From this dialog box, you can add a new tag (optionally including a description) or remove a tag that you put onto a tool.  You cannot remove tags placed by other users however.</p>
+<p>
+	To add a tag in this dialog box:</p>
+<ol>
+<li>
+		Enter your tag in the <em>Tag</em> field. <strong>Note</strong>: when you begin typing the name of a new tag, it will automatically search the tool tag database for existing matches so that you can reuse tags that others have created.</li>
+</ol>
+<p style="margin-left: 40px; ">
+<img alt="" src="/uploaded/content_tag_post2.png" style="width: 800px; height: 487px;"/></p>
+<ol start="2">
+<li>
+		Optionally, enter a description of the tag.</li>
+<li>
+		Click <em>Apply Tag</em>.</li>
+</ol>
+<p>
+	To remove a tag from the tool:</p>
+<ol>
+<li>
+		Click the tag in the dialog box.</li>
+<li>
+		Click <em>Remove Tag</em>.</li>
+</ol>
+<h3>
+	Searching Tools</h3>
+<p>
+	To search through tool tags, names, or descriptions, select <em>System&gt;Search for Tools</em> from the menu bar.</p>
+<p>
+<img alt="" src="/uploaded/content_searchpost1.png" style="width: 800px; height: 232px;"/></p>
+<p>
+	Enter your search term(s) and click <em>Search Tools</em>.  All searches are case-insensitive (i.e., GENE will match to gene, Gene, geNe, etc).  </p>
+<p>
+	The search results display the tools with all their tags.  The matching search term is bolded in the tool name/description and matching tags are shown and clicking on a tag in the search results will cause a new search to be made using that tag as the search term.</p>
+<p>
+<img alt="" src="/uploaded/content_search_post2.tiff?1351859853" style="width: 800px; height: 521px;"/></p>
+<p>
+	 </p>
+<h1>New Feature: Extracting rows and columns from a file</h1>
+<p class="byline">Posted by Ted Liefeld on Friday, October 19, 2012 at 02:50PM</p>
+<br/><p class="byline">Last updated on Tuesday, October 23, 2012 at 06:26AM</p>
+<p>
+	The GenomeSpace team is pleased to announce a new GenomeSpace feature: the addition of server-side row and column extraction.</p>
+<p>
+	GenomeSpace now has server-side row and column extraction that allows you to pull a set of rows and columns out of your tab- or comma-delimited data file and save it as its own file in GenomeSpace, without having to download the original file or re-upload the resulting filtered file.  The Extract Rows and Columns dialog allows you to quickly and easily:</p>
+<ul>
+<li>
+		trim header lines from the top of a file</li>
+<li>
+		trim lines from the end of a file</li>
+<li>
+		extract selected columns from a file</li>
+<li>
+		save the subset of a GenomeSpace file as a new file</li>
+</ul>
+<p>
+	To access this feature you can either:</p>
+<ul>
+<li>
+		Right-click on a file and select <em>Extract rows/cols</em> from the pop-up menu</li>
+<li>
+		Select one file checkbox (only a single file) and then select <em>File&gt;Extract rows and columns</em> in the menu bar.</li>
+</ul>
+<p>
+	This opens a dialog, showing only the first 10 or so lines (or the first 50kb if there are a lot of columns) of the selected file.</p>
+<p>
+<img alt="" src="/uploaded/content_extractrowcols.jpg" style="width: 800px; height: 545px;"/></p>
+<p>
+	From this dialog, you can select the first row at which to start the row and column extraction (you can trim out header lines by starting at a lower row, for example) and the last row to include (leave this blank to take the rest of the file from the starting row). Then you can select columns by checking the checkbox at the top of each column.  If you want to select many columns at once, you can use the 'toggle all columns' link which will check any unchecked columns and uncheck any that were previously checked. The rows/columns that have been selected to go to the new file are highlighted in light blue, while those that will be cut out are displayed as grey text on a white background.</p>
+<p>
+	Finally, decide on the file name you want to use for the new subset file.  The default will be to add <span style="font-family:courier new,courier,monospace;">.slice</span> to the end of the source filename, leaving the file extension intact.  For example, if your source filename is <span style="font-family:courier new,courier,monospace;">myfile.gct</span>, the default extracted file name will be <span style="font-family:courier new,courier,monospace;">myfile.slice.gct</span>.  Note that if you are removing header lines you may also want to change the file extension to match the new format.</p>
+<p>
+	Click <em>Save</em> to create a new GenomeSpace file in the same GenomeSpace directory as the original file.</p>
+<h1>New Feature: Links to parent directories</h1>
+<p class="byline">Posted by Ted Liefeld on Thursday, October 18, 2012 at 09:57AM</p>
+<br/><p class="byline">Last updated on Friday, October 19, 2012 at 03:19PM</p>
+<p>
+	The GenomeSpace team is pleased to announce a new GenomeSpace feature: the addition of parent directory links.</p>
+<p>
+	We have added breadcrumb links to the top of the right pane of GenomeSpace to make it easier to navigate around directories in your cloud-based file system.  Clicking on any of the links in the breadcrumbs will open that directory in GenomeSpace. </p>
+<p>
+<img alt="" src="/uploaded/content_parentlinks.gif?1350571360"/></p>
+<p>
+	When you are at the top level of the directory tree (i.e.,<em> /Home</em>), the links are not present since it is not possible for you to navigate any higher in the directory system.</p>
+<p>
+	 </p>
+<h1>New Tool: geWorkbench</h1>
+<p class="byline">Posted by Ted Liefeld on Friday, October 05, 2012 at 07:42AM</p>
+<br/><p class="byline">Last updated on Tuesday, December 11, 2018 at 01:12PM</p>
+<p>
+	GenomeSpace is proud to announce the addition of another new tool to the GenomeSpace tool bar: <b style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); "><a href="http://wiki.c2b2.columbia.edu/workbench/index.php/Home" style="color: rgb(17, 85, 204); " target="_blank">geWorkbench</a>,</b><span style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); display: inline !important; float: none; "><span class="Apple-converted-space"> </span>the bioinformatics platform of Columbia University’s<span class="Apple-converted-space"> </span></span><a href="http://magnet.c2b2.columbia.edu/" style="color: rgb(17, 85, 204); font-family: arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); " target="_blank">National Center for the Multiscale Analysis of Genomic and Cellular Networks</a><span style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); display: inline !important; float: none; ">.</span></p>
+<p>
+<b>geWorkbench</b> (<u>ge</u>nomics <u>Workbench</u>) is a Java-based open-source platform for integrated genomics. Using a component architecture, it allows individually developed plug-ins to be configured into complex bioinformatic applications. At present there are more than 70 available <a href="http://wiki.c2b2.columbia.edu/workbench/index.php/Plugins" title="Plugins">plug-ins</a> supporting the visualization and analysis of gene expression and sequence data.</p>
+<p>
+	You should see geWorkbench appear in your tool bar the next time you login to the <a href="https://gsui.genomespace.org/jsui/gsui.html">GenomeSpace User Interface</a> (GSUI) or refresh the page.</p>
+<p>
+	Please note that since <strong>geWorkbench</strong> is a large application, the first time you launch it you will need to download<a href="http://wiki.c2b2.columbia.edu/workbench/index.php/Download_and_Installation"> geWorkbench</a>.  A link will be provided when you launch geWorkbench from GenomeSpace.</p>
+<h1>Adding Private Tools: Part 2</h1>
+<p class="byline">Posted by Ted Liefeld on Monday, October 01, 2012 at 09:42AM</p>
+<br/><p class="byline">Last updated on Wednesday, October 03, 2012 at 10:53AM</p>
+<p>
+	About a month ago, we <a href="http://www.genomespace.org/blog/2012/08/27/adding-private-tools">posted</a> that GenomeSpace had added the ability to let you put your own tools into the tool bar so that you could use your local instance of GenePattern, Galaxy, or any other GenomeSpace enabled tool.  It has now gotten easier to add your tools into GenomeSpace with the release of the <em>Manage Private Tools</em> dialog.</p>
+<p>
+	To add a tool to your toolbar, first, make sure it is <a href="http://www.genomespace.org/support/api/genomespace-enablement-of-tools">GenomeSpace enabled</a>.</p>
+<p>
+	Once the tool is ready, start at the <em>System</em> menu and select <em>Manage Private Tools</em>.</p>
+<p>
+<img alt="" height="411" src="/uploaded/content_privtools1.png" width="793"/></p>
+<p>
+	This will open up the list of private tools that you have available.  Most people will start with an empty list like this (below).  Click <em>Add new</em> to start the process of adding a new tool.</p>
+<p>
+<img alt="" src="/uploaded/content_addnew.jpg" style="width: 382px; height: 172px;"/></p>
+<p>
+	This will present you with the dialog for adding your tool to the tool bar.</p>
+<p>
+<img alt="" src="/uploaded/content_privtools3.png" style="width: 800px; height: 649px;"/></p>
+<p>
+	As we discussed in the <a href="http://www.genomespace.org/blog/2012/08/27/adding-private-tools">earlier post</a>, you now need to enter the information about the tool that you are adding.  Here you will need to enter:</p>
+<ul>
+<li>
+		Name</li>
+<li>
+		(optional) Description</li>
+<li>
+		Tool Provider, that is, the group or institution that developed the tool</li>
+<li>
+		URL for launching the tool (Base URL)</li>
+<li>
+		(optional) Help URL</li>
+<li>
+		The parameter used to send files from GenomeSpace to the tool
+		<ul>
+<li>
+				(optional) The file formats that the tool natively accepts.  Files in these formats will be sent directly to the tool and GenomeSpace will not try to convert them.  If another format is selected and there is a conversion to one of the formats selected here, GenomeSpace will try to automatically convert it when a file is sent to your tool.</li>
+</ul>
+</li>
+<li>
+		(optional)The tool icon
+		<ul>
+<li>
+				A default icon (as shown above) will be used if not icon is uploaded.</li>
+</ul>
+</li>
+<li>
+		(optional) Sharing
+		<ul>
+<li>
+				Sharing of tools uses the same user groups as the sharing of files with one exception: you may not share to public.  If you have a tool you would like to make available to all members of the GenomeSpace community, please contact the development team at gs-help@broadinstitute.org.</li>
+</ul>
+</li>
+</ul>
+<p>
+	Help about what to use in each of the fields is available if you click the help icons (blue question marks) at the right side of the dialog.  A completed tool information dialog (with the help showing) will look something like this:</p>
+<p>
+<img alt="" src="/uploaded/content_privtools5.png" style="width: 800px; height: 613px;"/></p>
+<p>
+	That's it!  Once your tool has been added, you should be able to launch it from GenomeSpace.</p>
+<h1>Public Data: A differentiation map of hematopoiesis.</h1>
+<p class="byline">Posted by Ted Liefeld on Monday, October 01, 2012 at 08:24AM</p>
+<p>
+	We are pleased to announce that the data from the paper, <a href="http://www.ncbi.nlm.nih.gov/pubmed/21241896">Densely Interconnected Transcriptional Circuits Control Cell States in Human Hematopoiesis</a>, Novershtern et al, <em>Cell</em>, Volume 144, Issue 2, 296-309, 2011, has been made available on GenomeSpace.  You can access the data in GenomeSpace at the path <a href="https://gsui.genomespace.org/jsui/gsui.html?pathOrUrl=https://dm.genomespace.org/datamanager/v1.0/file/Home/Public/SharedData/Datasets/DMap">/Public/SharedData/Datasets/DMap</a>.</p>
+<h3>
+	Abstract</h3>
+<p>
+	Though many individual transcription factors are known to regulate hematopoietic differentiation, major aspects of the global architecture of hematopoiesis remain unknown. Here, we profiled gene expression in 38 distinct purified populations of human hematopoietic cells and used probabilistic models of gene expression and analysis of cis-elements in gene promoters to decipher the general organization of their regulatory circuitry. We identified modules of highly coexpressed genes, some of which are restricted to a single lineage but most of which are expressed at variable levels across multiple lineages. We found densely interconnected cis-regulatory circuits and a large number of transcription factors that are differentially expressed across hematopoietic states. These findings suggest a more complex regulatory system for hematopoiesis than previously assumed.</p>
+<div class="center">Displaying results <strong>41 - 50</strong> of <strong>58</strong> in total<br/>
+<div class="pagination"><a class="previous_page" href="/blog/page/4" rel="prev">← Previous</a> <a href="/blog/" rel="start">1</a> <a href="/blog/page/2">2</a> <a href="/blog/page/3">3</a> <a href="/blog/page/4" rel="prev">4</a> <em class="current">5</em> <a href="/blog/page/6" rel="next">6</a> <a class="next_page" href="/blog/page/6" rel="next">Next →</a></div></div>
+</td>
+</tr></table>
+</div>
+</div>
+<div id="footer">
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+	$(document).ready(function() {
+		$("a.toggle_link").click(function() {
+			var image = $(this).children("img");
+			$(image).attr("src", $(image).attr("src") == "/assets/plus.png" ? "/assets/minus.png" : "/assets/plus.png");
+		});
+	});
+
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54489169-1', 'auto');
+  ga('send', 'pageview');
+
+
+//]]>
+</script></div></body>
+</html>

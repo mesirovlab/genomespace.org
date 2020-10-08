@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>GenomeSpace: 
+	  	News
+  </title>
+<link href="/assets/site.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/demo_table_jui.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/jquery-ui-1.8.4.custom.css" media="screen" rel="stylesheet" type="text/css"/>
+<script src="/assets/application.js" type="text/javascript"></script>
+<link href="/assets/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+<meta content="authenticity_token" name="csrf-param"/>
+<meta content="kV6bT712w3ZUz8F/ZkZibW1ZcOMQUgUZuhfHjjExPTA=" name="csrf-token"/>
+</head>
+<body>
+<div id="page_wrapper">
+<div id="page_content">
+<div id="logo"><a href="/"><img alt="Gslogo" src="/assets/gslogo.png"/></a></div>
+<div id="login_menu"><a href="https://gsui.genomespace.org/jsui/gsui.html">User Login</a>
+</div>
+<ul id="nav">
+<li id="what-is-genomespace"><a href="/what-is-genomespace">What is GenomeSpace?</a>
+</li>
+<li id="tools"><a href="/support/tools">Tools</a>
+</li>
+<li id="recipes"><a href="http://recipes.genomespace.org">Recipes</a></li>
+<li id="documentation"><a href="/documentation">Documentation</a>
+<ul>
+<li><a href="/support/guides/user-guide">User Guide</a>
+<p>Read the detailed guide to the user interface</p>
+</li>
+<li><a href="/support/guides/tool-guide">Tool Guide</a>
+<p>Learn how to access GenomeSpace functionality for each Tool</p>
+</li>
+<li><a href="/faq">FAQ</a>
+<p>See answers to frequently asked questions</p>
+</li>
+<li><a href="/presentations-and-videos">Presentations and Videos</a>
+<p>Access talks by the GenomeSpace community</p>
+</li>
+<li><a href="/support/guides/end-to-end-analyses">End-to-End Analyses</a>
+<p>Provides description for end-to-end analyses.</p>
+</li>
+</ul>
+</li>
+<li id="developers"><a href="/for-developers">Developers</a>
+<ul>
+<li><a href="/what-can-genomespace-do-for-tool-developers">What Can GenomeSpace Do For Tool Developers?</a>
+<p></p>
+</li>
+<li><a href="/adopters">Technical Documentation</a>
+<p></p>
+</li>
+<li><a href="/source-code">Source Code and Distributions</a>
+<p></p>
+</li>
+<li><a href="/developer-support-and-feedback">Developer Support and Feedback</a>
+<p></p>
+</li>
+</ul>
+</li>
+<li id="support"><a href="/support">Support</a>
+</li>
+<li id="about"><a href="/about">About</a>
+</li>
+<li class="search">
+<div id="search_box">
+<form accept-charset="UTF-8" action="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"/></div>
+<input class="search" id="search" name="search" type="text"/>
+<input class="searchBtn" type="submit"/>
+</form> </div>
+</li>
+</ul>
+<script type="text/javascript">
+//<![CDATA[
+
+		// grab page category and use to highlight correct menu item.  if none present, parse url to find where the user is.
+		var category = "";
+		if ( !category ){
+			url_parts = $(location).attr('pathname').split("/");
+			url_string = url_parts[1] + "/" + url_parts[2]
+			if (url_string == "support/tools"){
+				category = "tools"
+			}
+			else if (url_string == "support/guides"){
+				url_parts[3] == "recipes" ? category = "recipes" : category = "documentation"
+			}
+			else if (url_parts[1] == "genomespace-recipes")
+			{
+                category = "gsrecipes"
+            }
+			else if (url_string == "support/api"){
+				category = "developers"
+			}
+			else if ((url_string == "register/undefined") || (url_string == "request_invite/undefined")) {
+				category = "what-is-genomespace"
+			}
+			else if (url_string == "/undefined") {
+				category = ""
+			}
+			else if (url_string == "support/undefined") {
+				category = "support"
+			}
+		}
+		$("#" + category).addClass("current");
+
+
+//]]>
+</script>
+<div id="content_panel">
+<table width="100%"><tr>
+<td id="main_content">
+<div id="notice"></div>
+<div id="alert"></div>
+<h1>GenomeSpace at the 2nd CEGS Computational Workshop</h1>
+<p>
+	Find out more about GenomeSpace  and GenePattern at the at the <a href="http://www.broadinstitute.org/collaboration/cegs/outreach_workshop">Center for Cell Circuits Computational Genomics Workshop</a>, September 22 &amp; 23, 2014 at the Broad Institute. Look for us on day 2, Tuesday September 23rd for hands-on training.</p>
+<h1>GenomeSpace at ISMB2014, Boston</h1>
+<p>
+	Find out more about GenomeSpace at the <a href="http://www.iscb.org/ismb2014">2014 Intelligent Systems for Molecular Biology (ISMB)</a> meeting in Boston, July 11-15. Look for us in the Technology Track (room 301)  on Tuesday, July 15 at 2:30 PM, and contact us if you want to meet to discuss how you can use GenomeSpace can help you.</p>
+<h1>GenomeSpace at AACR, San Diego</h1>
+<p>
+	Find out more about GenomeSpace at the <a href="http://www.aacr.org/Pages/Home.aspx">2014 Annual Americal Association for Cancer Research</a> meeting in San Diego, April 4-9. Look for us in Poster Section 24 on Wednesday, April 9 from 8:00 AM to 12:00 PM, and contact us if you want to meet to discuss how you can use GenomeSpace can help you.</p>
+<h1>GenomeSpace Website offline Oct 17-20</h1>
+<p>
+	Due to server maintenance at the Broad Institute, the GenomeSpace website(www.genomespace.org) will be unavailable from Thursday Oct 17 through Saturday October 20th 2013.  During this time we expect that the GenomeSpace user interface will remain available though some tools hosted at the Broad Institue will not be.</p>
+<p>
+	Summary of expected outages:</p>
+<ul>
+<li>
+		This site (www.genomespace.org)</li>
+<li>
+		The GenomeSpace Recipes and help links in the GenomeSpace user interface</li>
+<li>
+		GenePattern</li>
+<li>
+		IGV</li>
+<li>
+		MSigDB tools</li>
+</ul>
+<h1>GenomeSpace at the Network Biology Symposium &amp; Cytoscape workshop</h1>
+<p>
+	 GenomeSpace will be featured at the Network Biology Symposium &amp; Cytoscape workshop in Paris, October 9 - 10:</p>
+<ul>
+<li>
+<strong>GenomeSpace presentation, Thursday, October 10, 12:00-12:20</strong>. Hear about the new developments in GenomeSpace, including support for more cloud-based storage systems, new tools added to the GenomeSpace community, and new recipes for creating powerful integrative analyses using GenomeSpace-enabled tools.</li>
+<br/>
+<li>
+		View the <strong>GenomeSpace poster</strong>, number 1, at the poster sessions on Wednesday, October 9 or Thursday October 10th.</li>
+</ul>
+<h1>GenomeSpace at ISMB 2013 Berlin</h1>
+<p>
+	GenomeSpace will be featured at a number of events at <a href="http://www.iscb.org/ismbeccb2013">ISMB 2013</a> in Berlin, July 19 - 22:</p>
+<ul>
+<li>
+<strong>Technology Track</strong> <strong>presentation, Monday, July 21, 2:10 in Hall 10</strong>. Hear about the new developments in GenomeSpace, including support for more cloud-based storage systems, new tools added to the GenomeSpace community, and new recipes for creating powerful integrative analyses using GenomeSpace-enabled tools.<br/>
+		 </li>
+<li>
+		View the <strong>GenomeSpace poster</strong>, number B26, at the poster session on Tuesday, July 23, from 12:25 p.m. to 2:10 p.m.</li>
+</ul>
+<h1>GenomeSpace at BOSC-Broad Interoperability Hackathon</h1>
+<p>
+	GenomeSpace will be one of the featured tools at the BOSC/Broad interoperability hackathon on Sunday and Monday, April 7 and 8 at the <a class="external text" href="http://www.broadinstitute.org/" rel="nofollow" style="text-decoration: none; color: rgb(51, 102, 187); background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFZJREFUeF59z4EJADEIQ1F36k7u5E7ZKXeUQPACJ3wK7UNokVxVk9kHnQH7bY9hbDyDhNXgjpRLqFlo4M2GgfyJHhjq8V4agfrgPQX3JtJQGbofmCHgA/nAKks+JAjFAAAAAElFTkSuQmCC); background-attachment: initial; background-origin: initial; background-clip: initial; background-color: initial; padding-right: 13px; background-position: 100% 50%; background-repeat: no-repeat no-repeat; ">Broad Institute</a>. It occurs just prior to <a class="external text" href="http://www.bio-itworldexpo.com/" rel="nofollow" style="text-decoration: none; color: rgb(51, 102, 187); background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFZJREFUeF59z4EJADEIQ1F36k7u5E7ZKXeUQPACJ3wK7UNokVxVk9kHnQH7bY9hbDyDhNXgjpRLqFlo4M2GgfyJHhjq8V4agfrgPQX3JtJQGbofmCHgA/nAKks+JAjFAAAAAElFTkSuQmCC); background-attachment: initial; background-origin: initial; background-clip: initial; background-color: initial; padding-right: 13px; background-position: 100% 50%; background-repeat: no-repeat no-repeat; ">Bio-IT World</a> in Boston and is a warm up event for <a href="http://www.open-bio.org/wiki/BOSC_2013" style="text-decoration: none; color: rgb(6, 69, 173); background-image: none; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: initial; background-position: initial initial; background-repeat: initial initial; " title="BOSC 2013">BOSC 2013</a> occurring July 19-20th in Berlin. The goal of the hackathon will be developing open source tools to help enhance bioinformatics interoperability. See<a href="http://www.broadinstitute.org/events/interoperability-hackathon-2013/home"> http://www.broadinstitute.org/events/interoperability-hackathon-2013/home</a> for more information as the event approaches.</p>
+<h1>GenomeSpace at the 9th annual Cytoscape Workshop</h1>
+<p>
+	GenomeSpace will be presenting at the <strong><a href="http://cytoscape.eventbrite.com/">9th annual Cytoscape workshop</a></strong> at the <a href="http://gladstoneinstitutes.org/">Gladstone Institute </a>in San Francisco on December 14th during the "<em><strong>Cytoscape Plugin and App Expo</strong></em>" section on Friday afternoon.</p>
+<h1>GenomeSpace moved to GenePattern's production servers</h1>
+<p>
+	We have transitioned the GenePattern instance used by GenomeSpace to the main GenePattern server at <a href="http://genepattern.broadinstitute.org/gp">http://genepattern.broadinstitute.org/gp</a> effective immediately.  Up to now GenomeSpace has been pointed to a test instance at <a href="http://gpami.broadinstitute.org:8080/gp/">http://gpami.broadinstitute.org:8080/gp/</a>. We recommend that you save your data from the GenePattern Test server to GenomeSpace by logging in directly from <a href="http://gpami.broadinstitute.org:8080/gp/">this link</a>.</p>
+<p>
+	On the public GenePattern server you will need to associate your GenomeSpace credentials to your public GenePattern account or create a new Genepattern account if you do not already have one on that server.</p>
+<p>
+	Data left on the GenePattern test server after this time will be subject to Genepattern's default retention policy (expiration after 10 calendar days) and will remain available for a short time at the test URL, though this will not be launchable from GenomeSpace.</p>
+<h1>GenomeSpace at FGED</h1>
+<p>
+<span style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); display: inline !important; float: none;">GenomeSpace will be featured in a talk on "Integrative Genomics Tools" at the FGED 13 meeting in Toronto on Tuesday, October 23. Hear the update on new GenomeSpace functionality and tools:<span class="Apple-converted-space"> </span></span><a href="http://www.microarrays.ca/fged/" style="color: rgb(17, 85, 204); font-family: arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);" target="_blank">http://www.microarrays.ca/<wbr/>fged/</a></p>
+<div class="center">Displaying results <strong>11 - 20</strong> of <strong>27</strong> in total<br/>
+<div class="pagination"><a class="previous_page" href="/news/" rel="prev start">← Previous</a> <a href="/news/" rel="prev start">1</a> <em class="current">2</em> <a href="/news/page/3" rel="next">3</a> <a class="next_page" href="/news/page/3" rel="next">Next →</a></div></div>
+</td>
+</tr></table>
+</div>
+</div>
+<div id="footer">
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+	$(document).ready(function() {
+		$("a.toggle_link").click(function() {
+			var image = $(this).children("img");
+			$(image).attr("src", $(image).attr("src") == "/assets/plus.png" ? "/assets/minus.png" : "/assets/plus.png");
+		});
+	});
+
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54489169-1', 'auto');
+  ga('send', 'pageview');
+
+
+//]]>
+</script></div></body>
+</html>

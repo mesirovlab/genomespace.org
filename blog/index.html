@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>GenomeSpace: 
+	  	Blog
+  </title>
+<link href="/assets/site.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/demo_table_jui.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/jquery-ui-1.8.4.custom.css" media="screen" rel="stylesheet" type="text/css"/>
+<script src="/assets/application.js" type="text/javascript"></script>
+<link href="/assets/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+<meta content="authenticity_token" name="csrf-param"/>
+<meta content="WowZL4DqWWwcKOWFFf2pgaPjykaJfsVhSbet2mCmfks=" name="csrf-token"/>
+</head>
+<body>
+<div id="page_wrapper">
+<div id="page_content">
+<div id="logo"><a href="/"><img alt="Gslogo" src="/assets/gslogo.png"/></a></div>
+<div id="login_menu"><a href="https://gsui.genomespace.org/jsui/gsui.html">User Login</a>
+</div>
+<ul id="nav">
+<li id="what-is-genomespace"><a href="/what-is-genomespace">What is GenomeSpace?</a>
+</li>
+<li id="tools"><a href="/support/tools">Tools</a>
+</li>
+<li id="recipes"><a href="http://recipes.genomespace.org">Recipes</a></li>
+<li id="documentation"><a href="/documentation">Documentation</a>
+<ul>
+<li><a href="/support/guides/user-guide">User Guide</a>
+<p>Read the detailed guide to the user interface</p>
+</li>
+<li><a href="/support/guides/tool-guide">Tool Guide</a>
+<p>Learn how to access GenomeSpace functionality for each Tool</p>
+</li>
+<li><a href="/faq">FAQ</a>
+<p>See answers to frequently asked questions</p>
+</li>
+<li><a href="/presentations-and-videos">Presentations and Videos</a>
+<p>Access talks by the GenomeSpace community</p>
+</li>
+<li><a href="/support/guides/end-to-end-analyses">End-to-End Analyses</a>
+<p>Provides description for end-to-end analyses.</p>
+</li>
+</ul>
+</li>
+<li id="developers"><a href="/for-developers">Developers</a>
+<ul>
+<li><a href="/what-can-genomespace-do-for-tool-developers">What Can GenomeSpace Do For Tool Developers?</a>
+<p></p>
+</li>
+<li><a href="/adopters">Technical Documentation</a>
+<p></p>
+</li>
+<li><a href="/source-code">Source Code and Distributions</a>
+<p></p>
+</li>
+<li><a href="/developer-support-and-feedback">Developer Support and Feedback</a>
+<p></p>
+</li>
+</ul>
+</li>
+<li id="support"><a href="/support">Support</a>
+</li>
+<li id="about"><a href="/about">About</a>
+</li>
+<li class="search">
+<div id="search_box">
+<form accept-charset="UTF-8" action="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"/></div>
+<input class="search" id="search" name="search" type="text"/>
+<input class="searchBtn" type="submit"/>
+</form> </div>
+</li>
+</ul>
+<script type="text/javascript">
+//<![CDATA[
+
+		// grab page category and use to highlight correct menu item.  if none present, parse url to find where the user is.
+		var category = "";
+		if ( !category ){
+			url_parts = $(location).attr('pathname').split("/");
+			url_string = url_parts[1] + "/" + url_parts[2]
+			if (url_string == "support/tools"){
+				category = "tools"
+			}
+			else if (url_string == "support/guides"){
+				url_parts[3] == "recipes" ? category = "recipes" : category = "documentation"
+			}
+			else if (url_parts[1] == "genomespace-recipes")
+			{
+                category = "gsrecipes"
+            }
+			else if (url_string == "support/api"){
+				category = "developers"
+			}
+			else if ((url_string == "register/undefined") || (url_string == "request_invite/undefined")) {
+				category = "what-is-genomespace"
+			}
+			else if (url_string == "/undefined") {
+				category = ""
+			}
+			else if (url_string == "support/undefined") {
+				category = "support"
+			}
+		}
+		$("#" + category).addClass("current");
+
+
+//]]>
+</script>
+<div id="content_panel">
+<table width="100%"><tr>
+<td id="main_content">
+<div id="notice"></div>
+<div id="alert"></div>
+<h1>GenomeSpace Orientation Webinar</h1>
+<p class="byline">Posted by Sara Garamszegi on Monday, September 12, 2016 at 10:14AM</p>
+<br/><p class="byline">Last updated on Tuesday, October 11, 2016 at 09:48AM</p>
+<p>
+	A GenomeSpace orientation webinar will be held October 24, 2016, from 2:00-3:00PM EDT (18:00-19:00 UTC/GMT).</p>
+<p>
+	In this webinar, we will walk users through the GenomeSpace User Interface (GSUI) and introduce users to the GenomeSpace Recipe Resource. We will cover what a recipe is, how to search for recipes of interest, how to use a recipe, and how to create your own recipes. As a part of this, we will be doing a live demonstration of running a recipe in GenomeSpace.</p>
+<p>
+<!--<a href="https://docs.google.com/a/broadinstitute.org/forms/d/e/1FAIpQLSewY5m3TcDZvSW3leLJHQDQT_VJlka2xcMnWkgSsWnwQXH6Dg/viewform">Click here to sign up now</a>! To see the dates of future webinars, check our <a href="http://genomespace.org/calendar">Calendar of Events</a>.</p>--></p>
+<p>
+	Space for the GenomeSpace Orientation Webinar is now filled. The webinar will be recorded and the link will be posted, for those that are unable to attend the live session. We will be hosting more orientation webinars soon, so if you missed this round, there will be another chance! Check out the <a href="http://genomespace.org/calendar">GenomeSpace Calendar of Events</a> for upcoming webinar, office hours, and other outreach events.</p>
+<h1>Webinar Recording Available</h1>
+<p class="byline">Posted by Sara Garamszegi on Wednesday, July 20, 2016 at 11:16AM</p>
+<br/><p class="byline">Last updated on Thursday, July 21, 2016 at 09:36AM</p>
+<p>
+	Thank you to those of you who joined us for our GenomeSpace recipe webinar on June 27, 2016. If you missed the webinar, don't worry! A recording of the <a href="https://www.youtube.com/watch?v=ty2OfQPYkDw">webinar</a> is available on our <a href="https://www.youtube.com/channel/UCfJ2_KaGrcmsNguNor5cgtg">YouTube channel</a>. While you're there, check out our recipe videos and other helpful guides.</p>
+<p>
+	For future reference, links to webinar recordings will be made available in the webinar event descriptions on the <a href="http://genomespace.org/calendar">GenomeSpace calendar</a>.</p>
+<h1>New Tool: FireBrowse</h1>
+<p class="byline">Posted by Michael Noble, Sam Meier, Ted Liefeld, and Sara Garamszegi on Friday, April 01, 2016 at 11:59AM</p>
+<p>
+	GenomeSpace is proud to announce the addition of a new data resource to the GenomeSpace tool catalog: <strong>FireBrowse</strong>.</p>
+<p>
+<a href="http://firebrowse.org/" target="new">FireBrowse</a> is a companion portal to the Broad Institute GDAC Firehose analysis pipeline. Developed for <a href="http://cancergenome.nih.gov/" target="new">The Cancer Genome Atlas (TCGA)</a>, and backed by a powerful compute infrastructure, programming interface, online reports and modern graphical tools, FireBrowse provides a simple yet capable means of visually and programmatically exploring one of the most comprehensive and deeply-characterized open cancer datasets in the world. FireBrowse is developed at The Broad Institute of MIT and Harvard.</p>
+<p>
+	See the <a href="http://genomespace.org/support/guides/tool-guide/sections/firebrowse-GS-capabilities" target="new">FireBrowse Tool Guide</a> to learn how to start using FireBrowse.</p>
+<h1>Webinar Recording Available</h1>
+<p class="byline">Posted by Felix Wu on Thursday, March 10, 2016 at 04:47PM</p>
+<p>
+	Thank you to those of you who joined us for our GenomeSpace webinar last week (Feb 29, 2016). If you missed the webinar, don't worry! A recording of the <a href="https://youtu.be/Q8-e0T79RR0">webinar</a> is available on our <a href="https://www.youtube.com/channel/UCfJ2_KaGrcmsNguNor5cgtg">YouTube channel</a>. While you're there, check out our recipe videos and other helpful guides.</p>
+<p>
+	For future reference, links to webinar recordings will be made available in the webinar event descriptions on the <a href="http://genomespace.org/calendar">GenomeSpace calendar</a>.</p>
+<h1>Recipe Resource Maintenance</h1>
+<p class="byline">Posted by Ted Liefeld on Wednesday, March 09, 2016 at 09:35AM</p>
+<p>
+	The GenomeSpace Recipe Resource will be unavailable on Friday March 11th from 10-11 PST while it undergoes scheduled maintenance.</p>
+<h1>GenomeSpace Orientation Webinars</h1>
+<p class="byline">Posted by Sara Garamszegi on Thursday, February 18, 2016 at 11:30AM</p>
+<br/><p class="byline">Last updated on Friday, February 26, 2016 at 01:52PM</p>
+<p>
+	The first GenomeSpace orientation webinar will be held February 29, 2016, from 2:00-3:00PM EST (19:00-20:00 UTC/GMT).</p>
+<p>
+	In this webinar, we will walk users through the GenomeSpace User Interface (GSUI) and introduce users to the GenomeSpace Recipe Resource. We will cover what a recipe is, how to search for recipes of interest, how to use a recipe, and how to create your own recipes. As a part of this, we will be doing a live demonstration of running a recipe in GenomeSpace.</p>
+<p>
+<span style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 12.8px; line-height: normal;">Space for the GenomeSpace Orientation Webinar is now filled. </span><span style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 12.8px; line-height: normal;">The webinar will be recorded and the link will be posted, for those that are unable to attend the live session. </span><span style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 12.8px; line-height: normal;">We will be hosting more orientation webinars soon, so if you missed this round, there will be another chance! Check out the <a href="http://genomespace.org/calendar">GenomeSpace Calendar of Events</a> for upcoming webinar, office hours, and other outreach events.</span></p>
+<!--<p>
+	To see the dates of future webinars, check our&nbsp;<a href="http://genomespace.org/calendar">Calendar of Events</a>.</p>-->
+<h1>Announcing the New GenomeSpace Recipe Resource</h1>
+<p class="byline">Posted by Ted Liefeld on Monday, February 01, 2016 at 01:38PM</p>
+<br/><p class="byline">Last updated on Tuesday, February 02, 2016 at 05:47PM</p>
+<p>
+	The GenomeSpace team is pleased to announce a new <a href="http://recipes.genomespace.org">GenomeSpace Recipe Resource</a> website.</p>
+<p>
+<strong>All members of the GenomeSpace community can now author</strong> and share recipes with each other. We invite you to contribute your own analysis recipes and add your comments and votes to other recipes.  The new resource also introduces a new look and an improved interface for searching for recipes.</p>
+<p>
+	Several guides describe the new resource and help you get started. Please take a look at:</p>
+<ul>
+<li>
+<a href="http://recipes.genomespace.org/page/how-to-use-the-recipe-resource-and-recipes">How to use the Recipe Resource and recipes</a></li>
+<li>
+<a href="http://recipes.genomespace.org/page/best-practices-for-creating-recipes">Best Practices for Creating Recipes</a></li>
+<li>
+<a href="http://recipes.genomespace.org/page/community-guidelines">Community Guidelines</a></li>
+</ul>
+<p>
+	 </p>
+<p>
+	 </p>
+<p>
+	 </p>
+<h1>New Format Converters in GenomeSpace</h1>
+<p class="byline">Posted by Ted Liefeld on Wednesday, March 04, 2015 at 10:13AM</p>
+<br/><p class="byline">Last updated on Friday, March 06, 2015 at 09:18AM</p>
+<p>
+	In response to user requests we have added the following three new format converters to the GenomeSpace ecosystem.</p>
+<p style="margin-left: 40px;">
+<strong>CDT to GCT</strong> converts the <a href="http://www.genomespace.org/support/guides/user-guide/sections/convert-file-formats#CDT">CDT (cluster data table)</a> output file from GenePattern's HierarchicalClustering module to GenePattern's more widely used <a href="http://www.genomespace.org/support/guides/user-guide/sections/convert-file-formats#gct">GCT</a> format. The converter preserves identifiers and expression values and removes any column or row that maps clustering tree relationships.</p>
+<p style="margin-left: 40px;">
+<strong>CDT to TAB</strong> converts the <a href="http://www.genomespace.org/support/guides/user-guide/sections/convert-file-formats#CDT">CDT</a> output file from GenePattern's HierarchicalClustering module to Genomica <a href="http://www.genomespace.org/support/guides/user-guide/sections/convert-file-formats#tab">TAB</a> format. As with the GCT conversion above, the converter preserves identifiers and expression values and removes any column or row that maps clustering tree relationships.</p>
+<p style="margin-left: 40px;">
+<strong>LST to geneset.TAB</strong> converts a Genomica <a href="http://www.genomespace.org/support/guides/user-guide/sections/convert-file-formats#LST">LST</a> file to the Genomica <a href="http://www.genomespace.org/support/guides/user-guide/sections/convert-file-formats#tab">geneset.TAB</a> format. The description column of the LST file is removed and the output file defines the LST file's column of gene symbols as a single gene set in a tab-delimited format. Define additional gene sets by manually revising the geneset.TAB file.</p>
+<p>
+	If you need additional format converters, please let us know at <a href="mailto:gs-help@broadinstitute.org?subject=new%20format%20converter">gs-help@broadinstitute.org</a>.</p>
+<p>
+	 </p>
+<h1>Cytoscape Updated to version 3.2.1</h1>
+<p class="byline">Posted by Barry Demchak, Tim Hull, Soo Hee Lee, and Ted Liefeld on Tuesday, March 03, 2015 at 10:01AM</p>
+<br/><p class="byline">Last updated on Monday, March 09, 2015 at 09:55AM</p>
+<p>
+	We are pleased to announce that <a href="http://www.cytoscape.org/">Cytoscape 3</a> in GenomeSpace has been updated to version 3.2.1. If you are already using an older version of Cytoscape 3, including the prior v3.1.1, manually upgrade to v3.2.1 using the installer at <a href="http://www.cytoscape.org/download.php">http://www.cytoscape.org/download.php</a>. Upgrade is highly recommended. Once installed, the Cytoscape 3 tool icon will launch v3.2.1 from GenomeSpace. See full details in the <a href="http://www.cytoscape.org/release_notes_3_2_1.html">Cytoscape v3.2.1 Release Notes</a>.</p>
+<p style="margin-left: 40px;">
+<strong>Performance improvements</strong> <strong>in v3.2</strong></p>
+<ul>
+<li style="margin-left: 40px;">
+		Quicker startup.</li>
+<li style="margin-left: 40px;">
+		Faster network loading, merging, and rendering.</li>
+<li style="margin-left: 40px;">
+		For developers, improved API for Tunables and Commands.</li>
+</ul>
+<p style="margin-left: 40px;">
+<strong>New features in v3.2 </strong></p>
+<ul>
+<li style="margin-left: 40px;">
+		A built-in chart editor that now supports gradients. The chart editor renders node table data into high quality vector graphics that include the standard bar, box, line, pie, heatmap, and ring charts. </li>
+<li style="margin-left: 40px;">
+		Interactive web visualization publishable as web applications.</li>
+</ul>
+<p style="margin-left: 40px;">
+<strong>System requirements</strong> <strong>for v3.2.1</strong></p>
+<ul>
+<li style="margin-left: 40px;">
+		All systems including Mac OS X 10.7 and Linux: install the latest version of Oracle Java. Cytoscape recommends Java 8 for v3.2 and v3.2.1 on all platforms, although Java 7 is still supported. Java 6 is no longer supported.</li>
+<li style="margin-left: 40px;">
+		Windows XP and newer: 64 bit is recommended although 32 bit is still supported. Override default Oracle Java 32 bit installation for the 64 bit version by following instructions given in the <a href="http://www.cytoscape.org/release_notes_3_2_1.html#system_requirements" target="_blank">v3.2.1 Release Notes</a>.</li>
+</ul>
+<h1>geWorkbench 2.6.0 released</h1>
+<p class="byline">Posted by Ted Liefeld, Kenneth Smith on Friday, January 30, 2015 at 09:50AM</p>
+<p>
+	We are pleased to announce that <a href="http://www.geworkbench.org">geWorkbench</a> has been updated to version 2.6.  In this updated version geWorkbench integration with GenomeSpace has been improved.  Also it can now support larger datasets,  has improved its use of  BLAST and  R,  and has added the Classification and Regression Tree (CART) analysis from GenePattern. Full details are available in the <a href="http://wiki.c2b2.columbia.edu/workbench/index.php/Release_Descriptions#Brief_overview_of_changes_in_geWorkbench_release_2.6.0">geWorkbench release notes</a>.</p>
+<p>
+	Note that since geWorkbench is a desktop application, launching it from GenomeSpace takes a few steps.  Clicking launch in GenomeSpace will typically download a file to your computer (launchHelper.jnlp) which you need to save and then open manually to launch the application.  This is common to all desktop applications due to browser security restrictions.  Full details of the requirements for launching geWorkbench can be found on the <a href="http://wiki.c2b2.columbia.edu/workbench/index.php/Download_and_Installation#Special_Java_Requirements_for_Specific_Components">geWorkbench wiki</a>. There is also a <a href="http://wiki.c2b2.columbia.edu/workbench/index.php/Download_and_Installation#Java_Runtime_Special_Exceptions">useful post for adding Java runtime special exceptions </a>to make launching geWorkbench easier.</p>
+<div class="center">Displaying results <strong>1 - 10</strong> of <strong>58</strong> in total<br/>
+<div class="pagination"><span class="previous_page disabled">← Previous</span> <em class="current">1</em> <a href="/blog/page/2" rel="next">2</a> <a href="/blog/page/3">3</a> <a href="/blog/page/4">4</a> <a href="/blog/page/5">5</a> <a href="/blog/page/6">6</a> <a class="next_page" href="/blog/page/2" rel="next">Next →</a></div></div>
+</td>
+</tr></table>
+</div>
+</div>
+<div id="footer">
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+	$(document).ready(function() {
+		$("a.toggle_link").click(function() {
+			var image = $(this).children("img");
+			$(image).attr("src", $(image).attr("src") == "/assets/plus.png" ? "/assets/minus.png" : "/assets/plus.png");
+		});
+	});
+
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54489169-1', 'auto');
+  ga('send', 'pageview');
+
+
+//]]>
+</script></div></body>
+</html>

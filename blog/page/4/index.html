@@ -1,0 +1,376 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>GenomeSpace: 
+	  	Blog
+  </title>
+<link href="/assets/site.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/demo_table_jui.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/jquery-ui-1.8.4.custom.css" media="screen" rel="stylesheet" type="text/css"/>
+<script src="/assets/application.js" type="text/javascript"></script>
+<link href="/assets/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+<meta content="authenticity_token" name="csrf-param"/>
+<meta content="HYlJqR6wDhj9EJah6b0C3I/pF6X4q/zQbtw/KzBeffY=" name="csrf-token"/>
+</head>
+<body>
+<div id="page_wrapper">
+<div id="page_content">
+<div id="logo"><a href="/"><img alt="Gslogo" src="/assets/gslogo.png"/></a></div>
+<div id="login_menu"><a href="https://gsui.genomespace.org/jsui/gsui.html">User Login</a>
+</div>
+<ul id="nav">
+<li id="what-is-genomespace"><a href="/what-is-genomespace">What is GenomeSpace?</a>
+</li>
+<li id="tools"><a href="/support/tools">Tools</a>
+</li>
+<li id="recipes"><a href="http://recipes.genomespace.org">Recipes</a></li>
+<li id="documentation"><a href="/documentation">Documentation</a>
+<ul>
+<li><a href="/support/guides/user-guide">User Guide</a>
+<p>Read the detailed guide to the user interface</p>
+</li>
+<li><a href="/support/guides/tool-guide">Tool Guide</a>
+<p>Learn how to access GenomeSpace functionality for each Tool</p>
+</li>
+<li><a href="/faq">FAQ</a>
+<p>See answers to frequently asked questions</p>
+</li>
+<li><a href="/presentations-and-videos">Presentations and Videos</a>
+<p>Access talks by the GenomeSpace community</p>
+</li>
+<li><a href="/support/guides/end-to-end-analyses">End-to-End Analyses</a>
+<p>Provides description for end-to-end analyses.</p>
+</li>
+</ul>
+</li>
+<li id="developers"><a href="/for-developers">Developers</a>
+<ul>
+<li><a href="/what-can-genomespace-do-for-tool-developers">What Can GenomeSpace Do For Tool Developers?</a>
+<p></p>
+</li>
+<li><a href="/adopters">Technical Documentation</a>
+<p></p>
+</li>
+<li><a href="/source-code">Source Code and Distributions</a>
+<p></p>
+</li>
+<li><a href="/developer-support-and-feedback">Developer Support and Feedback</a>
+<p></p>
+</li>
+</ul>
+</li>
+<li id="support"><a href="/support">Support</a>
+</li>
+<li id="about"><a href="/about">About</a>
+</li>
+<li class="search">
+<div id="search_box">
+<form accept-charset="UTF-8" action="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"/></div>
+<input class="search" id="search" name="search" type="text"/>
+<input class="searchBtn" type="submit"/>
+</form> </div>
+</li>
+</ul>
+<script type="text/javascript">
+//<![CDATA[
+
+		// grab page category and use to highlight correct menu item.  if none present, parse url to find where the user is.
+		var category = "";
+		if ( !category ){
+			url_parts = $(location).attr('pathname').split("/");
+			url_string = url_parts[1] + "/" + url_parts[2]
+			if (url_string == "support/tools"){
+				category = "tools"
+			}
+			else if (url_string == "support/guides"){
+				url_parts[3] == "recipes" ? category = "recipes" : category = "documentation"
+			}
+			else if (url_parts[1] == "genomespace-recipes")
+			{
+                category = "gsrecipes"
+            }
+			else if (url_string == "support/api"){
+				category = "developers"
+			}
+			else if ((url_string == "register/undefined") || (url_string == "request_invite/undefined")) {
+				category = "what-is-genomespace"
+			}
+			else if (url_string == "/undefined") {
+				category = ""
+			}
+			else if (url_string == "support/undefined") {
+				category = "support"
+			}
+		}
+		$("#" + category).addClass("current");
+
+
+//]]>
+</script>
+<div id="content_panel">
+<table width="100%"><tr>
+<td id="main_content">
+<div id="notice"></div>
+<div id="alert"></div>
+<h1>GenomeSpace UI enhancements</h1>
+<p class="byline">Posted by Ted Liefeld on Wednesday, June 19, 2013 at 09:03AM</p>
+<br/><p class="byline">Last updated on Thursday, June 20, 2013 at 01:58PM</p>
+<p>
+	This morning, we updated the GenomeSpace user interface (GSUI) with several enhancements to make it easier to use and work with your files.  The new GSUI looks like this:</p>
+<p>
+<img alt="" src="/uploaded/content_newgsui_markup.png" style="width: 800px; height: 553px; "/></p>
+<p>
+	Some of the changes and upgrades from the previous version include the following:</p>
+<ol>
+<li>
+<strong>Sortable files and directories</strong>:  You can now sort the files and directories in your GenomeSpace folders according to the header you click (Filename, Owner, Size, Last Modified).</li>
+<li>
+<strong>Larger drop targets for file upload</strong>: Dragging and dropping a file from your desktop over a folder will automatically upload the file to that folder.  If you drop it on a file, or below the list of files it will upload to the currently open folder.</li>
+<li>
+<strong>New <em>Connect</em> menu</strong>: The <em>Connect</em> menu has been added to make it easier to connect your GenomeSpace account to other cloud storage providers.</li>
+<li>
+<strong>User interface tweaks</strong>: Numerous small changes to give you more room to see and work with your files.</li>
+<li>
+<strong>Faster loading</strong>: <span style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); display: inline !important; float: none;">Various improvements to make GenomeSpace load more quickly when you log in</span>.</li>
+</ol>
+<p>
+<span style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); display: inline !important; float: none;">If you have suggestions for additional improvements, please contact us at<span class="Apple-converted-space"> </span></span>gs-help@broadinstitute.org.</p>
+<h1>Uploading Files</h1>
+<p class="byline">Posted by Judy McLaughlin on Thursday, May 02, 2013 at 03:27PM</p>
+<br/><p class="byline">Last updated on Friday, May 03, 2013 at 09:06AM</p>
+<p>
+	There are currently two methods for uploading files in GenomeSpace:</p>
+<ul>
+<li>
+<a href="http://www.genomespace.org/blog/2013/04/08/new-feature-drag-and-drop-to-copy-files-and-folders">Drag-and-drop</a> (recommended)</li>
+</ul>
+<p style="margin-left: 40px;">
+	or</p>
+<ul>
+<li>
+		the Java Uploader</li>
+</ul>
+<p>
+	In general, we <strong>recommend</strong> <strong>dragging</strong> a file from your computer and <strong>dropping</strong> it on a GenomeSpace folder. </p>
+<p>
+	However, if you are uploading <strong>files larger than 1 GB</strong>, you should use the <a href="http://www.genomespace.org/support/guides/user-guide/sections/managing-files#javauploader">Java Uploader</a>.</p>
+<p>
+	There are some known issues to be aware of:</p>
+<ul>
+<li>
+		If you are using an older browser (e.g., a Firefox version lower than 18 or a Chrome version lower than 24), it will probably not support the drag-and-drop functionality. </li>
+</ul>
+<p style="margin-left: 80px;">
+<strong>Workaround: </strong>You can either try a newer browser or use the Java Uploader.</p>
+<ul>
+<li>
+		For Chrome users: Chrome loads your files into memory during the upload process, so if you use this feature for very large files (e.g., 1GB+) the memory used by your Chrome process can become very large.</li>
+</ul>
+<p style="margin-left: 80px;">
+<strong>Workaround</strong>: For very large files, use the Java Uploader.</p>
+<ul>
+<li>
+		The Java Uploader does not work with Java 7 on Chrome on Macs. To see what version of Java you have on your Mac, try <a href="http://javatester.org/version.html">Java Tester</a>. </li>
+</ul>
+<p style="margin-left: 80px;">
+<strong>Workaround</strong>: Use Firefox.</p>
+<h1>New Features: File manipulation enhancements</h1>
+<p class="byline">Posted by Ted Liefeld on Monday, April 08, 2013 at 10:22AM</p>
+<br/><p class="byline">Last updated on Thursday, April 11, 2013 at 04:12PM</p>
+<h3>
+	New Feature: Drag and drop files to copy them</h3>
+<p>
+	Since GenomeSpace was released, you have been able to move a file or folder by using the mouse to drag and drop it into the folder you would like to move it to.  As of the latest update, you can now use this same approach to copy a file (or folder) to a new location. To copy the file/folder instead of moving it, press and hold down the CTRL, SHIFT, or ALT key on your keyboard (any one key will do) while you drop the file into its new location.</p>
+<p>
+	In addition, if you drag and drop a file or folder that you have read, but not write, access to, it will now copy the folder to the new location by default.</p>
+<p>
+	We hope that these changes will make it even easier for you to manage your GenomeSpace files and folders. Please feel free to contact us at gs-help at broadinstitute dot org if you would like to request any other changes or features.</p>
+<h3>
+	Experimental Feature: Drag files from your desktop to upload</h3>
+<p>
+	In an effort to make it even easier to upload your data to GenomeSpace, we have enabled HTML5 uploading in GenomeSpace.  What this means is that if you are using a modern browser that supports HTML5 (for example, Firefox 18 or higher, Chrome 24 or higher), you can now upload files to GenomeSpace by dragging them from your desktop and dropping them onto the folder in GenomeSpace where you would like them to be.</p>
+<p>
+	Please note that this is still an experimental feature, so there may be some rough edges.  If you happen to experience isssues, please let us know at gs-help at broadinstitute dot org and we will try to smooth them out for you.</p>
+<p>
+	One warning for users of the Chrome browser:  Chrome loads your files into memory during the upload process, so if you use this feature for very large files (e.g., 1GB+) the memory used by your Chrome process can become very large.  We suggest that for very large files, you continue to use the Java Uploader applet at this time.</p>
+<h1>New Tool: Gitools</h1>
+<p class="byline">Posted by Ted Liefeld on Tuesday, February 05, 2013 at 10:44AM</p>
+<br/><p class="byline">Last updated on Wednesday, February 06, 2013 at 04:15PM</p>
+<p>
+	GenomeSpace is proud to announce the addition of another new tool to the GenomeSpace tool bar: <a href="http://www.gitools.org/">Gitools</a>, from <a href="http://bg.upf.edu/" style="color: rgb(17, 85, 204);" target="_blank">Biomedical Genomics Group</a> at the Biomedical Research Park in Barcelona (<a href="http://www.prbb.org/" style="color: rgb(17, 85, 204);" target="_blank">PRBB</a>).</p>
+<p>
+	Gitools is an open-source tool that performs analyses and allows users to visualize data and results as interactive heatmaps that facilitate the integration of novel data with previous knowledge. Gitools can import data import from GenomeSpace, IntOGen, Biomart, Gene Ontology, and KEGG .</p>
+<h1>GenomeSpace UI Updated</h1>
+<p class="byline">Posted by Ted Liefeld on Monday, February 04, 2013 at 09:52AM</p>
+<br/><p class="byline">Last updated on Tuesday, February 05, 2013 at 10:41AM</p>
+<p>
+	The GenomeSpace User Interface (GSUI) has received some minor updates and one bug fix this morning.  To make the UI more in line with standard web applications, we have moved the menu bar to the top of the page above the toolbar.   In addition, we have fixed a bug where the GSUI failed to properly re-open a directory after it has been renamed.</p>
+<p>
+	The new GSUI now looks like this:</p>
+<p>
+<img alt="" src="/uploaded/content_jsuiupdate.png" style="width: 800px; height: 419px;"/></p>
+<p>
+	 </p>
+<h1>New Feature: Mounting Amazon AWS S3 Buckets</h1>
+<p class="byline">Posted by Ted Liefeld on Friday, November 30, 2012 at 11:07AM</p>
+<br/><p class="byline">Last updated on Monday, November 02, 2015 at 11:56AM</p>
+<p>
+	The GenomeSpace Data Manager was originally built to save the files you upload to GenomeSpace in an Amazon Simple Storage System (S3) bucket that is managed by GenomeSpace itself. However you can add additional Amazon S3 buckets to GenomeSpace that you or a third party has set up to make the file contents available to your GenomeSpace and your GenomeSpace tools. For buckets that are publicly accessible, you only need to tell GenomeSpace the name of the bucket to mount it.  However, for private buckets, or those with limited non-public accessibility, the process is more complex, requiring you to set up a sub-account and the minimal permissions in Amazon to share the bucket with GenomeSpace.  Once a bucket has been mounted in GenomeSpace, you can share it with other GenomeSpace users using the standard GenomeSpace sharing dialogs.</p>
+<p>
+	For details on how to mount a bucket into your GenomeSpace, <a href="http://genomespace.org/support/guides/user-guide/sections/connect-s3-bucket">follow the steps in the documentation</a>.</p>
+<h1>Having Trouble With Dialog Boxes in GenomeSpace?</h1>
+<p class="byline">Posted by Judy McLaughlin on Thursday, November 29, 2012 at 10:55AM</p>
+<br/><p class="byline">Last updated on Friday, November 30, 2012 at 11:03AM</p>
+<p>
+	Do you use the <a href="http://adblockplus.org/en/">AdBlock Plus</a> plugin for Firefox or Chrome?  If so, you may have noticed some issues with empty or mispositioned dialog boxes in GenomeSpace. </p>
+<p>
+	The solution:  Select <em>Tools&gt;AdBlock Plus&gt;Disable on gsui.genomespace.org</em>, then restart your browser.  You should start seeing the correct dialog boxes and functionality.</p>
+<h1>Public Data: TCGA Ovarian Cancer</h1>
+<p class="byline">Posted by Ted Liefeld on Thursday, November 29, 2012 at 07:07AM</p>
+<br/><p class="byline">Last updated on Friday, November 30, 2012 at 11:02AM</p>
+<p>
+	We are pleased to announce that data from the following paper have been made available on GenomeSpace: </p>
+<p style="margin-left: 40px;">
+	The Cancer Genome Atlas Network.  <a href="http://www.nature.com/nature/journal/v474/n7353/full/nature10166.html"><b>Integrated genomic analyses of ovarian carcinoma.</b><i> Nature. </i><b>474 </b>(7353):609-615</a>.</p>
+<p>
+	The GenomeSpace mirror of this dataset includes all public level 3 and level 4 data from <a href="https://tcga-data.nci.nih.gov/docs/publications/ov_2011/">https://tcga-data.nci.nih.gov/docs/publications/ov_2011/</a>. </p>
+<p>
+	You can access the data in GenomeSpace at the path <a href="https://gsui.genomespace.org/jsui/gsui.html?pathOrUrl=/Public/SharedData/Datasets/TCGA/Ovarian%20Cancer" style="text-decoration: underline; color: rgb(74, 142, 204); ">/Public/SharedData/Datasets/TCGA/Ovarian Cancer/</a>.  (This requires a GenomeSpace login. If you don't have one, it's <a href="https://identity.genomespace.org:8444/identityServer/registration.html?openId.return_to=%27https://gsui.genomespace.org/jsui/openIdClient?is_cancel=true&amp;openid.rpnonce=2012-02-28T18%3A40%3A23Z0&amp;openid.rpsig=upskiGzwmYpAQd6cBIT%2FeLXunKMWkcoD6ca17n6kgbM%3D%27" style="text-decoration: underline; color: rgb(74, 142, 204); ">easy to register</a>.)</p>
+<p>
+<strong>Abstract</strong><br/>
+<br/>
+	The Cancer Genome Atlas (TCGA) project has analyzed mRNA expression, miRNA expression, promoter methylation, and DNA copy number in 489 high-grade serous ovarian adenocarcinomas (HGS-OvCa) and the DNA sequences of exons from coding genes in 316 of these tumors. These results show that HGS-OvCa is characterized by TP53 mutations in almost all tumors (96%); low prevalence but statistically recurrent somatic mutations in 9 additional genes including NF1, BRCA1, BRCA2, RB1, and CDK12; 113 significant focal DNA copy number aberrations; and promoter methylation events involving 168 genes. Analyses delineated four ovarian cancer transcriptional subtypes, three miRNA subtypes, four promoter methylation subtypes, a transcriptional signature associated with survival duration and shed new light on the impact on survival of tumors with BRCA1/2 and CCNE1 aberrations. Pathway analyses suggested that homologous recombination is defective in about half of tumors, and that Notch and FOXM1 signaling are involved in serous ovarian cancer pathophysiology.</p>
+<h1>Public Data: TCGA Colon and Rectal Cancer</h1>
+<p class="byline">Posted by Ted Liefeld on Monday, November 19, 2012 at 09:40AM</p>
+<br/><p class="byline">Last updated on Thursday, November 29, 2012 at 10:54AM</p>
+<p>
+	We are pleased to announce that data from the following paper have been made available on GenomeSpace: </p>
+<p>
+	The Cancer Genome Atlas Network.  <a href="http://www.nature.com/nature/journal/v487/n7407/full/nature11252.html">Comprehensive Molecular Characterization of Human Colon and Rectal Cancer. <em>Nature</em>. 2012;487:330-337. [doi:10.1038/nature11252]</a></p>
+<p>
+	The GenomeSpace mirror of this dataset includes all public level 3 and level 4 data from <a href="https://tcga-data.nci.nih.gov/docs/publications/coadread_2012/">https://tcga-data.nci.nih.gov/docs/publications/coadread_2012/</a>. </p>
+<p>
+	You can access the data in GenomeSpace at the path <a href="https://gsui.genomespace.org/jsui/gsui.html?pathOrUrl=/Public/SharedData/Datasets/TCGA/Colon%20and%20Rectal%20Cancer" style="text-decoration: underline; color: rgb(74, 142, 204); ">/Public/SharedData/Datasets/TCGA/Colon and Rectal/</a>.  (This requires a GenomeSpace login. If you don't have one, it's <a href="https://identity.genomespace.org:8444/identityServer/registration.html?openId.return_to=%27https://gsui.genomespace.org/jsui/openIdClient?is_cancel=true&amp;openid.rpnonce=2012-02-28T18%3A40%3A23Z0&amp;openid.rpsig=upskiGzwmYpAQd6cBIT%2FeLXunKMWkcoD6ca17n6kgbM%3D%27" style="text-decoration: underline; color: rgb(74, 142, 204); ">easy to register</a>.)</p>
+<h3>
+	Abstract:</h3>
+<p>
+	To characterize somatic alterations in colorectal carcinoma (CRC), we conducted genome-scale analysis of 276 samples, analyzing exome sequence, DNA copy number, promoter methylation, mRNA and microRNA expression. A subset (97) underwent low-depth-of-coverage whole-genome sequencing. 16% of CRC have hypermutation, three quarters of which have the expected high microsatellite instability (MSI), usually with hypermethylation and MLH1 silencing, but one quarter has somatic mismatch repair gene mutations. Excluding hypermutated cancers, colon and rectum cancers have remarkably similar patterns of genomic alteration. Twenty-four genes are significantly mutated. In addition to the expected APC, TP53, SMAD4, PIK3CA and KRAS mutations, we found frequent mutations in ARID1A, SOX9, and FAM123B/WTX. Recurrent copy number alterations include potentially drug-targetable amplifications of ERBB2 and newly discovered amplification of IGF2. Recurrent chromosomal translocations include fusion of NAV2 and WNT pathway member TCF7L1. Integrative analyses suggest new markers for aggressive CRC and important role for MYC-directed transcriptional activation and repression.</p>
+<h1>Calling the GenomeSpace API from Python</h1>
+<p class="byline">Posted by Ted Liefeld on Wednesday, November 14, 2012 at 03:37PM</p>
+<br/><p class="byline">Last updated on Tuesday, May 26, 2015 at 01:49PM</p>
+<p>
+	For today's technology tidbit, we're going to explore how to call the GenomeSpace REST-ful web interfaces from the Python programming language.  (Full disclosure: this was my first attempt to use Python so I am sure there are stylistic issues and more elegant ways to do this). </p>
+<p>
+	Below, we'll review the steps to connect to the GenomeSpace Data Manager and list the user's home directory in an interactive Python session.</p>
+<h3>
+	1. Import the libraries we'll be using</h3>
+<div style="background-color: #DDEEFF">
+<pre>
+# set up imports
+import urllib2
+import json</pre>
+</div>
+<h3>
+	2. Set up a password manager basic authentication</h3>
+<div style="background-color: #DDEEFF">
+<pre>
+# set some properties
+gsUsername = 'ted'
+gsPassword = '*****'
+
+</pre>
+</div>
+<h3>
+	3. Retrieve the GenomeSpace server URLs from the published web page</h3>
+<div style="background-color: #DDEEFF">
+<pre>
+# get all the GenomeSpace URLs from the main web page
+opener = urllib2.build_opener()
+allUrls = opener.open('http://www.genomespace.org/sites/genomespacefiles/config/serverurl.properties')
+urlMap = {}
+for line in allUrls:
+     tokens = line.split("=")
+     if (len(tokens) == 2):
+         urlMap[tokens[0]] = tokens[1][:-1] #the trailing \n is not handled properly
+
+idUrl = urlMap['prod.identityServerUrl']
+dmUrl = urlMap['prod.dmServer'] + '/v1.0/'</pre>
+</div>
+<h3>
+	4. Use basic authentication to get a gs-token to use for the rest of the calls<span id="cke_bm_136E" style="display: none;"> </span><span id="cke_bm_135E" style="display: none;"> </span></h3>
+<div style="background-color: #DDEEFF">
+<pre>
+auth_handler = urllib2.HTTPBasicAuthHandler()
+auth_handler.add_password(realm=" GenomeSpace ", uri=idUrl, user=gsUsername, passwd=gsPassword)
+opener = urllib2.build_opener(auth_handler)
+urllib2.install_opener(opener)
+urllib2.urlopen(idUrl)
+</pre>
+</div>
+<h3>
+	5. Get the GSDirectory JSON object</h3>
+<div style="background-color: #DDEEFF">
+<pre>
+req = urllib2.Request(dmUrl + 'file/Home/' + gsUsername)
+req.add_header('Cookie','gs-token='+token)
+mydir = sslopener.open(req)
+homedirJson = mydir.read()
+
+# turn it into a real object from a JSON string
+homeDirObj = json.loads(homedirJson)</pre>
+</div>
+<h3>
+	6. Get the URL for the first file and download its contents</h3>
+<div style="background-color: #DDEEFF">
+<pre>
+firstUrl = homeDirObj['contents'][0]['url']
+
+req2 = urllib2.Request(firstUrl)
+req2.add_header('Cookie','gs-token='+token)
+firstFileContents = sslopener.open(req2)
+print firstFileContents</pre>
+</div>
+<p>
+	That's it!  For more details on how to use the GenomeSpace REST-ful APIs, the structure of the JSON objects, etc., please refer to the documents on the <a href="http://www.genomespace.org/adopters">Technical Documentation</a> page.</p>
+<p>
+	 </p>
+<p>
+	 </p>
+<div class="center">Displaying results <strong>31 - 40</strong> of <strong>58</strong> in total<br/>
+<div class="pagination"><a class="previous_page" href="/blog/page/3" rel="prev">← Previous</a> <a href="/blog/" rel="start">1</a> <a href="/blog/page/2">2</a> <a href="/blog/page/3" rel="prev">3</a> <em class="current">4</em> <a href="/blog/page/5" rel="next">5</a> <a href="/blog/page/6">6</a> <a class="next_page" href="/blog/page/5" rel="next">Next →</a></div></div>
+</td>
+</tr></table>
+</div>
+</div>
+<div id="footer">
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+	$(document).ready(function() {
+		$("a.toggle_link").click(function() {
+			var image = $(this).children("img");
+			$(image).attr("src", $(image).attr("src") == "/assets/plus.png" ? "/assets/minus.png" : "/assets/plus.png");
+		});
+	});
+
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54489169-1', 'auto');
+  ga('send', 'pageview');
+
+
+//]]>
+</script></div></body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>GenomeSpace: 
+	  	User Guide
+  </title>
+<link href="/assets/site.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/demo_table_jui.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/jquery-ui-1.8.4.custom.css" media="screen" rel="stylesheet" type="text/css"/>
+<script src="/assets/application.js" type="text/javascript"></script>
+<link href="/assets/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+<meta content="authenticity_token" name="csrf-param"/>
+<meta content="IQDy7AVZQ0QcOdorEqBo2y3gqoOrtp8rOzvuxiMZZDw=" name="csrf-token"/>
+</head>
+<body>
+<div id="page_wrapper">
+<div id="page_content">
+<div id="logo"><a href="/"><img alt="Gslogo" src="/assets/gslogo.png"/></a></div>
+<div id="login_menu"><a href="https://gsui.genomespace.org/jsui/gsui.html">User Login</a>
+</div>
+<ul id="nav">
+<li id="what-is-genomespace"><a href="/what-is-genomespace">What is GenomeSpace?</a>
+</li>
+<li id="tools"><a href="/support/tools">Tools</a>
+</li>
+<li id="recipes"><a href="http://recipes.genomespace.org">Recipes</a></li>
+<li id="documentation"><a href="/documentation">Documentation</a>
+<ul>
+<li><a href="/support/guides/user-guide">User Guide</a>
+<p>Read the detailed guide to the user interface</p>
+</li>
+<li><a href="/support/guides/tool-guide">Tool Guide</a>
+<p>Learn how to access GenomeSpace functionality for each Tool</p>
+</li>
+<li><a href="/faq">FAQ</a>
+<p>See answers to frequently asked questions</p>
+</li>
+<li><a href="/presentations-and-videos">Presentations and Videos</a>
+<p>Access talks by the GenomeSpace community</p>
+</li>
+<li><a href="/support/guides/end-to-end-analyses">End-to-End Analyses</a>
+<p>Provides description for end-to-end analyses.</p>
+</li>
+</ul>
+</li>
+<li id="developers"><a href="/for-developers">Developers</a>
+<ul>
+<li><a href="/what-can-genomespace-do-for-tool-developers">What Can GenomeSpace Do For Tool Developers?</a>
+<p></p>
+</li>
+<li><a href="/adopters">Technical Documentation</a>
+<p></p>
+</li>
+<li><a href="/source-code">Source Code and Distributions</a>
+<p></p>
+</li>
+<li><a href="/developer-support-and-feedback">Developer Support and Feedback</a>
+<p></p>
+</li>
+</ul>
+</li>
+<li id="support"><a href="/support">Support</a>
+</li>
+<li id="about"><a href="/about">About</a>
+</li>
+<li class="search">
+<div id="search_box">
+<form accept-charset="UTF-8" action="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"/></div>
+<input class="search" id="search" name="search" type="text"/>
+<input class="searchBtn" type="submit"/>
+</form> </div>
+</li>
+</ul>
+<script type="text/javascript">
+//<![CDATA[
+
+		// grab page category and use to highlight correct menu item.  if none present, parse url to find where the user is.
+		var category = "";
+		if ( !category ){
+			url_parts = $(location).attr('pathname').split("/");
+			url_string = url_parts[1] + "/" + url_parts[2]
+			if (url_string == "support/tools"){
+				category = "tools"
+			}
+			else if (url_string == "support/guides"){
+				url_parts[3] == "recipes" ? category = "recipes" : category = "documentation"
+			}
+			else if (url_parts[1] == "genomespace-recipes")
+			{
+                category = "gsrecipes"
+            }
+			else if (url_string == "support/api"){
+				category = "developers"
+			}
+			else if ((url_string == "register/undefined") || (url_string == "request_invite/undefined")) {
+				category = "what-is-genomespace"
+			}
+			else if (url_string == "/undefined") {
+				category = ""
+			}
+			else if (url_string == "support/undefined") {
+				category = "support"
+			}
+		}
+		$("#" + category).addClass("current");
+
+
+//]]>
+</script>
+<div id="content_panel">
+<table width="100%"><tr>
+<td id="toc_wrapper">
+<div id="toc">
+<h3>User Guide</h3>
+<ol>
+<li class="" id="guide_section_1">
+<a href="/support/guides/user-guide/sections/quickstart">Highlights &amp; Quickstart</a>
+</li>
+<li class="" id="guide_section_2">
+<a href="/support/guides/user-guide/sections/overview">Overview of User Guide</a>
+</li>
+<li class="" id="guide_section_3">
+<a href="/support/guides/user-guide/sections/register">Registering &amp; Login</a>
+</li>
+<li class="has_children" id="guide_section_4">
+<a class="toggle_link" href="#" onclick="collapseDiv('child_51'); return false;"><img alt="Minus" src="/assets/minus.png"/></a>
+<a href="/support/guides/user-guide/sections/UI">User Interface</a>
+<ol id="child_51">
+<li class="" id="guide_section_5">
+<a href="/support/guides/user-guide/sections/customizing">Customize the interface, the tool catalog &amp; tool tags</a>
+</li>
+</ol>
+</li>
+<li class="has_children" id="guide_section_6">
+<a class="toggle_link" href="#" onclick="collapseDiv('child_73'); return false;"><img alt="Minus" src="/assets/minus.png"/></a>
+<a href="/support/guides/user-guide/sections/connect-storage">Connect Storage</a>
+<ol id="child_73">
+<li class="" id="guide_section_7">
+<a href="/support/guides/user-guide/sections/connect-s3-bucket">Connect S3 Bucket</a>
+</li>
+</ol>
+</li>
+<li class="has_children" id="guide_section_8">
+<a class="toggle_link" href="#" onclick="collapseDiv('child_6'); return false;"><img alt="Minus" src="/assets/minus.png"/></a>
+<a href="/support/guides/user-guide/sections/manage-files-folders">Manage files &amp; folders</a>
+<ol id="child_6">
+<li class="" id="guide_section_9">
+<a href="/support/guides/user-guide/sections/share-data">Share data</a>
+</li>
+<li class="" id="guide_section_10">
+<a href="/support/guides/user-guide/sections/preview-heatmap">Preview &amp; Heatmap</a>
+</li>
+<li class="" id="guide_section_11">
+<a href="/support/guides/user-guide/sections/tag-search">Tag &amp; Search</a>
+</li>
+</ol>
+</li>
+<li class="" id="guide_section_12">
+<a href="/support/guides/user-guide/sections/manage-groups-tools">Manage groups &amp; tools</a>
+</li>
+<li class="has_children" id="guide_section_13">
+<a class="toggle_link" href="#" onclick="collapseDiv('child_7'); return false;"><img alt="Minus" src="/assets/minus.png"/></a>
+<a href="/support/guides/user-guide/sections/run-an-analysis">Run an Analysis</a>
+<ol id="child_7">
+<li class="" id="guide_section_14">
+<a href="/support/guides/user-guide/sections/convert-file-formats">Convert file formats</a>
+</li>
+<li class="" id="guide_section_15">
+<a href="/support/guides/user-guide/sections/extract-file-rows-columns">Extract file rows &amp; columns</a>
+</li>
+<li class="" id="guide_section_16">
+<a href="/support/guides/user-guide/sections/export-external-site-files-to-genomespace">Export external site files to GenomeSpace</a>
+</li>
+<li class="" id="guide_section_17">
+<a href="/support/guides/user-guide/sections/recipe-demo-datasets">Recipe demo datasets</a>
+</li>
+<li class="" id="guide_section_18">
+<a href="/support/guides/user-guide/sections/wdk-launch-on-file-or-url">WDK launch on file or URL</a>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+<p class="center"><a href="/support/guides/user-guide/print"><img alt="Print_icon" src="/assets/print_icon.gif" title="Printer Friendly View"/></a></p>
+</td>
+<script type="text/javascript">
+//<![CDATA[
+
+		$(document).ready(function() {
+			var guide_section = "guide_section_10";
+			$("#" + guide_section + "> a").css("font-weight", "bold");
+			if ( 'User Guide' == "Recipes" ) {
+				$.each($("#toc a.toggle_link"), function() {
+					$(this).click();
+					var image = $(this).children("img");
+					$(image).attr("src", $(image).attr("src") == "/assets/plus.png" ? "/assets/minus.png" : "/assets/plus.png");
+				});
+			}
+		});
+
+//]]>
+</script>
+<td id="main_content">
+<div id="notice"></div>
+<div id="alert"></div>
+<h1>Preview &amp; Heatmap
+	</h1>
+<p>
+	For a given file, access the<em> Preview</em> function from the <em>File </em>menu or right-click pop-up menu. You can preview any plain text based or binary file and, depending on file data type, a heatmap of the entire dataset in the secondary <em>Heatmap</em> tab (<strong>Screenshot</strong>). GenomeSpace automatically converts binary text to plain text in the Preview pane.</p>
+<p>
+<strong>Previews </strong>are up to the first 5 kilobytes.</p>
+<ul>
+<li>
+		Use the horizontal scroll bar to view columns across the file.</li>
+<li>
+		Alternatively, preview in a spread-sheet format, up to the first ten rows of a delimited file, with <em><a href="http://www.genomespace.org/support/guides/user-guide/sections/extract-file-rows-columns" target="_self">Extract Rows &amp; Columns</a>.</em></li>
+<li>
+		SAM files will show the header section and some lines of reads.</li>
+<li>
+		Display of BAM files, although binary formats of SAM, are not currently supported.</li>
+</ul>
+<p>
+<strong>Heatmaps </strong>are created by <a href="http://jheatmap.github.io/jheatmap/" target="_blank">jHeatmap</a> and are possible for gct matrix format files or a format that can be converted to GCT, such as GXP and Genomica tab formatted files.</p>
+<ul>
+<li>
+		The colors are row normalized.</li>
+<li>
+		The blue-to-white-to-red heatmap scale matches lower to higher values, respectively.</li>
+<li>
+<a href="http://www.broadinstitute.org/cancer/software/genepattern/gp_guides/file-formats/sections/gct" target="_blank">GCT file formats</a> provide two columns to describe probes or targets, and the Heatmap preview allows selection of either column to display on the y-axis from a drop-down menu.</li>
+<li>
+		Mouse-scroll within the heatmap to zoom view.</li>
+<li>
+		Click on a datapoint in the heatmap for column, row, and value.</li>
+</ul>
+<p>
+	Depending on the dataset size, the heatmap may require some moments to load. Try mouse clicking or scrolling within the heatmap area to display a portion of the heatmap. Files ~5MB should display immediately. Related, depending on your browser memory settings, extremely large files may fail to display. If you see a blank outline, please let us know at <a href="mailto:gs-help@broadinstitute.org?subject=Heatmap%20preview%20giving%20blank%20outline">gs-help@broadinstitute.org</a> so we can determine the source of error.</p>
+<p>
+<img alt="" src="/uploaded/content_shl_ug_preview.png" style="width: 700px; height: 264px;"/></p>
+<p style="margin-left: 40px;">
+	 </p>
+<p style="margin-left: 40px;">
+	 </p>
+</td>
+<tr><td colspan="2">
+<p class="center">
+<a href="/support/guides/user-guide/sections/share-data">&lt;&lt; Share data</a>
+		| <a href="/support/guides/user-guide/sections/manage-files-folders">Up</a> |
+		<a href="/support/guides/user-guide/sections/tag-search">Tag &amp; Search &gt;&gt;</a>
+</p>
+</td></tr>
+<script type="text/javascript">
+//<![CDATA[
+
+		if ( "User Guide" == "Recipes" && true ) {
+			$.each($("#main_content a.toggle_link"), function() {
+				$(this).click();
+				var image = $(this).children("img");
+				$(image).attr("src", $(image).attr("src") == "/assets/plus.png" ? "/assets/minus.png" : "/assets/plus.png");
+			});
+		}
+		$('.collapsed').toggle();
+
+//]]>
+</script>
+</tr></table>
+</div>
+</div>
+<div id="footer">
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+	$(document).ready(function() {
+		$("a.toggle_link").click(function() {
+			var image = $(this).children("img");
+			$(image).attr("src", $(image).attr("src") == "/assets/plus.png" ? "/assets/minus.png" : "/assets/plus.png");
+		});
+	});
+
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54489169-1', 'auto');
+  ga('send', 'pageview');
+
+
+//]]>
+</script></div></body>
+</html>

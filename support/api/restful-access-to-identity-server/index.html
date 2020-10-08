@@ -1,0 +1,1783 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>GenomeSpace: 
+	  	RESTful Access to Identity Server (version beta 4.1)
+  </title>
+<link href="/assets/site.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/demo_table_jui.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/jquery-ui-1.8.4.custom.css" media="screen" rel="stylesheet" type="text/css"/>
+<script src="/assets/application.js" type="text/javascript"></script>
+<link href="/assets/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+<meta content="authenticity_token" name="csrf-param"/>
+<meta content="WKeIol7ha7EoGXPlXq8fRe8WKePzdSZWNWmvQRwFNvE=" name="csrf-token"/>
+</head>
+<body>
+<div id="page_wrapper">
+<div id="page_content">
+<div id="logo"><a href="/"><img alt="Gslogo" src="/assets/gslogo.png"/></a></div>
+<div id="login_menu"><a href="https://gsui.genomespace.org/jsui/gsui.html">User Login</a>
+</div>
+<ul id="nav">
+<li id="what-is-genomespace"><a href="/what-is-genomespace">What is GenomeSpace?</a>
+</li>
+<li id="tools"><a href="/support/tools">Tools</a>
+</li>
+<li id="recipes"><a href="http://recipes.genomespace.org">Recipes</a></li>
+<li id="documentation"><a href="/documentation">Documentation</a>
+<ul>
+<li><a href="/support/guides/user-guide">User Guide</a>
+<p>Read the detailed guide to the user interface</p>
+</li>
+<li><a href="/support/guides/tool-guide">Tool Guide</a>
+<p>Learn how to access GenomeSpace functionality for each Tool</p>
+</li>
+<li><a href="/faq">FAQ</a>
+<p>See answers to frequently asked questions</p>
+</li>
+<li><a href="/presentations-and-videos">Presentations and Videos</a>
+<p>Access talks by the GenomeSpace community</p>
+</li>
+<li><a href="/support/guides/end-to-end-analyses">End-to-End Analyses</a>
+<p>Provides description for end-to-end analyses.</p>
+</li>
+</ul>
+</li>
+<li id="developers"><a href="/for-developers">Developers</a>
+<ul>
+<li><a href="/what-can-genomespace-do-for-tool-developers">What Can GenomeSpace Do For Tool Developers?</a>
+<p></p>
+</li>
+<li><a href="/adopters">Technical Documentation</a>
+<p></p>
+</li>
+<li><a href="/source-code">Source Code and Distributions</a>
+<p></p>
+</li>
+<li><a href="/developer-support-and-feedback">Developer Support and Feedback</a>
+<p></p>
+</li>
+</ul>
+</li>
+<li id="support"><a href="/support">Support</a>
+</li>
+<li id="about"><a href="/about">About</a>
+</li>
+<li class="search">
+<div id="search_box">
+<form accept-charset="UTF-8" action="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"/></div>
+<input class="search" id="search" name="search" type="text"/>
+<input class="searchBtn" type="submit"/>
+</form> </div>
+</li>
+</ul>
+<script type="text/javascript">
+//<![CDATA[
+
+		// grab page category and use to highlight correct menu item.  if none present, parse url to find where the user is.
+		var category = "";
+		if ( !category ){
+			url_parts = $(location).attr('pathname').split("/");
+			url_string = url_parts[1] + "/" + url_parts[2]
+			if (url_string == "support/tools"){
+				category = "tools"
+			}
+			else if (url_string == "support/guides"){
+				url_parts[3] == "recipes" ? category = "recipes" : category = "documentation"
+			}
+			else if (url_parts[1] == "genomespace-recipes")
+			{
+                category = "gsrecipes"
+            }
+			else if (url_string == "support/api"){
+				category = "developers"
+			}
+			else if ((url_string == "register/undefined") || (url_string == "request_invite/undefined")) {
+				category = "what-is-genomespace"
+			}
+			else if (url_string == "/undefined") {
+				category = ""
+			}
+			else if (url_string == "support/undefined") {
+				category = "support"
+			}
+		}
+		$("#" + category).addClass("current");
+
+
+//]]>
+</script>
+<div id="content_panel">
+<table width="100%"><tr>
+<td id="main_content">
+<div id="notice"></div>
+<div id="alert"></div>
+<form accept-charset="UTF-8" action="/support/api/restful-access-to-identity-server" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"/><input name="authenticity_token" type="hidden" value="WKeIol7ha7EoGXPlXq8fRe8WKePzdSZWNWmvQRwFNvE="/></div>
+<span>
+<label class="inline" for="select_component">Select Version:</label>
+<select id="select_component" name="select[component]"><option selected="selected" value="restful-access-to-identity-server-beta-4-1">beta 4.1</option>
+<option value="restful-access-to-identity-server-beta-4-0">beta 4.0</option></select>
+<input class="inline" name="commit" type="submit" value="Display"/> | 
+	<p class="inline"><a href="/adopters">Back</a></p>
+</span>
+</form><hr/>
+</table>
+<h1>RESTful Access to Identity Server (version beta 4.1)
+</h1>
+<h3>
+<a href="#intro">Introduction</a></h3>
+<ul>
+<li>
+<a href="#intro">Introduction</a></li>
+<li>
+<a href="#user_reg">User Services</a>
+<ul>
+<li>
+<a href="#registerReq">Registration Request</a></li>
+<li>
+<a href="#registerComp">Registration Completion</a></li>
+<li>
+<a href="#reset_password">Reset Password</a></li>
+<li>
+<a href="#get_token_time">Get Remaining Time on Token</a></li>
+<li>
+<a href="#get_token_user">Get Username from Token</a></li>
+<li>
+<a href="#get_usernames">Get All GenomeSpace Usernames</a></li>
+<li>
+<a href="#FindMatchingGenomeSpaceUsernames">Find matching GenomeSpace Usernames by Email address</a></li>
+<li>
+<a href="#get_user">Get User Info</a></li>
+<li>
+<a href="#change_profile">Change Email or Password</a></li>
+<li>
+<a href="#deleteUser">Delete User Record</a></li>
+<li>
+<a href="#userActionLog">Get user action log (history)</a></li>
+</ul>
+</li>
+<li>
+<a href="#user_prof">User Profile Services</a>
+<ul>
+<li>
+<a href="#createUserProfile">Create User Profile</a></li>
+<li>
+<a href="#getUserProfileByUser">Get User Profile by User</a></li>
+<li>
+<a href="#getUserProfileById">Get User Profile by Id</a></li>
+<li>
+<a href="#updateUserProfile">Update User Profile</a></li>
+<li>
+<a href="#deleteUserProfile">Delete User Profile</a></li>
+</ul>
+</li>
+<li>
+<a href="#gms">Group Management Service</a>
+<ul>
+<li>
+<a href="#gms_get_all">Get all group names and ids</a></li>
+<li>
+<a href="#gms_get_groupid">Get groupIds for user</a></li>
+<li>
+<a href="#gms_get_groups">Get groups for user</a></li>
+<li>
+<a href="#gms_my_read_groups">Get my readable groups</a></li>
+<li>
+<a href="#gms_my_manage_groups">Get my manageable groups</a></li>
+<li>
+<a href="#gms_create">Create Group</a></li>
+<li>
+<a href="#gms_get_group">Get group</a></li>
+<li>
+<a href="#gms_update">Update group</a></li>
+<li>
+<a href="#gms_delete">Delete group</a></li>
+</ul>
+</li>
+</ul>
+<h2>
+<a name="intro">Introduction</a></h2>
+<p>
+	The Identity Server provides REST services for</p>
+<ol>
+<li>
+		User registration, password reset, change password and email.</li>
+<li>
+		Saving and retrieving per-user persistent data with User Profiles.</li>
+<li>
+		Creating groups and group membership. The GenomeSpace Data Manager uses groups to provide/restrict access by other users to GenomeSpace files and directories.</li>
+</ol>
+<p>
+	Nearly all services require a login as a security measure; user registration and password reset are two that do not. Most services use the logged-in user to associate or limit access to the serviceable entity. For example a created user profile will be associated with the logged-in user, implicitly.</p>
+<h3>
+	Client Requirements</h3>
+<p>
+	The IdentityServer REST interface is accessed using HTTPS POST, GET, PUT, and DELETE.</p>
+<p>
+	JSON is used to pass application data to and from the server, with a few exceptions as indicated below by the HTTP request header requirements.</p>
+<p>
+	The REST calls that need a user login will require the HTTP header <code>Cookie: gs-token=A_valid_token</code>. The valid token is to have been obtained in a prior login using the IdentityServer's OpenId or HTTP Basic Authentication protocol.</p>
+<h3>
+	General REST Implementation Details</h3>
+<p>
+	The URLs below need to be prefixed with an appropriate GenomeSpace Identity Server URL, which is obtained at runtime as described in the <a href="/adopters">Adopters page.</a> An example is <em>https://identity.genomespace.org/identityServer/</em>.</p>
+<p>
+	REST failure responses indicating generic errors are not shown. Examples are 405 for Incorrect HTTP verb, 401 for Not logged in, 409 for Internal server error including incorrectly formatted json, and 403 for operations forbidden due to access restriction, such as deleting another user's user profile.</p>
+<p>
+	In general it is desirable (but optional) for tools to add a header (or request parameter, or cookie, any of these forms can be used) <code>gs-toolname=MyToolName</code> to all their requests.  This is optional but identifies which tool is making a request which permits more detailed usage reporting within the GenomeSpace system.</p>
+<h2>
+<a id="user_reg" name="user_reg"></a>User Services</h2>
+<h3>
+<a id="registerReq" name="registerReq"></a>Registration Request</h3>
+<p>
+	Creates a request for GenomeSpace user account.  An email is sent to the user containing a url.  Account registration is completed when an HTTP GET is done on that url.</p>
+<p>
+	Please note, the previous single-step registration is deprecated, and will become unusable in the near future.</p>
+<p>
+	A login is not required.  Username and password are validated (40 chars max, restricted char set, and username uniqueness) and a 409 status with message is returned if there is a problem.</p>
+<h4>
+<a id="register_req" name="register_req"></a>Request</h4>
+<p>
+	All JSON fields shown here are required.  Required headers: Accept: text/html, Content-Type: application/json</p>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+<td>
+				Body</td>
+</tr>
+<tr>
+<td>
+				POST</td>
+<td>
+				usermanagement/register/initial</td>
+<td>
+				{"username":"my_name",<br/>
+				"email":"my_name@my.org",<br/>
+				"password":"xyzzy"}</td>
+</tr>
+</tbody>
+</table>
+<h4>
+	Response</h4>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Status</td>
+<td>
+				Status Code</td>
+<td>
+				Body</td>
+</tr>
+<tr>
+<td>
+				OK</td>
+<td>
+				200</td>
+<td>
+				 </td>
+</tr>
+<tr>
+<td>
+				Fail</td>
+<td>
+				409</td>
+<td>
+<p>
+					username already exists, invalid username characters, etc.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>
+<a id="registerComp" name="registerComp"></a>Registration Completion</h3>
+<p>
+	Finalizes a registration request. The uuid parameter comes from an email that was sent to the user.</p>
+<p>
+	A login is not required.</p>
+<h4>
+<a id="register_comp" name="register_comp"></a>Request</h4>
+<p>
+	Required headers: none</p>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+<td>
+				Body</td>
+</tr>
+<tr>
+<td>
+				GET</td>
+<td>
+				usermanagement/register/pendingUuid/{uuid}</td>
+<td>
+				[none]</td>
+</tr>
+</tbody>
+</table>
+<h4>
+	Response</h4>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Status</td>
+<td>
+				Status Code</td>
+<td>
+				Body</td>
+</tr>
+<tr>
+<td>
+				See Other</td>
+<td>
+				303</td>
+<td>
+				Redirects to an identityServer message page containing a success or fail message.</td>
+</tr>
+</tbody>
+</table>
+<h3>
+<a id="reset_password" name="reset_password"></a>Reset Password</h3>
+<p>
+	The GenomeSpace server will assign a time-limited, one-use temporary password to the user, and will email it to the email address on record for that user. The regular password is not changed by this action; user can change their password once logged in with the temporary password.</p>
+<h4>
+	Request</h4>
+<p>
+	Required headers: none</p>
+<p>
+	{username_or_email}  is either the GenomeSpace username, or the registered user's email address.</p>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+</tr>
+<tr>
+<td>
+				PUT</td>
+<td>
+				usermanagement/resetpassword/{username_or_email}</td>
+</tr>
+</tbody>
+</table>
+<h4>
+	Response</h4>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Status</td>
+<td>
+				Status Code</td>
+<td>
+				Reason</td>
+</tr>
+<tr>
+<td>
+				OK</td>
+<td>
+				204</td>
+<td>
+				 </td>
+</tr>
+<tr>
+<td>
+				Fail</td>
+<td>
+				404</td>
+<td>
+				No such user, etc.</td>
+</tr>
+</tbody>
+</table>
+<h3>
+<a id="get_token_time" name="get_token_time"></a>Get Remaining Time on Token</h3>
+<p>
+	GenomeSpace generates a string upon successful login called a token, and it is typically put in a cookie or in ~/.gs. This service returns the amount of time remaining on a token.</p>
+<p>
+	The token to be examined may come from either a cookie or URL query parameter. No user login is necessary.</p>
+<h4>
+	Request</h4>
+<p>
+	Required headers: Accept: text/plain</p>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+<td>
+				Source of token</td>
+</tr>
+<tr>
+<td>
+				GET</td>
+<td>
+				usermanagement/utility/token/remainingTime</td>
+<td>
+				gs-token cookie</td>
+</tr>
+<tr>
+<td>
+				GET</td>
+<td>
+				usermanagement/utility/token/remainingTime?token={token}</td>
+<td>
+				query parameter</td>
+</tr>
+</tbody>
+</table>
+<h4>
+	Response</h4>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Status</td>
+<td>
+				Status Code</td>
+<td>
+				Body</td>
+</tr>
+<tr>
+<td>
+				OK</td>
+<td>
+				200</td>
+<td>
+				[Plain text, not JSON] The number of milliseconds remaining.</td>
+</tr>
+</tbody>
+</table>
+<h3>
+<a id="get_token_user" name="get_token_user"></a>Get Username from Token</h3>
+<p>
+	A given token (a GenomeSpace generated string) is assigned to a user. This service returns the username for a token.</p>
+<p>
+	The token to be examined may come from either a cookie or URL query parameter. No user login is necessary.</p>
+<h4>
+	Request</h4>
+<p>
+	Required headers: Accept: text/plain</p>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+<td>
+				Source of token</td>
+</tr>
+<tr>
+<td>
+				GET</td>
+<td>
+				usermanagement/utility/token/username</td>
+<td>
+				gs-token cookie</td>
+</tr>
+<tr>
+<td>
+				GET</td>
+<td>
+				usermanagement/utility/token/username?token={token}</td>
+<td>
+				query parameter</td>
+</tr>
+</tbody>
+</table>
+<h4>
+	Response</h4>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Status</td>
+<td>
+				Status Code</td>
+<td>
+				Body</td>
+</tr>
+<tr>
+<td>
+				OK</td>
+<td>
+				200</td>
+<td>
+				[Plain text, not JSON] The username.</td>
+</tr>
+</tbody>
+</table>
+<h3>
+<a id="get_usernames" name="get_usernames"></a>Get All GenomeSpace Usernames</h3>
+<p>
+	Returns all GenomeSpace usernames. A login is required for security but does not affect the results.</p>
+<h4>
+	Request</h4>
+<p>
+	Required headers: Accept: application/json</p>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+</tr>
+<tr>
+<td>
+				GET</td>
+<td>
+				selfmanagement/usernames</td>
+</tr>
+</tbody>
+</table>
+<h4>
+	Response</h4>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Status</td>
+<td>
+				Status Code</td>
+<td>
+				Body</td>
+</tr>
+<tr>
+<td>
+				OK</td>
+<td>
+				200</td>
+<td>
+				{"usernames":["bob","ted","alice","jane"]}</td>
+</tr>
+</tbody>
+</table>
+<h3>
+<a name="FindMatchingGenomeSpaceUsernames"></a>Find matching GenomeSpace Usernames by Email</h3>
+<p>
+	Returns all GenomeSpace usernames matching the  email provided. A login is required for security but does not affect the results.</p>
+<h4>
+	Request</h4>
+<p>
+	Required headers: Accept: application/json</p>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+</tr>
+<tr>
+<td>
+				GET</td>
+<td>
+				selfmanagement/email/{email address}</td>
+</tr>
+</tbody>
+</table>
+<h4>
+	Response</h4>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Status</td>
+<td>
+				Status Code</td>
+<td>
+				Body</td>
+</tr>
+<tr>
+<td>
+				OK</td>
+<td>
+				200</td>
+<td>
+<p>
+					[<br/>
+					    {<br/>
+					        "username": "junit_restestG_1349185132419_user3",<br/>
+					        "email": "test@test.com",<br/>
+					        "usernameLowercase": "junit_restestg_1349185132419_user3"<br/>
+					    },<br/>
+					    {<br/>
+					        "username": "junit_test_1363614700804_user3",<br/>
+					        "email": "test@test.com",<br/>
+					        "usernameLowercase": "junit_test_1363614700804_user3"<br/>
+					    }</p>
+<p>
+					]</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>
+<a id="get_user" name="get_user"></a>Get User Info</h3>
+<p>
+	Returns the logged-in user's registration info.</p>
+<h4>
+	Request</h4>
+<p>
+	Required headers: Accept: application/json</p>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+<td>
+				Username source</td>
+</tr>
+<tr>
+<td>
+				GET</td>
+<td>
+				selfmanagement/user</td>
+<td>
+				gs-token cookie</td>
+</tr>
+<tr>
+<td>
+				GET</td>
+<td>
+				selfmanagement/user/{username}</td>
+<td>
+				query parameter (must match the login)</td>
+</tr>
+</tbody>
+</table>
+<h4>
+	Response</h4>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Status</td>
+<td>
+				Status Code</td>
+<td>
+				Body</td>
+</tr>
+<tr>
+<td>
+				OK</td>
+<td>
+				200</td>
+<td>
+				{"username":"bob","registrationDate":"Fri, Feb 29, 2011 at 04:53:03",<br/>
+				"token":"ZhPH20zL87EpXS+a5bQe8cD\/b+fk1e79","email":"email@none.org",<br/>
+				"tokenExpiration":"1317709404123","usernameLowercase":"bob","roles":"public",<br/>
+				"sysid":"08511269-8d24-4a94-9e57-59c699790c0f","version":"16"}</td>
+</tr>
+</tbody>
+</table>
+<h3>
+<a id="change_profile" name="change_profile"></a>Change Email or Password</h3>
+<p>
+	Allows a GenomeSpace user to change his/her password or email address. A user login is required.</p>
+<h4>
+	Request</h4>
+<p>
+	Required headers: Content-Type: application/json</p>
+<p>
+	JSON should contain only the fields that change, i.e. only password, only email, or both.</p>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+<td>
+				Body</td>
+<td>
+				Username source</td>
+</tr>
+<tr>
+<td>
+				PUT</td>
+<td>
+				selfmanagement/user</td>
+<td>
+				"{"password":"XYZZY",<br/>
+				"email":"new@email.org"}</td>
+<td>
+				gs-token cookie</td>
+</tr>
+<tr>
+<td>
+				PUT</td>
+<td>
+				selfmanagement/user/{username}</td>
+<td>
+				"{"password":"XYZZY",<br/>
+				"email":"new@email.org"}</td>
+<td>
+				query parameter (must match login)</td>
+</tr>
+</tbody>
+</table>
+<p>
+	 </p>
+<h4>
+	Response</h4>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Status</td>
+<td>
+				Status Code</td>
+<td>
+				Body</td>
+</tr>
+<tr>
+<td>
+				OK</td>
+<td>
+				200</td>
+<td>
+				[No content]</td>
+</tr>
+</tbody>
+</table>
+<h3>
+<a id="deleteUser" name="deleteUser"></a>Delete User Record</h3>
+<p>
+	Allows a GenomeSpace user to delete his/her GenomeSpace account. A user login is required.</p>
+<h4>
+	Request</h4>
+<p>
+	Required headers: none</p>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+<td>
+				Username source</td>
+</tr>
+<tr>
+<td>
+				DELETE</td>
+<td>
+				selfmanagement/user</td>
+<td>
+				gs-token cookie</td>
+</tr>
+<tr>
+<td>
+				DELETE</td>
+<td>
+				selfmanagement/user/{username}</td>
+<td>
+				query parameter (must match login)</td>
+</tr>
+</tbody>
+</table>
+<h4>
+	Response</h4>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Status</td>
+<td>
+				Status Code</td>
+<td>
+				Body</td>
+</tr>
+<tr>
+<td>
+				OK</td>
+<td>
+				201</td>
+<td>
+				[No content]</td>
+</tr>
+</tbody>
+</table>
+<h3>
+<a id="deleteUser" name="userActionLog"></a>Get User Action Log (history)</h3>
+<p>
+	Get the user action log entries for the current user over a specified time period.  Requires user be logged in.</p>
+<h4>
+	Request</h4>
+<p>
+	Required headers: Accept: application/json.  Dates should be formatetd as "yyyy-mm-dd" (e.g. '2013-08-12'   for August 12, 2013)</p>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+<td>
+				Username source</td>
+</tr>
+<tr>
+<td>
+				GET</td>
+<td>
+				userlog/userjson/{from date}/{to date}</td>
+<td>
+				gs-token cookie</td>
+</tr>
+</tbody>
+</table>
+<h4>
+	Response</h4>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Status</td>
+<td>
+				Status Code</td>
+<td>
+				Body</td>
+</tr>
+<tr>
+<td>
+				OK</td>
+<td>
+				200</td>
+<td>
+<div class="netInfoResponseText netInfoText" role="tabpanel" selected="true">
+<pre role="list">
+<code class="wrappedText focusRow" role="listitem">[{"username": "ted", "entity": "GSUI web application", "timestamp": "2013-08-16 12:46", "function": "LOGIN"</code><code class="wrappedText focusRow" role="listitem">, "module": "GSUI"},
+</code><code class="wrappedText focusRow" role="listitem">	{"username": "ted", "entity": "GetWebTools", "timestamp": "2013-08-16 12:46", "function": "READ", "module"</code><code class="wrappedText focusRow" role="listitem">: "ATM"}]</code></pre>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<h2>
+<a id="user_prof" name="user_prof"></a>User Profile Services</h2>
+<p>
+	User Profiles are per-user persistent data kept as database records. A user profile has an internal UUID but is functionally identified by client-defined optional attributes. A client should always define one attribute called "module" which serves as a namespace, having the value of the Java package, or client's url domain name.</p>
+<h3>
+<a id="createUserProfile" name="createUserProfile"></a>Create User Profile</h3>
+<p>
+	Creates an instance of user profile. Requires a GenomeSpace login, and the username json parameter must match the login (404 results otherwise).</p>
+<p>
+	The HTTP reply will contain the url of the created resource. The 36 character UUID profile id is the last component in the created URL.</p>
+<h4>
+	Request</h4>
+<p>
+	Required headers: Content-Type: application/json</p>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+<td>
+				Body</td>
+</tr>
+<tr>
+<td>
+				POST</td>
+<td>
+				/selfmanagement/profile</td>
+<td>
+				{"username":"junit_userProfile_1319573589201_user5",<br/>
+				"value":"some persisted string, possibly json",<br/>
+				"module":"org.yourOrganiztion.yourProject.yourModule",<br/>
+				"myOptionalAttr1":"example1",<br/>
+				"myOptionalAttr2":"example2"}/td&gt;</td>
+</tr>
+</tbody>
+</table>
+<h4>
+	Response</h4>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Status</td>
+<td>
+				Status Code</td>
+<td>
+				Sample HTTP header attribute</td>
+</tr>
+<tr>
+<td>
+				OK</td>
+<td>
+				201</td>
+<td>
+				Location: https://identity.genomespace.org:8444/identityServer/<br/>
+				groupmanagement/group/108129df-aa59-4da0-ae6b-0e3c1323684c</td>
+</tr>
+</tbody>
+</table>
+<h3>
+<a id="getUserProfileByUser" name="getUserProfileByUser"></a>Get User Profile by User</h3>
+<p>
+	Gets all profiles for a user, or applies filtering to get only some. Optional attributes specify which subset of profiles should be fetched. If no optional attributes are specified then all the user's profiles are returned. If one or more are specified then only profiles having a matching optional attribute are returned.</p>
+<h4>
+	Request</h4>
+<p>
+	Required headers: Accept: application/json</p>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+<td>
+				Comment</td>
+</tr>
+<tr>
+<td>
+				GET</td>
+<td>
+				selfmanagement/profile/user/{username}</td>
+<td>
+				Returns all profiles for the user</td>
+</tr>
+<tr>
+<td>
+				GET</td>
+<td>
+				selfmanagement/profile/user/{username}?<br/>
+				{optionalAttributeName1}={attr1}&amp;<br/>
+				{optionalAttributeName2}={attr2}...</td>
+<td>
+				Returns profiles for user having attr1 and attr2</td>
+</tr>
+</tbody>
+</table>
+<h4>
+	Response</h4>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Status</td>
+<td>
+				Status Code</td>
+<td>
+				Sample json</td>
+</tr>
+<tr>
+<td>
+				OK</td>
+<td>
+				200</td>
+<td>
+				{"profiles":[{"timestamp":"1318098869739","username":"gs_user1",<br/>
+				"value":"test value 0","uuid":"30662a95-8002-4e68-a54d-fd0864dcc407"},<br/>
+				{"timestamp":"1318098869843","username":"gs_user1",<br/>
+				"myattribute":"myvalue","value":"test value 1",<br/>
+				"uuid":"43e72992-0238-49ed-8b63-0ced11e4bb40"}]}</td>
+</tr>
+<tr>
+<td>
+				OK</td>
+<td>
+				404</td>
+<td>
+				No matching profiles found</td>
+</tr>
+</tbody>
+</table>
+<h3>
+<a id="getUserProfileById" name="getUserProfileById"></a>Get User Profiles by User</h3>
+<p>
+	Gets the one specified profile, or returns 404 if profile not found.</p>
+<h4>
+	Request</h4>
+<p>
+	Required headers: Accept: application/json</p>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+</tr>
+<tr>
+<td>
+				GET</td>
+<td>
+				selfmanagement/profile/{profileId}</td>
+</tr>
+</tbody>
+</table>
+<h4>
+	Response</h4>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Status</td>
+<td>
+				Status Code</td>
+<td>
+				Sample json</td>
+</tr>
+<tr>
+<td>
+				OK</td>
+<td>
+				200</td>
+<td>
+				{"timestamp":"1318098867961","username":"gs_user0",<br/>
+				"value":"test value 0","uuid":"986c6d73-970b-45b4-b064-4a9b9615a801"}</td>
+</tr>
+<tr>
+<td>
+				OK</td>
+<td>
+				404</td>
+<td>
+				No matching profiles found</td>
+</tr>
+</tbody>
+</table>
+<h3>
+<a id="updateUserProfile" name="updateUserProfile"></a>Update User Profile</h3>
+<p>
+	Changes an existing user profile record.</p>
+<p>
+	Update permits the removal of optional attributes. All optional attributes to be kept must be provided in the update json, along with the UUID.</p>
+<p>
+	To change just the persisted value, an alternative is to "re-create" a user profile using POST and specifying exactly the same optional attributes, and that will overwrite an existing profile.</p>
+<h4>
+	Request</h4>
+<p>
+	Required headers: Content-Type: application/json</p>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+<td>
+				Body</td>
+</tr>
+<tr>
+<td>
+				PUT</td>
+<td>
+				selfmanagement/profile</td>
+<td>
+				{"username":"junit_userProfile_1319573589201_user5",<br/>
+				"value":"some persisted string, possibly json",<br/>
+				"module":"org.yourOrganiztion.yourProject.yourModule",<br/>
+				"uuid":"c14082c7-794a-44da-a252-54296d83db6b"}</td>
+</tr>
+</tbody>
+</table>
+<h4>
+	Response</h4>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Status</td>
+<td>
+				Status Code</td>
+<td>
+				Sample HTTP header attribute</td>
+</tr>
+<tr>
+<td>
+				OK</td>
+<td>
+				204</td>
+</tr>
+</tbody>
+</table>
+<h3>
+<a id="deleteUserProfile" name="deleteUserProfile"></a>Delete User Profile</h3>
+<h4>
+	Request</h4>
+<p>
+	Required headers: none</p>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+</tr>
+<tr>
+<td>
+				DELETE</td>
+<td>
+				selfmanagement/profile/{profileId}</td>
+</tr>
+</tbody>
+</table>
+<h4>
+	Response</h4>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Status</td>
+<td>
+				Status Code</td>
+<td>
+				Sample HTTP header attribute</td>
+</tr>
+<tr>
+<td>
+				OK</td>
+<td>
+				204</td>
+</tr>
+</tbody>
+</table>
+<h2>
+<a id="gms" name="gms"></a>Group Management Service</h2>
+<h3>
+<a id="gms_get_all" name="gms_get_all"></a>Get All Group Names and Group Ids</h3>
+<p>
+	Returns all group names and their ids. A login is required for security but does not affect the results.</p>
+<h4>
+	Request</h4>
+<p>
+	Required headers: Accept: application/json</p>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+</tr>
+<tr>
+<td>
+				GET</td>
+<td>
+				groupmanagement/groups</td>
+</tr>
+</tbody>
+</table>
+<h4>
+	Responses</h4>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Status</td>
+<td>
+				Status Code</td>
+<td>
+				JSON returned</td>
+</tr>
+<tr>
+<td>
+				OK</td>
+<td>
+				200</td>
+<td>
+				{"groups":[{"id":"eafc1a3a-4475-4282-ac64-6c486ee064d1",<br/>
+				"name":"junit_restestG_1319573546874_group0"},<br/>
+				{"id":"8124d580-a677-4957-af67-1e71445945f8",<br/>
+				"name":"DmClientTestGroup"}]}</td>
+</tr>
+</tbody>
+</table>
+<h3>
+<a id="gms_get_groupid" name="gms_get_groupid"></a>Get Group Ids for User</h3>
+<p>
+	Returns the groupId of all groups whose membership includes the specified user. A login is required for security but does not affect the results.</p>
+<h4>
+	Request</h4>
+<p>
+	Required headers: Accept: application/json</p>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+</tr>
+<tr>
+<td>
+				GET</td>
+<td>
+				groupmanagement/user/{username}/groupids</td>
+</tr>
+</tbody>
+</table>
+<h4>
+	Response</h4>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				OK</td>
+<td>
+				200</td>
+<td>
+				{"groupids":["b87c3380-502f-4779-b1ce-f3316665ffa6","8c0f3816-9e5e-4239-a842-79ecab53ca82",<br/>
+				"5035080c-4afe-4c84-af55-71ebf8a7741b","e67fe11d-323d-470c-9fb8-5426ed4ca804","gs-public"]}</td>
+</tr>
+</tbody>
+</table>
+<h3>
+<a id="gmscreate" name="gms_create"></a>Create Group</h3>
+<p>
+	Creates a group. If no members are specified, adds the logged-in user as the first member and first group administrator. If members are specified, at least one must be flagged as the administrator.</p>
+<p>
+	The HTTP reply will contain the url of the created resource. The 36-character UUID groupId is the last component in the created URL.</p>
+<h4>
+<a id="gms_create_req" name="gms_create_req"></a>Request</h4>
+<p>
+	Required headers: Content-Type: application/json</p>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+<td>
+				Body</td>
+</tr>
+<tr>
+<td>
+				POST</td>
+<td>
+				groupmanagement/group</td>
+<td>
+				{"self-administered":"false","description":"Your string of choice",<br/>
+				"name":"group0","non-member-readable":"false"}</td>
+</tr>
+<tr>
+<td>
+				POST</td>
+<td>
+				groupmanagement/group</td>
+<td>
+				{"self-administered":"true","description":"Your string of choice",<br/>
+				"name":"group0","non-member-readable":"false",<br/>
+				"members":[{"username":"user0","is-admin":"true"},<br/>
+				{"username":"user1","is-admin":"false"}]}</td>
+</tr>
+</tbody>
+</table>
+<h4>
+	Response</h4>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Status</td>
+<td>
+				Status Code</td>
+<td>
+				Detail</td>
+</tr>
+<tr>
+<td>
+				OK</td>
+<td>
+				201</td>
+<td>
+				Location: https://identity.genomespace.org:8444/identityServer/<br/>
+				groupmanagement/group/108129df-aa59-4da0-ae6b-0e3c1323684c</td>
+</tr>
+<tr>
+<td>
+				Fail</td>
+<td>
+				409</td>
+<td>
+				Group having name 'group0' already exists</td>
+</tr>
+<tr>
+<td>
+				Fail</td>
+<td>
+				409</td>
+<td>
+				Unknown GenomeSpace user</td>
+</tr>
+<tr>
+<td>
+				Fail</td>
+<td>
+				409</td>
+<td>
+				List of users is missing is-admin=true</td>
+</tr>
+</tbody>
+</table>
+<h3>
+<a id="gms_get_group" name="gms_get_group"></a>Get group</h3>
+<p>
+	Returns the attributes of the group. Will also return membership if the logged-in user is a member of the group, or if the group is non-member readable. Otherwise the membership will be empty.</p>
+<h4>
+<a id="gms_get_group_req" name="gms_get_group_req"></a>Request</h4>
+<p>
+	Required headers: Accept: application/json</p>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+</tr>
+<tr>
+<td>
+				GET</td>
+<td>
+				groupmanagement/group/{groupid}</td>
+</tr>
+</tbody>
+</table>
+<p>
+	{groupid} is the UUID generated when the group was created.</p>
+<h4>
+	Response</h4>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Status</td>
+<td>
+				Status Code</td>
+<td>
+				Example</td>
+</tr>
+<tr>
+<td>
+				OK</td>
+<td>
+				200</td>
+<td>
+				{"id":"b87c3380-502f-4779-b1ce-f3316665ffa6","self-administered":"false",<br/>
+				"description":"some description","name":"group0","non-member-readable":"false",<br/>
+				"members":[{"username":"user0","is-admin":"true"}]}</td>
+</tr>
+<tr>
+<td>
+				OK</td>
+<td>
+				200</td>
+<td>
+				If logged-in user is not a member and non-member-readable=false<br/>
+				{"id":"b87c3380-502f-4779-b1ce-f3316665ffa6","self-administered":"false",<br/>
+				"description":"some description","name":"group0","non-member-readable":"false",<br/>
+				"members":[]}</td>
+</tr>
+<tr>
+<td>
+				OK</td>
+<td>
+				204</td>
+<td>
+				No such group exists</td>
+</tr>
+<tr>
+<td>
+				Fail</td>
+<td>
+				409</td>
+<td>
+				User is not a member of the group</td>
+</tr>
+</tbody>
+</table>
+<h3>
+<a id="gms_get_groups" name="gms_get_groups"></a>Get groups for User</h3>
+<p>
+	Returns the group attributes (no membership info) of all groups whose membership includes the user. A login is required for security but does not affect the results.</p>
+<h4>
+<a id="gms_get_groups_req" name="gms_get_groups_req"></a>Request</h4>
+<p>
+	Required headers: Accept: application/json</p>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+</tr>
+<tr>
+<td>
+				GET</td>
+<td>
+				groupmanagement/user/{username}/group</td>
+</tr>
+</tbody>
+</table>
+<h4>
+	Response</h4>
+<p>
+	The return datatype is JSON.</p>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Status</td>
+<td>
+				Code</td>
+<td>
+				Body</td>
+</tr>
+<tr>
+<td>
+				OK</td>
+<td>
+				200</td>
+<td>
+				{"groups":[{"id":"b87c3380-502f-4779-b1ce-f3316665ffa6","self-administered":"false",<br/>
+				"description":"Desc 0","name":"group0","non-member-readable":"false",<br/>
+				{"id":"8c0f3816-9e5e-4239-a842-79ecab53ca82","self-administered":"false",<br/>
+				"description":"the description","name":"group1","non-member-readable":"false",<br/>
+				{"id":"gs-public","self-administered":"false",<br/>
+				"description":"GenomeSpace Public Group","name":"gs-public","non-member-readable":"false"}</td>
+</tr>
+<tr>
+<td>
+				Fail</td>
+<td>
+				409</td>
+<td>
+				username is not a registered user</td>
+</tr>
+</tbody>
+</table>
+<h3>
+<a id="gms_my_read_groups" name="gms_my_read_groups"></a>Get my readable groups</h3>
+<p>
+	Returns the group attributes (no membership info) of either groups whose membership includes the logged-in user, or groups that are non-member readable. Login is required and it determines the membership username that gets used.</p>
+<h4>
+<a id="gms_my_read_groups_req" name="gms_my_read_groups_req"></a>Request</h4>
+<p>
+	Required headers: Accept: application/json</p>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+</tr>
+<tr>
+<td>
+				GET</td>
+<td>
+				groupmanagement/readable/group</td>
+</tr>
+</tbody>
+</table>
+<h4>
+	Response</h4>
+<p>
+	The return datatype is JSON. In the following example the logged in user is a member of group0 and gs-public, but not of group1.</p>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Status</td>
+<td>
+				Code</td>
+<td>
+				Body</td>
+</tr>
+<tr>
+<td>
+				OK</td>
+<td>
+				200</td>
+<td>
+				{"groups":[{"id":"b87c3380-502f-4779-b1ce-f3316665ffa6","self-administered":"false",<br/>
+				"description":"Desc 0","name":"group0","non-member-readable":"false",<br/>
+				{"id":"8c0f3816-9e5e-4239-a842-79ecab53ca82","self-administered":"false",<br/>
+				"description":"the description","name":"group1","non-member-readable":"true",<br/>
+				{"id":"gs-public","self-administered":"false",<br/>
+				"description":"GenomeSpace Public Group","name":"gs-public","non-member-readable":"false"}</td>
+</tr>
+<tr>
+<td>
+				Fail</td>
+<td>
+				409</td>
+<td>
+				username is not a registered user</td>
+</tr>
+</tbody>
+</table>
+<h3>
+<a id="gms_my_manage_groups" name="gms_my_manage_groups"></a>Get my manageable groups</h3>
+<p>
+	Returns the group attributes (no membership info) of either groups whose administrators includes the logged-in user, or groups that are self-administrating and whose membership includes the logged-in user. Login is required and it determines the membership username that gets used.</p>
+<h4>
+<a id="gms_my_manage_groups_req" name="gms_my_manage_groups_req"></a>Request</h4>
+<p>
+	Required headers: Accept: application/json</p>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+</tr>
+<tr>
+<td>
+				GET</td>
+<td>
+				groupmanagement/manageable/group</td>
+</tr>
+</tbody>
+</table>
+<h4>
+	Response</h4>
+<p>
+	The return datatype is JSON. In the following example the logged in user is an admin of group0, and only a member of the self-administered group1.</p>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Status</td>
+<td>
+				Code</td>
+<td>
+				Body</td>
+</tr>
+<tr>
+<td>
+				OK</td>
+<td>
+				200</td>
+<td>
+				{"groups":[{"id":"b87c3380-502f-4779-b1ce-f3316665ffa6","self-administered":"false",<br/>
+				"description":"Desc 0","name":"group0","non-member-readable":"false",<br/>
+				{"id":"8c0f3816-9e5e-4239-a842-79ecab53ca82","self-administered":"true",<br/>
+				"description":"the description","name":"group1","non-member-readable":"true"}</td>
+</tr>
+<tr>
+<td>
+				Fail</td>
+<td>
+				409</td>
+<td>
+				username is not a registered user</td>
+</tr>
+</tbody>
+</table>
+<h3>
+<a id="gms_update" name="gms_update"></a>Update group</h3>
+<p>
+	Updates the attributes of a group. If members are specified then the membership is updated too, provided at least one member remains and at least one administrator. The logged-in user must be an administrator of the group. A self-administered group allows non-administrators to update membership but not the group attributes.</p>
+<h4>
+<a id="gms_update_req" name="gms_update_req"></a>Request</h4>
+<p>
+	Required headers: Content-Type: application/json</p>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+<td>
+				Body</td>
+</tr>
+<tr>
+<td>
+				PUT</td>
+<td>
+				groupmanagement/group</td>
+<td>
+				{"description":"Describes it","id":"5035080c-4afe-4c84-af55-71ebf8a7741b",<br/>
+				"name":"My updated group name for this group",<br/>
+				"non-member-readable":"false","self-administered":"true"}</td>
+</tr>
+<tr>
+<td>
+				PUT</td>
+<td>
+				groupmanagement/group</td>
+<td>
+				{"description":"Describes it","id":"5035080c-4afe-4c84-af55-71ebf8a7741b",<br/>
+				"name":"My updated group name for this group",<br/>
+				"non-member-readable":"false","self-administered":"true",<br/>
+				members":[{"is-admin":"true","username":"user2"},<br/>
+				{"is-admin":"false","username":"user0"}]}</td>
+</tr>
+</tbody>
+</table>
+<h4>
+	Response</h4>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Status</td>
+<td>
+				Code</td>
+<td>
+				Body</td>
+</tr>
+<tr>
+<td>
+				OK</td>
+<td>
+				200</td>
+<td>
+				(none)</td>
+</tr>
+<tr>
+<td>
+				Fail</td>
+<td>
+				409</td>
+<td>
+				Username is not an administrator</td>
+</tr>
+<tr>
+<td>
+				Fail</td>
+<td>
+				409</td>
+<td>
+				Group does not exist</td>
+</tr>
+</tbody>
+</table>
+<h3>
+<a id="gms_delete" name="gms_delete"></a>Delete group</h3>
+<p>
+	Deletes the group. The logged-in user must be an administrator of the group.</p>
+<h4>
+<a id="gms_delete_req" name="gms_delete_req"></a>Request</h4>
+<p>
+	Required headers: none</p>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+</tr>
+<tr>
+<td>
+				DELETE</td>
+<td>
+				groupmanagement/group/{groupid}</td>
+</tr>
+</tbody>
+</table>
+<h4>
+	Response</h4>
+<table border="1" cellpadding="2" cellspacing="0" width="869px">
+<tbody>
+<tr>
+<td>
+				Status</td>
+<td>
+				Code</td>
+<td>
+				Detail</td>
+</tr>
+<tr>
+<td>
+				OK</td>
+<td>
+				200</td>
+<td>
+				 </td>
+</tr>
+<tr>
+<td>
+				Fail</td>
+<td>
+				409</td>
+<td>
+				username is not an administrator</td>
+</tr>
+<tr>
+<td>
+				Fail</td>
+<td>
+				409</td>
+<td>
+				Group does not exist</td>
+</tr>
+<tr>
+<td>
+				Fail</td>
+<td>
+				409</td>
+<td>
+				Forbidden to delete the "gs-public" group</td>
+</tr>
+</tbody>
+</table>
+<p>
+	 </p>
+</td>
+</tr></table>
+</div>
+</div>
+<div id="footer">
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+	$(document).ready(function() {
+		$("a.toggle_link").click(function() {
+			var image = $(this).children("img");
+			$(image).attr("src", $(image).attr("src") == "/assets/plus.png" ? "/assets/minus.png" : "/assets/plus.png");
+		});
+	});
+
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54489169-1', 'auto');
+  ga('send', 'pageview');
+
+
+//]]>
+</script></div></body>
+</html>

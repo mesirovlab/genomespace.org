@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>GenomeSpace: 
+	  	OpenId Requirements (version beta 1.0)
+  </title>
+<link href="/assets/site.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/demo_table_jui.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/jquery-ui-1.8.4.custom.css" media="screen" rel="stylesheet" type="text/css"/>
+<script src="/assets/application.js" type="text/javascript"></script>
+<link href="/assets/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+<meta content="authenticity_token" name="csrf-param"/>
+<meta content="5vScdLTs6uwQo7SkkR50tJ6p5tGVsWyjWurbBlN/g6c=" name="csrf-token"/>
+</head>
+<body>
+<div id="page_wrapper">
+<div id="page_content">
+<div id="logo"><a href="/"><img alt="Gslogo" src="/assets/gslogo.png"/></a></div>
+<div id="login_menu"><a href="https://gsui.genomespace.org/jsui/gsui.html">User Login</a>
+</div>
+<ul id="nav">
+<li id="what-is-genomespace"><a href="/what-is-genomespace">What is GenomeSpace?</a>
+</li>
+<li id="tools"><a href="/support/tools">Tools</a>
+</li>
+<li id="recipes"><a href="http://recipes.genomespace.org">Recipes</a></li>
+<li id="documentation"><a href="/documentation">Documentation</a>
+<ul>
+<li><a href="/support/guides/user-guide">User Guide</a>
+<p>Read the detailed guide to the user interface</p>
+</li>
+<li><a href="/support/guides/tool-guide">Tool Guide</a>
+<p>Learn how to access GenomeSpace functionality for each Tool</p>
+</li>
+<li><a href="/faq">FAQ</a>
+<p>See answers to frequently asked questions</p>
+</li>
+<li><a href="/presentations-and-videos">Presentations and Videos</a>
+<p>Access talks by the GenomeSpace community</p>
+</li>
+<li><a href="/support/guides/end-to-end-analyses">End-to-End Analyses</a>
+<p>Provides description for end-to-end analyses.</p>
+</li>
+</ul>
+</li>
+<li id="developers"><a href="/for-developers">Developers</a>
+<ul>
+<li><a href="/what-can-genomespace-do-for-tool-developers">What Can GenomeSpace Do For Tool Developers?</a>
+<p></p>
+</li>
+<li><a href="/adopters">Technical Documentation</a>
+<p></p>
+</li>
+<li><a href="/source-code">Source Code and Distributions</a>
+<p></p>
+</li>
+<li><a href="/developer-support-and-feedback">Developer Support and Feedback</a>
+<p></p>
+</li>
+</ul>
+</li>
+<li id="support"><a href="/support">Support</a>
+</li>
+<li id="about"><a href="/about">About</a>
+</li>
+<li class="search">
+<div id="search_box">
+<form accept-charset="UTF-8" action="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"/></div>
+<input class="search" id="search" name="search" type="text"/>
+<input class="searchBtn" type="submit"/>
+</form> </div>
+</li>
+</ul>
+<script type="text/javascript">
+//<![CDATA[
+
+		// grab page category and use to highlight correct menu item.  if none present, parse url to find where the user is.
+		var category = "";
+		if ( !category ){
+			url_parts = $(location).attr('pathname').split("/");
+			url_string = url_parts[1] + "/" + url_parts[2]
+			if (url_string == "support/tools"){
+				category = "tools"
+			}
+			else if (url_string == "support/guides"){
+				url_parts[3] == "recipes" ? category = "recipes" : category = "documentation"
+			}
+			else if (url_parts[1] == "genomespace-recipes")
+			{
+                category = "gsrecipes"
+            }
+			else if (url_string == "support/api"){
+				category = "developers"
+			}
+			else if ((url_string == "register/undefined") || (url_string == "request_invite/undefined")) {
+				category = "what-is-genomespace"
+			}
+			else if (url_string == "/undefined") {
+				category = ""
+			}
+			else if (url_string == "support/undefined") {
+				category = "support"
+			}
+		}
+		$("#" + category).addClass("current");
+
+
+//]]>
+</script>
+<div id="content_panel">
+<table width="100%"><tr>
+<td id="main_content">
+<div id="notice"></div>
+<div id="alert"></div>
+<form accept-charset="UTF-8" action="/support/api/openid-requirements" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"/><input name="authenticity_token" type="hidden" value="5vScdLTs6uwQo7SkkR50tJ6p5tGVsWyjWurbBlN/g6c="/></div>
+<span>
+<label class="inline" for="select_component">Select Version:</label>
+<select id="select_component" name="select[component]"><option selected="selected" value="openid-requirements-beta-1-0">beta 1.0</option></select>
+<input class="inline" name="commit" type="submit" value="Display"/> | 
+	<p class="inline"><a href="/adopters">Back</a></p>
+</span>
+</form><hr/>
+<h1>OpenId Requirements (version beta 1.0)
+</h1>
+<p>
+	The OpenId client or "Relying Party" is the software tool to be intergrated with GenomeSpace, also called "your app" below. The OpenId server or "Provider" is the GenomeSpace server.<br/>
+	The end result of successful OpenId login is, your app will have a valid GenomeSpace token and username, which are needed to access nearly all GenomeSpace web services.<br/>
+	Because token can only come from the GenomeSpace OpenId Provider, it is the only OpenId Provider that will work with GenomeSpace, and not Google, Facebook, Twitter, etc.</p>
+<h2>
+	Tool Requirements</h2>
+<h3>
+	Client Library</h3>
+<p>
+	Choose an OpenId client library to use with your app. For Java we recommend</p>
+<pre wrap="">
+openid4java 0.9.6</pre>
+<p>
+	For Python we recommend</p>
+<pre wrap="">
+python-openid 2.5.5 and python 2.6.6</pre>
+<p>
+	The library needs to support OpenId Version 2.0, and needs to support at least one of these spec extensions: Attribute Exchange ("AX"), Simple Registration ("SReg") version 1.0 or 1.1, or the openId version 2 spec compliant custom extension.</p>
+<h3>
+	Client code</h3>
+<p>
+	Your application needs code that calls the OpenId client library to talk OpenId protocol with the GenomeSpace OpenId server. There is Java code in <a href="https://bitbucket.org/GenomeSpace/combined">BitBucket"s GenomeSpace/Combined project</a>, called "openIdClient". It's pretty much one Java Servlet and some supporting Jsp, and includes the minimal set of required jars. If you search for "This is where a real app would forward or otherwise connect" you'll find the point in the code where the servlet should redirect to your app upon successful login.</p>
+<h3>
+	Server URL</h3>
+<p>
+	The OpenId spec describes how the user starts the login process by supplying a "User-Supplied Identifier". It in turn resolves to the "OpenId Provider Endpoint URL". Since there is only one acceptable provider, your app can always use one User-Supplied Identifier which is a url gotten by HTTP GET from <a href="http://www.genomespace.org/sites/genomespacefiles/config/serverurl.properties"> http://www.genomespace.org/sites/genomespacefiles/config/serverurl.properties</a> and extracting the "openIdUrl" property for the desired server.</p>
+<h3>
+	Extension</h3>
+<p>
+	Your app's client code needs to request that the GenomeSpace OpenId server return the gs-token and gs-username values. Due to the lack of uniform support among various OpenId libraries, the GenomeSpace OpenId server supports three ways of doing this. Pick any one of the three. It's just a question of what is supported by your OpenId library.</p>
+<ol>
+<li>
+		In the OpenId Authentication Request, the client adds a SimpleRegistration request.<br/>
+<br/>
+		SReg Version 1.0 parameters are:<br/>
+		openid.sreg.gender<br/>
+		openid.sreg.nickname<br/>
+<br/>
+		SReg Version 1.1 parameters are:<br/>
+		openid.ns:http://specs.openid.net/auth/2.0<br/>
+		openid.ns.sreg:http://openid.net/extensions/sreg/1.1<br/>
+		openid.sreg.required:nickname,gender<br/>
+<br/>
+		The OpenId authentication response from GenomeSpace will contain the gs-token value for sreg gender key, and gs-username for nickname, i.e. the two SReg attributes are re-purposed.</li>
+<li>
+		In the OpenId Authentication Request, the client adds an Attribute Exchange FetchRequest with these parameters:<br/>
+		openid.ns.ext1 = <a href="http://openid.net/srv/ax/1.0" title="http://openid.net/srv/ax/1.0">http://openid.net/srv/ax/1.0</a><br/>
+		openid.ext1.type.gs-token = <a href="http://identity.genomespace.org/openid/gs-token" title="http://identity.genomespace.org/openid/gs-token">http://identity.genomespace.org/openid/gs-token</a><br/>
+		openid.ext1.type.gs-username = <a href="http://identity.genomespace.org/openid/gs-username" title="http://identity.genomespace.org/openid/gs-username">http://identity.genomespace.org/openid/gs-username</a><br/>
+		openid.ext1.ifavailable = gs-token,gs-username<br/>
+		From the OpenId authentication response, the client gets the gs-token and gs-username from the FetchResponse.</li>
+<li>
+		When the OpenId client makes neither of the above parameter requests, the GenomeSpace OpenId provider will supply gs-token and gs-username in a OpenId custom extension. Nothing is required from the client in the auth request, and the client can get gs-token and gs-username from the validated response from these OpenId key-value pairs:<br/>
+		openid.ns.ext1:http://identity.genomespace.org/token<br/>
+		openid.ext1.gs-username:&lt;the GenomeSpace username&gt;<br/>
+		openid.ext1.gs-token:&lt;the GenomeSpace token&gt;</li>
+</ol>
+<h3>
+	Retrieving email address</h3>
+<p>
+	If your app wants the user's email address, the client should request the user's email address in the OpenId Authentication Request. It is best to use the same mechanism that was used to request gs-token and gs-username. The added OpenId message parameters are:</p>
+<ol>
+<li>
+		With Attribute Exchange:<br/>
+		openid.ext1.type.email = <a href="http://identity.genomespace.org/openid/email" title="http://identity.genomespace.org/openid/email">http://identity.genomespace.org/openid/email</a><br/>
+		openid.ext1.ifavailable = gs-token,gs-username,email</li>
+<li>
+		With Simple Registration<br/>
+<br/>
+		SReg 1.0:<br/>
+		openid.sreg.email<br/>
+<br/>
+		SReg 1.1:<br/>
+		openid.sreg.optional:email</li>
+<li>
+		 </li>
+<li>
+		With GenomeSpace custom extension, the Authentication Response will contain:<br/>
+		openid.ext1.email:&lt;the GenomeSpace user email&gt;</li>
+</ol>
+<h3>
+	Logout</h3>
+<p>
+	OpenId logout is possible but requires both of these steps to be done:</p>
+<ul>
+<li>
+		Your app clears its saved value for gs-token.</li>
+<li>
+		Your app does an HTTP request to the appropriate URL shown below, to cause the Provider to remove its gs-token cookie.<br/>
+		ForGenomeSpace Prod, use <a href="https://identity.genomespace.org/identityServer/openIdProvider?_action=logout" title="https://identity.genomespace.org/identityServer/openIdProvider?_action=logout">https://identity.genomespace.org/identityServer/openIdProvider?_action=l...</a><br/>
+		ForGenomeSpace Test, use <a href="https://identityTest.genomespace.org:8444/identityServer/openIdProvider?_action=logout" title="https://identityTest.genomespace.org:8444/identityServer/openIdProvider?_action=logout">https://identityTest.genomespace.org:8444/identityServer/openIdProvider?...</a><br/>
+		ForGenomeSpace Dev, use <a href="https://identityDev.genomespace.org:8444/identityServer/openIdProvider?_action=logout" title="https://identityDev.genomespace.org:8444/identityServer/openIdProvider?_action=logout">https://identityDev.genomespace.org:8444/identityServer/openIdProvider?_...</a></li>
+</ul>
+</td>
+</tr></table>
+</div>
+</div>
+<div id="footer">
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+	$(document).ready(function() {
+		$("a.toggle_link").click(function() {
+			var image = $(this).children("img");
+			$(image).attr("src", $(image).attr("src") == "/assets/plus.png" ? "/assets/minus.png" : "/assets/plus.png");
+		});
+	});
+
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54489169-1', 'auto');
+  ga('send', 'pageview');
+
+
+//]]>
+</script></div></body>
+</html>

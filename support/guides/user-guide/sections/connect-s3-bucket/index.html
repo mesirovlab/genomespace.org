@@ -1,0 +1,359 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>GenomeSpace: 
+	  	User Guide
+  </title>
+<link href="/assets/site.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/demo_table_jui.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/jquery-ui-1.8.4.custom.css" media="screen" rel="stylesheet" type="text/css"/>
+<script src="/assets/application.js" type="text/javascript"></script>
+<link href="/assets/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+<meta content="authenticity_token" name="csrf-param"/>
+<meta content="HFTCNDUdqdKd+ZlwlWhJhMap7UIPgnm19mSY9ToziT4=" name="csrf-token"/>
+</head>
+<body>
+<div id="page_wrapper">
+<div id="page_content">
+<div id="logo"><a href="/"><img alt="Gslogo" src="/assets/gslogo.png"/></a></div>
+<div id="login_menu"><a href="https://gsui.genomespace.org/jsui/gsui.html">User Login</a>
+</div>
+<ul id="nav">
+<li id="what-is-genomespace"><a href="/what-is-genomespace">What is GenomeSpace?</a>
+</li>
+<li id="tools"><a href="/support/tools">Tools</a>
+</li>
+<li id="recipes"><a href="http://recipes.genomespace.org">Recipes</a></li>
+<li id="documentation"><a href="/documentation">Documentation</a>
+<ul>
+<li><a href="/support/guides/user-guide">User Guide</a>
+<p>Read the detailed guide to the user interface</p>
+</li>
+<li><a href="/support/guides/tool-guide">Tool Guide</a>
+<p>Learn how to access GenomeSpace functionality for each Tool</p>
+</li>
+<li><a href="/faq">FAQ</a>
+<p>See answers to frequently asked questions</p>
+</li>
+<li><a href="/presentations-and-videos">Presentations and Videos</a>
+<p>Access talks by the GenomeSpace community</p>
+</li>
+<li><a href="/support/guides/end-to-end-analyses">End-to-End Analyses</a>
+<p>Provides description for end-to-end analyses.</p>
+</li>
+</ul>
+</li>
+<li id="developers"><a href="/for-developers">Developers</a>
+<ul>
+<li><a href="/what-can-genomespace-do-for-tool-developers">What Can GenomeSpace Do For Tool Developers?</a>
+<p></p>
+</li>
+<li><a href="/adopters">Technical Documentation</a>
+<p></p>
+</li>
+<li><a href="/source-code">Source Code and Distributions</a>
+<p></p>
+</li>
+<li><a href="/developer-support-and-feedback">Developer Support and Feedback</a>
+<p></p>
+</li>
+</ul>
+</li>
+<li id="support"><a href="/support">Support</a>
+</li>
+<li id="about"><a href="/about">About</a>
+</li>
+<li class="search">
+<div id="search_box">
+<form accept-charset="UTF-8" action="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"/></div>
+<input class="search" id="search" name="search" type="text"/>
+<input class="searchBtn" type="submit"/>
+</form> </div>
+</li>
+</ul>
+<script type="text/javascript">
+//<![CDATA[
+
+		// grab page category and use to highlight correct menu item.  if none present, parse url to find where the user is.
+		var category = "";
+		if ( !category ){
+			url_parts = $(location).attr('pathname').split("/");
+			url_string = url_parts[1] + "/" + url_parts[2]
+			if (url_string == "support/tools"){
+				category = "tools"
+			}
+			else if (url_string == "support/guides"){
+				url_parts[3] == "recipes" ? category = "recipes" : category = "documentation"
+			}
+			else if (url_parts[1] == "genomespace-recipes")
+			{
+                category = "gsrecipes"
+            }
+			else if (url_string == "support/api"){
+				category = "developers"
+			}
+			else if ((url_string == "register/undefined") || (url_string == "request_invite/undefined")) {
+				category = "what-is-genomespace"
+			}
+			else if (url_string == "/undefined") {
+				category = ""
+			}
+			else if (url_string == "support/undefined") {
+				category = "support"
+			}
+		}
+		$("#" + category).addClass("current");
+
+
+//]]>
+</script>
+<div id="content_panel">
+<table width="100%"><tr>
+<td id="toc_wrapper">
+<div id="toc">
+<h3>User Guide</h3>
+<ol>
+<li class="" id="guide_section_1">
+<a href="/support/guides/user-guide/sections/quickstart">Highlights &amp; Quickstart</a>
+</li>
+<li class="" id="guide_section_2">
+<a href="/support/guides/user-guide/sections/overview">Overview of User Guide</a>
+</li>
+<li class="" id="guide_section_3">
+<a href="/support/guides/user-guide/sections/register">Registering &amp; Login</a>
+</li>
+<li class="has_children" id="guide_section_4">
+<a class="toggle_link" href="#" onclick="collapseDiv('child_51'); return false;"><img alt="Minus" src="/assets/minus.png"/></a>
+<a href="/support/guides/user-guide/sections/UI">User Interface</a>
+<ol id="child_51">
+<li class="" id="guide_section_5">
+<a href="/support/guides/user-guide/sections/customizing">Customize the interface, the tool catalog &amp; tool tags</a>
+</li>
+</ol>
+</li>
+<li class="has_children" id="guide_section_6">
+<a class="toggle_link" href="#" onclick="collapseDiv('child_73'); return false;"><img alt="Minus" src="/assets/minus.png"/></a>
+<a href="/support/guides/user-guide/sections/connect-storage">Connect Storage</a>
+<ol id="child_73">
+<li class="" id="guide_section_7">
+<a href="/support/guides/user-guide/sections/connect-s3-bucket">Connect S3 Bucket</a>
+</li>
+</ol>
+</li>
+<li class="has_children" id="guide_section_8">
+<a class="toggle_link" href="#" onclick="collapseDiv('child_6'); return false;"><img alt="Minus" src="/assets/minus.png"/></a>
+<a href="/support/guides/user-guide/sections/manage-files-folders">Manage files &amp; folders</a>
+<ol id="child_6">
+<li class="" id="guide_section_9">
+<a href="/support/guides/user-guide/sections/share-data">Share data</a>
+</li>
+<li class="" id="guide_section_10">
+<a href="/support/guides/user-guide/sections/preview-heatmap">Preview &amp; Heatmap</a>
+</li>
+<li class="" id="guide_section_11">
+<a href="/support/guides/user-guide/sections/tag-search">Tag &amp; Search</a>
+</li>
+</ol>
+</li>
+<li class="" id="guide_section_12">
+<a href="/support/guides/user-guide/sections/manage-groups-tools">Manage groups &amp; tools</a>
+</li>
+<li class="has_children" id="guide_section_13">
+<a class="toggle_link" href="#" onclick="collapseDiv('child_7'); return false;"><img alt="Minus" src="/assets/minus.png"/></a>
+<a href="/support/guides/user-guide/sections/run-an-analysis">Run an Analysis</a>
+<ol id="child_7">
+<li class="" id="guide_section_14">
+<a href="/support/guides/user-guide/sections/convert-file-formats">Convert file formats</a>
+</li>
+<li class="" id="guide_section_15">
+<a href="/support/guides/user-guide/sections/extract-file-rows-columns">Extract file rows &amp; columns</a>
+</li>
+<li class="" id="guide_section_16">
+<a href="/support/guides/user-guide/sections/export-external-site-files-to-genomespace">Export external site files to GenomeSpace</a>
+</li>
+<li class="" id="guide_section_17">
+<a href="/support/guides/user-guide/sections/recipe-demo-datasets">Recipe demo datasets</a>
+</li>
+<li class="" id="guide_section_18">
+<a href="/support/guides/user-guide/sections/wdk-launch-on-file-or-url">WDK launch on file or URL</a>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+<p class="center"><a href="/support/guides/user-guide/print"><img alt="Print_icon" src="/assets/print_icon.gif" title="Printer Friendly View"/></a></p>
+</td>
+<script type="text/javascript">
+//<![CDATA[
+
+		$(document).ready(function() {
+			var guide_section = "guide_section_7";
+			$("#" + guide_section + "> a").css("font-weight", "bold");
+			if ( 'User Guide' == "Recipes" ) {
+				$.each($("#toc a.toggle_link"), function() {
+					$(this).click();
+					var image = $(this).children("img");
+					$(image).attr("src", $(image).attr("src") == "/assets/plus.png" ? "/assets/minus.png" : "/assets/plus.png");
+				});
+			}
+		});
+
+//]]>
+</script>
+<td id="main_content">
+<div id="notice"></div>
+<div id="alert"></div>
+<h1>Connect S3 Bucket
+	</h1>
+<p>
+	You can connect public and private <a href="http://aws.amazon.com/s3/" target="_blank">Amazon S3 Buckets</a>, and instructions for mounting both categories of buckets are outlined on this page.</p>
+<p>
+	You can connect multiple S3 Buckets simultaneously to your GenomeSpace account.</p>
+<ul>
+<li>
+		Public buckets require only the name of the bucket to mount it. </li>
+<li>
+		Connecting private buckets, or those with limited non-public accessibility, involves several steps and requires an <a href="http://aws.amazon.com/" target="_blank">Amazon AWS account</a> with an S3 Bucket and bucket permissions edited to share with GenomeSpace. Bucket permissions are either read-only or read-and-write. Once a bucket has been mounted in GenomeSpace, you can share it with other GenomeSpace users using the standard GenomeSpace sharing dialogs.</li>
+</ul>
+<p>
+	 </p>
+<h2>
+	Mount a Public Amazon S3 Bucket</h2>
+<p>
+	A publicly accessible Amazon S3 Bucket has its permissions set to allow public access to anyone without authentication. Public buckets may be mounted only with <em>read </em>permissions in GenomeSpace and means you cannot write files back to them. This is to prevent users from accidentally saving files to Amazon S3 Buckets that they do not control.</p>
+<ol>
+<li>
+		Select <em>Connect&gt;Amazon S3 Bucket</em>. This will open the <em>Mount Cloud Storage</em> dialog box (<strong>Screenshot </strong>2013).</li>
+<li>
+		Select the <em>Public S3 Bucket</em> tab.</li>
+<li>
+		Enter the name of the publicly accessible bucket in the field.
+		<ul>
+<li>
+				In the <strong>screenshot</strong> example, we used the <em>1000genomes</em> bucket.</li>
+<li>
+				Bucket names are always all lowercase.</li>
+</ul>
+</li>
+<li>
+		Click <em>Submit</em>.  In less than a minute, the directory view refreshes with the new bucket mounted under your <em>Home</em> directory, e.g. <em>s3:1000genomes</em>.  You can now read files from this bucket as you would any other files in GenomeSpace and share it <em>read-only</em> to other GenomeSpace users.</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_mountpublic_ex1000g.jpg" style="width: 300px; height: 176px;"/></p>
+<p>
+	See <a href="https://aws.amazon.com/datasets" target="_blank">aws.amazon.com</a> for the comprehensive list of public S3 datasets. Of note are two projects, the <a href="http://aws.amazon.com/datasets/4383">1000 Genomes Project</a> and the <a href="http://aws.amazon.com/datasets/1903160021374413">Human Microbiome Project</a>. To find a specific S3 Bucket input name, click on the specific dataset and look for a URL address such as &lt;https://s3-us-west-2.amazonaws.com/human-microbiome-project&gt;. For this example, input <em>human-microbiome-project</em> as the S3 Bucket name to mount the data. Some datasets do not provide their bucket name on the website as they require human subjects protection approval, copying the data to your own drive prior to access, or access from specific geographic regions, i.e. from northeastern USA. Contact the provider for more information.</p>
+<p style="margin-left: 40px;">
+	 </p>
+<h2>
+	Mount a Private Read/Write Amazon S3 Bucket</h2>
+<p>
+	Connecting a private Amazon S3 bucket is a multistep process to verify you have access to the <a href="http://aws.amazon.com/s3/" target="_blank">Amazon Web Services (AWS)</a> account. GenomeSpace opens a wizard to guide you through the connection procedure. Buckets with default AWS settings will be <em>read-only</em>. Special instructions to edit your bucket permissions to read-<em>and-write</em> are at the end of this section.</p>
+<ol>
+<li>
+		Sign in to your <a href="https://www.amazon.com/ap/signin?openid.assoc_handle=aws&amp;openid.return_to=https%3A%2F%2Fsignin.aws.amazon.com%2Foauth%3Fresponse_type%3Dcode%26client_id%3Darn%253Aaws%253Aiam%253A%253A015428540659%253Auser%252Fhomepage%26redirect_uri%3Dhttps%253A%252F%252Fus-west-2.console.aws.amazon.com%252Fconsole%252Fhome%253Fregion%253Dus-west-2%2526state%253DhashArgs%252523%2526isauthcode%253Dtrue%26noAuthCookie%3Dtrue&amp;openid.mode=checkid_setup&amp;openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;action=&amp;disableCorpSignUp=&amp;clientContext=&amp;marketPlaceId=&amp;poolName=&amp;authCookies=&amp;pageId=aws.ssop&amp;siteState=unregistered%2Cen_us&amp;accountStatusPolicy=P1&amp;sso=&amp;openid.pape.preferred_auth_policies=MultifactorPhysical&amp;openid.pape.max_auth_age=120&amp;openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0&amp;server=%2Fap%2Fsignin%3Fie%3DUTF8&amp;accountPoolAlias=&amp;forceMobileApp=0&amp;forceMobileLayout=0" target="_blank">Amazon AWS management console</a>. </li>
+<li>
+		Within your GenomeSpace account, Select <em>Connect&gt;Amazon S3 Bucket</em>. This will open the <em>Connect to Amazon S3 Buckets</em> dialog box.</li>
+<li>
+		Select the <em>Read/Write S3 Bucket</em> tab.</li>
+<li>
+		Click the <em>Begin</em> button and <strong>follow the guided instructions in the wizard </strong>that opens (<strong>Screenshot</strong> 2013).
+		<ul>
+<li>
+				Wizard section headings are in gray. Click on the section heading to expand the section.</li>
+<li>
+				Click on a previous section heading to go back and edit inputs. </li>
+<li>
+				For your convenience, we have provided clickable URL links to the relevant AWS Console pages and these are underlined.</li>
+</ul>
+</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" height="344" src="/uploaded/content_mount_priv_s3_2_1.png" width="650"/></p>
+<h4>
+	Supplemental clarification to the wizard instructions</h4>
+<ul>
+<li>
+		When the wizard opens, it should look like the <strong>Screenshot</strong> above. GenomeSpace automatically generates an AWS username under a <em>Pending</em> status. You will copy the AWS username to paste when you create the AWS sub-user account. If the creation date and time do not correspond to the current date and time, then it is from a previous session. Delete the account by clicking the red <strong><span style="color:#ff0000;">x</span></strong> and click <em>Create another pending account</em> to generate a fresh AWS username.</li>
+<li>
+		If you encounter errors, go back to sections by clicking on section headers and remove any leading or trailing spaces in the input textboxes and submit again.</li>
+<li value="2">
+		When creating the custom policy, copy-paste the GenomeSpace provided policy document that is in JSON, a computer language with a lot of whitespace, brackets {, and quotes ". JSON is sensitive to misplaced extra spaces.</li>
+<li>
+		You will see an <em>AWS credentials verified successfully </em>notification when the connection is successful.</li>
+<li value="2">
+<em>Read-only</em> is the default AWS setting for S3 Buckets connected to GenomeSpace even if you select <em>Read and Write</em> permissions from the GenomeSpace wizard. The bucket owner can grant <em>read-and-write</em> permissions under S3 bucket <em>Properties</em>&gt;<em>Permissions</em>&gt;<em>Add CORS Configuration</em>. Copy-paste the following custom script over the sample CORS configuration and save.</li>
+</ul>
+<pre style="margin-left: 80px;">
+<span style="color:#696969;">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/"&gt;
+    &lt;CORSRule&gt;
+        &lt;AllowedOrigin&gt;*&lt;/AllowedOrigin&gt;
+        &lt;AllowedMethod&gt;PUT&lt;/AllowedMethod&gt;
+        &lt;AllowedMethod&gt;POST&lt;/AllowedMethod&gt;
+        &lt;AllowedHeader&gt;*&lt;/AllowedHeader&gt;
+    &lt;/CORSRule&gt;
+    &lt;CORSRule&gt;
+        &lt;AllowedOrigin&gt;*&lt;/AllowedOrigin&gt;
+        &lt;AllowedMethod&gt;GET&lt;/AllowedMethod&gt;
+    &lt;/CORSRule&gt;
+&lt;/CORSConfiguration&gt;</span>
+</pre>
+<p>
+	Amazon AWS is constantly updating their services. If you find our instructions no longer work, please let us know as soon as possible at <a href="mailto:gs-help@broadinstitute.org?subject=Connection%20to%20private%20AWS%20S3%20bucket">gs-help@broadinstitute.org</a>.</p>
+</td>
+<tr><td colspan="2">
+<p class="center">
+<a href="/support/guides/user-guide/sections/connect-storage">&lt;&lt; Connect Storage</a>
+		| <a href="/support/guides/user-guide/sections/connect-storage">Up</a> |
+		<a href="/support/guides/user-guide/sections/manage-files-folders">Manage files &amp; folders &gt;&gt;</a>
+</p>
+</td></tr>
+<script type="text/javascript">
+//<![CDATA[
+
+		if ( "User Guide" == "Recipes" && true ) {
+			$.each($("#main_content a.toggle_link"), function() {
+				$(this).click();
+				var image = $(this).children("img");
+				$(image).attr("src", $(image).attr("src") == "/assets/plus.png" ? "/assets/minus.png" : "/assets/plus.png");
+			});
+		}
+		$('.collapsed').toggle();
+
+//]]>
+</script>
+</tr></table>
+</div>
+</div>
+<div id="footer">
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+	$(document).ready(function() {
+		$("a.toggle_link").click(function() {
+			var image = $(this).children("img");
+			$(image).attr("src", $(image).attr("src") == "/assets/plus.png" ? "/assets/minus.png" : "/assets/plus.png");
+		});
+	});
+
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54489169-1', 'auto');
+  ga('send', 'pageview');
+
+
+//]]>
+</script></div></body>
+</html>

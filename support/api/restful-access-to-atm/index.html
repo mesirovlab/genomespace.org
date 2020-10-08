@@ -1,0 +1,612 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>GenomeSpace: 
+	  	RESTful Access to Analysis Tool Manager (version beta 4.0)
+  </title>
+<link href="/assets/site.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/demo_table_jui.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/jquery-ui-1.8.4.custom.css" media="screen" rel="stylesheet" type="text/css"/>
+<script src="/assets/application.js" type="text/javascript"></script>
+<link href="/assets/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+<meta content="authenticity_token" name="csrf-param"/>
+<meta content="6lJDJShDEPFzkBTrMvan05j+wiAfMo01AbZkwQg4kDM=" name="csrf-token"/>
+</head>
+<body>
+<div id="page_wrapper">
+<div id="page_content">
+<div id="logo"><a href="/"><img alt="Gslogo" src="/assets/gslogo.png"/></a></div>
+<div id="login_menu"><a href="https://gsui.genomespace.org/jsui/gsui.html">User Login</a>
+</div>
+<ul id="nav">
+<li id="what-is-genomespace"><a href="/what-is-genomespace">What is GenomeSpace?</a>
+</li>
+<li id="tools"><a href="/support/tools">Tools</a>
+</li>
+<li id="recipes"><a href="http://recipes.genomespace.org">Recipes</a></li>
+<li id="documentation"><a href="/documentation">Documentation</a>
+<ul>
+<li><a href="/support/guides/user-guide">User Guide</a>
+<p>Read the detailed guide to the user interface</p>
+</li>
+<li><a href="/support/guides/tool-guide">Tool Guide</a>
+<p>Learn how to access GenomeSpace functionality for each Tool</p>
+</li>
+<li><a href="/faq">FAQ</a>
+<p>See answers to frequently asked questions</p>
+</li>
+<li><a href="/presentations-and-videos">Presentations and Videos</a>
+<p>Access talks by the GenomeSpace community</p>
+</li>
+<li><a href="/support/guides/end-to-end-analyses">End-to-End Analyses</a>
+<p>Provides description for end-to-end analyses.</p>
+</li>
+</ul>
+</li>
+<li id="developers"><a href="/for-developers">Developers</a>
+<ul>
+<li><a href="/what-can-genomespace-do-for-tool-developers">What Can GenomeSpace Do For Tool Developers?</a>
+<p></p>
+</li>
+<li><a href="/adopters">Technical Documentation</a>
+<p></p>
+</li>
+<li><a href="/source-code">Source Code and Distributions</a>
+<p></p>
+</li>
+<li><a href="/developer-support-and-feedback">Developer Support and Feedback</a>
+<p></p>
+</li>
+</ul>
+</li>
+<li id="support"><a href="/support">Support</a>
+</li>
+<li id="about"><a href="/about">About</a>
+</li>
+<li class="search">
+<div id="search_box">
+<form accept-charset="UTF-8" action="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"/></div>
+<input class="search" id="search" name="search" type="text"/>
+<input class="searchBtn" type="submit"/>
+</form> </div>
+</li>
+</ul>
+<script type="text/javascript">
+//<![CDATA[
+
+		// grab page category and use to highlight correct menu item.  if none present, parse url to find where the user is.
+		var category = "";
+		if ( !category ){
+			url_parts = $(location).attr('pathname').split("/");
+			url_string = url_parts[1] + "/" + url_parts[2]
+			if (url_string == "support/tools"){
+				category = "tools"
+			}
+			else if (url_string == "support/guides"){
+				url_parts[3] == "recipes" ? category = "recipes" : category = "documentation"
+			}
+			else if (url_parts[1] == "genomespace-recipes")
+			{
+                category = "gsrecipes"
+            }
+			else if (url_string == "support/api"){
+				category = "developers"
+			}
+			else if ((url_string == "register/undefined") || (url_string == "request_invite/undefined")) {
+				category = "what-is-genomespace"
+			}
+			else if (url_string == "/undefined") {
+				category = ""
+			}
+			else if (url_string == "support/undefined") {
+				category = "support"
+			}
+		}
+		$("#" + category).addClass("current");
+
+
+//]]>
+</script>
+<div id="content_panel">
+<table width="100%"><tr>
+<td id="main_content">
+<div id="notice"></div>
+<div id="alert"></div>
+<form accept-charset="UTF-8" action="/support/api/restful-access-to-atm" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"/><input name="authenticity_token" type="hidden" value="6lJDJShDEPFzkBTrMvan05j+wiAfMo01AbZkwQg4kDM="/></div>
+<span>
+<label class="inline" for="select_component">Select Version:</label>
+<select id="select_component" name="select[component]"><option selected="selected" value="restful-access-to-atm-beta-4-0">beta 4.0</option>
+<option value="restful-access-to-atm-beta-3-0">beta 3.0</option>
+<option value="restful-access-to-atm-beta-2-0">beta 2.0</option></select>
+<input class="inline" name="commit" type="submit" value="Display"/> | 
+	<p class="inline"><a href="/adopters">Back</a></p>
+</span>
+</form><hr/>
+<h1>RESTful Access to Analysis Tool Manager (version beta 4.0)
+</h1>
+<h2>
+	Introduction</h2>
+<p>
+	Part of the functionality that we are including in the GenomeSpace CDK is a Java API that provides client applications access to authentication, authorization, data file services, and Analysis Tool Manager services.  If your application is not written in Java and you want to add GenomeSpace support to it, you can still access these services by contacting them directly.</p>
+<h2>
+	HTTP Client Requirements</h2>
+<p>
+	In addition to supporting the usual HTTP POST, GET, PUT, etc., your client will have to be able to do the following:</p>
+<h3>
+	Handle cookies</h3>
+<p>
+	Accept cookies and send their values to the correct domains.</p>
+<h3>
+	Support HTTP redirects</h3>
+<p>
+	Accept as a response HTTP code 303 and automatically GET the response from the specified location URL.</p>
+<h3>
+	Support Basic Authentication</h3>
+<p>
+	Client should be ready to respond to Basic authentication credentials challenge via HTTP response code 401.</p>
+<h3>
+	Support JSON marshalling and unmarshalling</h3>
+<p>
+	The Analysis Tool Manager will generate responses using JSON.</p>
+<h3>
+	Support for HTTPS</h3>
+<p>
+	All communications to the Identity Server and the Analysis Tool Manager service occur through secure HTTP.  We have obtained third-party certificates for our servers, so updating trust stores should not be necessary in most cases.</p>
+<h2>
+	Common Request Headers</h2>
+<p>
+	Every request to the Analysis Tool Manager should include the <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">Accept</a> header with a preference for the media types application/json and application/text.  The gs-token cookie should also be included.  More on gs-token below.</p>
+<p>
+	In general it is desirable (but optional) for tools to add a header (or request parameter, or cookie, any of these forms can be used) <code>gs-toolname=MyToolName</code> to all their requests.  This is optional but identifies which tool is making a request which permits more detailed usage reporting within the GenomeSpace system.</p>
+<h2>
+	Login and Authentication</h2>
+<p>
+	You can do an explicit login at the beginning of a session by issuing a GET to: <a href="https://identity.genomespace.org/identityServer/basic">https://identity.genomespace.org/identityServer/basic</a>. You will get an HTTP 401 response code with a request for credentials using Basic Authentication.  Basic authentication is described in <a href="http://www.ietf.org/rfc/rfc2617.txt">RFC2617</a>.  If you are utilizing an HTTP library, it is very likely that it already includes support for Basic authentication. On successful submission of credentials, the server’s response will include a cookie named gs-token. The cookie should be included in all subsequent requests to the Analysis Tool Manager. If your library has cookie handling enabled, the inclusion of the cookie in requests should happen automatically. If an Analysis Tool Manager request does not include the gs-token cookie or the session has expired, server will respond with another 401 authentication challenge. If successfully responded to, the client will be redirected to the original request.</p>
+<h2>
+	WADL</h2>
+<p>
+	All the operations available from the Analysis Tool Manager are described in Web Application Description Language (WADL) specification show below:</p>
+<pre style="border: 1px dashed #6699CC;width:869px;margin:10px;padding:10px;overflow-x:auto;">
+&lt;application&gt;
+  &lt;doc jersey:generatedBy="Jersey: 1.5 01/14/2011 12:36 PM"/&gt;
+  &lt;resources base="https://dmdev.genomespace.org:8444/atm/"&gt;
+    &lt;resource path="v{1.0}/webtool"&gt;
+      &lt;resource path="descriptor"&gt;
+        &lt;method id="getWebTools" name="GET"&gt;
+          &lt;response&gt; 
+            &lt;representation mediaType="application/json"/&gt;
+          &lt;/response&gt;
+        &lt;/method&gt;
+      &lt;/resource&gt;
+      &lt;resource path="{internalIdOrName}/descriptor"&gt;
+        &lt;param name="internalIdOrName" style="template" type="xs:string"/&gt;
+        &lt;method id="getWebToolDescriptor" name="GET"&gt;
+          &lt;response&gt;
+            &lt;representation mediaType="application/json"/&gt;
+          &lt;/response&gt;
+        &lt;/method&gt;
+      &lt;/resource&gt;
+      &lt;resource path="{toolName}/launchurl"&gt;
+        &lt;param name="toolName" style="template" type="xs:string"/&gt;
+          &lt;method id="getWebTool" name="GET"&gt;
+            &lt;response&gt;
+              &lt;representation mediaType="text/plain"/&gt;
+            &lt;/response&gt;
+          &lt;/method&gt;
+      &lt;/resource&gt;
+    &lt;/resource&gt;
+  &lt;/resources&gt;
+&lt;/application&gt; </pre>
+<h2>
+	WebToolDescriptor Object</h2>
+<p>
+	Information about Web Tools available from the Analysis Tool Manager will be returned in JSON objects.  The WebToolDescriptor object describes a Web Tool.  An example of a WebTool is GenePattern.  The fields in a WebToolDescriptor are shown below:</p>
+<table border="1" width="100%">
+<tbody>
+<tr>
+<td>
+<br/>
+<strong>Field Name</strong></td>
+<td>
+<p align="center">
+<strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+					name</p>
+</td>
+<td>
+<p>
+					Name of the web tool.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+					version</p>
+</td>
+<td>
+<p>
+					The version of the web tool.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+					author</p>
+</td>
+<td>
+<p>
+					The author of the web tool.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+					description</p>
+</td>
+<td>
+<p>
+					Description of the web tool.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+					help</p>
+</td>
+<td>
+<p>
+					URI for help about the web tool.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+					fileParameters</p>
+</td>
+<td>
+<p>
+					A list of FileParameters.  See below.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+					tags</p>
+</td>
+<td>
+<p>
+					A set of tags.  Currently unused.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+					baseUrl</p>
+</td>
+<td>
+<p>
+					The base portion of the URL to the web tool, not including arguments that are specified as parameters.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>
+	FileParameter</h3>
+<p>
+	Defines a FileParameter that will placed on the URL for a WebTool, specifying that the tool should download that file (or files) from GenomeSpace.</p>
+<table border="1" width="100%">
+<tbody>
+<tr>
+<td>
+<br/>
+<strong>Field Name</strong></td>
+<td>
+<p align="center">
+<strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+					name</p>
+</td>
+<td>
+<p>
+					Name of the parameter.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+					description</p>
+</td>
+<td>
+<p>
+					Description of the parameter.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+					required</p>
+</td>
+<td>
+<p>
+					Boolean flag indicating whether or not the parameter is required.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+					compositeFilename</p>
+</td>
+<td>
+<p>
+					True means that the value for this parameter can contain multiple filenames.  The filenames are separated by the nameDelimeters below.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+					nameDelimiters</p>
+</td>
+<td>
+<p>
+					The string used to delimit multiple filenames.  This is only used if compositeFilename is true.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+					nameDelimiterRegex</p>
+</td>
+<td>
+<p>
+					This field is currently showing up in the JSON, due to a configuration issue with the JSON marshaller.  It is internal to the FileParameter class and will be removed from the JSON in a future release.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+					formats</p>
+</td>
+<td>
+<p>
+					An array of GSDataFormats, describing the acceptable file formats for this FileParameter.  See below.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+	GSDataFormats describe the data sources.  The fields are shown below:</p>
+<table border="1" width="100%">
+<tbody>
+<tr>
+<td>
+<br/>
+<strong>Field Name</strong></td>
+<td>
+<p align="center">
+<strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+					name</p>
+</td>
+<td>
+<p>
+					The name of the format.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+					url</p>
+</td>
+<td>
+<p>
+					An URL to the format definition.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+					fileExtension</p>
+</td>
+<td>
+<p>
+					The extension for the filename.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+					description</p>
+</td>
+<td>
+<p>
+					A short description of the format.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+	Example ToolDescriptor objects are included in the Appendix.</p>
+<h2>
+	Accessing WebTools</h2>
+<h3>
+	List of WebTools</h3>
+<p>
+	You can retrieve a list of WebToolDescriptors by sending a get request as shown below.  All URLs are preceded by https://atm.genomespace.org/atm/v1.0.</p>
+<table border="1" width="100%">
+<tbody>
+<tr>
+<td>
+<br/>
+<strong>Verb</strong></td>
+<td>
+<p align="center">
+<strong>URL</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+					GET</p>
+</td>
+<td>
+<p>
+					webtool/descriptor</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+	This will return a collection of WebTools in JSON format.</p>
+<h3>
+	WebTool ByName</h3>
+<p>
+	You can retrieve the descriptor for a webtool by name using a get request as shown below. </p>
+<table border="1" width="100%">
+<tbody>
+<tr>
+<td>
+<br/>
+<strong>Verb</strong></td>
+<td>
+<p align="center">
+<strong>URL</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+					GET</p>
+</td>
+<td>
+<p>
+					webtool/webtoolname/descriptor</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+	where webtoolname is the name of a WebToolDescriptor.  This will a return a WebTool descriptor in JSON format, or 404 there is no webtool with the given name.</p>
+<h3>
+	WebTool Launch URL</h3>
+<p>
+	You can retrieve an URL to launch a particular web tool, passing in the paths of files in GenomeSpace as arguments for the WebTool.  The format of the URL is as follows:</p>
+<table border="1" width="100%">
+<tbody>
+<tr>
+<td valign="top" width="50">
+<br/>
+<strong>Verb</strong></td>
+<td valign="top" width="428">
+<p align="center">
+<strong>URL</strong></p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="50">
+<p>
+					GET</p>
+</td>
+<td valign="top" width="428">
+<p>
+					webtool/webtoolname/launchurl?fileparamname1=gs_path_to_file1&amp;<br/>
+					fileparamname2=gs_path_file2</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+	where webtoolname is the name of a WebToolDescriptor object, fileparamname1 is the name of a FileParameter understood by the given WebTool, gs_path_to_file1 is the GenomeSpace path to a file that has been uploaded to GenomeSpace.  Note that the file path names must be URL encoded.  If the WebTool takes multiple arguments as input, the arguments must be separated by ampersands.<br/>
+	Note that some WebTools (e.g., IGV) take multiple filenames for a single parameter.  For these tools, the FileParameter is defined with the compositeFilename being true, and the URL sent to the ATM would be of the form:</p>
+<pre style="border: 1px dashed #6699CC;width:869px;margin:10px;padding:10px;overflow-x:auto;">
+ webtool/webtoolname/launchurl?fileparamname1=gs_path_to_file1&lt;delimeter&gt;gs_path_file2</pre>
+<p>
+	This method will return a text response with the URL in the body of the response.</p>
+<h2>
+	Appendix: Sample ToolDescriptors</h2>
+<p>
+	A simple WebToolDescriptor with no parameters:</p>
+<pre style="border: 1px dashed #6699CC;width:869px;margin:10px;padding:10px;overflow-x:auto;">
+{"tags":[],
+"internalId":"6c09bfe1-6dd4-4c97-a13f-8ef72147b6a7",
+"author":"UCSD","name":"Cytoscape",
+"description":"Cytoscape An open source platform for complex-network analysis and visualization",
+"baseUrl":"http:\/\/chianti.ucsd.edu\/genomespace\/cytoscape.jnlp",
+"fileParameters":[]} </pre>
+<p>
+	A WebToolDescriptor with a parameter:</p>
+<pre style="border: 1px dashed #6699CC;width:869px;margin:10px;padding:10px;overflow-x:auto;">
+{"tags":[],
+"internalId":"4b959bde-864a-46d8-a23f-0dc57245113f",
+"author":"Jim Robinson",
+"name":"IGV",
+"description":"Integrative Genomics Visualizer",
+"baseUrl":"http:\/\/www.broadinstitute.org\/igv\/projects\/dev\/igv_gs.jnlp",
+"fileParameters":[
+  {"formats":[
+    {"name":"gct",
+     "description":"A tab-delimited text file containing gene expression data.  Used by GenePattern.",
+     "url":"http:\/\/www.genomespace.org\/datamanager\/dataformat\/gct",
+     "fileExtension":"gct"},
+    {"name":"bed",
+     "description":"BED format provides a flexible way to define the data lines that are displayed in an annotation track.",
+     "url":"http:\/\/www.genomespace.org\/datamanager\/dataformat\/bed",
+     "fileExtension":"bed"},
+    {"name":"res",
+     "description":"The RES file format is a tab delimited file format that describes an expression dataset.",
+     "url":"http:\/\/www.genomespace.org\/datamanager\/dataformat\/res",
+     "fileExtension":"res"}],
+  "compositeFilename":true,
+  "nameDelimiters":",",
+  "name":"sessionURL",
+  "required":false,
+  "internalId":"45517701-1c6a-4a6a-8fb2-305bdb8a8ef1",
+  "parentInternalId":"4b959bde-864a-46d8-a23f-0dc57245113f"}]
+} </pre>
+</td>
+</tr></table>
+</div>
+</div>
+<div id="footer">
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+	$(document).ready(function() {
+		$("a.toggle_link").click(function() {
+			var image = $(this).children("img");
+			$(image).attr("src", $(image).attr("src") == "/assets/plus.png" ? "/assets/minus.png" : "/assets/plus.png");
+		});
+	});
+
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54489169-1', 'auto');
+  ga('send', 'pageview');
+
+
+//]]>
+</script></div></body>
+</html>

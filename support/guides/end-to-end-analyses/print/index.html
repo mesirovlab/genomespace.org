@@ -1,0 +1,1393 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>End-to-End Analyses</title>
+<link href="/assets/site.css" media="all" rel="stylesheet" type="text/css"/>
+</head>
+<body style="background-image: none;">
+<h1>End-to-End Analyses</h1>
+<h2>List of Driving Biological Projects</h2>
+<p>
+	The documents in this section are descriptions of the driving biological projects which have lead to development of GenomeSpace recipes.</p>
+<table border="0" cellpadding="5" cellspacing="5" width="621">
+<tbody>
+<tr class="first">
+<td>
+<span style="font-size:18px;"><strong><a href="/support/guides/end-to-end-analyses/sections/dbp-gene-networks-in-cancer">Gene Networks in Cancer</a></strong></span></td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2>Driving Biological Project: Gene Networks in Cancer</h2>
+<p>
+<style type="text/css">
+<!--
+.provided{color: #31708f; font-weight: bold;}
+.derived{color: #3c763d; font-weight: bold;}
+.steps{color: #a94442; font-weight: bold;}
+.tool{font-variant: small-caps; font-weight: bold;}
+.subtool{font-style: italic;}
+.menu{font-style: italic; font-weight: bold;}
+.parameter{font-family: monospace; font-weight: bold;}
+.screenshots{line-height: 20px; padding: 2px 4px; background-color: #fff; border: 3px solid #e1e1e8; width:700px; margin-left: 15px;}
+tr.input td {border-bottom: 3px solid #e1e1e8;}
+tr.output td {border-bottom: 3px solid #e1e1e8; border-top: 3px solid #e1e1e8;}
+-->	</style>
+</p>
+<p>
+<strong>Driving Biological Project:</strong> <strong>Gene networks in cancer: an example of a GenomeSpace analysis.</strong> Detailed descriptions of the datasets used, and the analysis steps taken, to examine gene regulatory networks (GRN) in human cancer stem cells through GenomeSpace. Videos illustrating the analysis can be found on the GenomeSpace YouTube channel, as the "<a href="https://www.youtube.com/playlist?list=PL4ZmSx1n2Kw4XJKMwpLeXspPLwVTTPjTp">Driving Biological Project: Identifying Gene Regulatory Networks in Human Cancer Stem Cells</a>" playlist.</p>
+<p>
+<strong>Legend:</strong></p>
+<ul>
+<li>
+<span class="provided">provided datasets</span>: located in the GenomeSpace SharedData account, under the folder: <span class="menu">Driving Biological Projects → Identifying Gene Regulatory Networks in Human Cancer Stem Cells</span></li>
+<li>
+<span class="derived">derived datasets</span>: files that are generated during the analysis</li>
+<li>
+<span class="steps">analysis steps</span></li>
+<li>
+<span class="tool">GenomeSpace tool</span> used in analysis step</li>
+<li>
+<span class="subtool">Module, subtool or plugin</span> used in analysis step</li>
+<li>
+<span class="menu">Menu →</span> indicates menu items or navigation through a tool's menu</li>
+<li>
+<span class="parameter">parameter</span> used in analysis step</li>
+</ul>
+<p>
+<strong>Definitions:</strong></p>
+<p>
+<img alt="" src="/uploaded/content_suppnotefig.png" style="width: 300px; height: 210px; float:right; margin-left: 40px; margin-right: 10px;"/></p>
+<p style="margin-left: 40px;">
+<strong>Stemness signature</strong>: a set of genes which are upregulated in induced cancer stem cells (iCSCs), and enriched in embryonic stem cells (ESCs) and induced pluripotent stem cells (iPSCs). These genes represent a stem cell state.</p>
+<p style="margin-left: 40px;">
+<strong>Non-stemness signature</strong>: a set of genes which are upregulated in iCSCs, but are not associated with the stemness signature.</p>
+<p style="margin-left: 40px;">
+<strong>Stemness "ON"</strong>: a set of breast cancer tumor samples which have significant enrichment in the stemness signature.</p>
+<p style="margin-left: 40px;">
+<strong>Stemness "OFF"</strong>: a set of breast cancer tumor samples which do not have enrichment of the stemness signature.</p>
+<p>
+	 </p>
+<p>
+<strong>Dataset Descriptions:</strong></p>
+<p style="margin-left: 40px;">
+<strong>Dataset 1</strong>: Microarray gene expression data of induced cancer stem cells (iCSCs), generated from primary human keratinocytes which were transformed into squamous cell carcinomas using Ras, IκBα, and either GFP, E2F3, or c-Myc<a href="http://www.ncbi.nlm.nih.gov/pubmed/18397753/"><sup>1</sup></a>.<br/>
+<strong>Provided files:</strong> <span class="provided">MYC_E2F3GFP.gct</span>, <span class="provided">MYC_E2F3GFP.cls</span></p>
+<p style="margin-left: 40px;">
+<strong>Dataset 2</strong>: Microarray gene expression data of embryonic stem cells (ESCs) and induced pluripotent stem cells (iPSCs) created from subsets of several published datasets (Gene Expression Omnibus accession numbers: GSE22499<a href="http://www.ncbi.nlm.nih.gov/pubmed/20682450"><sup>2</sup></a>, GSE22246<a href="http://www.ncbi.nlm.nih.gov/pubmed/20727844"><sup>3</sup></a>, GSE12390<a href="http://www.ncbi.nlm.nih.gov/pubmed/18786420"><sup>4</sup></a>, and GSE15148<a href="http://www.ncbi.nlm.nih.gov/pubmed/19325077"><sup>5</sup></a>).<br/>
+<strong>Provided files:</strong> <span class="provided">diff_ESCiPSC.zip</span>, <span class="provided">diff_ESCiPSC.array.tab</span></p>
+<p style="margin-left: 40px;">
+<strong>Dataset 3</strong>: Data of primary human breast cancer tumor samples including gene expression data (GCT format, calculate from Affymetrix .CEL files), CNV data (aCGH format), and reference annotation data<a href="http://www.ncbi.nlm.nih.gov/pubmed/17157792"><sup>6</sup></a>.<br/>
+<strong>Provided files:</strong> <span class="provided">breasttumor.geneexp.gct</span>, <span class="provided">breasttumor.acgh.txt</span></p>
+<p style="margin-left: 40px;">
+<strong>Dataset 4</strong>: Array comparative genomic hybridization (aCGH) data of primary human breast tumor samples<a href="http://www.ncbi.nlm.nih.gov/pubmed/17157792"><sup>6</sup></a>.<br/>
+<strong>Provided files:</strong> <span class="provided">breasttumor.acgh.order.cn</span></p>
+<p style="margin-left: 40px;">
+<strong>Dataset 5</strong>: ChIP-seq data of identifying targets of the human c-MYC transcription factor<a href="http://www.ncbi.nlm.nih.gov/pubmed/22955616/"><sup>7</sup></a>.<br/>
+<strong>Provided files:</strong> <span class="provided">SRR502406.fastq.gz</span></p>
+<p style="margin-left: 40px;">
+<strong>Gene sets</strong> (Published or Custom): These can be manually curated custom gene sets of the investigator's choice, or previously published gene sets (e.g. from <span class="tool">MSigDB</span> or <span class="tool">Reactome</span>). Example gene sets used in this analysis include stem cell expression signatures, human cancer modules, ChIP-seq targets, genes altered by RNAi, Gene Ontology terms, and KEGG pathways.</p>
+<p>
+	 </p>
+<p>
+<strong>Analysis Steps:</strong></p>
+<p>
+<span class="steps">1.</span> Examine gene expression differences between induced cancer stem cells (iCSCs) and parental cells or non-tumorigenic transformants.</p>
+<table class="screenshots">
+<tbody>
+<tr class="input">
+<td align="left">
+<strong>Input:</strong> <span class="provided">MYC_E2F3GFP.gct</span> and <span class="provided">MYC_E2F3GFP.cls</span></td>
+</tr>
+<tr>
+<td align="left">
+<a class="toggle_link" href="javascript:void(0)" onclick="$('#step1').toggle()"><img src="/assets/plus.png"/><strong>Click here for detailed, step-by-step instructions for this step.</strong></a></td>
+</tr>
+<tr class="collapsed" id="step1" style="display: none;">
+<td align="left">
+<ol type="A">
+<li>
+						Upload the raw gene expression datasets to GenomeSpace (<span class="provided">MYC_E2F3GFP.gct</span> and <span class="provided">MYC_E2F3GFP.cls</span>).</li>
+<li>
+						Launch <span class="tool">GenePattern</span> from GenomeSpace.</li>
+<li>
+						Identify features of differential expression using the <span class="subtool">ComparativeMarkerSelection</span> module in <span class="tool">GenePattern</span>.
+						<ol type="i">
+<li>
+<span class="parameter">input file</span>: <span class="provided">MYC_E2F3GFP.gct</span></li>
+<li>
+<span class="parameter">cls file</span>: <span class="provided">MYC_E2F3GFP.cls</span></li>
+<li>
+								Click <span class="parameter">Run</span> to run the job.</li>
+</ol>
+</li>
+<li>
+						Identify differentially expressed genes using the <span class="subtool">ComparativeMarkerSelectionViewer</span> module in <span class="tool">GenePattern</span>.
+						<ol type="i">
+<li>
+<span class="parameter">comparative marker selection filename</span>: <span class="derived">MYC_E2F3GFP.comp.marker.odf</span></li>
+<li>
+<span class="parameter">dataset filename</span>: <span class="provided">MYC_E2F3GFP.gct</span></li>
+<li>
+								Click <span class="parameter">Run</span> to run the job.</li>
+<li>
+								Visualize the results by clicking <span class="parameter">Open Visualizer</span>.</li>
+<li>
+								Create a filter for the data by navigating to the following menu: <span class="menu">Edit → Filter Features → Custom Filter</span></li>
+<li>
+								Click <span class="menu">Add Filter</span> to add additional criteria:
+								<ol type="a">
+<li>
+<span class="parameter">Score ≤</span> 0</li>
+<li>
+<span class="parameter">FDR(BH) ≤</span> 0.05</li>
+<li>
+<span class="parameter">Feature P High ≤</span> 0.05</li>
+<li>
+										Click "OK".</li>
+</ol>
+</li>
+<li>
+								Export the file by navigating to the following menu: <span class="menu">File → Save Derived Dataset → Use Current Features</span></li>
+<li>
+								Save the file to your local directory by giving it a name, e.g. <span class="derived">up_regulated_in_MYC_over_E2F3GFP.gct</span>, then clicking <span class="parameter">Create</span>.</li>
+</ol>
+</li>
+<li>
+						Save this file to GenomeSpace. Close <span class="subtool">ComparativeMarkerSelectionViewer</span>.</li>
+<li>
+						In GenomeSpace, extract the list of Gene Symbols by right-clicking on the file, choosing <span class="menu">Extract rows / cols</span>, then change the following parameters:
+						<ol type="i">
+<li>
+<span class="parameter">Save as:</span> <span class="derived">up_regulated_in_MYC_over_E2F3GFP.slice.gct</span></li>
+<li>
+<span class="parameter">Start at row:</span> 4</li>
+<li>
+<span class="parameter">Delimiter:</span> Tab</li>
+<li>
+								Select <span class="parameter">Column 2</span>, then click <span class="parameter">Save</span>.</li>
+</ol>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="output">
+<td align="left">
+<strong>Output:</strong> a list of 3903 Gene Symbols of genes significantly up-regulated in induced iCSCs (<span class="derived">up_regulated_in_MYC_over_E2F3GFP.slice.gct</span>).</td>
+</tr>
+<tr>
+<td align="left">
+<a class="toggle_link" href="javascript:void(0)" onclick="$('#vid1').toggle()"><img src="/assets/plus.png"/>Click here to watch a <b>video</b> of this step.</a></td>
+</tr>
+<tr class="collapsed" id="vid1" style="display: none;">
+<td align="center">
+<iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/ulgYJrzndSM?list=PL4ZmSx1n2Kw4XJKMwpLeXspPLwVTTPjTp" width="560"></iframe><br/>
+				 </td>
+</tr>
+</tbody>
+</table>
+<p>
+	 </p>
+<p>
+<span class="steps">2.</span> Process and normalize gene expression datasets of embryonic stem cells (ESCs) and induced pluripotent stem cells (iPSCs).</p>
+<table class="screenshots">
+<tbody>
+<tr class="input">
+<td align="left">
+<strong>Input:</strong> <span class="provided">diff_ESCiPSC.zip</span>.</td>
+</tr>
+<tr>
+<td align="left">
+<a class="toggle_link" href="javascript:void(0)" onclick="$('#step2').toggle()"><img src="/assets/plus.png"/><strong>Click here for detailed, step-by-step instructions for this step.</strong></a></td>
+</tr>
+<tr class="collapsed" id="step2" style="display: none;">
+<td align="left">
+<ol type="A">
+<li>
+						Upload the raw gene expression datasets to GenomeSpace (<span class="provided">diff_ESCiPSC.zip</span>).</li>
+<li>
+						Launch <span class="tool">GenePattern</span> from GenomeSpace.</li>
+<li>
+						Normalize raw expression profiles of <span class="provided">diff_ESCiPSC.zip</span>, and create a GCT file using the <span class="subtool">ExpressionFileCreator</span> module in <span class="tool">GenePattern</span>.
+						<ol type="i">
+<li>
+<span class="parameter">input file:</span> <span class="provided">diff_ESCiPSC.zip</span></li>
+<li>
+<span class="parameter">annotate probes:</span> no</li>
+<li>
+								Click <span class="parameter">Run</span> to run the job.</li>
+</ol>
+</li>
+<li>
+						Calculate the log<sub>2</sub> of the normalized expression profiles the file generated in <span class="steps">#2C</span> using the <span class="subtool">PreprocessDataset</span> module in <span class="tool">GenePattern</span>.
+						<ol type="i">
+<li>
+<span class="parameter">input filename:</span> <span class="derived">diff_ESCiPSC.gct</span></li>
+<li>
+<span class="parameter">threshold and filter:</span> no</li>
+<li>
+<span class="parameter">row normalization:</span> no</li>
+<li>
+<span class="parameter">log2 transform:</span> yes</li>
+<li>
+								Click <span class="parameter">Run</span> to run the job.</li>
+</ol>
+</li>
+<li>
+						Collapse the dataset generated in <span class="steps">#2D</span> to average the different probes and get Gene Symbols using the <span class="subtool">CollapseDataset</span> module in <span class="tool">GenePattern</span>.
+						<ol type="i">
+<li>
+<span class="parameter">dataset file:</span> <span class="derived">diff_ESCiPSC.preprocessed.gct</span></li>
+<li>
+<span class="parameter">chip platform:</span> <a href="ftp://gseaftp.broadinstitute.org/pub/gsea/annotations/HG_U133_Plus_2.chip" target="_new">ftp://gseaftp.broadinstitute.org/pub/gsea/annotations/HG_U133_Plus_2.chip</a></li>
+<li>
+<span class="parameter">collapse mode:</span> Median</li>
+<li>
+								Click <span class="parameter">Run</span> to run the job.</li>
+</ol>
+</li>
+<li>
+						Normalize the dataset generated in <span class="steps">#2E</span> by row-centering the data using the <span class="subtool">HierarchicalClustering</span> module in <span class="tool">GenePattern</span>.
+						<ol type="i">
+<li>
+<span class="parameter">input filename:</span> <span class="derived">diff_ESCiPSC.preprocessed.collapsed.gct</span></li>
+<li>
+<span class="parameter">row center:</span> Subtract the mean of each row</li>
+<li>
+								Click <span class="parameter">Run</span> to run the job.</li>
+</ol>
+</li>
+<li>
+						Send the resulting file from <span class="steps">#2F</span> (e.g. <span class="derived">diff_ESCiPSC.preprocessed.collapsed.cdt</span>) back to GenomeSpace.</li>
+<li>
+						Convert the CDT file to a <span class="tool">Genomica</span> TAB file:
+						<ol type="i">
+<li>
+								Right-click on the file, then choose <span class="menu">Convert</span></li>
+<li>
+<span class="parameter">Convert to:</span> genomicatab</li>
+<li>
+								Click <span class="parameter">Convert on Server</span></li>
+</ol>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="output">
+<td align="left">
+<strong>Output:</strong> a normalized gene expression file that is row centered and collapsed (e.g., <span class="derived">diff_ESCiPSC.preprocessed.collapsed.tab</span>).</td>
+</tr>
+<tr>
+<td align="left">
+<a class="toggle_link" href="javascript:void(0)" onclick="$('#vid2').toggle()"><img src="/assets/plus.png"/>Click here to watch a <b>video</b> of this step.</a></td>
+</tr>
+<tr class="collapsed" id="vid2" style="display: none;">
+<td align="center">
+<iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/56i3YOR3S9k?list=PL4ZmSx1n2Kw4XJKMwpLeXspPLwVTTPjTp" width="560"></iframe><br/>
+				 </td>
+</tr>
+</tbody>
+</table>
+<p>
+	 </p>
+<p>
+<span class="steps">3.</span> Determine whether the genes up-regulated in iCSCs (from <span class="steps">#1</span>) share any similarity with genes expressed in ESCs or iPSCs (from <span class="steps">#2</span>).</p>
+<table class="screenshots">
+<tbody>
+<tr class="input">
+<td align="left">
+<strong>Input:</strong> list of iCSC-associated genes (<span class="steps">#1</span>; <span class="derived">up_regulated_in_MYC_over_E2F3GFP.slice.gct</span>); other gene expression datasets (<span class="steps">#2</span>; <span class="derived">diff_ESCiPSC.preprocessed.collapsed.tab</span>); an accompanying array description file (<span class="provided">diff_ESCiPSC.array.tab</span>).</td>
+</tr>
+<tr>
+<td align="left">
+<a class="toggle_link" href="javascript:void(0)" onclick="$('#step3').toggle()"><img src="/assets/plus.png"/><strong>Click here for detailed, step-by-step instructions for this step.</strong></a></td>
+</tr>
+<tr class="collapsed" id="step3" style="display: none;">
+<td align="left">
+<ol type="A">
+<li>
+<strong>Identify stemness genes:</strong> First, identify how many iCSC-associated up-regulated genes (<span class="steps">#1</span>) are enriched in the ESC and iPSC datasets (<span class="steps">#2</span>), using the <span class="subtool">ModuleMap</span> tool in <span class="tool">Genomica</span>. Stemness genes are genes common to all the stem cell-based datasets.
+						<ol type="i">
+<li>
+								Launch <span class="tool">Genomica</span> on the gene expression file (<span class="steps">#2</span>) from GenomeSpace.</li>
+<li>
+								Navigate to the menu <span class="menu">Sets → Load Gene Sets from GenomeSpace File...</span> Then choose the gene set file (<span class="steps">#1</span>).</li>
+<li>
+								Navigate to the menu <span class="menu">Sets → Load Experiment Sets from GenomeSpace...</span> Then choose the experiment file (<span class="provided">diff_ESCiPSC.array.tab</span>).</li>
+<li>
+								Navigate to the menu <span class="menu">Algorithms → Create a Module Map...</span>
+<ol type="a">
+<li>
+										Under <span class="menu">Gene Sets</span>, click the box next to ...<span class="derived">up_regulated_in_MYC_over_E2F3GFP.slice.gct</span></li>
+<li>
+										Under <span class="menu">Gene Sets</span>, set <span class="parameter">Exclude gene sets with more than</span> to 10000</li>
+<li>
+										Under <span class="menu">Experiments</span>, set <span class="parameter">Expression levels &gt;= __ are considered up-regulated</span> to 0.5</li>
+<li>
+										Under <span class="menu">Experiments</span>, set <span class="parameter">Expression levels &lt;= __ are considered down-regulated</span> to -0.5</li>
+<li>
+										Under <span class="menu">Experiment attributes</span>, check the box next to ...<span class="provided">diff_ESCiPSC.array</span></li>
+<li>
+										Run the analysis to create a module map.</li>
+</ol>
+</li>
+<li>
+								Obtain a list of stemness genes:
+								<ol type="a">
+<li>
+										In the window <span class="menu">Exp.An</span>, highlight the <span class="menu">Gene</span> column.</li>
+<li>
+										Click the <span class="menu">View Gene Hits</span> button.</li>
+<li>
+										Click <span class="menu">Analyze</span>.</li>
+<li>
+										Once the new heatmap is loaded, under <span class="menu">Print Analysis</span>, click <span class="menu">Columns</span>. Save the resulting file of Gene Symbols and annotations to your local computer. Give the file a name, e.g. <span class="derived">stemness.lst</span>.</li>
+<li>
+										Save this file to GenomeSpace.</li>
+</ol>
+</li>
+<li>
+								In GenomeSpace, convert the LST file to a <span class="tool">Genomica</span> geneset TAB format:
+								<ol type="a">
+<li>
+										Right-click on the file, then choose <span class="menu">Convert</span></li>
+<li>
+<span class="parameter">Convert to:</span> geneset.tab</li>
+<li>
+										Click <span class="parameter">Convert on Server</span></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<strong>Identify non-stemness genes:</strong> Next, identify how many of the iCSC-associated up-regulated genes (<span class="steps">#1</span>) are enriched in the differentiated cells. First, identify which are up-regulated in iCSCs (<span class="steps">#1</span>), but are not present in the stemness signature (<span class="steps">#3A.vi</span>), using the <span class="subtool">IntersectingIdentifiers</span> module in <span class="tool">GenePattern</span>. Next, use the <span class="subtool">ModuleMap</span> tool in <span class="tool">Genomica</span> to create a module map to identify non-stemness genes. Non-stemness genes are unique to iCSCs.
+						<ol type="i">
+<li>
+								Identify non-stemness genes up-regulated in iCSCs (<span class="subtool">IntersectingIdentifiers</span>, <span class="tool">GenePattern</span>).
+								<ol type="a">
+<li>
+										Launch <span class="tool">GenePattern</span> from GenomeSpace.</li>
+<li>
+										Using the <span class="subtool">IntersectingIdentifiers</span> module, change the following parameters:
+										<ol type="1">
+<li>
+<span class="parameter">First file:</span> <span class="derived">stemness.geneset.tab</span></li>
+<li>
+<span class="parameter">Second file:</span> <span class="derived">up_regulated_in_MYC_over_E2F3GFP.slice.gct</span></li>
+<li>
+<span class="parameter">First file identifier column index:</span> 1</li>
+<li>
+<span class="parameter">Second file identifier column index:</span> 1</li>
+<li>
+<span class="parameter">Output file name prefix:</span> stemness_MYC</li>
+<li>
+<span class="parameter">First file skip rows:</span> 1</li>
+<li>
+<span class="parameter">Second file skip rows:</span> 0</li>
+<li>
+												Click <span class="parameter">Run</span> to run the job.</li>
+</ol>
+</li>
+<li>
+										From the output files, save the <span class="derived">stemness_MYC.notinfirst.gct</span> file back to GenomeSpace, then convert the GCT to a <span class="tool">Genomica</span> geneset tab format:
+										<ol type="1">
+<li>
+												Right-click on the file, then choose <span class="menu">Convert</span></li>
+<li>
+<span class="parameter">Convert to:</span> geneset.tab</li>
+<li>
+												Click <span class="parameter">Convert on Server</span></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+								Use <span class="tool">Genomica</span> to identify non-stemness genes using the <span class="subtool">ModuleMap</span> tool.
+								<ol type="a">
+<li>
+										Launch <span class="tool">Genomica</span> on the gene expression file (<span class="steps">#2</span>).</li>
+<li>
+										Navigate to the menu <span class="menu">Sets → Load Gene Sets from GenomeSpace File...</span>, choose the <span class="derived">stemness_MYC.notinfirst.geneset.tab</span> file (<span class="steps">#3B.i</span>).</li>
+<li>
+										Navigate to the menu <span class="menu">Sets → Load Experiment Sets from GenomeSpace...</span>. Then choose the experiment file (<span class="provided">diff_ESCiPSC.array.tab</span>).</li>
+<li>
+										Navigate to the menu <span class="menu">Algorithms → Create a Module Map...</span></li>
+<li>
+										Under <span class="menu">Gene Sets</span>, click the box next to ...<span class="derived">stemness_MYC.notinfirst.gct</span></li>
+<li>
+										Use the same parameters as in <span class="steps">#3A.iv</span>.</li>
+<li>
+										Run the analysis to create a module map.</li>
+</ol>
+</li>
+<li>
+								Obtain a list of non-stemness genes:
+								<ol type="a">
+<li>
+										Follow the steps in <span class="steps">#3A.v</span> to save the file, e.g. <span class="derived">nonstemness.lst</span>.</li>
+<li>
+										Follow the steps in <span class="steps">#3A.vi</span> to convert the file to <span class="derived">nonstemness.geneset.tab</span>.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+						Visualize the results of <span class="steps">#3A</span> and <span class="steps">#3B</span> in <span class="tool">Genomica</span>.</li>
+</ol>
+</td>
+</tr>
+<tr class="output">
+<td align="left">
+<strong>Output:</strong> a list of 550 stemness genes (<span class="derived">stemness.geneset.tab</span>) and a list of 469 non-stemness genes (<span class="derived">nonstemness.geneset.tab</span>).<br/>
+<b>NOTE:</b> Do not close <span class="tool">Genomica</span>.</td>
+</tr>
+<tr>
+<td align="left">
+<a class="toggle_link" href="javascript:void(0)" onclick="$('#vid3').toggle()"><img src="/assets/plus.png"/>Click here to watch a <b>video</b> of this step.</a></td>
+</tr>
+<tr class="collapsed" id="vid3" style="display: none;">
+<td align="center">
+<iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/oMxCJ34N7cA?list=PL4ZmSx1n2Kw4XJKMwpLeXspPLwVTTPjTp" width="560"></iframe><br/>
+				 </td>
+</tr>
+</tbody>
+</table>
+<p>
+	 </p>
+<p>
+<span class="steps">4.</span> Determine if the stemness genes (<span class="steps">#3A</span>) are systematically regulated at a transcriptional level during differentiation.</p>
+<table class="screenshots">
+<tbody>
+<tr class="input">
+<td align="left">
+<strong>Input:</strong> list of stemness genes (<span class="steps">#3A</span>; <span class="derived">stemness.geneset.tab</span>); gene sets of interest. In this example, we evaluate the <span class="tool">MSigDB</span> gene set for computationally derived human cancer gene expression (Collection 4), and the <span class="tool">MSigDB</span> Gene Ontology gene set (Collection 5).</td>
+</tr>
+<tr>
+<td align="left">
+<a class="toggle_link" href="javascript:void(0)" onclick="$('#step4').toggle()"><img src="/assets/plus.png"/><strong>Click here for detailed, step-by-step instructions for this step.</strong></a></td>
+</tr>
+<tr class="collapsed" id="step4" style="display: none;">
+<td align="left">
+<ol type="A">
+<li>
+						First, upload collections of gene sets of human cancer gene expression and the Molecular Signatures Database (<span class="tool">MSigDB</span>) (<a href="http://www.msigdb.org" target="_new">http://www.msigdb.org</a>) to GenomeSpace.
+						<ol type="i">
+<li>
+								Navigate to the <span class="tool">MSigDB</span>/GSEA gene sets download page: <a href="http://www.broadinstitute.org/gsea/downloads.jsp" target="_new">http://www.broadinstitute.org/gsea/downloads.jsp</a></li>
+<li>
+								Download the following gene sets to your local drive:
+								<ol type="a">
+<li>
+<span class="derived">c4.cm.v4.0.symbols.gmt</span></li>
+<li>
+<span class="derived">c5.all.v4.0.symbols.gmt</span></li>
+</ol>
+</li>
+<li>
+								Save all files to GenomeSpace.</li>
+<li>
+								Convert all files to <span class="tool">Genomica</span> TAB format:
+								<ol type="a">
+<li>
+										Right-click on the file, then choose <span class="menu">Convert</span></li>
+<li>
+<span class="parameter">Convert to:</span> geneset.tab</li>
+<li>
+										Click <span class="parameter">Convert on Server</span></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+						Next, perform a multidimensional gene set enrichment analysis of the stemness gene list (<span class="steps">#3A</span>) against the gene sets from <span class="tool">MSigDB</span> using the <span class="subtool">Analyze Gene Sets</span> tool in <span class="tool">Genomica</span>.
+						<ol type="i">
+<li>
+								In <span class="tool">Genomica</span>, navigate to the menu <span class="menu">Sets → Load Gene Sets from GenomeSpace File...</span>. Then choose the stemness gene set (<span class="steps">#3A</span>).</li>
+<li>
+								Navigate to the menu <span class="menu">Sets → Load Gene Sets from GenomeSpace File...</span>. Then choose a gene set to compare, e.g. C4 Cancer Module gene set (<span class="steps">#4A.i</span>, <span class="derived">c4.cm.v4.0.symbols.geneset.tab</span>).</li>
+<li>
+								Navigate to the menu <span class="menu">Analyze → Gene Sets...</span>.
+								<ol type="a">
+<li>
+										Under <span class="menu">Sets to Analyze</span>, choose the "stemness" gene set.</li>
+<li>
+										Under <span class="menu">Sets to Find Enrichment For</span>, choose a gene set (e.g. C4).</li>
+<li>
+										Click <span class="menu">Analyze</span> to run the analysis.</li>
+</ol>
+</li>
+<li>
+<b>OPTIONAL:</b> save the results, e.g. <span class="derived">stemness_GO.gxp</span>.</li>
+<li>
+								Repeat the analysis with the other gene sets as well.<br/>
+<b>NOTE:</b> to repeat the analysis using other gene sets, you may have to reload <span class="tool">Genomica</span> to clear the memory of previous gene sets. Make sure to include an expression array dataset when reloading.</li>
+</ol>
+</li>
+<li>
+						Obtain and visualize expression profiles of any enriched gene sets of interest (<span class="tool">Genomica</span>).</li>
+</ol>
+</td>
+</tr>
+<tr class="output">
+<td align="left">
+<strong>Output:</strong> a list of 50 cancer modules and 101 Gene Ontology terms that are enriched in stemness genes (P-value &lt; 0.01, hypergeometric test, FDR &lt; 0.05).</td>
+</tr>
+<tr>
+<td align="left">
+<a class="toggle_link" href="javascript:void(0)" onclick="$('#vid4').toggle()"><img src="/assets/plus.png"/>Click here to watch a <b>video</b> of this step.</a></td>
+</tr>
+<tr class="collapsed" id="vid4" style="display: none;">
+<td align="center">
+<iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/AQiCkUrnbQA?list=PL4ZmSx1n2Kw4XJKMwpLeXspPLwVTTPjTp" width="560"></iframe><br/>
+				 </td>
+</tr>
+</tbody>
+</table>
+<p>
+	 </p>
+<p>
+<span class="steps">5.</span> Determine if the non-stemness genes (<span class="steps">#3B</span>) are systematically regulated at the transcriptional level during differentiation, by repeating <span class="steps">#4A</span>-<span class="steps">4C</span> on the non-stemness genes.</p>
+<table class="screenshots">
+<tbody>
+<tr class="input">
+<td align="left">
+<strong>Input:</strong> list of non-stemness genes (<span class="steps">#3B</span>; <span class="derived">nonstemness.geneset.tab</span>); gene sets of interest. In this example, we evaluate the <span class="tool">MSigDB</span> gene set for computationally derived human cancer gene expression (Collection 4), and the <span class="tool">MSigDB</span> Gene Ontology gene set (Collection 5).</td>
+</tr>
+<tr>
+<td align="left">
+<a class="toggle_link" href="javascript:void(0)" onclick="$('#step5').toggle()"><img src="/assets/plus.png"/><strong>Click here for detailed, step-by-step instructions for this step.</strong></a></td>
+</tr>
+<tr class="collapsed" id="step5" style="display: none;">
+<td align="left">
+<ol type="A">
+<li>
+						Perform a multidimensional gene set enrichment analysis of the non-stemness gene list (<span class="steps">#3B</span>) against the gene sets from <span class="tool">MSigDB</span> using the <span class="subtool">Analyze Gene Sets</span> tool in <span class="tool">Genomica</span>.
+						<ol type="i">
+<li>
+								In <span class="tool">Genomica</span>, navigate to the menu <span class="menu">Sets → Load Gene Sets from GenomeSpace File...</span>. Then choose the non-stemness gene set (<span class="steps">#3B</span>).</li>
+<li>
+								Navigate to the menu <span class="menu">Analyze → Gene Sets...</span>.
+								<ol type="a">
+<li>
+										Under <span class="menu">Sets to Analyze</span>, choose the "non-stemness" gene set.</li>
+<li>
+										Under <span class="menu">Sets to Find Enrichment For</span>, choose a gene set (e.g. C4).</li>
+<li>
+										Click <span class="menu">Analyze</span> to run the analysis.</li>
+</ol>
+</li>
+<li>
+								OPTIONAL: save the results, e.g. <span class="derived">nonstemness_GO.gxp</span>.</li>
+<li>
+								Repeat the analysis with the other gene sets as well.</li>
+</ol>
+</li>
+<li>
+						Obtain and visualize expression profiles of any enriched gene sets of interest (<span class="tool">Genomica</span>).</li>
+</ol>
+</td>
+</tr>
+<tr class="output">
+<td align="left">
+<strong>Output:</strong> a list of 37 cancer modules and 11 Gene Ontology terms that are enriched in non-stemness genes (P-value &lt; 0.01, hypergeometric test, FDR &lt; 0.05).</td>
+</tr>
+<tr>
+<td align="left">
+<a class="toggle_link" href="javascript:void(0)" onclick="$('#vid5').toggle()"><img src="/assets/plus.png"/>Click here to watch a <b>video</b> of this step.</a></td>
+</tr>
+<tr class="collapsed" id="vid5" style="display: none;">
+<td align="center">
+<iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/IBLYs17Gb8E?list=PL4ZmSx1n2Kw4XJKMwpLeXspPLwVTTPjTp" width="560"></iframe><br/>
+				 </td>
+</tr>
+</tbody>
+</table>
+<p>
+	 </p>
+<p>
+<span class="steps">6.</span> Determine how the stemness and non-stemness gene signatures are represented in differentiated cancer cells. To determine this, first process and normalize breast cancer gene expression profiles in <span class="tool">GenePattern</span>, for later analysis in <span class="tool">Genomica</span>.</p>
+<table class="screenshots">
+<tbody>
+<tr class="input">
+<td align="left">
+<strong>Input:</strong> A breast cancer gene expression dataset (<span class="provided">breasttumor.geneexp.gct</span>)</td>
+</tr>
+<tr>
+<td align="left">
+<a class="toggle_link" href="javascript:void(0)" onclick="$('#step6').toggle()"><img src="/assets/plus.png"/><strong>Click here for detailed, step-by-step instructions for this step.</strong></a></td>
+</tr>
+<tr class="collapsed" id="step6" style="display: none;">
+<td align="left">
+<ol type="A">
+<li>
+						Upload the raw gene expression datasets to GenomeSpace (<span class="provided">breasttumor.geneexp.gct</span>).</li>
+<li>
+						Launch <span class="tool">GenePattern</span> from GenomeSpace.</li>
+<li>
+						Calculate the log<sub>2</sub> of the expression profiles using the <span class="subtool">PreprocessDataset</span> module in <span class="tool">GenePattern</span>.
+						<ol type="i">
+<li>
+<span class="parameter">input filename:</span> <span class="provided">breasttumor.geneexp.gct</span></li>
+<li>
+<span class="parameter">threshold and filter:</span> no</li>
+<li>
+<span class="parameter">row normalization:</span> no</li>
+<li>
+<span class="parameter">log2 transform:</span> yes</li>
+<li>
+								Click <span class="parameter">Run</span> to run the job.</li>
+</ol>
+</li>
+<li>
+						Collapse the dataset generated from <span class="steps">#6C</span> to average the different probes and get Gene Symbols using the <span class="subtool">CollapseDataset</span> module in <span class="tool">GenePattern</span>.
+						<ol type="i">
+<li>
+<span class="parameter">dataset file:</span> <span class="derived">breasttumor.geneexp.preprocessed.gct</span></li>
+<li>
+<span class="parameter">chip platform:</span> <a href="ftp://gseaftp.broadinstitute.org/pub/gsea/annotations/HG_U133_Plus_2.chip" target="_new">ftp://gseaftp.broadinstitute.org/pub/gsea/annotations/HG_U133_Plus_2.chip</a></li>
+<li>
+<span class="parameter">collapse mode:</span> Median</li>
+<li>
+								Click <span class="parameter">Run</span> to run the job.</li>
+</ol>
+</li>
+<li>
+						Normalize the dataset from <span class="steps">#6D</span> by row-centering using the <span class="subtool">HierarchicalClustering</span> module in <span class="tool">GenePattern</span>.
+						<ol type="i">
+<li>
+<span class="parameter">input filename:</span> <span class="derived">breasttumor.geneexp.preprocessed.collapsed.gct</span></li>
+<li>
+<span class="parameter">row center:</span> Subtract the mean of each row</li>
+<li>
+								Click <span class="parameter">Run</span> to run the job.</li>
+</ol>
+</li>
+<li>
+						Send the resulting file from <span class="steps">#6E</span> (e.g. <span class="derived">breasttumor.geneexp.preprocessed.collapsed.cdt</span>) back to GenomeSpace.</li>
+<li>
+						Convert the CDT file from <span class="steps">#6F</span> to a <span class="tool">Genomica</span> TAB file:
+						<ol type="i">
+<li>
+								Right-click on the file, then choose <span class="menu">Convert</span></li>
+<li>
+<span class="parameter">Convert to:</span> genomicatab</li>
+<li>
+								Click <span class="parameter">Convert on Server</span></li>
+</ol>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="output">
+<td align="left">
+<strong>Output:</strong> a normalized gene expression file of normal/tumor breast cancer samples in <span class="tool">Genomica</span> tab format (<span class="derived">breasttumor.geneexp.preprocessed.collapsed.tab</span>).</td>
+</tr>
+<tr>
+<td align="left">
+<a class="toggle_link" href="javascript:void(0)" onclick="$('#vid6').toggle()"><img src="/assets/plus.png"/>Click here to watch a <b>video</b> of this step.</a></td>
+</tr>
+<tr class="collapsed" id="vid6" style="display: none;">
+<td align="center">
+<iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/nWykeoOOkDU?list=PL4ZmSx1n2Kw4XJKMwpLeXspPLwVTTPjTp" width="560"></iframe><br/>
+				 </td>
+</tr>
+</tbody>
+</table>
+<p>
+	 </p>
+<p>
+<span class="steps">7.</span> Determine the relationship between stemness genes and differentiated breast cancer tumor samples. To do this, separate the tumor samples into two groups based on whether they are enriched or depleted for expressed stemness genes. Then, use this categorization to process breast cancer tumor copy number variation (CNV) data.</p>
+<table class="screenshots">
+<tbody>
+<tr class="input">
+<td align="left">
+<strong>Input:</strong> a normalized gene expression file of breast cancer samples (<span class="steps">#6</span>; <span class="derived">breasttumor.geneexp.preprocessed.collapsed.tab</span>), the list of stemness genes (<span class="steps">#3A</span>, <span class="derived">stemness.geneset.tab</span>), and the raw breast cancer CNV profiles (<span class="provided">breasttumor.acgh.txt</span>).</td>
+</tr>
+<tr>
+<td align="left">
+<a class="toggle_link" href="javascript:void(0)" onclick="$('#step7').toggle()"><img src="/assets/plus.png"/><strong>Click here for detailed, step-by-step instructions for this step.</strong></a></td>
+</tr>
+<tr class="collapsed" id="step7" style="display: none;">
+<td align="left">
+<ol type="A">
+<li>
+						First, create a module map to distinguish the two groups of breast cancer tumor samples in <span class="tool">Genomica</span>.
+						<ol type="i">
+<li>
+								Launch <span class="tool">Genomica</span> on the gene expression dataset file (<span class="steps">#6</span>; <span class="derived">breasttumor.geneexp.preprocessed.collapsed.tab</span>).</li>
+<li>
+								Navigate to the menu <span class="menu">Sets → Load Gene Sets from GenomeSpace File...</span>. Then choose the stemness gene set file (<span class="steps">#3A</span>; <span class="derived">stemness.geneset.tab</span>).</li>
+<li>
+								Navigate to the menu <span class="menu">Algorithms → Create a Module Map...</span>
+<ol type="a">
+<li>
+										Under <span class="menu">Gene Sets</span>, click the box next to ...<span class="derived">stemness.geneset</span></li>
+<li>
+										Under <span class="menu">Experiments</span>, set <span class="parameter">Expression levels &gt;= __ are considered up-regulated</span> to 0.5</li>
+<li>
+										Under <span class="menu">Experiments</span>, set <span class="parameter">Expression levels &lt;= __ are considered up-regulated</span> to -0.5</li>
+<li>
+										Run the analysis to create a module map.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+						Next, create an experiment array set out of the arrays which are up- or down-regulated for stemness genes by processing the module map output in <span class="tool">Genomica</span>.
+						<ol type="i">
+<li>
+								In the window <span class="menu">Exp.An</span>, highlight the column, e.g. "INGENESET".</li>
+<li>
+								Under <span class="menu">Print Analysis</span>, click <span class="menu">Regulation</span>. Choose a folder. <span class="tool">Genomica</span> will automatically create and save the following files to this folder: <span class="derived">INGENESET.present.txt</span>, <span class="derived">INGENESET.absent.txt</span>, and <span class="derived">INGENESET.array.tab</span>.</li>
+<li>
+								Save the files to GenomeSpace.</li>
+</ol>
+</li>
+<li>
+						Next, normalize the raw breast cancer copy number variation (CNV) profiles (<span class="provided">breasttumor.acgh.txt</span>) using the <span class="subtool">Acgh2Tab</span> module in <span class="tool">GenePattern</span>.
+						<ol type="i">
+<li>
+								Launch <span class="tool">GenePattern</span> from GenomeSpace and search for the <span class="subtool">Acgh2Tab</span> module, then run with the following parameters:
+								<ol type="a">
+<li>
+<span class="parameter">acgh input file:</span> <span class="provided">breasttumor.acgh.txt</span></li>
+<li>
+<span class="parameter">presentlist file:</span> <span class="derived">INGENESET.present.txt</span></li>
+<li>
+<span class="parameter">absentlist file:</span> <span class="derived">INGENESET.absent.txt</span></li>
+<li>
+<span class="parameter">genelocs file:</span> hg18_refseq_genes.txt</li>
+<li>
+										Click <span class="parameter">Run</span> to run the job.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+						Save the converted aCGH file from <span class="steps">#7D</span> to GenomeSpace (e.g. <span class="derived">acgh.avergene.tab</span>).</li>
+</ol>
+</td>
+</tr>
+<tr class="output">
+<td align="left">
+<strong>Output:</strong> an experiment set file that separates breast cancer tumor samples based on presence (up-regulation) or absence (down-regulation) of stemness genes (<span class="derived">INGENESET.array.tab</span>), a normalized CNV profile (<span class="derived">acgh.avergene.tab</span>), arrays in which the stemness signature is present (<span class="derived">INGENESET.present.txt</span>; "Stemness ON" samples) and absent (<span class="derived">INGENESET.absent.txt</span>; "Stemness OFF" samples).</td>
+</tr>
+<tr>
+<td align="left">
+<a class="toggle_link" href="javascript:void(0)" onclick="$('#vid7').toggle()"><img src="/assets/plus.png"/>Click here to watch a <b>video</b> of this step.</a></td>
+</tr>
+<tr class="collapsed" id="vid7" style="display: none;">
+<td align="center">
+<iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/v_8rSZ8GrHs?list=PL4ZmSx1n2Kw4XJKMwpLeXspPLwVTTPjTp" width="560"></iframe><br/>
+				 </td>
+</tr>
+</tbody>
+</table>
+<p>
+	 </p>
+<p>
+<span class="steps">8.</span> Upload the C1 collection of chromosome cytobands gene sets from <span class="tool">MSigDB</span> to GenomeSpace, then convert the file to geneset tab format for <span class="tool">Genomica</span>.</p>
+<table class="screenshots">
+<tbody>
+<tr class="input">
+<td align="left">
+<strong>Input:</strong> None.</td>
+</tr>
+<tr>
+<td align="left">
+<a class="toggle_link" href="javascript:void(0)" onclick="$('#step8').toggle()"><img src="/assets/plus.png"/><strong>Click here for detailed, step-by-step instructions for this step.</strong></a></td>
+</tr>
+<tr class="collapsed" id="step8" style="display: none;">
+<td align="left">
+<ol type="A">
+<li>
+						Navigate to the <span class="tool">MSigDB</span>/GSEA gene sets download page: <a href="http://www.broadinstitute.org/gsea/downloads.jsp" target="_new">http://www.broadinstitute.org/gsea/downloads.jsp</a>.</li>
+<li>
+						Download the following gene sets to your local drive:
+						<ol type="i">
+<li>
+<span class="derived">c1.all.v4.0.symbols.gmt</span></li>
+</ol>
+</li>
+<li>
+						Save the file to GenomeSpace.</li>
+<li>
+						Convert all files to <span class="tool">Genomica</span> TAB format:
+						<ol type="i">
+<li>
+								Right-click on the file, then choose <span class="menu">Convert</span></li>
+<li>
+<span class="parameter">Convert to:</span> geneset.tab</li>
+<li>
+								Click <span class="parameter">Convert on Server</span></li>
+</ol>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="output">
+<td align="left">
+<strong>Output:</strong> a <span class="tool">Genomica</span> gene set of the Collection C1 from <span class="tool">MSigDB</span> (e.g., <span class="derived">c1.all.v4.0.symbols.geneset.tab</span></td>
+</tr>
+<tr>
+<td align="left">
+<a class="toggle_link" href="javascript:void(0)" onclick="$('#vid8').toggle()"><img src="/assets/plus.png"/>Click here to watch a <b>video</b> of this step.</a></td>
+</tr>
+<tr class="collapsed" id="vid8" style="display: none;">
+<td align="center">
+<iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/07v51jE6-tk?list=PL4ZmSx1n2Kw4XJKMwpLeXspPLwVTTPjTp" width="560"></iframe><br/>
+				 </td>
+</tr>
+</tbody>
+</table>
+<p>
+	 </p>
+<p>
+<span class="steps">9.</span> To identify if gene expression signatures (such as "Stemness ON" and "Stemness OFF") are associated with copy number aberrations in genes regulating transcription, perform Stepwise Linkage Analysis of Microarray Signatures (SLAMS).<br/>
+	     Description of the SLAMS procedure<a href="http://www.ncbi.nlm.nih.gov/pubmed/16680134/"><sup>11</sup></a>:</p>
+<ol>
+<li>
+		Sort tumor samples into groups based on whether the stemness signature is present ("ON") or absent ("OFF") (Completed in Step <span class="steps">#7</span>).</li>
+<li>
+		Compare the DNA copy number changes (from the array CGH data) between the groups of tumor samples. Calculate the association between stemness expression and CNV datasets to identify amplifications/deletions associated with the stemness signature.</li>
+<li>
+		Select genes which are potential candidate regulators of the stemness signature, based on coordinate gene amplification/deletion and gene expression upregulation/downregulation.</li>
+<li>
+		Validate the candidate regulators by assessing their predictive ability in independent samples of tumor samples.</li>
+</ol>
+<table class="screenshots">
+<tbody>
+<tr class="input">
+<td align="left">
+<strong>Input:</strong> the normalized breast cancer CNV profiles (<span class="steps">#7D</span>; <span class="derived">acgh.avergene.tab</span>), the experiment array set with stemness present/absent annotation (<span class="steps">#7B</span>; <span class="derived">INGENESET.array.tab</span>), the processed <span class="tool">MSigDB</span> C1 collection (<span class="steps">#8A</span>; <span class="derived">c1.all.v4.0.symbols.geneset.tab</span>), and the normalized breast cancer gene expression dataset (<span class="steps">#6</span>; <span class="derived">breasttumor.geneexp.preprocessed.collapsed.tab</span>).</td>
+</tr>
+<tr>
+<td align="left">
+<a class="toggle_link" href="javascript:void(0)" onclick="$('#step9').toggle()"><img src="/assets/plus.png"/><strong>Click here for detailed, step-by-step instructions for this step.</strong></a></td>
+</tr>
+<tr class="collapsed" id="step9" style="display: none;">
+<td align="left">
+<ol type="A">
+<li>
+						First, compare CNV data between groups of tumor samples to identify candidate regulators of expression, using <span class="tool">Genomica</span>.
+						<ol type="i">
+<li>
+								Launch <span class="tool">Genomica</span> on the normalized breast cancer CNV profile (<span class="steps">#7D</span>).</li>
+<li>
+								Navigate to the menu <span class="menu">Sets → Load Gene Sets from GenomeSpace File...</span>. Then choose C1 collection of chromosome cytobands file from GenomeSpace. (<span class="steps">#8A</span>).</li>
+<li>
+								Navigate to the menu <span class="menu">Sets → Load Experiment Sets from GenomeSpace File...</span>. Then choose the experiment array set of samples that are present or absent for stemness genes (<span class="steps">#7B</span>).</li>
+<li>
+								Navigate to the menu <span class="menu">Algorithms → Create a Module Map...</span>
+<ol type="a">
+<li>
+										Under <span class="menu">Gene Set</span>, click the box next to ...<span class="derived">c1.all.4.0.symbols.geneset</span></li>
+<li>
+										Under <span class="menu">Experiment attributes</span>, check the box next to ...<span class="derived">INGENESET.array</span></li>
+<li>
+										Run the analysis to create a module map using default settings.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+						Next, save the list of most promising candidate regulators back to GenomeSpace, and converts the file format.
+						<ol type="i">
+<li>
+								In the window <span class="menu">Exp.An</span>, highlight the "CHR8Q24" and "CHR8Q22" columns (the top 2 most enriched cytobands).</li>
+<li>
+								Click <span class="menu">View Gene Hits</span>.</li>
+<li>
+								Check the box next to ...<span class="derived">INGENESET.array</span>.</li>
+<li>
+								Click <span class="menu">Analyze</span>.</li>
+<li>
+								Once the new heatmap is loaded, under <span class="menu">Print Analysis</span>, click <span class="menu">Columns</span>. Save the resulting file of 145 candidate regulators, e.g. <span class="derived">candidate_regulators.lst</span>.</li>
+<li>
+								Upload <span class="derived">candidate_regulators.lst</span> to GenomeSpace.</li>
+<li>
+								In GenomeSpace, convert the LST file to a <span class="tool">Genomica</span> geneset TAB format:
+								<ol type="a">
+<li>
+										Right-click on the file, then choose <span class="menu">Convert</span></li>
+<li>
+<span class="parameter">Convert to:</span> geneset.tab</li>
+<li>
+										Click <span class="parameter">Convert on Server</span></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+						Next, obtain a list of candidate stemness regulators based on coordinate gene amplification/deletion and gene expression upregulation/downregulation.
+						<ol type="i">
+<li>
+								Upload the normalized breast cancer gene expression dataset <span class="derived">breasttumor.geneexp.processed.collapsed.tab</span> to <span class="tool">Genomica</span> (<span class="steps">#6</span>).</li>
+<li>
+								Navigate to the menu <span class="menu">Sets → Load Gene Sets from GenomeSpace File...</span>. Then choose the candidate regulators file (<span class="steps">#9E</span>; <span class="derived">candidate_regulators.geneset.tab</span>).</li>
+<li>
+								Navigate to the menu <span class="menu">Sets → Load Experiment Sets from GenomeSpace File...</span>. Then choose the experiment array set of samples that are present or absent for stemness genes (<span class="steps">#7E</span>).</li>
+<li>
+								Navigate to the menu <span class="menu">Algorithms → Create a Module Map...</span>
+<ol type="a">
+<li>
+										Under <span class="menu">Gene Sets</span>, click the box next to ...<span class="derived">candidate_regulators.geneset</span></li>
+<li>
+										Under <span class="menu">Experiment attributes</span>, check the box next to ...<span class="derived">INGENESET.array</span></li>
+<li>
+										Run the analysis to create a module map.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+						Finally, save the list of stemness regulators back to GenomeSpace, and convert the file format.
+						<ol type="i">
+<li>
+								In the window <span class="menu">Exp.An</span>, highlight the "INGENESET" column.</li>
+<li>
+								Click <span class="menu">View Gene Hits</span>.</li>
+<li>
+								Check the box next to ...<span class="derived">INGENESET.array</span>.</li>
+<li>
+								Click <span class="menu">Analyze</span>.</li>
+<li>
+								Once the new heatmap is loaded, under <span class="menu">Print Analysis</span>, click <span class="menu">Columns</span>. Save the resulting file of 48 stemness regulators, e.g. <span class="derived">stemness_regulators.lst</span>.</li>
+<li>
+								Upload <span class="derived">stemness_regulators.lst</span> to GenomeSpace.</li>
+<li>
+								In GenomeSpace, convert the LST file to a <span class="tool">Genomica</span> geneset TAB format:
+								<ol type="a">
+<li>
+										Right-click on the file, then choose <span class="menu">Convert</span></li>
+<li>
+<span class="parameter">Convert to:</span> geneset.tab</li>
+<li>
+										Click <span class="menu">Convert on Server</span></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="output">
+<td align="left">
+<strong>Output:</strong> visualize the enrichment of cytobands CHR8Q24, CHR8Q22 in the CNV data for tumors with the stemness signature. Obtain a list of identified regulators (e.g. <span class="derived">stemness_regulators.geneset.tab</span>). This file contains a list of 48 candidate regulators (out of the 145) that are "stemness regulators", which are also significantly enriched in "Stemness ON" tumors. One of these stemness regulators is MYC, suggesting that the iCSC model faithfully recapitulates genes reprogrammed in authentic human cancers by c-MYC amplification. Finally, visualize the expression of the breast cancer gene expression dataset for these regulators.</td>
+</tr>
+<tr>
+<td align="left">
+<a class="toggle_link" href="javascript:void(0)" onclick="$('#vid9').toggle()"><img src="/assets/plus.png"/>Click here to watch a <b>video</b> of this step.</a></td>
+</tr>
+<tr class="collapsed" id="vid9" style="display: none;">
+<td align="center">
+<iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/G7EMUR-TjvA?list=PL4ZmSx1n2Kw4XJKMwpLeXspPLwVTTPjTp" width="560"></iframe><br/>
+				 </td>
+</tr>
+</tbody>
+</table>
+<p>
+	 </p>
+<p>
+<span class="steps">10.</span> Visualize CNV profiles of enriched chromosome cytobands in <span class="tool">IGV</span>.</p>
+<table class="screenshots">
+<tbody>
+<tr class="input">
+<td align="left">
+<strong>Input:</strong> <span class="provided">breasttumor.acgh.order.cn</span>.</td>
+</tr>
+<tr>
+<td align="left">
+<a class="toggle_link" href="javascript:void(0)" onclick="$('#step10').toggle()"><img src="/assets/plus.png"/><strong>Click here for detailed, step-by-step instructions for this step.</strong></a></td>
+</tr>
+<tr class="collapsed" id="step10" style="display: none;">
+<td align="left">
+<ol type="A">
+<li>
+						Upload the file to GenomeSpace (<span class="provided">breasttumor.acgh.order.cn</span>).</li>
+<li>
+						Launch <span class="tool">IGV</span> on the file to visualize the CNV profiles.</li>
+</ol>
+</td>
+</tr>
+<tr class="output">
+<td align="left">
+<strong>Output:</strong> visualization of chromosome cytobands.</td>
+</tr>
+<tr>
+<td align="left">
+<a class="toggle_link" href="javascript:void(0)" onclick="$('#vid10').toggle()"><img src="/assets/plus.png"/>Click here to watch a <b>video</b> of this step.</a></td>
+</tr>
+<tr class="collapsed" id="vid10" style="display: none;">
+<td align="center">
+<iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/Vf5qKzuwNtw?list=PL4ZmSx1n2Kw4XJKMwpLeXspPLwVTTPjTp" width="560"></iframe><br/>
+				 </td>
+</tr>
+</tbody>
+</table>
+<p>
+	 </p>
+<p>
+<span class="steps">11.</span> Having determined that some transcriptional regulators have copy number aberrations that affect gene expression in breast cancer tumor samples, check if specific transcription factors and miRNAs (such as Oct4, Nanog, Sox2, Myc and the Polycomb complex) are regulating stemness and non-stemness genes.</p>
+<table class="screenshots">
+<tbody>
+<tr class="input">
+<td align="left">
+<strong>Input:</strong> ChIP-seqs of TFs and epigenetic regulators such as Myc (<span class="provided">SRR502406.fastq.gz</span>).</td>
+</tr>
+<tr>
+<td align="left">
+<a class="toggle_link" href="javascript:void(0)" onclick="$('#step11').toggle()"><img src="/assets/plus.png"/><strong>Click here for detailed, step-by-step instructions for this step.</strong></a></td>
+</tr>
+<tr class="collapsed" id="step11" style="display: none;">
+<td align="left">
+<ol type="A">
+<li>
+						Upload the file to GenomeSpace (<span class="provided">SRR502406.fastq.gz</span>).</li>
+<li>
+						Load ChIP-seq data into the <span class="tool">Galaxy</span> <span class="subtool">ChIPseq</span> pipeline.
+						<ol type="i">
+<li>
+								Send the <span class="provided">SRR502406.fastq.gz</span> file to <span class="tool">Galaxy</span>.</li>
+<li>
+								Click on the pen icon to change the file attributes. Change the following parameters:
+								<ol type="a">
+<li>
+<span class="parameter">Database/Build:</span> Human Feb. 2009 (GRCh37/hg19) (hg19)</li>
+<li>
+<span class="parameter">Datatype:</span> fastqsanger</li>
+<li>
+										Click <span class="parameter">Save</span> to save the changes.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+						Map the ChIP-seq reads using <span class="subtool">Bowtie</span>. Navigate to the menu <span class="menu">NGS: Mapping → Map with Bowtie for Illumina</span>. Set the following parameters:
+						<ol type="i">
+<li>
+<span class="parameter">Will you select a reference genome from your history or use a built-in index?:</span> Use a built-in index</li>
+<li>
+<span class="parameter">Select a reference genome: Human (Homo sapiens) (b37):</span> hg19 Canonical</li>
+<li>
+<span class="parameter">Is this library mate-paired?:</span> Single-end</li>
+<li>
+<span class="parameter">FASTQ file:</span> <span class="steps">#11B.i</span> (<span class="derived">GenomeSpace importer on SRR502406.fastq.gz</span>)</li>
+<li>
+<span class="parameter">Bowtie settings to use:</span> Full parameter list</li>
+<li>
+<span class="parameter">Maximum permitted total of quality values at mismatched read positions (-e):</span> 40</li>
+<li>
+<span class="parameter">Number of mismatches for SOAP-like alignment policy (-v):</span> 2</li>
+<li>
+<span class="parameter">Suppress all alignments for a read if more than n reportable alignments exist (-m):</span> 1</li>
+<li>
+								Click <span class="parameter">Execute</span> to run the job.</li>
+</ol>
+</li>
+<li>
+						Filter the results using <span class="subtool">SAM Tools</span>. Navigate to the menu <span class="menu">NGS Toolbox Beta → NGS: SAM Tools → Filter SAM</span>. Set the following parameters:
+						<ol type="i">
+<li>
+<span class="parameter">Select dataset to filter:</span> <span class="steps">#11C</span> (<span class="derived">Map with Bowtie for Illumina on data 1</span>)</li>
+<li>
+<span class="parameter">Flags:</span> insert flag</li>
+<li>
+<span class="parameter">Type:</span> The read is unmapped</li>
+<li>
+<span class="parameter">Set the states for this flag:</span> No</li>
+<li>
+								Click <span class="parameter">Execute</span> to run the job.</li>
+</ol>
+</li>
+<li>
+						Call peaks using the <span class="subtool">Model-based Analysis of ChIP-Seq (MACS)</span> tool. Navigate to the menu <span class="menu">NGS Toolbox Beta → NGS: Peak Calling → MACS</span>. Set the following parameters:
+						<ol type="i">
+<li>
+<span class="parameter">ChIP-Seq Tag File:</span> <span class="steps">#11D</span> (<span class="derived">Filter SAM on data 2</span>)</li>
+<li>
+<span class="parameter">Select the regions with MFOLD high-confidence enrichment ratio against background to build model:</span> 10</li>
+<li>
+								Click <span class="parameter">Execute</span> to run the job.</li>
+</ol>
+</li>
+<li>
+						Send the .bed file back to GenomeSpace. Navigate to the menu <span class="menu">Send Data → GenomeSpace Exporter</span>. Set the following parameters.
+						<ol type="i">
+<li>
+<span class="parameter">Send this dataset to GenomeSpace:</span> <span class="steps">#11E</span> (<span class="derived">MACS on data 3 (peaks: bed)</span>)</li>
+<li>
+<span class="parameter">filename:</span> SRR502406.bed</li>
+<li>
+								Click <span class="parameter">Execute</span> to run the job.</li>
+</ol>
+</li>
+<li>
+						Obtain a gene set of transcription factor target motifs and miRNA target motifs from <span class="tool">MSigDB</span>.
+						<ol type="i">
+<li>
+								Navigate to the <span class="tool">MSigDB</span>/GSEA gene sets download page: <a href="http://www.broadinstitute.org/gsea/downloads.jsp" target="_new">http://www.broadinstitute.org/gsea/downloads.jsp</a></li>
+<li>
+								Download the following gene sets to your local drive:
+								<ol type="a">
+<li>
+<span class="derived">c3.all.v4.0.symbols.gmt</span></li>
+</ol>
+</li>
+<li>
+								Save all files to GenomeSpace.</li>
+<li>
+								Convert all files to <span class="tool">Genomica</span> TAB format:
+								<ol type="a">
+<li>
+										Right-click on the file, then choose <span class="menu">Convert</span></li>
+<li>
+<span class="parameter">Convert to:</span> geneset.tab</li>
+<li>
+										Click <span class="parameter">Convert on Server</span></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+						Perform a multidimensional gene set enrichment analysis of the stemness gene list (<span class="steps">#3A</span>) against the gene sets from <span class="tool">MSigDB</span> using the <span class="subtool">Analyze Gene Sets</span> tool in <span class="tool">Genomica</span>.
+						<ol type="i">
+<li>
+								Launch <span class="tool">Genomica</span> on the normalized breast cancer gene expression dataset (<span class="steps">#6</span>; <span class="derived">breasttumor.geneexp.preprocessed.collapsed.tab</span>).</li>
+<li>
+								In <span class="tool">Genomica</span>, navigate to the menu <span class="menu">Sets → Load Gene Sets from GenomeSpace File...</span>. Then choose the stemness gene set (<span class="steps">#3A</span>).</li>
+<li>
+								Navigate to the menu <span class="menu">Sets → Load Gene Sets from GenomeSpace File...</span>. Then choose a gene set to compare, e.g. C3 motifs gene set (<span class="steps">#11G</span>, <span class="derived">c3.all.v4.0.symbols.geneset.tab</span>).</li>
+<li>
+								Navigate to the menu <span class="menu">Analyze → Gene Sets...</span>
+<ol type="a">
+<li>
+										Under <span class="menu">Sets to Analyze</span>, choose the "stemness" gene set.</li>
+<li>
+										Under <span class="menu">Sets to Find Enrichment For</span>, choose a gene set (e.g. C3).</li>
+<li>
+										Click <span class="menu">Analyze</span> to run the analysis.</li>
+</ol>
+</li>
+<li>
+<b>OPTIONAL:</b> save the results, e.g. <span class="derived">stemness_motifs.gxp</span>.</li>
+</ol>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="output">
+<td align="left">
+<strong>Output:</strong> a .bed file that can be visualized further.</td>
+</tr>
+<tr>
+<td align="left">
+<a class="toggle_link" href="javascript:void(0)" onclick="$('#vid11').toggle()"><img src="/assets/plus.png"/>Click here to watch a <b>video</b> of this step.</a></td>
+</tr>
+<tr class="collapsed" id="vid11" style="display: none;">
+<td align="center">
+<iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/-_blMxWNqrQ?list=PL4ZmSx1n2Kw4XJKMwpLeXspPLwVTTPjTp" width="560"></iframe><br/>
+				 </td>
+</tr>
+</tbody>
+</table>
+<p>
+	 </p>
+<p>
+<span class="steps">12.</span> Visualize interesting TFs and epigenetic regulators's ChIP-seq signals (<span class="steps">#11H</span>) using <span class="tool">IGV</span>.</p>
+<table class="screenshots">
+<tbody>
+<tr class="input">
+<td align="left">
+<strong>Input:</strong> The .bed file from <span class="steps">#11H</span>.</td>
+</tr>
+<tr>
+<td align="left">
+<a class="toggle_link" href="javascript:void(0)" onclick="$('#step12').toggle()"><img src="/assets/plus.png"/><strong>Click here for detailed, step-by-step instructions for this step.</strong></a></td>
+</tr>
+<tr class="collapsed" id="step12" style="display: none;">
+<td align="left">
+<ol type="A">
+<li>
+						Launch <span class="tool">IGV</span> on the .bed file.</li>
+</ol>
+</td>
+</tr>
+<tr class="output">
+<td align="left">
+<strong>Output:</strong> visualization of the ChIP-seq signals.</td>
+</tr>
+<tr>
+<td align="left">
+<a class="toggle_link" href="javascript:void(0)" onclick="$('#vid12').toggle()"><img src="/assets/plus.png"/>Click here to watch a <b>video</b> of this step.</a></td>
+</tr>
+<tr class="collapsed" id="vid12" style="display: none;">
+<td align="center">
+<iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/C-3hoTNMZyk?list=PL4ZmSx1n2Kw4XJKMwpLeXspPLwVTTPjTp" width="560"></iframe><br/>
+				 </td>
+</tr>
+</tbody>
+</table>
+<p>
+	 </p>
+<p>
+<span class="steps">13.</span> Create a gene regulatory network of genes which regulate the transcriptional profile of stemness genes using the <span class="subtool">ModuleNetwork</span> tool in <span class="tool">Genomica</span>.</p>
+<table class="screenshots">
+<tbody>
+<tr class="input">
+<td align="left">
+<strong>Input:</strong> the normalized breast cancer gene expression dataset (<span class="steps">#6</span>; <span class="derived">breasttumor.geneexp.preprocessed.collapsed.tab</span>), the list of stemness regulators (<span class="steps">#9J</span>; <span class="derived">stemness_regulators.geneset.tab</span>).</td>
+</tr>
+<tr>
+<td align="left">
+<a class="toggle_link" href="javascript:void(0)" onclick="$('#step13').toggle()"><img src="/assets/plus.png"/><strong>Click here for detailed, step-by-step instructions for this step.</strong></a></td>
+</tr>
+<tr class="collapsed" id="step13" style="display: none;">
+<td align="left">
+<ol type="A">
+<li>
+						Create a module network using the <span class="subtool">ModuleNetwork tool in</span> <span class="tool">Genomica</span>.
+						<ol type="i">
+<li>
+								Launch <span class="tool">Genomica</span> on the normalized breast cancer gene expression dataset file (<span class="steps">#6</span>).</li>
+<li>
+								Navigate to the menu <span class="menu">Algorithms → Create a Module Network...</span>, then change the following parameters:
+								<ol type="a">
+<li>
+										Under <span class="menu">Regulation</span>, set <span class="parameter">Maximum tree depth</span> to 5.</li>
+<li>
+										For <span class="parameter">Candidate regulator genes</span>, click <span class="menu">GenomeSpace Load...</span>.</li>
+<li>
+										Choose the stemness regulators gene set (<span class="steps">#9J</span>).</li>
+<li>
+										Click <span class="parameter">Run</span>.</li>
+</ol>
+</li>
+<li>
+								Export the resulting network to GenomeSpace.
+								<ol type="a">
+<li>
+										Navigate to the menu <span class="menu">GenomeSpace → Export Network to GenomeSpace...</span>.</li>
+<li>
+										Choose the directory to save the file, and give it a name, e.g. <span class="derived">stemness_network.ndb</span>.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</td>
+</tr>
+<tr class="output">
+<td align="left">
+<strong>Output:</strong> a module network that can be passed to <span class="tool">Cytoscape</span> (<span class="derived">stemness_network.ndb</span>).</td>
+</tr>
+<tr>
+<td align="left">
+<a class="toggle_link" href="javascript:void(0)" onclick="$('#vid13').toggle()"><img src="/assets/plus.png"/>Click here to watch a <b>video</b> of this step.</a></td>
+</tr>
+<tr class="collapsed" id="vid13" style="display: none;">
+<td align="center">
+<iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/p7fQ7YMR9JU?list=PL4ZmSx1n2Kw4XJKMwpLeXspPLwVTTPjTp" width="560"></iframe><br/>
+				 </td>
+</tr>
+</tbody>
+</table>
+<p>
+	 </p>
+<p>
+<span class="steps">14.</span> Visualize the gene regulatory network in <span class="tool">Cytoscape</span>. In this example, we use <span class="tool">Cytoscape 2.8</span>.</p>
+<table class="screenshots">
+<tbody>
+<tr class="input">
+<td align="left">
+<strong>Input:</strong> a module network (<span class="steps">#13A</span>).</td>
+</tr>
+<tr>
+<td align="left">
+<a class="toggle_link" href="javascript:void(0)" onclick="$('#step14').toggle()"><img src="/assets/plus.png"/><strong>Click here for detailed, step-by-step instructions for this step.</strong></a></td>
+</tr>
+<tr class="collapsed" id="step14" style="display: none;">
+<td align="left">
+<ol type="A">
+<li>
+						Import the network results (<span class="steps">#13A</span>) from GenomeSpace into <span class="tool">Cytoscape</span> and show the gene regulatory network.
+						<ol type="i">
+<li>
+								Launch <span class="tool">Cytoscape</span> from GenomeSpace.</li>
+<li>
+								Load the stemness network into <span class="tool">Cytoscape</span>:
+								<ol type="a">
+<li>
+										Navigate to the menu <span class="menu">File → Import → GenomeSpace → Load Network...</span>. Choose the stemness network file (<span class="derived">stemness_network.ndb</span>).</li>
+<li>
+										Once the network is loaded, navigate to the menu <span class="menu">Control Panel → Network</span>.</li>
+<li>
+										Right-click on the stemness_network, and choose <span class="menu">Create View</span>.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+						Load the list of stemness regulators into <span class="tool">Cytoscape</span>:
+						<ol type="i">
+<li>
+								Navigate to the menu <span class="menu">File → Import → GenomeSpace → Load Attributes from Table...</span>. Choose the stemness regulators file (<span class="derived">stemness_regulators.geneset.tab</span>).</li>
+<li>
+								Under the <span class="menu">Advanced</span> section, check the box next to <span class="parameter">Show Text File Import Options</span>.</li>
+<li>
+								Under the <span class="menu">Attribute Names</span> section, check the box next to <span class="parameter">Transfer first line as attribute names</span>.</li>
+<li>
+								Click <span class="menu">Import</span> to import the file.</li>
+</ol>
+</li>
+<li>
+						Filter the network of nodes and edges to just the stemness regulators:
+						<ol type="i">
+<li>
+								Under the <span class="menu">Control Panel</span> section, click the <span class="menu">Filters</span> tab.</li>
+<li>
+								Under the <span class="menu">Filter Definition</span> section, use the drop-down menu to choose <span class="parameter">node.INGENESET</span> as the attribute to filter on.</li>
+<li>
+								Click <span class="menu">Add</span> to add the filter.</li>
+<li>
+								Under the <span class="menu">Advanced</span> section, double-click on the bar next to the INGENESET attribute, and change the following parameters:
+								<ol type="a">
+<li>
+<span class="parameter">Low bound:</span> 1</li>
+<li>
+<span class="parameter">High bound:</span> 1</li>
+<li>
+										Click <span class="parameter">OK</span></li>
+</ol>
+</li>
+<li>
+								In the main <span class="tool">Cytoscape</span> menu, click on the menu icon labeled, <span class="menu">Create new network from selected nodes, all edges</span>.</li>
+</ol>
+</li>
+<li>
+						To better visualize the network, navigate to the menu <span class="menu">Layout → Cytoscape Layouts → Degree Sorted Circle Layout</span>.</li>
+</ol>
+</td>
+</tr>
+<tr class="output">
+<td align="left">
+<strong>Output:</strong> visualization of the gene regulatory network.</td>
+</tr>
+<tr>
+<td align="left">
+<a class="toggle_link" href="javascript:void(0)" onclick="$('#vid14').toggle()"><img src="/assets/plus.png"/>Click here to watch a <b>video</b> of this step.</a></td>
+</tr>
+<tr class="collapsed" id="vid14" style="display: none;">
+<td align="center">
+<iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/K696YUcCi4o?list=PL4ZmSx1n2Kw4XJKMwpLeXspPLwVTTPjTp" width="560"></iframe><br/>
+				 </td>
+</tr>
+</tbody>
+</table>
+<p>
+	 </p>
+<p>
+<strong>Non-stemness genes.</strong> Repeat steps 7, 9, 13 and 14 using the list of non-stemness genes, to identify genes regulating the non-stemness signature and to predict and visualize the iCSC unique regulatory network in <span class="tool">Cytoscape</span>.</p>
+<hr/>
+</body>
+</html>

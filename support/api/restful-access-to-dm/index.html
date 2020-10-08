@@ -1,0 +1,1609 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>GenomeSpace: 
+	  	RESTful Access to Data Manager (version beta 4.3)
+  </title>
+<link href="/assets/site.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/demo_table_jui.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/jquery-ui-1.8.4.custom.css" media="screen" rel="stylesheet" type="text/css"/>
+<script src="/assets/application.js" type="text/javascript"></script>
+<link href="/assets/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+<meta content="authenticity_token" name="csrf-param"/>
+<meta content="eIGuH0D9/tc19iX09q/Ddr+mY6QpRvs12qDxYVx+eLY=" name="csrf-token"/>
+</head>
+<body>
+<div id="page_wrapper">
+<div id="page_content">
+<div id="logo"><a href="/"><img alt="Gslogo" src="/assets/gslogo.png"/></a></div>
+<div id="login_menu"><a href="https://gsui.genomespace.org/jsui/gsui.html">User Login</a>
+</div>
+<ul id="nav">
+<li id="what-is-genomespace"><a href="/what-is-genomespace">What is GenomeSpace?</a>
+</li>
+<li id="tools"><a href="/support/tools">Tools</a>
+</li>
+<li id="recipes"><a href="http://recipes.genomespace.org">Recipes</a></li>
+<li id="documentation"><a href="/documentation">Documentation</a>
+<ul>
+<li><a href="/support/guides/user-guide">User Guide</a>
+<p>Read the detailed guide to the user interface</p>
+</li>
+<li><a href="/support/guides/tool-guide">Tool Guide</a>
+<p>Learn how to access GenomeSpace functionality for each Tool</p>
+</li>
+<li><a href="/faq">FAQ</a>
+<p>See answers to frequently asked questions</p>
+</li>
+<li><a href="/presentations-and-videos">Presentations and Videos</a>
+<p>Access talks by the GenomeSpace community</p>
+</li>
+<li><a href="/support/guides/end-to-end-analyses">End-to-End Analyses</a>
+<p>Provides description for end-to-end analyses.</p>
+</li>
+</ul>
+</li>
+<li id="developers"><a href="/for-developers">Developers</a>
+<ul>
+<li><a href="/what-can-genomespace-do-for-tool-developers">What Can GenomeSpace Do For Tool Developers?</a>
+<p></p>
+</li>
+<li><a href="/adopters">Technical Documentation</a>
+<p></p>
+</li>
+<li><a href="/source-code">Source Code and Distributions</a>
+<p></p>
+</li>
+<li><a href="/developer-support-and-feedback">Developer Support and Feedback</a>
+<p></p>
+</li>
+</ul>
+</li>
+<li id="support"><a href="/support">Support</a>
+</li>
+<li id="about"><a href="/about">About</a>
+</li>
+<li class="search">
+<div id="search_box">
+<form accept-charset="UTF-8" action="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"/></div>
+<input class="search" id="search" name="search" type="text"/>
+<input class="searchBtn" type="submit"/>
+</form> </div>
+</li>
+</ul>
+<script type="text/javascript">
+//<![CDATA[
+
+		// grab page category and use to highlight correct menu item.  if none present, parse url to find where the user is.
+		var category = "";
+		if ( !category ){
+			url_parts = $(location).attr('pathname').split("/");
+			url_string = url_parts[1] + "/" + url_parts[2]
+			if (url_string == "support/tools"){
+				category = "tools"
+			}
+			else if (url_string == "support/guides"){
+				url_parts[3] == "recipes" ? category = "recipes" : category = "documentation"
+			}
+			else if (url_parts[1] == "genomespace-recipes")
+			{
+                category = "gsrecipes"
+            }
+			else if (url_string == "support/api"){
+				category = "developers"
+			}
+			else if ((url_string == "register/undefined") || (url_string == "request_invite/undefined")) {
+				category = "what-is-genomespace"
+			}
+			else if (url_string == "/undefined") {
+				category = ""
+			}
+			else if (url_string == "support/undefined") {
+				category = "support"
+			}
+		}
+		$("#" + category).addClass("current");
+
+
+//]]>
+</script>
+<div id="content_panel">
+<table width="100%"><tr>
+<td id="main_content">
+<div id="notice"></div>
+<div id="alert"></div>
+<form accept-charset="UTF-8" action="/support/api/restful-access-to-dm" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"/><input name="authenticity_token" type="hidden" value="eIGuH0D9/tc19iX09q/Ddr+mY6QpRvs12qDxYVx+eLY="/></div>
+<span>
+<label class="inline" for="select_component">Select Version:</label>
+<select id="select_component" name="select[component]"><option selected="selected" value="restful-access-to-dm-beta-4-3">beta 4.3</option>
+<option value="restful-access-to-dm-beta-4-2">beta 4.2</option>
+<option value="restful-access-to-dm-beta-4-1">beta 4.1</option>
+<option value="restful-access-to-dm-beta-4-0">beta 4.0</option>
+<option value="restful-access-to-dm-beta-3-0">beta 3.0</option>
+<option value="restful-access-to-dm-beta-2-0">beta 2.0</option></select>
+<input class="inline" name="commit" type="submit" value="Display"/> | 
+	<p class="inline"><a href="/adopters">Back</a></p>
+</span>
+</form><hr/>
+<h1>RESTful Access to Data Manager (version beta 4.3)
+</h1>
+<ul style="list-style:none;">
+<li>
+<a href="#intro">Introduction</a></li>
+<li>
+<a href="#http_reqs">HTTP Client Requirements</a></li>
+<li>
+<a href="#headers">Common Request Headers</a></li>
+<li>
+<a href="#urls">URLs and API Version</a></li>
+<li>
+<a href="#login">Login and Authentication</a></li>
+<li>
+<a href="#wadl">WADL</a></li>
+<li>
+<a href="#gs_objects">GSFileMetadata, GSDataFormat and, GSDirectoryListing Objects</a></li>
+<li>
+<a href="#directories">Directories</a></li>
+<li>
+<a href="#upload">Uploading files</a></li>
+<li>
+<a href="#download">Downloading Files</a></li>
+<li>
+<a href="#permissions">File and Directory Ownership and Permissions</a></li>
+<li>
+<a href="#formats">Downloading Files in Different Data Formats</a></li>
+<li>
+<a href="#operations">Other File, Directory, and Format Operations</a>
+<ul style="list-style:none;">
+<li>
+<a href="#delete">Delete a File or Directory</a></li>
+<li>
+<a href="#copy">Copy a File or Directory</a></li>
+<li>
+<a href="#copyWithConversion">Convert a file on the server</a></li>
+<li>
+<a href="#file_metadata">Obtain Metadata on a File or Directory</a></li>
+<li>
+<a href="#http_file_headers">To get HTTP headers on a file or directory</a></li>
+<li>
+<a href="#all_formats">List all Data Formats</a></li>
+</ul>
+</li>
+<li>
+<a href="#appendix_a">Appendix A: GSFileMetadata JSON object</a><font style="color:red;">(new)</font></li>
+<li>
+<a href="#appendix_b">Appendix B: GSDirectoryListing JSON object</a></li>
+<li>
+<a href="#appendix_c">Appendix C: GSDataFormat JSON object</a></li>
+<li>
+<a href="#appendix_d">Appendix D: Data Manager Data Formats</a></li>
+<li>
+<a href="#appendix_e">Appendix E: Available Data Format Converters</a></li>
+<li>
+<a href="#appendix_f">Appendix F: ACL, ACE, and SID JSON formats</a>
+<ul style="list-style:none;">
+<li>
+<a href="#acl">Access Control List (ACL) Object</a></li>
+<li>
+<a href="#ace">Access Control Entry (ACE) Object</a></li>
+<li>
+<a href="#sid">Security Identity (SID) Object</a></li>
+</ul>
+</li>
+<li>
+<a href="#appendix_g">Appendix G: S3FileUploadInfo JSON object</a></li>
+<li>
+		 </li>
+</ul>
+<h2>
+<a name="intro">Introduction</a></h2>
+<p>
+	Part of the functionality that we are including in the GenomeSpace CDK is a Java API that provides client applications authentication and authorization services for the GenomeSpace system, as well as access to data file services. However, if your application is not written in Java and you want to add GenomeSpace support to it, you can still access these services by calling them directly over the web.</p>
+<h2>
+<a name="http_reqs">HTTP Client Requirements</a></h2>
+<p>
+	We highly recommend you utilize a fully-featured HTTP client library, such as <a href="http://hc.apache.org/httpcomponents-client-ga/">Apache HttpClient</a> for Java or <a href="http://code.google.com/p/httplib2/">Httplib2</a> for Python. It will make your life and your code a lot simpler.<br/>
+	In addition to supporting the usual HTTP POST, GET, PUT, etc., your client will need to have the capabilities listed below.</p>
+<h3>
+<br/>
+	Handle cookies</h3>
+<p>
+	Accept cookies and send their values to the correct domains.</p>
+<h3>
+	Support HTTP redirects</h3>
+<p>
+	Accept as a response HTTP code 303 and automatically GET the response from the specified location URL.</p>
+<h3>
+	Support Basic Authentication</h3>
+<p>
+	Client should be ready at any time to respond to Basic authentication credentials challenge via HTTP response code 401.</p>
+<h3>
+	Support JSON marshalling and unmarshalling</h3>
+<p>
+	The Data Manager will generate responses using JSON format and some operations require the client to PUT or POST JSON payloads.</p>
+<h3>
+	Support for HTTPS</h3>
+<p>
+	All communications to the Identity Server and the Data Manager service occur through secure HTTP.  We have obtained third-party certificates for our servers, so updating trust stores should not be necessary in most cases.</p>
+<h2>
+<a name="headers">Common Request Headers</a></h2>
+<p>
+	Every HTTP request to the Data Manager should include the <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">Accept</a> header with a preference for the media types <span style="font-family:courier new,courier,monospace;"><strong>application/json</strong></span> and <strong><span style="font-family:courier new,courier,monospace;">text/plain</span></strong> .</p>
+<p>
+	If you get responses that look like html instead of json, check that you are correctly setting the Accept header.</p>
+<p>
+	After having logged in, the<strong><span style="font-family:courier new,courier,monospace;"> gs-token</span></strong> cookie should be included in all requests. More on this below.</p>
+<p>
+	In general it is desirable (but optional) for tools to add a header (or request parameter, or cookie, any of these forms can be used) <code>gs-toolname=MyToolName</code> to all their requests.  This is optional but identifies which tool is making a request which permits more detailed usage reporting within the GenomeSpace system.</p>
+<h2>
+<a name="urls">URLs and API Version</a></h2>
+<p>
+	In this release of the Data Manager API we will start requiring the API version to be included in all calls.<br/>
+	The API version is specified in the base URL for all requests, e.g.:<br/>
+<a href="http://dm.genomespace.org/datamanager/v1.0/dataformat">http://dm.genomespace.org/datamanager/v1.0/dataformat</a><br/>
+<br/>
+	Calls that don’t include the URL will return an error code with a message.<br/>
+<br/>
+	The one exception we have allowed for the use of the new URL format is to GET files and directories.<br/>
+	If you GET<br/>
+<a href="https://dm.genomespace.org/datamanager/files/users/test/myFile.txt">https://dm.genomespace.org/datamanager/files/users/test/myFile.txt</a><br/>
+	DM will forward the request to a new URL that includes the API version in the URL and return the contents of the file or directory.<br/>
+<br/>
+	The purpose of this exception is to keep  GenomeSpace URLs that are visible to end-users (i.e. the file URLs) as clean as possible.<br/>
+<br/>
+	However, for all API calls we strongly recommend you include the API version in the URL.</p>
+<h2>
+<a name="login">Login and Authentication</a></h2>
+<p>
+	You can do an explicit login at the beginning of a session by issuing a GET to:<br/>
+<a href="https://identity.genomespace.org/identityServer/basic">https://identity.genomespace.org/identityServer/basic</a><br/>
+	You will get a HTTP 401 response code with a request for credentials using Basic Authentication. Basic authentication is described in <a href="http://www.ietf.org/rfc/rfc2617.txt">RFC2617</a>.<br/>
+	If you are utilizing an HTTP library (and we highly recommend that you do), it is very likely that it already includes support for Basic authentication. In this case, you would just need to set the credentials on the web client, and when confronted with a Basic authentication challenge, the web client would automatically respond.<br/>
+	On successful submission of credentials, the server’s response will include a cookie named gs-token. The cookie should be included in all subsequent requests to the Data Manager. If your library has cookie handling enabled, the inclusion of the cookie in requests should happen automatically.<br/>
+	All requests to the Data Manager are authenticated via the gs-token cookie. If a request does not include a valid gs-token cookie or the session has expired, the Data Manager will redirect the client (HTTP code 302) to the identity server and confronted with a Basic Authentication challenge as described above. Once authentication is completed, the client will be redirected back to the originally requested URL.</p>
+<h2>
+<a name="wadl">WADL</a></h2>
+<p>
+	All the operations available from the Data Manager  are described in Web Application Description Language (WADL) specification. The WADL can be accessed at:<br/>
+<a href="https://dm.genomespace.org/datamanager/application.wadl">https://dm.genomespace.org/datamanager/application.wadl</a></p>
+<h2>
+<a name="gs_objects">GSFileMetadata, GSDataFormat and, GSDirectoryListing Objects</a></h2>
+<p>
+	Information about files managed by Data Manager will be returned in JSON objects. GSFileMetadata objects will provide information about an individual file or directory (name, path, size,etc.). GSDirectoryListing carries a GSFileMetadata object for the corresponding directory and a list of GSFileMetadata with one entry for each file and subdirectory.<br/>
+	GSDataFormat carries information about the format of the files and the available format transformations. ACL contains permissions information on a given object. Appendix A,B,C and D of this document include samples of each.</p>
+<h2>
+<a name="directories">Directories<font style="color:red;">(new)</font></a></h2>
+<p>
+	Whenever a GET is submitted on a URL that corresponds to a directory, the DataManager will respond with a GSDirectoryListing.</p>
+<p>
+	 </p>
+<table border="1" width="100%">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+</tr>
+<tr>
+<td>
+<code>GET</code></td>
+<td>
+<code>/datamanager/v1.0/file/users/<em>test/dir1</em></code><br/>
+				 </td>
+</tr>
+</tbody>
+</table>
+<p>
+	Each user name will have a default directory assigned and created to reach this default directory.</p>
+<table border="1" width="100%">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+</tr>
+<tr>
+<td>
+<code>GET</code></td>
+<td>
+<code>/datamanager/v1.0/defaultdirectory </code></td>
+</tr>
+</tbody>
+</table>
+<p>
+	will redirect to the  default directory URL. Currently, the default directory for all users is at URL:<br/>
+<br/>
+	https://dm.genomespace.org/datamanager/v1.0/file/Home</p>
+<p>
+	To redirected to the  logged in user's personal directory, where they would have full read/write privileges:</p>
+<p>
+	 </p>
+<table border="1" width="100%">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+</tr>
+<tr>
+<td>
+<code>GET</code></td>
+<td>
+<code>/datamanager/v1.0/personaldirectory</code></td>
+</tr>
+</tbody>
+</table>
+<p>
+	 </p>
+<p>
+	Currently, this would redirect to a URL that would look like this:</p>
+<p>
+<span style="font-family:courier new,courier,monospace;">https://dm.genomespace.org/datamanager/v1.0/users/<em>theUserName</em></span></p>
+<p>
+	To create a directory:</p>
+<table border="1" width="100%">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+<td>
+				Body</td>
+</tr>
+<tr>
+<td>
+<code>PUT</code></td>
+<td>
+<code>/datamanager/v1.0/file/users/test/newdirname</code></td>
+<td>
+<code>{"isDirectory":true} </code></td>
+</tr>
+</tbody>
+</table>
+<p>
+	where <code>newdirname</code> is the new directory name. Note that DataManager expects the parent directory to exist (in this case, <code>/users/test</code>). If directory creation is successful, the GSFileMetaData for the new directory will be returned.</p>
+<h2>
+<a name="upload">Uploading files</a></h2>
+<p>
+	GenomeSpace offers two different methods to upload files. The simpler one we will refer to as "Single PUT upload". It is easier to implement on the client, but it is limited to files of up to 5GB. For larger files you will have to do a "Multipart file upload". In this second method, GenomeSpace provides the client with the information necessary for it to do an upload using Amazon S3's multipart upload protocol.</p>
+<h4>
+	Single PUT upload</h4>
+<p>
+	Uploading a file is a two step process. You must first obtain from Data Manager a signed Amazon S3 URL. Then you, will PUT your file to the generated URL.<br/>
+<br/>
+	To obtain the signed URL, you will do a GET with a URL that looks like:<br/>
+	Note that we changed the path from /uploadurls to /uploadurl<br/>
+<br/>
+<code>/datamanager/v1.0/uploadurl/users/test/mydir/AnotherLittleFile.txt?Content-Length=6&amp;Content-MD5=nwYkOry4nHDgwzHGHYcfpw%3D%3D&amp;Content-Type=application/octet-stream </code><br/>
+<br/>
+	Note that the base URL (<code>https://dmtest.genomespace.org/datamanager</code>) is followed by /uploadurl and then by the destination path and file name (<code>/users/test/mydir/AnotherLittleFile.txt</code>)<br/>
+<br/>
+	The 3 query parameters included in the URL</p>
+<p>
+	 </p>
+<table border="1" width="100%">
+<tbody>
+<tr>
+<td>
+				Query Param</td>
+<td>
+				Description</td>
+</tr>
+<tr>
+<td>
+<code>Content-Length </code></td>
+<td>
+				The size in bytes of the file</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.faqs.org/rfcs/rfc1864.html"><code>Content-MD5</code></a></td>
+<td>
+				The Base64 encoded MD5 hash for the file (note in the example the value is URL-encoded.%3D is the character ‘=’ url encoded. You should URL encode the values as well. To check your code, on Mac OSX you can obtain the correct Content-MD5 value for a file by issuing the following command:<br/>
+<code>openssl md5  -binary THEFILENAME | openssl base64 </code></td>
+</tr>
+<tr>
+<td>
+<code><a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">Content-Type</a></code></td>
+<td>
+				The content type you would like to assign to the file</td>
+</tr>
+</tbody>
+</table>
+<p>
+	In response, the Data Manager service will return an Amazon S3 URL that you will use to PUT the file.<br/>
+	The returned URL might look something like this (included here for illustration, but what it looks like is not important. Just use whatever was returned by the web service):<br/>
+<code>https://genomespace-input.s3.amazonaws.com/users/test/mydir/AnotherLittleFile.txt?AWSAccessKeyId=AKIAIDXKHSCMYX5BHNLA&amp;Expires=1296076583&amp;Signature=G4tZJCObhPsvcdZxKJkBY7%2Bq378%3D</code><br/>
+<br/>
+	With your file PUT you will need to include 4 HTTP headers:<br/>
+<code>Content-Length</code><br/>
+<code>Content-MD5</code> (should not be URL encoded)<br/>
+<code>Content-Type</code><br/>
+<br/>
+<code>x-amz-meta-md5-hash</code> is no longer needed or used. Do not include or upload will fail<br/>
+<br/>
+	Amazon S3 will return an HTTP status code of 200 on the successful completion of the upload.</p>
+<h4>
+	Multipart File Upload</h4>
+<p>
+	If you have a file larger than 5GB, you will have to do a multipart upload. In addition to overcoming the size limit of the "Single PUT upload", the multipart upload will allow for faster uploads. The S3 multipart protocol requires splitting the file into smaller chunks that can be uploaded concurrently a multithreaded implementation.</p>
+<p>
+	The S3 REST APIs are complicated. We highly recommend using an existing S3 library instead of dealing with the APIs directly. Amazon offers SDKs for <a href="http://aws.amazon.com/code/">Java, Ruby, PHP, and .NET</a>.</p>
+<p>
+	The first step is to request the information needed for the upload from GenomeSpace.</p>
+<table border="1" width="100%">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+</tr>
+<tr>
+<td>
+<code>GET</code></td>
+<td>
+<code>/datamanager/v1.0/<strong>uploadinfo/</strong>dir1/file1.txt</code></td>
+</tr>
+</tbody>
+</table>
+<p>
+	The part that follows /<strong>uploadinfo/</strong> is the destination path of the file you will be uploading. In response, the Data Manager will return a JSON S3FileUploadInfo object. This JSON response includes temporary Amazon credentials and S3 specific details you will be using during the upload.</p>
+<h2>
+<a name="download">Downloading Files</a></h2>
+<p>
+	To download the file, you will need either the absolute directory file path or you would have obtained the URL for the file already.<br/>
+	Both the absolute file path and url are available in the <code>GSFileMetada</code> object (properties named path and url respectively).<br/>
+<br/>
+	The URL to GET will look something like below (minus protocol, server,port number):<br/>
+<code>/datamanager/v1.0/file/users/test/mydir/AnotherLittleFile.txt</code><br/>
+<br/>
+	To avoid problems with special characters, you should URL encode each URL path element and the file name itself. (Do not just do a URL encode on the whole URL or you will end up with a URL that will not work).<br/>
+<br/>
+	The Data Manager will respond with a redirect to the Amazon S3 location of the file. If your HTTP client library has redirects enabled, the redirection should happen automatically.</p>
+<h2>
+<a name="permissions">File and Directory Ownership and Permissions</a></h2>
+<p>
+	Ownership of files and directories is established by who is the owner of the top level directory. Any file and directory that is directly or indirectly under a users home directory is owned by that user. As such, the owner user is able to read, write, delete, and grant permissions on any object below.<br/>
+<br/>
+	Example:<br/>
+<code>/users/fred</code> is home directory for a user named “fred”.<br/>
+	User fred is the owner of directory <code>/users/fred</code> as well as <code>/users/fred/dir1</code> and <code>/users/fred/dir1/myfile.txt</code> because the directory and the file are below the home directory.<br/>
+<br/>
+	Data Manager supports sharing of files and directories through the use of access control lists (ACLs). The owner of a file or directory can grant read and write permissions to any other user or group (for more information on users and groups see blabha).<br/>
+<br/>
+	Each ACL points to the object that it is associated with and includes a list of access control entries (ACE) identifying the user or group (generically referred as a Security Identity (SID) and the permission that has been granted.<br/>
+<br/>
+	Read permission on a file means that its contents can be downloaded. Write permissions mean that the file can be either updated/replaced or deleted.<br/>
+<br/>
+	On a directory read permission mean that the grantee can list the contents of the directory. Write permission mean that they can upload new files and delete and update existing ones.<br/>
+<br/>
+	ACL grants are inherited down the directory structure. So if you grant read permissions on a parent directory to another user, that user will be able read every file and directory below it in the hierarchy.<br/>
+<br/>
+	Example:<br/>
+	I user fred grants “read” permissions on directory /users/fred/dir1 to user kathy, she will be able to get a listing of <code>/users/fred/dir1</code> and every directory below dir1, like <code>/users/fred/dir1/dir2</code>  and <code>/users/fred/dir1/dir2/dir3</code>.<br/>
+	Kathy will also be able to download <code>/users/fred/dir1/myfile.txt</code> since the file inherited the read permission from its parent directory.<br/>
+<br/>
+	If fred goes ahead and also grants write permissions to kathy on <code>/users/fred/dir1</code>, then kathy will be able to create and delete new directories and files below <code>/users/fred/dir1</code>.<br/>
+<br/>
+	There are two ways to create an ACL. The first, PUT an ACL object:</p>
+<table border="1" width="100%">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+<td>
+				Body</td>
+</tr>
+<tr>
+<td>
+<code>PUT </code></td>
+<td>
+<code>/datamanager/v1.0/acl/file/dir1/fileOrDir </code></td>
+<td>
+				An ACL JSON object</td>
+</tr>
+</tbody>
+</table>
+<p>
+	The other method is to  POST the ACEs associated with the the ACL</p>
+<table border="1" width="100%">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+<td>
+				Body</td>
+</tr>
+<tr>
+<td>
+<code>POST</code></td>
+<td>
+<code>/datamanager/v1.0/acl/file/dir1/fileOrDir </code></td>
+<td>
+				An JSON array of ACE JSON objects</td>
+</tr>
+</tbody>
+</table>
+<p>
+	Both methods will return the resulting ACL JSON object.<br/>
+<br/>
+	For our running examples, the URLs would look something like:<br/>
+<code>https://dm.genomespace.org/datamanager/v1.0/acl/file/users/fred/dir1</code><br/>
+	and<br/>
+<code>https://dm.genomespace.org/datamanager/v1.0/acl/file/users/fred/dir1/dir2 </code><br/>
+<br/>
+	Once in existence, as you would expect, you can GET the ACL:</p>
+<table border="1" width="100%">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+</tr>
+<tr>
+<td>
+<code>GET</code></td>
+<td>
+<code>/datamanager/v1.0/acl/file/<em>dir1</em>/<em>fileOrDir</em> </code></td>
+</tr>
+</tbody>
+</table>
+<p>
+	 </p>
+<p>
+	You can also get all the ACLs that affect a particular file object by adding  the “hierarchy” query parameter to the URL:</p>
+<p>
+	 </p>
+<table border="1" width="100%">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+</tr>
+<tr>
+<td>
+<code>GET</code></td>
+<td>
+<code>/datamanager/v1.0/acl/file/<em>dir1</em>/<em>fileOrDir</em>?hierarchy=true </code></td>
+</tr>
+</tbody>
+</table>
+<p>
+	In this case, instead of getting a single JSON object you will get a JSON array of ACLs, one for each ACL found in the directory hierarchy for the file object.<br/>
+<br/>
+	To delete an ACL:</p>
+<table border="1" width="100%">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+</tr>
+<tr>
+<td>
+<code>DELETE </code></td>
+<td>
+<code>/datamanager/v1.0/acl/file/<em>dir1</em>/<em>fileOrDir</em> </code></td>
+</tr>
+</tbody>
+</table>
+<p>
+	or if you want to just remove a specific access control entry on an ACL:</p>
+<table border="1" width="100%">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+</tr>
+<tr>
+<td>
+<code>DELETE</code></td>
+<td>
+<code>/datamanager/v1.0/ace/<em>theAceId</em></code></td>
+</tr>
+</tbody>
+</table>
+<p>
+	You will need the ACE id that is included in the ACL JSON serialization.<br/>
+<br/>
+	To get the effective permissions on any file object  you can examine the “effectiveACL” property included in every GSFileMetadata object to obtain the consolidated permissions on that object. That is, who has read and write permissions on the object, either because of ownership, permissions granted directly on that object and permissions that have been inherited through the directory structure.<br/>
+	To emphasize, the ACL object attached to GSFileMetadata object is not a “real” ACL object, but flattened view of the hierarchical permissions and is included as a convenience.</p>
+<h2>
+<a name="formats">Downloading Files in Different Data Formats</a></h2>
+<p>
+	Data Manager has the ability to convert some files into formats that can be consumed by other applications.<br/>
+	The data format that the Data Manager thinks original file is identified in the <code>GSFileMetadata</code> property <code>dataFormat</code> (could be empty if it does not recognize the format).<br/>
+<code>GSFileMetadata</code> also specifies the property <code>availableDataFormats</code>. This will be an array of <code>GSDataFormat</code> objects that identify the formats this file can be requested in.<br/>
+<br/>
+	To GET the file in a specific format you will build a URL that looks as follows:</p>
+<table border="1" width="100%">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+</tr>
+<tr>
+<td>
+				GET</td>
+<td>
+				/datamanager/file/<em>dir1/dir2/fileName.ext</em>?dataformat=http://www.genomespace.org/datamanager/dataformat/lowercasetxt</td>
+</tr>
+</tbody>
+</table>
+<p>
+	Remember to URL-encode the value for the dataformat parameter.</p>
+<p>
+	The query parameter dataformat value is the URL for the format. This URL can be obtained from the <code>GSDataFormat</code> url property in the <code>availableDataFormats</code> array.</p>
+<h2>
+<a name="operations">Other File, Directory, and Format Operations</a></h2>
+<h3>
+<a name="delete">Delete a File or Directory</a></h3>
+<table border="1" width="100%">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+</tr>
+<tr>
+<td>
+<code>DELETE</code></td>
+<td>
+<code>/datamanager/v1.0/file/dir1/dir2/fileOrDirName </code></td>
+</tr>
+</tbody>
+</table>
+<p>
+	Note: To delete a directory, it needs to be empty</p>
+<h3>
+<a name="copy">Copy a File or Directory</a></h3>
+<table border="1" width="100%">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+<td>
+				Headers</td>
+</tr>
+<tr>
+<td>
+<code>PUT</code></td>
+<td>
+<code>/datamanager/v1.0/file/dir1/destFileOrDirName</code></td>
+<td>
+<code>x-gs-copy-source </code></td>
+</tr>
+</tbody>
+</table>
+<p>
+	Note: The URL identifies the new object that will be created by the copy.<br/>
+	The source file or directory is identified in the custom <code>x-gs-copy-source</code> header . The header value should have look like <code>/dir1/dir3/sourceFile</code>  (the base URL nor the URL path segment<code> /datamanager/v1.0/file</code> should be included).</p>
+<h3>
+<a name="copy">Convert a file on the server</a></h3>
+<table border="1" width="100%">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+<td>
+				Headers</td>
+</tr>
+<tr>
+<td>
+<code>PUT</code></td>
+<td>
+<code>/datamanager/v1.0/file/dir1/destFileOrDirName?dataformat=http://www.genomespace.org/datamanager/dataformat/dataformatname</code></td>
+<td>
+<code>x-gs-copy-source </code></td>
+</tr>
+</tbody>
+</table>
+<p>
+	Note: The URL identifies the new object that will be the source of the conversion. Note the <strong><span style="font-family:courier new,courier,monospace;">dataformat</span></strong> query parameter. This is expected to be URL for the destination format. The possible conversions for any file on GenomeSpace can be obtained from examining that file objects GSFileMetadata object (see <a href="#file_metadata">Obtain Metadata on a File or Directory</a>). Make sure you URL-encode the <strong><span style="font-family:courier new,courier,monospace;">dataformat</span></strong> parameter.<br/>
+	Also, the destination URL file name is expected to be consistent with the request data format e.g., if your source file is a GCT file and you are converting it to a GXP file, then the URL for the file needs to end with .gxp .</p>
+<p>
+	The source file or directory is identified in the custom <code>x-gs-copy-source</code> header . The header value should have look like <code>/dir1/dir3/sourceFile</code>  (the base URL nor the URL path segment<code> /datamanager/v1.0/file</code> should be included).</p>
+<h3>
+<a name="file_metadata">Obtain Metadata on a File or Directory</a></h3>
+<table border="1" width="100%">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+</tr>
+<tr>
+<td>
+<code>GET</code></td>
+<td>
+<code>/datamanager/v1.0/filemetadata/dir1/dir2/destFileOrDirName </code></td>
+</tr>
+</tbody>
+</table>
+<p>
+	This will return a JSON GSFileMetadata object. See Appendix A and B.</p>
+<h3>
+<a name="http_file_headers">To get HTTP headers on a file or directory</a></h3>
+<p>
+	If you want to get the response HTTP headers for a file or directory without actually GETting the file object, you can use the HEAD verb call. Can be useful, for example, to get the size of a file from the content-length header if for some reason you want to avoid looking at the GSFileMetadata object.</p>
+<table border="1" width="100%">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+</tr>
+<tr>
+<td>
+<code>HEAD</code></td>
+<td>
+<code>/datamanager/v1.0/file/dir1/dir2/fileOrDirName </code></td>
+</tr>
+</tbody>
+</table>
+<h3>
+<a name="all_formats">List all Data Formats</a></h3>
+<table border="1" width="100%">
+<tbody>
+<tr>
+<td>
+				Verb</td>
+<td>
+				URL</td>
+</tr>
+<tr>
+<td>
+<code>GET</code></td>
+<td>
+<code>/datamanager/v1.0/dataformat</code></td>
+</tr>
+</tbody>
+</table>
+<p>
+	Will return an array of <code>GSDataFormat</code> objects (see Appendix C).</p>
+<div>
+<h2>
+<a name="appendix_a">Appendix A: GSFileMetadata JSON object</a><font style="color:red;">(new)</font></h2>
+	Note that values boolean and numeric values are no longer enclosed in quotes. Also, empty collections, like empty directory contents, will show up as an empty JSON array (.eg. [ ]). The property contentType has been dropped.<br/>
+<table border="1" width="100%">
+<tbody>
+<tr>
+<td>
+					Property Name</td>
+<td>
+					Type</td>
+<td>
+					Description</td>
+</tr>
+<tr>
+<td>
+					name</td>
+<td>
+					string</td>
+<td>
+					The name of the file or directory</td>
+</tr>
+<tr>
+<td>
+					path</td>
+<td>
+					string</td>
+<td>
+					The absolute file path for the file</td>
+</tr>
+<tr>
+<td>
+					url</td>
+<td>
+					string</td>
+<td>
+					The url for the file</td>
+</tr>
+<tr>
+<td>
+					parentUrl</td>
+<td>
+					string</td>
+<td>
+					The url for the parent directory</td>
+</tr>
+<tr>
+<td>
+					size</td>
+<td>
+					number</td>
+<td>
+					The size of the file in bytes. Will be 0 if directory</td>
+</tr>
+<tr>
+<td>
+					owner</td>
+<td>
+					SID object</td>
+<td>
+					The user id for the owner of the file. See appendix E</td>
+</tr>
+<tr>
+<td>
+					isDirectory</td>
+<td>
+					boolean</td>
+<td>
+					Distinguish between file and directory. Will be true or false.</td>
+</tr>
+<tr>
+<td>
+					isLink<font style="color: red;">(new)</font></td>
+<td>
+					boolean</td>
+<td>
+					Indicate whether this is a link to another file object.</td>
+</tr>
+<tr>
+<td>
+					targetPath<font style="color: red;">(new)</font></td>
+<td>
+					string</td>
+<td>
+					If this file object is a link (i.e.,"isLink":true), targetPath will show the full file path of the linked file.</td>
+</tr>
+<tr>
+<td>
+					lastModified</td>
+<td>
+					date</td>
+<td>
+					Last modified time stamp in xsd:dateTime format. Empty for directory</td>
+</tr>
+<tr>
+<td>
+					dataFormat</td>
+<td>
+					object (GSDataFormat)</td>
+<td>
+					The data format of the file. Empty for directory and for files for which the format is unknown</td>
+</tr>
+<tr>
+<td>
+					availableDataFormats</td>
+<td>
+					array(GSDataFormat)</td>
+<td>
+					The formats this file can be converted to. Will always include at least the same format as in dataFormat. Empty if format is unknown or if this is a directory</td>
+</tr>
+<tr>
+<td>
+					effectiveAcl</td>
+<td>
+					ACL</td>
+<td>
+					Describes the permissions that are effective on this object. i.e., it includes permissions that have been set explicitly on this object and any others that have been inherited. See Appendix E. Note: because this is a “synthetic” and not a “real” ACL, the ACL does not have an id.</td>
+</tr>
+</tbody>
+</table>
+<p>
+		Example:</p>
+<pre style="border: 1px dashed #6699CC;width:869px;margin:10px;padding:10px;overflow-x:auto;">
+{
+ "name":"twoRecords.gct",
+ "url":"https:\/\/dev.broadinstitute.org\/datamanager\/file\/users\/test\/twoRecords.gct",
+"parentUrl":"https:\/\/dev.broadinstitute.org\/datamanager\/v1.0\/file\/users\/test",
+ "path":"\/users\/test\/twoRecords.gct",
+ "owner":{
+   "id":"test",
+   "name":"test",
+   "type":"User"
+ },
+ "size":225,
+ "lastModified":"2011-04-20T11:53:00-04:00",
+ "isDirectory":false,
+ "isLink":false,
+ "dataFormat":{
+   "name":"gct",
+   "url":"http:\/\/www.genomespace.org\/datamanager\/dataformat\/gct\/0.0.0",
+   "fileExtension":"gct"
+ },
+ "availableDataFormats":[
+   {
+     "name":"gxp",
+     "url":"http:\/\/www.genomespace.org\/datamanager\/dataformat\/gxp\/0.0.0",
+     "fileExtension":"gxp"
+   },
+   {
+     "name":"genomicatab",
+     "url":"http:\/\/www.genomespace.org\/datamanager\/dataformat\/genomicatab\/0.0.0",
+     "fileExtension":"tab"
+   },
+   {
+     "name":"gct",
+     "url":"http:\/\/www.genomespace.org\/datamanager\/dataformat\/gct\/0.0.0",
+     "fileExtension":"gct"
+   }
+ ],
+ "effectiveAcl":{
+   "object":{
+     "objectId":"\/users\/test\/twoRecords.gct",
+     "objectType":"DataManagerFileObject"
+   },
+   "accessControlEntries":[
+     {
+       "sid":{
+         "id":"test",
+         "name":"test",
+         "type":"User"
+       },
+       "permission":"R"
+     },
+     {
+       "sid":{
+         "id":"test",
+         "name":"test",
+         "type":"User"
+       },
+       "permission":"W"
+     }
+   ]
+ }
+}</pre>
+<h2>
+<a name="appendix_b">Appendix B: GSDirectoryListing JSON object</a></h2>
+<table border="1" width="100%">
+<tbody>
+<tr>
+<td>
+					Property name</td>
+<td>
+					Type</td>
+<td>
+					Description</td>
+</tr>
+<tr>
+<td>
+					contents</td>
+<td>
+					array(GSFileMetadata)</td>
+<td>
+					One entry per child file or directory</td>
+</tr>
+<tr>
+<td>
+					directory</td>
+<td>
+					object(GSFileMetadata)</td>
+<td>
+					The metadata for the directory</td>
+</tr>
+</tbody>
+</table>
+	Example:<br/>
+<pre style="border: 1px dashed #6699CC;width:869px;margin:10px;padding:10px;overflow-x:auto;">
+{
+ "directory":{
+    "name":"testDir1",
+    "url":"https:\/\/dev.broadinstitute.org\/datamanager\/file\/users\/test\/testDir1",
+    "parentUrl":"https:\/\/dev.broadinstitute.org\/datamanager\/v1.0\/file\/users\/test",
+    "path":"\/users\/test\/testDir1",
+    "owner":{
+       "id":"test",
+       "name":"test",
+       "type":"User"
+    },
+    "size":0,
+    "isDirectory":true,
+    "isLink":false,
+    "effectiveAcl":{
+       "object":{
+          "objectId":"\/users\/test\/testDir1",
+          "objectType":"DataManagerFileObject"
+       },
+       "accessControlEntries":[
+          {
+             "sid":{
+                "id":"test",
+                "name":"test",
+                "type":"User"
+             },
+             "permission":"R"
+          },
+          {
+             "sid":{
+                "id":"test",
+                "name":"test",
+                "type":"User"
+             },
+             "permission":"W"
+          }
+       ]
+    }
+ },
+ "contents":[
+    {
+       "name":"ASillyLittleFile.txt",
+       "url":"https:\/\/dev.broadinstitute.org\/datamanager\/file\/users\/test\/testDir1\/ASillyLittleFile.txt",
+       "path":"\/users\/test\/testDir1\/ASillyLittleFile.txt",
+       "owner":{
+          "id":"test",
+          "name":"test",
+          "type":"User"
+       },
+       "size":6,
+       "lastModified":"2011-10-18T12:37:31-04:00",
+       "isDirectory":false,
+       "isLink":false,
+       "dataFormat":{
+          "name":"txt",
+          "description":"Plain text format",
+          "url":"http:\/\/www.genomespace.org\/datamanager\/dataformat\/txt\/0.0.0",
+          "fileExtension":"txt"
+       },
+       "availableDataFormats":[
+          {
+             "name":"uppercasetxt",
+             "url":"http:\/\/www.genomespace.org\/datamanager\/dataformat\/uppercasetxt\/0.0.0",
+             "fileExtension":"uppertxt"
+          },
+          {
+             "name":"lowercasetxt",
+             "url":"http:\/\/www.genomespace.org\/datamanager\/dataformat\/lowercasetxt\/0.0.0",
+             "fileExtension":"lowertxt"
+          },
+          {
+             "name":"txt",
+             "url":"http:\/\/www.genomespace.org\/datamanager\/dataformat\/txt\/0.0.0",
+             "fileExtension":"txt"
+          }
+       ],
+       "effectiveAcl":{
+          "object":{
+             "objectId":"\/users\/test\/testDir1\/ASillyLittleFile.txt",
+             "objectType":"DataManagerFileObject"
+          },
+          "accessControlEntries":[
+             {
+                "sid":{
+                   "id":"test",
+                   "name":"test",
+                   "type":"User"
+                },
+                "permission":"R"
+             },
+             {
+                "sid":{
+                   "id":"test",
+                   "name":"test",
+                   "type":"User"
+                },
+                "permission":"W"
+             }
+          ]
+       }
+    },
+    {
+       "name":"aLittleSubdir",
+       "url":"https:\/\/dev.broadinstitute.org\/datamanager\/file\/users\/test\/testDir1\/aLittleSubdir",
+       "path":"\/users\/test\/testDir1\/aLittleSubdir",
+       "owner":{
+          "id":"test",
+          "name":"test",
+          "type":"User"
+       },
+       "size":0,
+       "isDirectory":true,
+       "isLink":false,
+       "effectiveAcl":{
+          "object":{
+             "objectId":"\/users\/test\/testDir1\/aLittleSubdir",
+             "objectType":"DataManagerFileObject"
+          },
+          "accessControlEntries":[
+             {
+                "sid":{
+                   "id":"test",
+                   "name":"test",
+                   "type":"User"
+                },
+                "permission":"R"
+             },
+             {
+                "sid":{
+                   "id":"test",
+                   "name":"test",
+                   "type":"User"
+                },
+                "permission":"W"
+             }
+          ]
+       }
+    }
+ ]
+}</pre>
+<h2>
+<a name="appendix_c">Appendix C: GSDataFormat JSON object</a></h2>
+	Note that version has been removed<br/>
+<table border="1" width="100%">
+<tbody>
+<tr>
+<td>
+					Property</td>
+<td>
+					Type</td>
+<td>
+					Description</td>
+</tr>
+<tr>
+<td>
+					name</td>
+<td>
+					string</td>
+<td>
+					The name of the format</td>
+</tr>
+<tr>
+<td>
+					url</td>
+<td>
+					string</td>
+<td>
+					The URL for the format. This is the official format identifier</td>
+</tr>
+<tr>
+<td>
+					fileExtension</td>
+<td>
+					string</td>
+<td>
+					The file extension associated with this format. This is optional.</td>
+</tr>
+<tr>
+<td>
+					description</td>
+<td>
+					string</td>
+<td>
+					A human-readable description of the format. This is optional.</td>
+</tr>
+</tbody>
+</table>
+<p>
+		Example:</p>
+<pre style="border: 1px dashed #6699CC;width:869px;margin:10px;padding:10px;overflow-x:auto;">
+{	
+    "name":"txt",
+    "description":"Plain text format",
+    "url":"http:\/\/www.genomespace.org\/datamanager\/dataformat\/txt\/0.0.0",
+    "fileExtension":"txt"
+}</pre>
+<h2>
+<a name="appendix_d">Appendix D: Data Manager Data Formats</a></h2>
+	These are the data formats that, as the writing of this document, Data Manager knows about. You can get an up-to-date listing by calling<code> /datamanager/v1.0/dataformat</code> as described earlier in this document.<br/>
+<table border="1" width="100%">
+<tbody>
+<tr>
+<td>
+					Name</td>
+<td>
+					URL</td>
+<td>
+					Description</td>
+</tr>
+<tr>
+<td>
+					gct</td>
+<td>
+					http://www.genomespace.org/datamanager/dataformat/gct</td>
+<td>
+					GenePattern expression dataset file format.</td>
+</tr>
+<tr>
+<td>
+					gmt</td>
+<td>
+					http://www.genomespace.org/datamanager/dataformat/gmt</td>
+<td>
+					Gene set file from MSigDB</td>
+</tr>
+<tr>
+<td>
+					gxp</td>
+<td>
+					http://www.genomespace.org/datamanager/dataformat/gxp</td>
+<td>
+					Main file format for Genomica.</td>
+</tr>
+<tr>
+<td>
+					Genomica tab</td>
+<td>
+					http://www.genomespace.org/datamanager/dataformat/genomicatab</td>
+<td>
+					Alternate Genomica format for loading gene expression data.</td>
+</tr>
+<tr>
+<td>
+					txt</td>
+<td>
+					http://www.genomespace.org/datamanager/dataformat/txt</td>
+<td>
+					Plain text file</td>
+</tr>
+<tr>
+<td>
+					lowercasetxt</td>
+<td>
+					http://www.genomespace.org/datamanager/dataformat/lowercasetxt</td>
+<td>
+					All lower case text. For demo purposes. Will go away in future.</td>
+</tr>
+<tr>
+<td>
+					uppercasetxt</td>
+<td>
+					http://www.genomespace.org/datamanager/dataformat/uppercasetxt</td>
+<td>
+					All upper case text. For demo purposes. Will go away in future.</td>
+</tr>
+<tr>
+<td>
+					nowhitespace</td>
+<td>
+					http://www.genomespace.org/datamanager/dataformat/nowhitespace</td>
+<td>
+					Text with no white space. For demo purposes. Will go away in future.</td>
+</tr>
+</tbody>
+</table>
+<h2>
+<a name="appendix_e">Appendix E: Available Data Format Converters</a></h2>
+	Below is a list of the currently available data format converters. To get an up-to-date list, call<code> /datamanager/v1.0/dataformatconverter</code><br/>
+<table border="1" width="100%">
+<tbody>
+<tr>
+<td>
+					Input Format</td>
+<td>
+					Output Format</td>
+</tr>
+<tr>
+<td>
+					gmt</td>
+<td>
+					Genomica tab</td>
+</tr>
+<tr>
+<td>
+					gxp</td>
+<td>
+					gct</td>
+</tr>
+<tr>
+<td>
+					Genomica tab</td>
+<td>
+					gct</td>
+</tr>
+<tr>
+<td>
+					gct</td>
+<td>
+					Genomica tab</td>
+</tr>
+<tr>
+<td>
+					gct</td>
+<td>
+					gxp</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<h2>
+<a name="appendix_f">Appendix F: ACL, ACE, and SID JSON formats</a></h2>
+	They are described here together as they are closely related.<br/>
+<pre style="border: 1px dashed #6699CC;width:869px;margin:10px;padding:10px;overflow-x:auto;">
+{
+ "id":"03b00579-5356-414c-afc7-3432ece90029",
+ "object":{
+   "objectId":"\/users\/test\/dir1\/AnotherLittleFile.txt",
+   "objectType":"DataManagerFileObject"
+ },
+ "accessControlEntries":[
+   {
+     "id":"9b02e70a-f25b-4951-90ae-6759517be31b",
+     "sid":{
+       "id":"test2",
+       "name":"test2",
+       "type":"User"
+     },
+     "permission":"R"
+   },
+   {
+     "id":"df603747-8c5c-4e80-b187-c7e912bc39a6",
+     "sid":{
+       "id":"86d3ff94-7ada-44c5-bec2-afdbd7be54b4",
+       "name":"DmClientTestGroup",
+       "type":"Group"
+     },
+     "permission":"W"
+   }
+ ]
+}</pre>
+<h3>
+<a name="acl">Access Control List (ACL) Object</a></h3>
+<table border="1" width="100%">
+<tbody>
+<tr>
+<td>
+					Property</td>
+<td>
+					Type</td>
+<td>
+					Description</td>
+</tr>
+<tr>
+<td>
+					id</td>
+<td>
+					string</td>
+<td>
+					The ACL id. Generated by the server and will not appear sometimes, like within “effectiveAcl” property in GSFileMetadata.</td>
+</tr>
+<tr>
+<td>
+					object/objectId</td>
+<td>
+					string</td>
+<td>
+					The identifier for the object that the ACL targets. Currently, ACL only targets file objects, so this will be the full path of the file or directory.</td>
+</tr>
+<tr>
+<td>
+					object/objectType</td>
+<td>
+					string</td>
+<td>
+					Identifies the type of object targeted by ACL. Currently, it is always DataManagerFileObject</td>
+</tr>
+<tr>
+<td>
+					accessControlEntries</td>
+<td>
+					array of ACEs</td>
+<td>
+					The access control entries.</td>
+</tr>
+</tbody>
+</table>
+<h3>
+<a name="ace">Access Control Entry (ACE) Object</a></h3>
+<table border="1" width="100%">
+<tbody>
+<tr>
+<td>
+					Property</td>
+<td>
+					Type</td>
+<td>
+					Description</td>
+</tr>
+<tr>
+<td>
+					id</td>
+<td>
+					string</td>
+<td>
+					The ACE id. Generated by the server and will not appear sometimes, like within “effectiveAcl” property in GSFileMetadata</td>
+</tr>
+<tr>
+<td>
+					sid</td>
+<td>
+					a SID object</td>
+<td>
+					The security identity being granted permissions.</td>
+</tr>
+<tr>
+<td>
+					permission</td>
+<td>
+					string</td>
+<td>
+					Only valid values are “R” and “W” for read and write.</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<h3>
+<a name="sid">Security Identity (SID) Object</a></h3>
+<table border="1" width="100%">
+<tbody>
+<tr>
+<td>
+					Property</td>
+<td>
+					Type</td>
+<td>
+					Description</td>
+</tr>
+<tr>
+<td>
+					id</td>
+<td>
+					string</td>
+<td>
+					The id for the SID</td>
+</tr>
+<tr>
+<td>
+					name</td>
+<td>
+					string</td>
+<td>
+					The name</td>
+</tr>
+<tr>
+<td>
+					type</td>
+<td>
+					string</td>
+<td>
+					The type of SID. At this time, only valid values are “User” and “Group”</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>
+	 </p>
+<h2>
+<a name="appendix_g">Appendix G: S3FileUploadInfo JSON object</a><font style="color: red;">(new)</font></h2>
+<p>
+	Note that version has been removed</p>
+<table border="1" width="100%">
+<tbody>
+<tr>
+<td>
+				Property</td>
+<td>
+				Type</td>
+<td>
+				Description</td>
+</tr>
+<tr>
+<td>
+				path</td>
+<td>
+				string</td>
+<td>
+				The GenomeSpace path of the file to upload</td>
+</tr>
+<tr>
+<td>
+				s3BucketName</td>
+<td>
+				string</td>
+<td>
+				The name of the Amazon S3 bucket that will contain the new file.</td>
+</tr>
+<tr>
+<td>
+				s3ObjectKey</td>
+<td>
+				string</td>
+<td>
+				The Amazon S3 object key for the new file.</td>
+</tr>
+<tr>
+<td>
+				genomeSpaceFileUrl</td>
+<td>
+				string</td>
+<td>
+				The GenomeSpace URL of the new file.</td>
+</tr>
+<tr>
+<td>
+				s3FileUrl</td>
+<td>
+				string</td>
+<td>
+				The Amazon S3 URL of the new file.</td>
+</tr>
+<tr>
+<td>
+				secretKey</td>
+<td>
+				string</td>
+<td>
+				Temporary S3 secret key. Part of Amazon credentials authorized to do the upload.</td>
+</tr>
+<tr>
+<td>
+				accessKey</td>
+<td>
+				string</td>
+<td>
+				Temporary S3 access key. Part of Amazon credentials authorized to do the upload.</td>
+</tr>
+<tr>
+<td>
+				sessionToken</td>
+<td>
+				string</td>
+<td>
+				Temporary S3 session token key. Part of Amazon credentials authorized to do the upload.</td>
+</tr>
+</tbody>
+</table>
+<p>
+	Example:</p>
+<pre style="border: 1px dashed #6699CC;width:869px;margin:10px;padding:10px;overflow-x:auto;">
+{
+    "path":"/users/test/clientTest1/AFileNamedDummy.txt", 
+    "s3BucketName":"genomespace-dev", 
+    "s3ObjectKey":"users/test/clientTest1/AFileNamedDummy.txt", 
+    "genomeSpaceFileUrl":"https://dmdev.genomespace.org:8444/datamanager/file/users/test/clientTest1/AFileNamedDummy.txt", 
+    "s3FileUrl":"https://genomespace-dev.s3.amazonaws.com/users/test/clientTest1/AFileNamedDummy.txt", 
+    "amazonCredentials": {
+        "secretKey":"1Gr3q/VAJRJFQTU3MzsTHnFH1Px1wz4gLjyF2ncQ", 
+        "accessKey":"ASIAJXISRHBODWMCUCXQ", 
+        "sessionToken":"AQoDYXdzEPNtiDYmMT6BA=="}
+    }</pre>
+</td>
+</tr></table>
+</div>
+</div>
+<div id="footer">
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+	$(document).ready(function() {
+		$("a.toggle_link").click(function() {
+			var image = $(this).children("img");
+			$(image).attr("src", $(image).attr("src") == "/assets/plus.png" ? "/assets/minus.png" : "/assets/plus.png");
+		});
+	});
+
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54489169-1', 'auto');
+  ga('send', 'pageview');
+
+
+//]]>
+</script></div></body>
+</html>

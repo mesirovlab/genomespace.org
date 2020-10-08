@@ -1,0 +1,590 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>GenomeSpace: 
+	  	User Guide
+  </title>
+<link href="/assets/site.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/demo_table_jui.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/jquery-ui-1.8.4.custom.css" media="screen" rel="stylesheet" type="text/css"/>
+<script src="/assets/application.js" type="text/javascript"></script>
+<link href="/assets/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+<meta content="authenticity_token" name="csrf-param"/>
+<meta content="HGN6ApDGWsaCo0dTqlUewgvEqpBl2/F/mQ7EJTTE8Lo=" name="csrf-token"/>
+</head>
+<body>
+<div id="page_wrapper">
+<div id="page_content">
+<div id="logo"><a href="/"><img alt="Gslogo" src="/assets/gslogo.png"/></a></div>
+<div id="login_menu"><a href="https://gsui.genomespace.org/jsui/gsui.html">User Login</a>
+</div>
+<ul id="nav">
+<li id="what-is-genomespace"><a href="/what-is-genomespace">What is GenomeSpace?</a>
+</li>
+<li id="tools"><a href="/support/tools">Tools</a>
+</li>
+<li id="recipes"><a href="http://recipes.genomespace.org">Recipes</a></li>
+<li id="documentation"><a href="/documentation">Documentation</a>
+<ul>
+<li><a href="/support/guides/user-guide">User Guide</a>
+<p>Read the detailed guide to the user interface</p>
+</li>
+<li><a href="/support/guides/tool-guide">Tool Guide</a>
+<p>Learn how to access GenomeSpace functionality for each Tool</p>
+</li>
+<li><a href="/faq">FAQ</a>
+<p>See answers to frequently asked questions</p>
+</li>
+<li><a href="/presentations-and-videos">Presentations and Videos</a>
+<p>Access talks by the GenomeSpace community</p>
+</li>
+<li><a href="/support/guides/end-to-end-analyses">End-to-End Analyses</a>
+<p>Provides description for end-to-end analyses.</p>
+</li>
+</ul>
+</li>
+<li id="developers"><a href="/for-developers">Developers</a>
+<ul>
+<li><a href="/what-can-genomespace-do-for-tool-developers">What Can GenomeSpace Do For Tool Developers?</a>
+<p></p>
+</li>
+<li><a href="/adopters">Technical Documentation</a>
+<p></p>
+</li>
+<li><a href="/source-code">Source Code and Distributions</a>
+<p></p>
+</li>
+<li><a href="/developer-support-and-feedback">Developer Support and Feedback</a>
+<p></p>
+</li>
+</ul>
+</li>
+<li id="support"><a href="/support">Support</a>
+</li>
+<li id="about"><a href="/about">About</a>
+</li>
+<li class="search">
+<div id="search_box">
+<form accept-charset="UTF-8" action="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"/></div>
+<input class="search" id="search" name="search" type="text"/>
+<input class="searchBtn" type="submit"/>
+</form> </div>
+</li>
+</ul>
+<script type="text/javascript">
+//<![CDATA[
+
+		// grab page category and use to highlight correct menu item.  if none present, parse url to find where the user is.
+		var category = "";
+		if ( !category ){
+			url_parts = $(location).attr('pathname').split("/");
+			url_string = url_parts[1] + "/" + url_parts[2]
+			if (url_string == "support/tools"){
+				category = "tools"
+			}
+			else if (url_string == "support/guides"){
+				url_parts[3] == "recipes" ? category = "recipes" : category = "documentation"
+			}
+			else if (url_parts[1] == "genomespace-recipes")
+			{
+                category = "gsrecipes"
+            }
+			else if (url_string == "support/api"){
+				category = "developers"
+			}
+			else if ((url_string == "register/undefined") || (url_string == "request_invite/undefined")) {
+				category = "what-is-genomespace"
+			}
+			else if (url_string == "/undefined") {
+				category = ""
+			}
+			else if (url_string == "support/undefined") {
+				category = "support"
+			}
+		}
+		$("#" + category).addClass("current");
+
+
+//]]>
+</script>
+<div id="content_panel">
+<table width="100%"><tr>
+<td id="toc_wrapper">
+<div id="toc">
+<h3>User Guide</h3>
+<ol>
+<li class="" id="guide_section_1">
+<a href="/support/guides/user-guide/sections/quickstart">Highlights &amp; Quickstart</a>
+</li>
+<li class="" id="guide_section_2">
+<a href="/support/guides/user-guide/sections/overview">Overview of User Guide</a>
+</li>
+<li class="" id="guide_section_3">
+<a href="/support/guides/user-guide/sections/register">Registering &amp; Login</a>
+</li>
+<li class="has_children" id="guide_section_4">
+<a class="toggle_link" href="#" onclick="collapseDiv('child_51'); return false;"><img alt="Minus" src="/assets/minus.png"/></a>
+<a href="/support/guides/user-guide/sections/UI">User Interface</a>
+<ol id="child_51">
+<li class="" id="guide_section_5">
+<a href="/support/guides/user-guide/sections/customizing">Customize the interface, the tool catalog &amp; tool tags</a>
+</li>
+</ol>
+</li>
+<li class="has_children" id="guide_section_6">
+<a class="toggle_link" href="#" onclick="collapseDiv('child_73'); return false;"><img alt="Minus" src="/assets/minus.png"/></a>
+<a href="/support/guides/user-guide/sections/connect-storage">Connect Storage</a>
+<ol id="child_73">
+<li class="" id="guide_section_7">
+<a href="/support/guides/user-guide/sections/connect-s3-bucket">Connect S3 Bucket</a>
+</li>
+</ol>
+</li>
+<li class="has_children" id="guide_section_8">
+<a class="toggle_link" href="#" onclick="collapseDiv('child_6'); return false;"><img alt="Minus" src="/assets/minus.png"/></a>
+<a href="/support/guides/user-guide/sections/manage-files-folders">Manage files &amp; folders</a>
+<ol id="child_6">
+<li class="" id="guide_section_9">
+<a href="/support/guides/user-guide/sections/share-data">Share data</a>
+</li>
+<li class="" id="guide_section_10">
+<a href="/support/guides/user-guide/sections/preview-heatmap">Preview &amp; Heatmap</a>
+</li>
+<li class="" id="guide_section_11">
+<a href="/support/guides/user-guide/sections/tag-search">Tag &amp; Search</a>
+</li>
+</ol>
+</li>
+<li class="" id="guide_section_12">
+<a href="/support/guides/user-guide/sections/manage-groups-tools">Manage groups &amp; tools</a>
+</li>
+<li class="has_children" id="guide_section_13">
+<a class="toggle_link" href="#" onclick="collapseDiv('child_7'); return false;"><img alt="Minus" src="/assets/minus.png"/></a>
+<a href="/support/guides/user-guide/sections/run-an-analysis">Run an Analysis</a>
+<ol id="child_7">
+<li class="" id="guide_section_14">
+<a href="/support/guides/user-guide/sections/convert-file-formats">Convert file formats</a>
+</li>
+<li class="" id="guide_section_15">
+<a href="/support/guides/user-guide/sections/extract-file-rows-columns">Extract file rows &amp; columns</a>
+</li>
+<li class="" id="guide_section_16">
+<a href="/support/guides/user-guide/sections/export-external-site-files-to-genomespace">Export external site files to GenomeSpace</a>
+</li>
+<li class="" id="guide_section_17">
+<a href="/support/guides/user-guide/sections/recipe-demo-datasets">Recipe demo datasets</a>
+</li>
+<li class="" id="guide_section_18">
+<a href="/support/guides/user-guide/sections/wdk-launch-on-file-or-url">WDK launch on file or URL</a>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+<p class="center"><a href="/support/guides/user-guide/print"><img alt="Print_icon" src="/assets/print_icon.gif" title="Printer Friendly View"/></a></p>
+</td>
+<script type="text/javascript">
+//<![CDATA[
+
+		$(document).ready(function() {
+			var guide_section = "guide_section_14";
+			$("#" + guide_section + "> a").css("font-weight", "bold");
+			if ( 'User Guide' == "Recipes" ) {
+				$.each($("#toc a.toggle_link"), function() {
+					$(this).click();
+					var image = $(this).children("img");
+					$(image).attr("src", $(image).attr("src") == "/assets/plus.png" ? "/assets/minus.png" : "/assets/plus.png");
+				});
+			}
+		});
+
+//]]>
+</script>
+<td id="main_content">
+<div id="notice"></div>
+<div id="alert"></div>
+<h1>Convert file formats
+	</h1>
+<p>
+	GenomeSpace contains built-in file converters for frictionlessly moving your files from one tool to another and these are described in the three sections below. By no means do the given lists encompass all the accepted file formats used by the tools.</p>
+<p>
+	Please let us know of additional file conversions that would be helpful to your work, or if you have a converter you would like to contribute to GenomeSpace, at <a href="mailto:gs-help@broadinstitute.org" style="text-decoration: underline; color: rgb(74, 142, 204); ">gs-help@broadinstitute.org</a>.</p>
+<hr/>
+<p>
+<strong><a name="rename"></a>Rename the file extension.</strong> A number of formats are based on the plain text format and you can convert these to a TXT file simply by renaming the file extension.</p>
+<p style="margin-left: 40px;">
+	To rename a file, either:</p>
+<ul>
+<li style="margin-left: 40px;">
+		Right-click on the file and select <em>Rename</em> from the pop-up menu.</li>
+<li style="margin-left: 40px;">
+		Check to select the file and select <em>File</em> menu&gt;<em>Rename</em>.</li>
+</ul>
+<p style="margin-left: 40px;">
+	Edit the original file name and extension in the display and click <em>Rename</em> to save.</p>
+<p>
+	The converse requires additional consideration. You can transvert a plain text file to a tool-specific format by renaming the extension <em>if the file is of a supported data type and has the required attributes of the format.</em></p>
+<ul style="list-style-type: circle;">
+<li>
+		Supported data types and required attributes are described in detail for file formats at their respective websites. These required attributes may include specific usage for select cells such as specific headings, unique sample and probe identifiers<em>, </em>etc.</li>
+<li>
+		One example attribute is the delimiter. For example, GenePattern's <a href="http://www.broadinstitute.org/cancer/software/genepattern/gp_guides/file-formats/sections/gct" target="_self">GCT format</a> data are tab-delimited and GenePattern's <a href="http://www.broadinstitute.org/cancer/software/genepattern/gp_guides/file-formats/sections/cls" target="_self">CLS format</a> labels are space-delimited.</li>
+<li>
+<em>A file must conform to the required attributes for a true conversion. </em>A file with the extension but without the required attributes results in a tool error.</li>
+<li>
+		Transversion may be useful to take advantage of certain GenomeSpace features, such as <a href="http://www.genomespace.org/support/guides/user-guide/sections/preview-heatmap" target="_self">Heatmap previews</a>, which are only available to GCT, GXP and Genomica TAB files.</li>
+<li>
+		Note rich text format TXT is noncomparable to plain text TXT. Mac users needing help on creating plain text files, see <a href="http://www.broadinstitute.org/software/igv/makemergedBAM#createplaintext">this external site</a>.</li>
+</ul>
+<hr/>
+<p>
+	 </p>
+<h2>
+	Convert a file format</h2>
+<p>
+	In sending files to different tools, you may automatically invoke a file conversion. Each tool handles these conversions differently, and may offer you options within the tool's user interface, or may convert the file behind the scenes. The option to manually convert the file will not be available if there is no converter for that format. The next section on this page lists available converters.</p>
+<p>
+	Manually convert file formats within GenomeSpace by:</p>
+<ul>
+<li>
+		Right-clicking the file and selecting <em>Convert</em>.</li>
+<li>
+		Checking a single file and selecting <em>File</em> menu<em>&gt;Convert.</em></li>
+</ul>
+<p>
+	This opens the <em>Convert File Format</em> dialog box.</p>
+<ul>
+<li>
+		Multiple converters for a file type are presented in a drop-down menu. Select the destination format from this menu.</li>
+<li>
+		To convert and download the file, click <em>Download</em>.</li>
+<li>
+		To convert and save in the same folder, click <em>Convert on Server</em>.</li>
+</ul>
+<p>
+	 </p>
+<h2>
+	Available Converters</h2>
+<p>
+	For the most current list of file converters, on the menu bar select <em>Help&gt;</em><em>Format Converters</em>. Hovering over formats in the new dialog displays brief descriptions of the format. Similarly, links in the table below take you to the next section where each format is described.</p>
+<p>
+	The <em>nowhitespace</em> converter for TXT files is for developer testing only. To convert TXT files, see <a href="#rename" target="_self">Convert by renaming the file extension</a>.</p>
+<table border="1" cellpadding="3" cellspacing="1" style="width: 500px; border-collapse: collapse;">
+<tbody>
+<tr>
+<td style="background-color: rgb(255, 255, 204);">
+<strong>From format</strong></td>
+<td style="background-color: rgb(255, 255, 204);">
+<strong>To format</strong></td>
+</tr>
+<tr>
+<td>
+<a href="#adj">ADJ</a></td>
+<td>
+<a href="#xgmml">XGMML</a></td>
+</tr>
+<tr>
+<td>
+<a href="#attr">ATTR</a> (Cytoscape)</td>
+<td>
+<a href="#attrgm">ATTR (Cytoscape GeneMania)</a></td>
+</tr>
+<tr>
+<td colspan="1" rowspan="2">
+<a href="#CDT">CDT</a></td>
+<td>
+<a href="#GCT">GCT</a> (GenePattern)</td>
+</tr>
+<tr>
+<td>
+<a href="#tab">TAB</a> (Genomica)</td>
+</tr>
+<tr>
+<td rowspan="5">
+<a href="#gct">GCT</a></td>
+<td>
+<a href="#attr">ATTR</a> (Cytoscape)</td>
+</tr>
+<tr>
+<td>
+<a href="#gxp">GXP</a></td>
+</tr>
+<tr>
+<td>
+<a href="#tab">TAB</a> (Genomica)</td>
+</tr>
+<tr>
+<td>
+<p>
+					geneset.<a href="#tab">TAB</a></p>
+<p>
+					The input is a dataset with expression values for genes or probes, but the output lists just the probes.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="#exp">EXP</a> (geWorkbench Affymetrix EXPeriment file)</td>
+</tr>
+<tr>
+<td>
+<a href="#gmt">GMT</a></td>
+<td>
+<a href="#tab">TAB</a> (Genomica)</td>
+</tr>
+<tr>
+<td>
+<a href="#gxp">GXP</a></td>
+<td>
+<a href="#gct">GCT</a></td>
+</tr>
+<tr>
+<td>
+<a href="#LST">LST</a></td>
+<td>
+<p>
+					geneset.<a href="#tab">TAB</a> (Genomica)</p>
+<p>
+					A single column indicating a geneset is added and includes all genes from the LST file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="#odf">ODF</a></td>
+<td>
+<a href="#attr">ATTR</a> (Cytoscape)</td>
+</tr>
+<tr>
+<td rowspan="2">
+<a href="#reg2target">REG2TARGET</a></td>
+<td>
+<p>
+					geneset.<a href="#tab">TAB</a></p>
+<p>
+					The input is a file that maps regulators to target genes, but the output lists just the probes.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="#gmt">GMT</a></td>
+</tr>
+<tr>
+<td rowspan="3">
+<a href="#res">RES</a></td>
+<td>
+<a href="#gxp">GXP</a></td>
+</tr>
+<tr>
+<td>
+<a href="#tab">TAB</a> (Genomica)</td>
+</tr>
+<tr>
+<td>
+<p>
+					geneset.<a href="#tab">TAB</a></p>
+<p>
+					The input is a dataset with expression values for genes or probes, but the output lists just the probes.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="#tab">TAB</a> (Genomica)</td>
+<td>
+<a href="#gct">GCT</a></td>
+</tr>
+</tbody>
+</table>
+<p>
+	 </p>
+<h2>
+	Descriptions of file formats for which converters are available</h2>
+<table border="1" cellpadding="3" cellspacing="1" style="width: 686px; height: 269px; border-collapse: collapse;">
+<tbody>
+<tr>
+<td style="background-color: rgb(255, 255, 204);">
+<strong>Format extension</strong></td>
+<td style="background-color: rgb(255, 255, 204);">
+<strong>Primary tool</strong></td>
+<td style="background-color: rgb(255, 255, 204);">
+<strong>Description</strong></td>
+</tr>
+<tr>
+<td>
+<strong><a name="adj"></a>ADJ</strong></td>
+<td>
+				GenePattern ARACNE module</td>
+<td>
+				Adjacency file, tab-delimited. Used by the ARACNE module in GenePattern. The ARACNE module is an algorithm that reverse engineers a gene regulatory network from microarray gene expression data. Further information on this file format can be found <a href="http://www.broadinstitute.org/webservices/gpModuleRepository/download/prod/module/?file=/ARACNE/broad.mit.edu:cancer.software.genepattern.module.analysis/00090/2/ARACNE.pdf">here</a> (PDF).</td>
+</tr>
+<tr>
+<td>
+<strong><a name="attr"></a>ATTR (Cytoscape)</strong></td>
+<td>
+				Cytoscape</td>
+<td>
+				Cytoscape format that describes node and edge attributes. Further information on this file format can be found <a href="http://cytoscape.org/manual/Cytoscape2_6Manual.html#Cytoscape%20Attribute%20File%20Format">here</a>.</td>
+</tr>
+<tr>
+<td>
+<strong><a name="attrgm"></a>ATTR (Cytoscape GeneMania)</strong></td>
+<td>
+				Cytoscape GeneMania plugin</td>
+<td>
+				Cytoscape attribute format for GeneMania networks. See <a href="http://www.genemania.org/plugin/">this page</a> for more information about the GeneMania plugin for Cytoscape.</td>
+</tr>
+<tr>
+<td>
+<a name="CDT"></a><strong>CDT</strong></td>
+<td>
+				GenePattern's HierarchicalClustering module</td>
+<td>
+				CDT (<b>c</b>lustered <b>d</b>ata <b>t</b>able) files are created by GenePattern's HierarchicalClustering module. The CDT file reorders the original input data based on the clustering. An additional column or row is added and depends on if clustering was performed on genes or arrays. The additional column or row contains a unique identifier for each row or column that is linked to the description of the tree structure in the GTR or ATR file that is also output by the module. For details on the format, see <a href="http://www.broadinstitute.org/cancer/software/genepattern/file-formats-guide#CDT" target="_self">here</a>.</td>
+</tr>
+<tr>
+<td>
+<strong><a name="exp"></a>EXP</strong></td>
+<td>
+				geWorkbench</td>
+<td>
+				The geWorkbench native tab-delimited format for saving microarray data, providing a way to include both the data matrix for a group of arrays and various set labels grouping these arrays in the same file. Further information on this file format can be found <a href="http://wiki.c2b2.columbia.edu/workbench/index.php/File_Formats#Affymetrix_File_Matrix_Format_.28geWorkbench_.22.exp.22_format.29">here</a>.</td>
+</tr>
+<tr>
+<td>
+<strong><a name="gct"></a>GCT</strong></td>
+<td>
+				GenePattern</td>
+<td>
+				A tab-delimited file format that describes an expression dataset. Further information on the file format can be found <a href="http://www.broadinstitute.org/cancer/software/genepattern/file-formats-guide#GCT">here</a>.</td>
+</tr>
+<tr>
+<td>
+<strong><a name="gmt"></a>GMT</strong></td>
+<td>
+				GenePattern GSEA module</td>
+<td>
+				Tab-delimited file format that describes gene sets. Each row represents a gene set. Further information on this file format can be found <a href="http://www.broadinstitute.org/cancer/software/genepattern/file-formats-guide#GMT">here</a>.</td>
+</tr>
+<tr>
+<td>
+<strong><a name="gxp"></a>GXP</strong></td>
+<td>
+				Genomica</td>
+<td>
+				Genomica proprietary expression file format. This file format can be used to store the results of complex analyses, and a single GXP file can store multiple annotation files and analyses. It presents the same data as <a href="#tab">TAB</a> format but is not tab-delimited. More information is detailed <a href="http://genomica.weizmann.ac.il/Tutorial/load_expression_data.html" target="_blank">here</a>.</td>
+</tr>
+<tr>
+<td>
+<a name="LST"></a><strong>LST</strong></td>
+<td>
+				Genomica</td>
+<td>
+<div>
+					Genomica outputs lists of genes as an LST format file. It contains the list of genes and descriptions given in the first two columns of <a href="#gxp">GXP</a> or <a href="#tab">TAB</a> files but not expression data. Gene symbols are in square brackets, followed by the identifier and description as shown in the lower-right quadrant of the figure <a href="http://genomica.weizmann.ac.il/Tutorial/load_expression_data.html" target="_blank">here</a>.</div>
+</td>
+</tr>
+<tr>
+<td>
+<strong><a name="odf"></a>ODF</strong></td>
+<td>
+				GenePattern</td>
+<td>
+				The Output Description Format (ODF) is similar to the RES or GCT file formats for gene expression datasets. The main difference is in the header; the body of data still contains the expression level values for each gene in each sample. Further information on the file format can be found <a href="http://www.broadinstitute.org/cancer/software/genepattern/file-formats-guide#ODF">here</a>.</td>
+</tr>
+<tr>
+<td>
+<strong><a name="reg2target"></a>REG2TARGET</strong></td>
+<td>
+				 </td>
+<td>
+				A two-column format that contains the mapping between regulators (column 1) and target genes (column 2).</td>
+</tr>
+<tr>
+<td>
+<strong><a name="res"></a>RES</strong></td>
+<td>
+				GenePattern</td>
+<td>
+<p>
+					A tab-delimited file format that describes an expression dataset. Unlike the GCT file format, the RES file format contains labels for each gene's absent (A) versus present (P) calls, as generated by Affymetrix's GeneChip software and does not allow missing expression values.  Further information on the file format can be found <a href="http://www.broadinstitute.org/cancer/software/genepattern/file-formats-guide#RES">here</a>. </p>
+</td>
+</tr>
+<tr>
+<td>
+<strong><a name="tab"></a>TAB</strong></td>
+<td>
+				Genomica</td>
+<td>
+<p>
+					Tab-delimited text file that contains gene expression data. It presents the same data as the <a href="#gxp">GXP</a> format. The first row is a header row, where the names of the arrays or experiments are specified from the third column onwards. Column one lists gene symbols and column two gives the name and description of the probe separated by space-hyphen-space " - ". Remaining columns give expression data for each gene across experiments.</p>
+<p>
+					The <strong>geneset.TAB</strong> format contains just the list of probes from a TAB file. This format is different from the <a href="#LST">LST</a> format in that it omits the column of descriptions and adds columns that define gene sets, marked by 1 if a gene is included and 0 if it is not.</p>
+</td>
+</tr>
+<tr>
+<td>
+<strong><a name="xgmml"></a>XGMML</strong></td>
+<td>
+				Cytoscape</td>
+<td>
+				eXtensible Graph Markup and Modeling Language file. These files contain network data and node/edge/network attributes. Further information on the file format can be found <a href="https://en.wikipedia.org/wiki/XGMML">here</a>. </td>
+</tr>
+</tbody>
+</table>
+<p>
+	 </p>
+</td>
+<tr><td colspan="2">
+<p class="center">
+<a href="/support/guides/user-guide/sections/run-an-analysis">&lt;&lt; Run an Analysis</a>
+		| <a href="/support/guides/user-guide/sections/run-an-analysis">Up</a> |
+		<a href="/support/guides/user-guide/sections/extract-file-rows-columns">Extract file rows &amp; columns &gt;&gt;</a>
+</p>
+</td></tr>
+<script type="text/javascript">
+//<![CDATA[
+
+		if ( "User Guide" == "Recipes" && true ) {
+			$.each($("#main_content a.toggle_link"), function() {
+				$(this).click();
+				var image = $(this).children("img");
+				$(image).attr("src", $(image).attr("src") == "/assets/plus.png" ? "/assets/minus.png" : "/assets/plus.png");
+			});
+		}
+		$('.collapsed').toggle();
+
+//]]>
+</script>
+</tr></table>
+</div>
+</div>
+<div id="footer">
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+	$(document).ready(function() {
+		$("a.toggle_link").click(function() {
+			var image = $(this).children("img");
+			$(image).attr("src", $(image).attr("src") == "/assets/plus.png" ? "/assets/minus.png" : "/assets/plus.png");
+		});
+	});
+
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54489169-1', 'auto');
+  ga('send', 'pageview');
+
+
+//]]>
+</script></div></body>
+</html>

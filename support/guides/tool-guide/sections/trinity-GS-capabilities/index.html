@@ -1,0 +1,366 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>GenomeSpace: 
+	  	Tool Guide
+  </title>
+<link href="/assets/site.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/demo_table_jui.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/jquery-ui-1.8.4.custom.css" media="screen" rel="stylesheet" type="text/css"/>
+<script src="/assets/application.js" type="text/javascript"></script>
+<link href="/assets/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+<meta content="authenticity_token" name="csrf-param"/>
+<meta content="+5a8/k5XsQdmwLp6wP/kNrQGGNvhnCkNtkBzG10NqAs=" name="csrf-token"/>
+</head>
+<body>
+<div id="page_wrapper">
+<div id="page_content">
+<div id="logo"><a href="/"><img alt="Gslogo" src="/assets/gslogo.png"/></a></div>
+<div id="login_menu"><a href="https://gsui.genomespace.org/jsui/gsui.html">User Login</a>
+</div>
+<ul id="nav">
+<li id="what-is-genomespace"><a href="/what-is-genomespace">What is GenomeSpace?</a>
+</li>
+<li id="tools"><a href="/support/tools">Tools</a>
+</li>
+<li id="recipes"><a href="http://recipes.genomespace.org">Recipes</a></li>
+<li id="documentation"><a href="/documentation">Documentation</a>
+<ul>
+<li><a href="/support/guides/user-guide">User Guide</a>
+<p>Read the detailed guide to the user interface</p>
+</li>
+<li><a href="/support/guides/tool-guide">Tool Guide</a>
+<p>Learn how to access GenomeSpace functionality for each Tool</p>
+</li>
+<li><a href="/faq">FAQ</a>
+<p>See answers to frequently asked questions</p>
+</li>
+<li><a href="/presentations-and-videos">Presentations and Videos</a>
+<p>Access talks by the GenomeSpace community</p>
+</li>
+<li><a href="/support/guides/end-to-end-analyses">End-to-End Analyses</a>
+<p>Provides description for end-to-end analyses.</p>
+</li>
+</ul>
+</li>
+<li id="developers"><a href="/for-developers">Developers</a>
+<ul>
+<li><a href="/what-can-genomespace-do-for-tool-developers">What Can GenomeSpace Do For Tool Developers?</a>
+<p></p>
+</li>
+<li><a href="/adopters">Technical Documentation</a>
+<p></p>
+</li>
+<li><a href="/source-code">Source Code and Distributions</a>
+<p></p>
+</li>
+<li><a href="/developer-support-and-feedback">Developer Support and Feedback</a>
+<p></p>
+</li>
+</ul>
+</li>
+<li id="support"><a href="/support">Support</a>
+</li>
+<li id="about"><a href="/about">About</a>
+</li>
+<li class="search">
+<div id="search_box">
+<form accept-charset="UTF-8" action="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"/></div>
+<input class="search" id="search" name="search" type="text"/>
+<input class="searchBtn" type="submit"/>
+</form> </div>
+</li>
+</ul>
+<script type="text/javascript">
+//<![CDATA[
+
+		// grab page category and use to highlight correct menu item.  if none present, parse url to find where the user is.
+		var category = "";
+		if ( !category ){
+			url_parts = $(location).attr('pathname').split("/");
+			url_string = url_parts[1] + "/" + url_parts[2]
+			if (url_string == "support/tools"){
+				category = "tools"
+			}
+			else if (url_string == "support/guides"){
+				url_parts[3] == "recipes" ? category = "recipes" : category = "documentation"
+			}
+			else if (url_parts[1] == "genomespace-recipes")
+			{
+                category = "gsrecipes"
+            }
+			else if (url_string == "support/api"){
+				category = "developers"
+			}
+			else if ((url_string == "register/undefined") || (url_string == "request_invite/undefined")) {
+				category = "what-is-genomespace"
+			}
+			else if (url_string == "/undefined") {
+				category = ""
+			}
+			else if (url_string == "support/undefined") {
+				category = "support"
+			}
+		}
+		$("#" + category).addClass("current");
+
+
+//]]>
+</script>
+<div id="content_panel">
+<table width="100%"><tr>
+<td id="toc_wrapper">
+<div id="toc">
+<h3>Tool Guide</h3>
+<ol>
+<li class="" id="guide_section_1">
+<a href="/support/guides/tool-guide/sections/tool-guide-intro">Introduction</a>
+</li>
+<li class="" id="guide_section_2">
+<a href="/support/guides/tool-guide/sections/arrayexpress-GS-capabilities">ArrayExpress</a>
+</li>
+<li class="" id="guide_section_3">
+<a href="/support/guides/tool-guide/sections/cbioportal-GS-capabilities">cBioPortal</a>
+</li>
+<li class="" id="guide_section_4">
+<a href="/support/guides/tool-guide/sections/cistrome-GS-capabilities">Cistrome </a>
+</li>
+<li class="" id="guide_section_5">
+<a href="/support/guides/tool-guide/sections/cytoscape-GS-capabilities">Cytoscape</a>
+</li>
+<li class="" id="guide_section_6">
+<a href="/support/guides/tool-guide/sections/cytoscape_3-GS-capabilities">Cytoscape 3</a>
+</li>
+<li class="" id="guide_section_7">
+<a href="/support/guides/tool-guide/sections/firebrowse-GS-capabilities">FireBrowse</a>
+</li>
+<li class="" id="guide_section_8">
+<a href="/support/guides/tool-guide/sections/galaxy-GS-capabilities">Galaxy</a>
+</li>
+<li class="" id="guide_section_9">
+<a href="/support/guides/tool-guide/sections/genepattern-GS-capabilities">GenePattern</a>
+</li>
+<li class="" id="guide_section_10">
+<a href="/support/guides/tool-guide/sections/genomica-GS-capabilities">Genomica</a>
+</li>
+<li class="" id="guide_section_11">
+<a href="/support/guides/tool-guide/sections/geworkbench-GS-capabilities">geWorkbench</a>
+</li>
+<li class="" id="guide_section_12">
+<a href="/support/guides/tool-guide/sections/gitools-GS-capabilities">Gitools</a>
+</li>
+<li class="" id="guide_section_13">
+<a href="/support/guides/tool-guide/sections/igv-gs-capabilities">Integrative Genomics Viewer (IGV)</a>
+</li>
+<li class="" id="guide_section_14">
+<a href="/support/guides/tool-guide/sections/isacreator">ISAcreator</a>
+</li>
+<li class="" id="guide_section_15">
+<a href="/support/guides/tool-guide/sections/msigdb-online-tools">MSigDB Online Tools</a>
+</li>
+<li class="" id="guide_section_16">
+<a href="/support/guides/tool-guide/sections/ucsc_genome_browser-GS-capabilities">UCSC Table Browser</a>
+</li>
+<li class="" id="guide_section_17">
+<a href="/support/guides/tool-guide/sections/tool-term-glossary">Tool Term Glossary</a>
+</li>
+<li class="" id="guide_section_18">
+<a href="/support/guides/tool-guide/sections/trinity-GS-capabilities">Trinity</a>
+</li>
+</ol>
+</div>
+<p class="center"><a href="/support/guides/tool-guide/print"><img alt="Print_icon" src="/assets/print_icon.gif" title="Printer Friendly View"/></a></p>
+</td>
+<script type="text/javascript">
+//<![CDATA[
+
+		$(document).ready(function() {
+			var guide_section = "guide_section_18";
+			$("#" + guide_section + "> a").css("font-weight", "bold");
+			if ( 'Tool Guide' == "Recipes" ) {
+				$.each($("#toc a.toggle_link"), function() {
+					$(this).click();
+					var image = $(this).children("img");
+					$(image).attr("src", $(image).attr("src") == "/assets/plus.png" ? "/assets/minus.png" : "/assets/plus.png");
+				});
+			}
+		});
+
+//]]>
+</script>
+<td id="main_content">
+<div id="notice"></div>
+<div id="alert"></div>
+<h1>Trinity
+	</h1>
+<p>
+	The Trinity Cancer Transcriptome Analysis Toolkit (CTAT) aims to provide tools for leveraging RNA-Seq to gain insights into the biology of cancer transcriptomes. Bioinformatics tool support is provided for mutation detection, fusion transcript identification, and de novo transcript assembly. Trinity CTAT was developed at The Broad Institute and is hosted on the <a href="https://galaxy.ncgas-trinity.indiana.edu" target="new">Trinity CTAT Galaxy portal</a> by the <a href="http://ncgas.org/" target="new">National Center for Genome Analysis Support (NCGAS) at Indiana University</a>. CTAT is funded by the <a href="http://itcr.nci.nih.gov/" target="new">National Cancer Institute Informatics Technology for Cancer Research (NCI ITCR)</a> program.</p>
+<p>
+	More information about Trinity CTAT can be found using the following links:</p>
+<ul>
+<li>
+<a href="https://github.com/NCIP/Trinity_CTAT/wiki" target="new">Trinity Cancer Transcriptome Analysis Toolkit Website</a></li>
+<li>
+<a href="https://github.com/trinityrnaseq/trinityrnaseq/wiki" target="new">RNA-Seq De novo Assembly Using Trinity</a></li>
+<li>
+<a href="https://galaxy.ncgas-trinity.indiana.edu" target="new">Trinity CTAT Galaxy portal</a></li>
+<li>
+<a href="https://groups.google.com/forum/#!forum/trinity_ctat_users" target="new">Trinity CTAT users Google Group</a></li>
+<li>
+<a href="http://ncgas.org/galaxy_trinity_faq.php" target="new">NCGAS Trinity Galaxy FAQ</a></li>
+</ul>
+<p>
+	 </p>
+<h2>
+	Creating an Account</h2>
+<p>
+	Before you can launch Trinity from GenomeSpace, you must first sign up for a Trinity account through the National Center for Genome Analysis Support (NCGAS). This can be accomplished by filling out the <a href="https://redcap.uits.iu.edu/surveys/?s=Edbef4bGGb" target="new">Trinity Galaxy Registration Form</a>.</p>
+<p>
+	Trinity Galaxy support by NCGAS is publically funded, so users are required to sign up and describe the nature of their work and their sources of funding. If you have any questions about this form, please contact the NCGAS team at <a href="mailto:help@ncgas.org">help@ncgas.org</a>.</p>
+<p>
+	Once you have submitted your registration form, you should receive an email from the NCGAS team with your account information and temporary password. This email should arrive within 24 hours of submitting your application.</p>
+<p>
+	 </p>
+<h2>
+	Connecting Your Account</h2>
+<p>
+	Once you have signed up for and activated your Trinity CTAT account, you can connect your Trinity account to GenomeSpace using the following method:</p>
+<ol>
+<li>
+		On the main login screen, bypass the Trinity Login section and instead navigate to the OpenID Login section.</li>
+<li>
+		Under the OpenID URL box, choose "GenomeSpace" from the drop-down menu to authenticate with your GenomeSpace account.</li>
+<li>
+		Click "Login".<br/>
+<img alt="" src="/uploaded/content_trinity1.png" style="border-width: 1px; border-style: solid; height: 635px; width: 600px;"/></li>
+<li>
+		Once you have successfully authenticated with OpenID, you will also need to associate a Galaxy account with this ID. To do this, enter your Trinity username and password again and click "Login" (see below). <strong>Do not create a new account</strong>.<br/>
+<img alt="" src="/uploaded/content_trinity2.png" style="width: 600px; height: 320px; border-width: 1px; border-style: solid;"/></li>
+</ol>
+<p>
+	Once you have connected your account, you can begin using Trinity normally.</p>
+<p>
+	 </p>
+<h2>
+	Trinity Tools</h2>
+<p>
+	Trinity encompasses a suite of tools hosted on a Galaxy server. There are three types of tools: (1) tools for interacting with GenomeSpace; (2) auxiliary tools that are common to Galaxy builds; and, (3) Trinity-specific tools which perform different functions or analyses.</p>
+<h3>
+	Get Data</h3>
+<p>
+	To import data to Trinity from GenomeSpace, click <em>Get Data</em> in the Tools menu and select <em><span class="genomespace_file_browser_prod tool-link">GenomeSpace import</span> from file browser</em><em>.</em>  This opens a view of your GenomeSpace directories.  The navigation is a little different here than it is in GenomeSpace, since there is no separate directories pane.  Double-click folders to open them, and double-click<em> ..(To Parent)</em> to return to the previous level of the folder structure.</p>
+<p>
+<img alt="" src="/uploaded/content_trinity3.png" style="width: 251px; height: 631px;"/></p>
+<p>
+	Select the checkboxes for the files you want to bring into Trinity. You can optionally select a file format from the file's drop-down menu, provided there is a converter.  Click the <em>Send to Galaxy</em> button to queue the files for import into Trinity.</p>
+<h3>
+	Send Data</h3>
+<p>
+	To send data back to GenomeSpace from Trinity, click <em>Send Data</em> in the Tools menu and select <em>GenomeSpace Exporter</em>.</p>
+<p>
+<img alt="" src="/uploaded/content_trinity4.png" style="width: 251px; height: 358px;"/></p>
+<ol>
+<li>
+		Select the dataset you want to export from the drop-down menu.</li>
+<li>
+		Select the target directory – you can open enclosing directories by clicking the <img alt="" src="/uploaded/content_toolug_galaxyplusicon.jpg" style="width: 18px; height: 16px;"/> button.</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_toolug_galaxyfilelist.jpg" style="width: 145px; height: 138px;"/></p>
+<ol start="3">
+<li>
+		You can optionally enter a file name.  If you do not enter one, Trinity will generate a file name automatically.</li>
+<li>
+		Click <em>Execute</em> to send the file to GenomeSpace.</li>
+</ol>
+<p>
+	 </p>
+<h3>
+	Other Galaxy Tools</h3>
+<p>
+	Trinity also has built-in Galaxy tools to help with basic file manipulation and other functions. These tools can by found by clicking on <em>Helper Tools</em> in the Tools menu.</p>
+<p>
+<img alt="" src="/uploaded/content_trinity5.png" style="width: 251px; height: 313px;"/></p>
+<p>
+	To learn about other Galaxy tools that can be found in Trinity, please visit the <a href="https://wiki.galaxyproject.org/" target="new">Galaxy Wiki Resource</a>.</p>
+<div>
+	 </div>
+<div>
+<h3>
+		Trinity-Specific Tools</h3>
+<p>
+		The Trinity CTAT suite of tools is specific to this build of Galaxy, and is not currently deployed on the main Galaxy server which is also connected to GenomeSpace. Currently, CTAT supports tools and functions for completing analyses such as:</p>
+<ul>
+<li>
+			De novo transcriptome assembly</li>
+<li>
+			Mutation detection</li>
+<li>
+			Fusion transcript identification</li>
+<li>
+			Other tools for manipulation of FASTA files</li>
+</ul>
+<p>
+<img alt="" src="/uploaded/content_trinity6.png" style="width: 251px; height: 837px;"/></p>
+<p>
+		More information about the capabilities of these specific tools can be found on the <a href="https://github.com/NCIP/Trinity_CTAT/wiki" target="new">Trinity CTAT wiki page</a>. In the future, Trinity CTAT may also support lincRNA classification, foreign transcript detection, and single-cell cancer transcriptome analysis.</p>
+</div>
+<p>
+	 </p>
+</td>
+<tr><td colspan="2">
+<p class="center">
+<a href="/support/guides/tool-guide/sections/tool-term-glossary">&lt;&lt; Tool Term Glossary</a>
+		| <a href="/support/guides/tool-guide/sections/tool-guide-intro">Up</a> |
+		&gt;&gt; 
+	</p>
+</td></tr>
+<script type="text/javascript">
+//<![CDATA[
+
+		if ( "Tool Guide" == "Recipes" && true ) {
+			$.each($("#main_content a.toggle_link"), function() {
+				$(this).click();
+				var image = $(this).children("img");
+				$(image).attr("src", $(image).attr("src") == "/assets/plus.png" ? "/assets/minus.png" : "/assets/plus.png");
+			});
+		}
+		$('.collapsed').toggle();
+
+//]]>
+</script>
+</tr></table>
+</div>
+</div>
+<div id="footer">
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+	$(document).ready(function() {
+		$("a.toggle_link").click(function() {
+			var image = $(this).children("img");
+			$(image).attr("src", $(image).attr("src") == "/assets/plus.png" ? "/assets/minus.png" : "/assets/plus.png");
+		});
+	});
+
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54489169-1', 'auto');
+  ga('send', 'pageview');
+
+
+//]]>
+</script></div></body>
+</html>

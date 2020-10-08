@@ -1,0 +1,399 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>GenomeSpace: 
+	  	Data Source Lightweight Integration (version alpha 0.1)
+  </title>
+<link href="/assets/site.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/demo_table_jui.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/jquery-ui-1.8.4.custom.css" media="screen" rel="stylesheet" type="text/css"/>
+<script src="/assets/application.js" type="text/javascript"></script>
+<link href="/assets/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+<meta content="authenticity_token" name="csrf-param"/>
+<meta content="TaLEu0MYn7HpvzVNHQqCVht1Sd6YxFsvoL2pwlbzxcE=" name="csrf-token"/>
+</head>
+<body>
+<div id="page_wrapper">
+<div id="page_content">
+<div id="logo"><a href="/"><img alt="Gslogo" src="/assets/gslogo.png"/></a></div>
+<div id="login_menu"><a href="https://gsui.genomespace.org/jsui/gsui.html">User Login</a>
+</div>
+<ul id="nav">
+<li id="what-is-genomespace"><a href="/what-is-genomespace">What is GenomeSpace?</a>
+</li>
+<li id="tools"><a href="/support/tools">Tools</a>
+</li>
+<li id="recipes"><a href="http://recipes.genomespace.org">Recipes</a></li>
+<li id="documentation"><a href="/documentation">Documentation</a>
+<ul>
+<li><a href="/support/guides/user-guide">User Guide</a>
+<p>Read the detailed guide to the user interface</p>
+</li>
+<li><a href="/support/guides/tool-guide">Tool Guide</a>
+<p>Learn how to access GenomeSpace functionality for each Tool</p>
+</li>
+<li><a href="/faq">FAQ</a>
+<p>See answers to frequently asked questions</p>
+</li>
+<li><a href="/presentations-and-videos">Presentations and Videos</a>
+<p>Access talks by the GenomeSpace community</p>
+</li>
+<li><a href="/support/guides/end-to-end-analyses">End-to-End Analyses</a>
+<p>Provides description for end-to-end analyses.</p>
+</li>
+</ul>
+</li>
+<li id="developers"><a href="/for-developers">Developers</a>
+<ul>
+<li><a href="/what-can-genomespace-do-for-tool-developers">What Can GenomeSpace Do For Tool Developers?</a>
+<p></p>
+</li>
+<li><a href="/adopters">Technical Documentation</a>
+<p></p>
+</li>
+<li><a href="/source-code">Source Code and Distributions</a>
+<p></p>
+</li>
+<li><a href="/developer-support-and-feedback">Developer Support and Feedback</a>
+<p></p>
+</li>
+</ul>
+</li>
+<li id="support"><a href="/support">Support</a>
+</li>
+<li id="about"><a href="/about">About</a>
+</li>
+<li class="search">
+<div id="search_box">
+<form accept-charset="UTF-8" action="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"/></div>
+<input class="search" id="search" name="search" type="text"/>
+<input class="searchBtn" type="submit"/>
+</form> </div>
+</li>
+</ul>
+<script type="text/javascript">
+//<![CDATA[
+
+		// grab page category and use to highlight correct menu item.  if none present, parse url to find where the user is.
+		var category = "";
+		if ( !category ){
+			url_parts = $(location).attr('pathname').split("/");
+			url_string = url_parts[1] + "/" + url_parts[2]
+			if (url_string == "support/tools"){
+				category = "tools"
+			}
+			else if (url_string == "support/guides"){
+				url_parts[3] == "recipes" ? category = "recipes" : category = "documentation"
+			}
+			else if (url_parts[1] == "genomespace-recipes")
+			{
+                category = "gsrecipes"
+            }
+			else if (url_string == "support/api"){
+				category = "developers"
+			}
+			else if ((url_string == "register/undefined") || (url_string == "request_invite/undefined")) {
+				category = "what-is-genomespace"
+			}
+			else if (url_string == "/undefined") {
+				category = ""
+			}
+			else if (url_string == "support/undefined") {
+				category = "support"
+			}
+		}
+		$("#" + category).addClass("current");
+
+
+//]]>
+</script>
+<div id="content_panel">
+<table width="100%"><tr>
+<td id="main_content">
+<div id="notice"></div>
+<div id="alert"></div>
+<form accept-charset="UTF-8" action="/support/api/data-source-lightweight-integration-alpha-0-1" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"/><input name="authenticity_token" type="hidden" value="TaLEu0MYn7HpvzVNHQqCVht1Sd6YxFsvoL2pwlbzxcE="/></div>
+<span>
+<label class="inline" for="select_component">Select Version:</label>
+<select id="select_component" name="select[component]"><option selected="selected" value="data-source-lightweight-integration-alpha-0-1">alpha 0.1</option></select>
+<input class="inline" name="commit" type="submit" value="Display"/> | 
+	<p class="inline"><a href="/adopters">Back</a></p>
+</span>
+</form><hr/>
+<h1>Data Source Lightweight Integration (version alpha 0.1)
+</h1>
+<h3 class="incomplete">
+<strong>Deprecated:  Use the <a href="http://www.genomespace.org/blog/2014/12/02/the-genomespace-web-development-kit">jsCDK</a> instead</strong></h3>
+<h1>
+	GenomeSpace Data Source Lightweight Integration</h1>
+<p>
+	Most tools in the GenomeSpace tool bar are integrated with GenomeSpace using either the GenomeSpace API or the GenomeSpace Java Client Development Kit (CDK).  One of these two approaches is required to achieve full integration, meaning that users have integrated identity (single sign on) and can send data to the tool from GenomeSpace, to GenomeSpace from the tool, and possibly also directly launch other GenomeSpace tools.  For a subset of applications however, such as data portals, the requirements are more modest, and so they only need to be able to send data into GenomeSpace for analysis.  Data portals have data to share for analysis in GenomeSpace tools, but do not have the capability to take data back from GenomeSpace or analyze it themselves. For tools that fall into this category, we have developed the GenomeSpace Lightweight <strong>D</strong>ata <strong>S</strong>ource <strong>I</strong>ntegration JavaScript <strong>L</strong>ibrary (DSIL).</p>
+<h2>
+	Features</h2>
+<p>
+	The DSIL allows web sites to:</p>
+<ul>
+<li>
+		Send a file to GenomeSpace that is available via an HTTP GET</li>
+<li>
+		Post a file to GenomeSpace</li>
+</ul>
+<p>
+	The DSIL handles all aspects of GenomeSpace authentication and provides a user interface that allows a user:</p>
+<ul>
+<li>
+		to determine where to place the file in the GenomeSpace file system</li>
+<li>
+		to (re)name the file</li>
+</ul>
+<p>
+	In short, it acts as a web-based save-file dialog that accepts either a URL or a posted file.</p>
+<p>
+	The DSIL is implemented in two parts: first as a JavaScript library hosted by the GenomeSpace user interface, and second as a web page that handles authentication, GenomeSpace file system navigation, and file (re)naming.</p>
+<h2>
+	Example Use of the DSIL</h2>
+<p>
+	An example page is available for live testing at <a href="http://gsui.genomespace.org/jsui/jsCDK/Demo.html">http://gsui.genomespace.org/jsui/jsCDK/Demo.html</a>. This simple example page looks like this;</p>
+<p>
+<img alt="" height="236" src="/uploaded/content_up2gs.png" style="border-width: 1px; border-style: solid;" width="480"/></p>
+<p>
+	Clicking on the <em>here to upload</em> link or adding a file and clicking the button will open a new browser window.  The new window will authenticate with GenomeSpace and then present the user with the ability to select the target directory and filename to use.</p>
+<p>
+<img alt="" src="/uploaded/content_up2.png" style="width: 483px; height: 482px; border-width: 1px; border-style: solid;"/></p>
+<p>
+	The full source of the page is as follows:</p>
+<div class="pre_wrapper">
+<pre>
+<span class="error" title="Start tag seen without seeing a doctype first. Expected “&lt;!DOCTYPE html&gt;”.">&lt;<span class="start-tag">html</span>&gt;</span><span class="error" title="Stray start tag “head”.">&lt;<span class="start-tag">head</span>&gt;</span><span>
+</span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">http-equiv</span>="<a class="attribute-value">Content-Type</a>" <span class="attribute-name">content</span>="<a class="attribute-value">text/html; charset=UTF-8</a>"&gt;</span><span>
+</span><span>&lt;<span class="start-tag">title</span>&gt;Upload To</span><span> GenomeSpace Example</span><span>&lt;/<span class="end-tag">title</span>&gt;</span><span>
+</span><span>        </span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">src</span>="<a class="attribute-value" href="view-source:https://gsui.genomespace.org/jsui/js/jquery-1.7.2.min.js">https://gsui.genomespace.org/jsui/js/jquery-1.7.2.min.js</a>" <span class="attribute-name">type</span>="<a class="attribute-value">text/javascript</a>"&gt;</span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+        </span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">src</span>="<a class="attribute-value" href="view-source:https://gsui.genomespace.org/jsui/upload/gsuploadwindow.js">https://gsui.genomespace.org/jsui/upload/gsuploadwindow.js</a>" <span class="attribute-name">type</span>="<a class="attribute-value">text/javascript</a>"&gt;</span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>  
+</span><span class="error" title="Stray end tag “head”.">&lt;/<span class="end-tag">head</span>&gt;</span><span>
+</span><span class="error" title="An “body” start tag seen but an element of the same type was already open.">&lt;<span class="start-tag">body</span>&gt;</span><span>
+</span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">uploadLink</a>"&gt;</span><span>Click </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value">#</a>" <span class="attribute-name">onclick</span>="<a class="attribute-value">uploadUrlByGetToGS();return false;</a>"&gt;</span><span>here to upload</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span> by sending a URL</span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+</span><span>&lt;<span class="start-tag">br</span>&gt;</span><span>&lt;<span class="start-tag">br</span>&gt;</span><span>
+use this form to post a file to GenomeSpace
+</span><span>&lt;<span class="start-tag">form</span> <span class="attribute-name">method</span>="<a class="attribute-value">POST</a>" <span class="attribute-name">enctype</span>="<a class="attribute-value">multipart/form-data</a>" <span class="attribute-name">id</span>="<a class="attribute-value">postToGenomeSpace</a>"&gt;</span><span>
+File to upload: </span><span>&lt;<span class="start-tag">input</span> <span class="attribute-name">name</span>="<a class="attribute-value">upfile</a>" <span class="attribute-name">type</span>="<a class="attribute-value">file</a>"&gt;</span><span>&lt;<span class="start-tag">br</span>/&gt;</span><span>&lt;<span class="start-tag">br/</span>&gt;</span><span>
+</span><span>&lt;<span class="start-tag">input</span> <span class="attribute-name">id</span>="<a class="attribute-value">postUploadBtn</a>" <span class="attribute-name">value</span>="<a class="attribute-value">Press here</a>" <span class="attribute-name">onclick</span>="<a class="attribute-value">postUploadToGS(); return false;</a>" <span class="attribute-name">type</span>="<a class="attribute-value">button</a>"&gt;</span><span> to upload the file!
+</span><span>&lt;/<span class="end-tag">form</span>&gt;</span><span>
+ </span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">type</span>="<a class="attribute-value">text/javascript</a>"&gt;</span><span>      
+        function uploadUrlByGetToGS(){
+               var urlToUpload = "http://beta.flymine.org/beta/service/query/results?format=tab&amp;start=0&amp;query=%3Cquery+model%3D%22genomic%22+view%3D%22Gene.symbol+Gene.organism.name+Gene.chromosomeLocation.locatedOn.primaryIdentifier+Gene.chromosomeLocation.start+Gene.chromosomeLocation.end+Gene.proteins.name+Gene.exons.primaryIdentifier%22+%3E%3Cconstraint+path%3D%22Gene.chromosomeLocation.locatedOn%22+type%3D%22Chromosome%22+%2F%3E%3Cconstraint+path%3D%22Gene.length%22+op%3D%22%26lt%3B%22+value%3D%228000%22+%2F%3E%3Cconstraint+path%3D%22Gene.pathways.name%22+op%3D%22ONE+OF%22+%3E%3Cvalue%3EMetabolic+pathways%3C%2Fvalue%3E%3Cvalue%3EGene+Expression%3C%2Fvalue%3E%3Cvalue%3ETranscription%3C%2Fvalue%3E%3Cvalue%3EmRNA+Processing%3C%2Fvalue%3E%3C%2Fconstraint%3E%3Cconstraint+path%3D%22Gene.chromosome.primaryIdentifier%22+op%3D%22%3D%22+value%3D%222L%22+%2F%3E%3C%2Fquery%3E&amp;_=1362507.";
+               var onComplete = function(savePath){
+               	alert('outer Saved to GenomeSpace as ' + savePath);
+               };
+               var onError = function(savePath){
+                	alert('outer ERROR saving to GenomeSpace as ' + savePath);
+               };
+               gsUploadByGet({
+               	url: urlToUpload,
+                   filename: 'TheFileName.txt',
+                   successCallback: onComplete,
+                   errorCallback: onError
+               });
+               return false;
+        };
+       function postUploadToGS(){      
+              	var formData = new FormData($('#postToGenomeSpace')[0]);
+               	gsUploadByPost(formData);
+               	return false;
+      };     
+   </span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+</span><span>&lt;/<span class="end-tag">body</span>&gt;</span><span>&lt;/<span class="end-tag">html</span>&gt;</span></pre>
+</div>
+<p>
+	The basic example above consists of</p>
+<ul>
+<li>
+		included JavaScript libraries</li>
+<li>
+		a link to send a file via a GET</li>
+<li>
+		a form to send a file via a POST</li>
+</ul>
+<p>
+	Let's look at each part in turn.</p>
+<h2>
+	Included JavaScript Libraries</h2>
+<p>
+	Two JavaScript libraries are used for this example:</p>
+<div class="pre_wrapper">
+<pre>
+<span>&lt;<span class="start-tag">script</span> <span class="attribute-name">src</span>="<a class="attribute-value" href="view-source:https://gsui.genomespace.org/jsui/js/jquery-1.7.2.min.js">https://gsui.genomespace.org/jsui/js/jquery-1.7.2.min.js</a>" <span class="attribute-name">type</span>="<a class="attribute-value">text/javascript</a>"&gt;</span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+</span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">src</span>="<a class="attribute-value" href="view-source:https://gsui.genomespace.org/jsui/upload/gsuploadwindow.js">https://gsui.genomespace.org/jsui/upload/gsuploadwindow.js</a>" <span class="attribute-name">type</span>="<a class="attribute-value">text/javascript</a>"&gt;</span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>  </span></pre>
+</div>
+<p>
+	The JQuery library (loaded directly from the GenomeSpace User Interface site) is required only for doing the POST version (more details below).</p>
+<p>
+	The gsuploadwindow.js library has the JavaScript methods to handle the GET/POST of files to GenomeSpace.</p>
+<h2>
+	Sending a File via a GET</h2>
+<p>
+	To send a file to GenomeSpace that it must GET from a server, the URL sent must be a publicly accessible URL, since the DSIL assumes that the sending web application is not using GenomeSpace Single Sign On. In this mode, the GenomeSpace server will use an HTTP GET to retrieve the file contents.  Since this is being done by the GenomeSpace server and not the user's browser, there will be no authentication information, headers, or cookies passed in the request.  </p>
+<p>
+	Sending a URL for GenomeSpace to upload in this manner is done using the <strong><span style="font-family:courier new,courier,monospace;">gsUploadByGet</span></strong> function and passing it a configuration object that contains:</p>
+<ul>
+<li>
+<em>(required)</em> <strong>url</strong> : the URL to the file</li>
+<li>
+<span style="color:#a9a9a9;">(optional)</span> <strong>filename</strong> : a name to save the file as</li>
+<li>
+<span style="color:#a9a9a9;">(optional)</span> <strong>successCallback</strong> : a javascript function to call upon successful completion</li>
+<li>
+<span style="color:#a9a9a9;">(optional) </span><strong>errorCallback</strong> " a javascript function to call in case of an error</li>
+</ul>
+<p>
+	The <strong>url</strong> should just be an unencoded string.  It will be URI encoded by the gsUploadByGet function before transmission.</p>
+<p>
+	The optional<strong> filename </strong>will be the default filename for saving the file, and the user can override this within GenomeSpace.  If a filename is not provided, it will use any part of the URL trailing the final '/' as the default filename.</p>
+<p>
+	The optional <strong>successCallback</strong> and <strong>errorCallback</strong> functions will be called after the file upload has completed or had an error.  Since these require JavaScript calling between browser windows, they should not be depended upon, but may be used to provide some additional feedback to the user. The <strong>successCallback</strong> and <strong>errorCallback</strong> functions will be passed as a single argument with the GenomeSpace directory path to which the file was saved (or where it failed to save, in the case of an error).</p>
+<p>
+	In the example, the save via GET was performed by this function:</p>
+<div class="pre_wrapper">
+<pre>
+<span>function uploadUrlByGetToGS(){
+               var dest = "http://beta.flymine.org/beta/service/query/results?format=tab&amp;start=0&amp;query=%3Cquery+model%3D%22genomic%22+view%3D%22Gene.symbol+Gene.organism.name+Gene.chromosomeLocation.locatedOn.primaryIdentifier+Gene.chromosomeLocation.start+Gene.chromosomeLocation.end+Gene.proteins.name+Gene.exons.primaryIdentifier%22+%3E%3Cconstraint+path%3D%22Gene.chromosomeLocation.locatedOn%22+type%3D%22Chromosome%22+%2F%3E%3Cconstraint+path%3D%22Gene.length%22+op%3D%22%26lt%3B%22+value%3D%228000%22+%2F%3E%3Cconstraint+path%3D%22Gene.pathways.name%22+op%3D%22ONE+OF%22+%3E%3Cvalue%3EMetabolic+pathways%3C%2Fvalue%3E%3Cvalue%3EGene+Expression%3C%2Fvalue%3E%3Cvalue%3ETranscription%3C%2Fvalue%3E%3Cvalue%3EmRNA+Processing%3C%2Fvalue%3E%3C%2Fconstraint%3E%3Cconstraint+path%3D%22Gene.chromosome.primaryIdentifier%22+op%3D%22%3D%22+value%3D%222L%22+%2F%3E%3C%2Fquery%3E&amp;_=1362507.";
+               var onComplete = function(savePath){
+               	alert('outer Saved to GenomeSpace as ' + savePath);
+               };
+               var onError = function(savePath){
+                	alert('outer ERROR saving to GenomeSpace as ' + savePath);
+               };
+               gsUploadByGet({
+               	url: dest,
+                   filename: 'TheFileName.txt',
+                   successCallback: onComplete,
+                   errorCallback: onError
+               });
+               return false;
+        };</span></pre>
+</div>
+<p>
+	 </p>
+<h2>
+	Sending a File via a POST</h2>
+<p>
+	In cases where there is not a public, unprotected URL that GenomeSpace can GET the file from, the server may instead POST the file to GenomeSpace so that the data source does not need to expose the file on its server. The POST may also be used where the data to be sent to GenomeSpace is dynamically generated and does not have a persistent URL from which it can be retrieved. In this method the return from the POST is a JSON object with one field, completionUrl, which is a URL that the POSTing server must open in a browser to allow the user to complete the sending of the file to GenomeSpace.</p>
+<p>
+	What happens in this case is:</p>
+<ol>
+<li>
+		The data source POSTs the file to GenomeSpace using the <span style="font-family:courier new,courier,monospace;">gsUploadByPost</span> function or by POSTing the file to https://gsui.genomespace.org/postToGenomeSpace.</li>
+<li>
+		The GenomeSpace UI receives the POST and writes it as a temporary file. It then returns a JSON Object with the URL to open a window that can complete the file save.</li>
+<li>
+		The data source opens a window on this URL.  The user authenticates if necessary, then selects the desired directory, possibly changes the file name, and clicks <em>Save</em>.</li>
+<li>
+		The temporary file is uploaded to the GenomeSpace data manager and then the temporary file is deleted.</li>
+</ol>
+<p>
+	It is important to note here that after the file is POSTed and until it is saved by the user, it is only protected by the obscurity of its URL (a random number appended to the filename).  <strong>If this level of security is not sufficient, you must NOT use this method but instead perform a complete GenomeSpace tool integration to ensure that all transfers are only done via HTTPS and are properly secured at all times.</strong>  See the developer documentation for details (<a href="http://www.genomespace.org/adopters" target="_blank">http://www.genomespace.org/adopters</a>).</p>
+<p>
+	When POSTing the file in the first step, the name of the file parameter is not significant.  The receiving method will only accept one file per POST, and will always take the first file that it finds, no matter what the HTTP parameter name is.  Thus, only the first file will be saved and made available for download.</p>
+<p>
+	If you are POSTing the files to the GenomeSpace upload from JavaScript, your page will also need to include the <a href="http://jquery.com/">JQuery</a> JavaScript library.  This is because the gsUploadByPost method is using the JQuery ajax function. The specific version of JQuery is probably not important due to the limited use, but the method has been tested with JQuery 1.7.2.</p>
+<h2>
+	Appendix: gsuploadwindow.js</h2>
+<p>
+	The gsuploadwindow.js script has the JavaScript methods for doing the POST or GET from JavaScript to GenomeSpace.  Developers who want to POST to GenomeSpace from a server (i.e., not from JavaScript) can look at the details of the Ajax call as an example.</p>
+<div class="pre_wrapper">
+<pre>
+// get the path to this script at load time
+// so we know what GenomeSpace UI to send the files to
+   var scripts= document.getElementsByTagName('script');
+   var path= scripts[scripts.length-1].src.split('?')[0];      // remove any ?query
+   var mydir= path.split('/').slice(0, -2).join('/')+'/';  // remove last filename part of path and the /uploads directory
+   var jsuiRoot = mydir;
+   
+   
+function gsUploadByGet(config){
+    // expect an object with url, filename (optional), successCallback(optional), errorCallback (optional)
+    
+     var gsUploadUrl = jsuiRoot +"/upload/loadUrlToGenomespace.html?uploadUrl=";
+       var dest = encodeURIComponent(config.url);
+       var filenameParam = "";
+       if (config['filename'] != null){
+          filenameParam = "&amp;fileName="+config.filename;
+       }    
+      
+       var newWin = window.open(gsUploadUrl + dest + filenameParam, "GenomeSpace Upload", "height=340px,width=550px");
+     newWin.focus();
+     
+     if (config['successCallback'] != null) newWin.setCallbackOnGSUploadComplete = config['successCallback'];
+        
+     if (config['errorCallback'] != null) newWin.setCallbackOnGSUploadError = config['errorCallback'];     
+    
+}
+
+function gsUploadByPost(formData){
+    // expects an object with formData( the file(s)),
+    
+     function gsUploadByPostErrorHandler(a,b,c,d){
+         alert('An error occurred psting the file to GenomeSpace');
+     };
+           
+    function gsUploadByPostCompleteHandler(responseObj,status,xhr){
+        if (typeof responseObj == "string"){
+            responseObj = JSON.parse(responseObj);
+        }
+        var newWin = window.open(responseObj.completionUrl, "GenomeSpace Upload", "height=340px,width=550px");
+        newWin.focus();
+    };
+    
+    $.ajax({
+        url: jsuiRoot + '/postToGenomeSpace',  //server script to process data
+        type: 'POST',
+        crossDomain: true,
+        success: gsUploadByPostCompleteHandler,
+        error: gsUploadByPostErrorHandler,
+        data: formData,
+        //Options to tell JQuery not to process data or worry about content-type
+        cache: false,
+        contentType: false,
+        processData: false
+    });
+}
+
+</pre>
+</div>
+<p>
+	 </p>
+</td>
+</tr></table>
+</div>
+</div>
+<div id="footer">
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+	$(document).ready(function() {
+		$("a.toggle_link").click(function() {
+			var image = $(this).children("img");
+			$(image).attr("src", $(image).attr("src") == "/assets/plus.png" ? "/assets/minus.png" : "/assets/plus.png");
+		});
+	});
+
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54489169-1', 'auto');
+  ga('send', 'pageview');
+
+
+//]]>
+</script></div></body>
+</html>

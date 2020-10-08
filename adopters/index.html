@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>GenomeSpace: 
+	  	Technical Documentation
+  </title>
+<link href="/assets/site.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/demo_table_jui.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/jquery-ui-1.8.4.custom.css" media="screen" rel="stylesheet" type="text/css"/>
+<script src="/assets/application.js" type="text/javascript"></script>
+<link href="/assets/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+<meta content="authenticity_token" name="csrf-param"/>
+<meta content="H7SV+68KJy4KYxbiijd4KWLQzl+vbimqFjmngdEj45k=" name="csrf-token"/>
+</head>
+<body>
+<div id="page_wrapper">
+<div id="page_content">
+<div id="logo"><a href="/"><img alt="Gslogo" src="/assets/gslogo.png"/></a></div>
+<div id="login_menu"><a href="https://gsui.genomespace.org/jsui/gsui.html">User Login</a>
+</div>
+<ul id="nav">
+<li id="what-is-genomespace"><a href="/what-is-genomespace">What is GenomeSpace?</a>
+</li>
+<li id="tools"><a href="/support/tools">Tools</a>
+</li>
+<li id="recipes"><a href="http://recipes.genomespace.org">Recipes</a></li>
+<li id="documentation"><a href="/documentation">Documentation</a>
+<ul>
+<li><a href="/support/guides/user-guide">User Guide</a>
+<p>Read the detailed guide to the user interface</p>
+</li>
+<li><a href="/support/guides/tool-guide">Tool Guide</a>
+<p>Learn how to access GenomeSpace functionality for each Tool</p>
+</li>
+<li><a href="/faq">FAQ</a>
+<p>See answers to frequently asked questions</p>
+</li>
+<li><a href="/presentations-and-videos">Presentations and Videos</a>
+<p>Access talks by the GenomeSpace community</p>
+</li>
+<li><a href="/support/guides/end-to-end-analyses">End-to-End Analyses</a>
+<p>Provides description for end-to-end analyses.</p>
+</li>
+</ul>
+</li>
+<li id="developers"><a href="/for-developers">Developers</a>
+<ul>
+<li><a href="/what-can-genomespace-do-for-tool-developers">What Can GenomeSpace Do For Tool Developers?</a>
+<p></p>
+</li>
+<li><a href="/adopters">Technical Documentation</a>
+<p></p>
+</li>
+<li><a href="/source-code">Source Code and Distributions</a>
+<p></p>
+</li>
+<li><a href="/developer-support-and-feedback">Developer Support and Feedback</a>
+<p></p>
+</li>
+</ul>
+</li>
+<li id="support"><a href="/support">Support</a>
+</li>
+<li id="about"><a href="/about">About</a>
+</li>
+<li class="search">
+<div id="search_box">
+<form accept-charset="UTF-8" action="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"/></div>
+<input class="search" id="search" name="search" type="text"/>
+<input class="searchBtn" type="submit"/>
+</form> </div>
+</li>
+</ul>
+<script type="text/javascript">
+//<![CDATA[
+
+		// grab page category and use to highlight correct menu item.  if none present, parse url to find where the user is.
+		var category = "developers";
+		if ( !category ){
+			url_parts = $(location).attr('pathname').split("/");
+			url_string = url_parts[1] + "/" + url_parts[2]
+			if (url_string == "support/tools"){
+				category = "tools"
+			}
+			else if (url_string == "support/guides"){
+				url_parts[3] == "recipes" ? category = "recipes" : category = "documentation"
+			}
+			else if (url_parts[1] == "genomespace-recipes")
+			{
+                category = "gsrecipes"
+            }
+			else if (url_string == "support/api"){
+				category = "developers"
+			}
+			else if ((url_string == "register/undefined") || (url_string == "request_invite/undefined")) {
+				category = "what-is-genomespace"
+			}
+			else if (url_string == "/undefined") {
+				category = ""
+			}
+			else if (url_string == "support/undefined") {
+				category = "support"
+			}
+		}
+		$("#" + category).addClass("current");
+
+
+//]]>
+</script>
+<div id="content_panel">
+<table width="100%"><tr>
+<td id="main_content">
+<div id="notice"></div>
+<div id="alert"></div>
+<h1>
+    Technical Documentation
+ </h1>
+<p>
+	Here are some useful links and basic information for software developers who are integrating GenomeSpace services with their software applications and tools. These are working documents, subject to change. We welcome feedback from early adopters.</p>
+<h2 style="font-size: 20px; font-weight: 100; color: rgb(93, 157, 199); ">
+	Overviews</h2>
+<ol>
+<li>
+<a class="attach_pdf?1328816281" href="/attachments/genomespace_architecture_upd.pdf" title="GenomeSpace Architecture">Architecture Overview (PDF)</a></li>
+<li>
+<a href="/support/api/genomespace-enablement-of-tools">Adding a Tool to GenomeSpace</a></li>
+<li>
+<a href="/support/api/openid-requirements">OpenId Integration</a></li>
+<li>
+<a href="/support/api/re-launch-avoidance-jrac--beta-1-0">Re-launch Avoidance Code (JRAC)</a></li>
+<li>
+<a href="/support/api/setting-up-your-own-instance-1-0">Setting Up Your Own GenomeSpace Instance</a></li>
+</ol>
+<h2>
+	GenomeSpace Service Interfaces</h2>
+<p>
+	GenomeSpace services are REST-based web services. Java-based software applications may prefer to use the GenomeSpace CDK which wraps these REST services and provides a Java API. Both of these interfaces are described in these documents:</p>
+<ol>
+<li>
+<a href="/support/api/cdk">Java Client Development Kit (CDK) Documentation</a></li>
+<li>
+<a href="/support/api/restful-access-to-atm">Analysis Tool Manager (ATM) RESTful API</a></li>
+<li>
+<a href="/support/api/restful-access-to-dm">Data Manager (DM) RESTful API</a></li>
+<li>
+<a href="/support/api/restful-access-to-identity-server">Identity Server RESTful API</a></li>
+<li>
+<a href="/support/api/data-source-lightweight-integration-alpha-0-1">Data Source Lightweight Integration</a> (deprecated)</li>
+</ol>
+<h2>
+	GenomeSpace Server URLs</h2>
+<p>
+	GenomeSpace tools using the REST API should do runtime discovery of the base server URL.  The CDK already does this.  Base URLs for prod, test, dev, and ci servers are obtained by doing an HTTP GET from this following URL.  The "prod" prefix indicates URLs on the production server.</p>
+<p>
+<a href="/sites/genomespacefiles/config/serverurl.properties">http://www.genomespace.org/sites/genomespacefiles/config/serverurl.properties</a></p>
+</td>
+</tr></table>
+</div>
+</div>
+<div id="footer">
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+	$(document).ready(function() {
+		$("a.toggle_link").click(function() {
+			var image = $(this).children("img");
+			$(image).attr("src", $(image).attr("src") == "/assets/plus.png" ? "/assets/minus.png" : "/assets/plus.png");
+		});
+	});
+
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54489169-1', 'auto');
+  ga('send', 'pageview');
+
+
+//]]>
+</script></div></body>
+</html>

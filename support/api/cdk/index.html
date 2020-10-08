@@ -1,0 +1,1056 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>GenomeSpace: 
+	  	Java Client Development Kit (CDK) (version beta 4.2)
+  </title>
+<link href="/assets/site.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/demo_table_jui.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/jquery-ui-1.8.4.custom.css" media="screen" rel="stylesheet" type="text/css"/>
+<script src="/assets/application.js" type="text/javascript"></script>
+<link href="/assets/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+<meta content="authenticity_token" name="csrf-param"/>
+<meta content="Ndpc9Cy1tK5UnYmg+UZesIcXq0ham/ZFGdVbFSwGTUI=" name="csrf-token"/>
+</head>
+<body>
+<div id="page_wrapper">
+<div id="page_content">
+<div id="logo"><a href="/"><img alt="Gslogo" src="/assets/gslogo.png"/></a></div>
+<div id="login_menu"><a href="https://gsui.genomespace.org/jsui/gsui.html">User Login</a>
+</div>
+<ul id="nav">
+<li id="what-is-genomespace"><a href="/what-is-genomespace">What is GenomeSpace?</a>
+</li>
+<li id="tools"><a href="/support/tools">Tools</a>
+</li>
+<li id="recipes"><a href="http://recipes.genomespace.org">Recipes</a></li>
+<li id="documentation"><a href="/documentation">Documentation</a>
+<ul>
+<li><a href="/support/guides/user-guide">User Guide</a>
+<p>Read the detailed guide to the user interface</p>
+</li>
+<li><a href="/support/guides/tool-guide">Tool Guide</a>
+<p>Learn how to access GenomeSpace functionality for each Tool</p>
+</li>
+<li><a href="/faq">FAQ</a>
+<p>See answers to frequently asked questions</p>
+</li>
+<li><a href="/presentations-and-videos">Presentations and Videos</a>
+<p>Access talks by the GenomeSpace community</p>
+</li>
+<li><a href="/support/guides/end-to-end-analyses">End-to-End Analyses</a>
+<p>Provides description for end-to-end analyses.</p>
+</li>
+</ul>
+</li>
+<li id="developers"><a href="/for-developers">Developers</a>
+<ul>
+<li><a href="/what-can-genomespace-do-for-tool-developers">What Can GenomeSpace Do For Tool Developers?</a>
+<p></p>
+</li>
+<li><a href="/adopters">Technical Documentation</a>
+<p></p>
+</li>
+<li><a href="/source-code">Source Code and Distributions</a>
+<p></p>
+</li>
+<li><a href="/developer-support-and-feedback">Developer Support and Feedback</a>
+<p></p>
+</li>
+</ul>
+</li>
+<li id="support"><a href="/support">Support</a>
+</li>
+<li id="about"><a href="/about">About</a>
+</li>
+<li class="search">
+<div id="search_box">
+<form accept-charset="UTF-8" action="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"/></div>
+<input class="search" id="search" name="search" type="text"/>
+<input class="searchBtn" type="submit"/>
+</form> </div>
+</li>
+</ul>
+<script type="text/javascript">
+//<![CDATA[
+
+		// grab page category and use to highlight correct menu item.  if none present, parse url to find where the user is.
+		var category = "";
+		if ( !category ){
+			url_parts = $(location).attr('pathname').split("/");
+			url_string = url_parts[1] + "/" + url_parts[2]
+			if (url_string == "support/tools"){
+				category = "tools"
+			}
+			else if (url_string == "support/guides"){
+				url_parts[3] == "recipes" ? category = "recipes" : category = "documentation"
+			}
+			else if (url_parts[1] == "genomespace-recipes")
+			{
+                category = "gsrecipes"
+            }
+			else if (url_string == "support/api"){
+				category = "developers"
+			}
+			else if ((url_string == "register/undefined") || (url_string == "request_invite/undefined")) {
+				category = "what-is-genomespace"
+			}
+			else if (url_string == "/undefined") {
+				category = ""
+			}
+			else if (url_string == "support/undefined") {
+				category = "support"
+			}
+		}
+		$("#" + category).addClass("current");
+
+
+//]]>
+</script>
+<div id="content_panel">
+<table width="100%"><tr>
+<td id="main_content">
+<div id="notice"></div>
+<div id="alert"></div>
+<form accept-charset="UTF-8" action="/support/api/cdk" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"/><input name="authenticity_token" type="hidden" value="Ndpc9Cy1tK5UnYmg+UZesIcXq0ham/ZFGdVbFSwGTUI="/></div>
+<span>
+<label class="inline" for="select_component">Select Version:</label>
+<select id="select_component" name="select[component]"><option selected="selected" value="cdk-beta-4-2">beta 4.2</option>
+<option value="cdk-beta-4-1">beta 4.1</option>
+<option value="cdk-beta-4-0">beta 4.0</option>
+<option value="cdk-beta-3-0">beta 3.0</option>
+<option value="cdk-beta-2-0">beta 2.0</option>
+<option value="cdk-beta-1-0">beta 1.0</option></select>
+<input class="inline" name="commit" type="submit" value="Display"/> | 
+	<p class="inline"><a href="/adopters">Back</a></p>
+</span>
+</form><hr/>
+<h1>Java Client Development Kit (CDK) (version beta 4.2)
+</h1>
+<h1>
+	1 Introduction</h1>
+<p>
+	The public interface to GenomeSpace includes several web service providers: the Identity Manager, the Data Manager, and the Analysis Tool Manager.  The GenomeSpace Client Development Kit (CDK) simplifies access to these services. The CDK provides an API for GenomeSpace clients to login, manage users, manage files, and launch web tools. Non-Java clients may use the same functionality via the REST web services API.</p>
+<p>
+	The REST web services accessed by the CDK are described in documents found in the sections called “GenomeSpace Service Interfaces” in <a href="http://www.genomespace.org/adopters">http://www.genomespace.org/adopters</a>.</p>
+<p>
+	For CDK usage examples, please refer to the JUnit tests that can be found in the Bitbucket version control system at <a href="https://bitbucket.org/GenomeSpace/combined">https://bitbucket.org/GenomeSpace/combined</a>.  Look for Java source files in the directory combined/cdk/src/test/java/org/genomespace/client/test.</p>
+<h1>
+	2 Requirements</h1>
+<h2>
+	2.1 Identity Management</h2>
+<p>
+	The CDK provides an API for GenomeSpace clients to:</p>
+<ul>
+<li>
+		Register new users</li>
+<li>
+		Login</li>
+<li>
+		Determine subsequent logged-in status</li>
+<li>
+		Change user’s password and email address</li>
+<li>
+		Create and manage persistent user profiles</li>
+<li>
+		Create and manage GenomeSpace file system groups</li>
+</ul>
+<h3>
+	2.1.1 Login</h3>
+<p>
+	The login method takes the username and password, sends those securely to the IdentityManager, receives the encrypted GenomeSpace user token from the IdentityManager, holds onto that token, and hides the token from the client.  If the login fails, then the exception is returned to the client.</p>
+<h3>
+	2.1.2 Logout</h3>
+<p>
+	The logout method clears the GenomeSpace user token.</p>
+<h3>
+	2.1.3 Query Login Status</h3>
+<p>
+	The CDK provides the client with the ability to determine whether the current user is logged into GenomeSpace.</p>
+<h3>
+	2.1.4 Register User</h3>
+<p>
+	The CDK provides the client with the ability to register a new GenomeSpace user.  This method takes a username, password, and e-mail address, sends that information securely to the IdentityManager, and returns to the client whether the registration succeeded or not.  If the registration fails (for example, if the requested username is already in use), then the CDK returns to the user an understandable error message.</p>
+<h2>
+	2.2 File Management</h2>
+<p>
+	The CDK provides the client with the ability upload files to GenomeSpace, download files from GenomeSpace, list files in GenomeSpace, and delete files in GenomeSpace.  The CDK only provides access to files owned by the user – files owned by other users are not visible to the user.</p>
+<h3>
+	2.2.1 Upload</h3>
+<p>
+	The CDK provides the ability to upload a file to GenomeSpace.  The upload method takes as input the location of the file to be uploaded, then uploads that file to the user’s GenomeSpace home directory.</p>
+<h3>
+	2.2.2 Download</h3>
+<p>
+	The CDK provides the ability to download a file from GenomeSpace.  There are two forms of the download operation – one form actually downloads the file to a temporary directory and returns the location of that temporary file; the other form returns a signed, one-time usage URL that the client can use to directly download the file from Amazon S3.  The download methods throw an appropriate exception if the file is not found on GenomeSpace.</p>
+<h3>
+	2.2.3 File Conversion</h3>
+<p>
+	The CDK provides the ability to download application data files in any of the different data formats that the Data Manager web service is able to transform the original file into.</p>
+<h3>
+	2.2.4 List</h3>
+<p>
+	The CDK provides the ability to list the files in the user’s GenomeSpace home directory.  This method returns a representation of the files in GenomeSpace, such that the objects can be easily passed to the download or delete method.</p>
+<h3>
+	2.2.5 Delete</h3>
+<p>
+	The CDK provides the ability to delete files in the user’s GenomeSpace home directory.  This method takes the name of the file as input and delete that file in GenomeSpace.  If the file is not found on GenomeSpace, it throws an appropriate exception.</p>
+<h2>
+	2.3 Analysis Tool Management</h2>
+<p>
+	The CDK is responsible for providing GenomeSpace clients with web tool launch capabilities.  The GenomeSpace Analysis Tool Manager (ATM) maintains a repository of tools available via the web that can be launched on behalf of a user.  These tools may be web applications or client applications that run on the user’s local machine, but are launchable via an URL.</p>
+<h3>
+	2.3.1 List Web Tools</h3>
+<p>
+	The CDK provides the client with the ability to retrieve a list of the available web tools available in the ATM. </p>
+<h3>
+	2.3.2 Launch URL for a Web Tool</h3>
+<p>
+	The CDK provides the client with the ability to retrieve an URL to launch a web tool, passing it GenomeSpace files as arguments.</p>
+<h1>
+	3 Implementation</h1>
+<h2>
+	3.1 Description</h2>
+<p>
+	The CDK provides a client application with the ability to perform basic identity management tasks and basic GenomeSpace file management tasks.  The identity management tasks include the ability to register a new user, login, logout, and check whether the current user is logged in.  The file management tasks allow the client to upload a file to GenomeSpace, download a file from GenomeSpace, list files uploaded to GenomeSpace, and delete a file uploaded to GenomeSpace.</p>
+<p>
+	The main entry point to the CDK is the GsSession class.  The client instantiates a GsSession instance, and then calls methods on GsSession to perform identity and file management operations. </p>
+<h2>
+	3.2 GsSession Construction</h2>
+<p>
+	The GsSession class provides several constructors.  Most clients will simply use the default constructor, which configures the GsSession instance to communicate with the production GenomeSpace servers running on Amazon AWS. Prior to instantiating a session, you should identify your tool to GenomeSpace.  This is optional but allows for more detailed tracking of tool use within the system.</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>GsSession.setToolName("MyToolName");<br/>
+	GsSession session = new GsSession(); </code></div>
+<p>
+	Several other constructors are provided for development purposes.  These constructors provide the ability to specify the URL for GenomeSpace servers, so that the JCDK can be used for testing development servers.  In addition, a constructor is provided that takes a GenomeSpace token as an argument, for use in testing GenomeSpace authentication.  These other constructors are not needed for development of GenomeSpace clients and consequently are not specified in this document.</p>
+<h2>
+	3.3 Identity Operations</h2>
+<p>
+	The GenomeSpace web services (Identity Manager, Analysis Tool Manager, etc.) require that the user be logged into GenomeSpace in order to access their services. </p>
+<h3>
+	3.3.1 Login</h3>
+<p>
+	To login using the CDK, the client should create a GsSession object and then call the login method.  The login method takes the username and password as arguments, encrypts them, and sends them to the IdentityManager for authentication.  The login method returns a User object that contains the username:</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>GsSession session = <strong>new</strong> GsSession();<br/>
+	String username = "test";<br/>
+	String password = "password";<br/>
+	User user = session.login(username, password);<br/>
+	System.<em>out</em>.println("Logged in to GenomeSpace: " +<br/>
+	      session.isLoggedIn() + " as " + user.getUsername()); </code></div>
+<p>
+	Assuming that authentication is successful, the IdentityManager then returns an authentication token in an HTTP cookie.  GsSession includes the cookie value in every HTTP request to the GenomeSpace web services.  The token contains the username and an expiration time stamp. If the token expires, the web services will return an HTTP authentication failure, and the CDK will throw an AuthorizationException.</p>
+<p>
+	The client holds onto the GsSession object, because that is required for any further identity and file operations, as described below.</p>
+<p>
+	To ensure a standard GenomeSpace look and feel in desktop applications (web applications using the CDK will presumably use OpenID) and for developer convenience, a GenomeSpace login dialog  is provided in the CDK. </p>
+<p>
+<img alt="" src="/uploaded/content_gslogindialog.png" style="width: 320px; height: 220px;"/></p>
+<p>
+	When using the GSLoginDialog, you should always first use the isLoggedIn method (see section 3.2.2 below) first to prevent showing the dialog when a cached reusable identity token already exists.</p>
+<pre style="padding: 5px; border: 1px solid black;">
+session = new GsSession();
+if (session.isLoggedIn()){
+    // if we were logged in by another app on this machine we can get the cached username
+    lblUsername.setText(session.getCachedUsernameForSSO());
+} else {
+    // open a GSLogin Dialog 
+    final GSLoginDialog loginDialog = new GSLoginDialog(null, Dialog.ModalityType.APPLICATION_MODAL);
+    loginDialog.setVisible(true);
+    final String userName = loginDialog.getUsername();
+    final String password = loginDialog.getPassword();
+    try {
+         session.login(userName, password);
+         return;
+    } catch (final AuthorizationException e) {
+         JOptionPane.showMessageDialog(null, "Invalid user name or password!","Login Error", 
+JOptionPane.ERROR_MESSAGE);
+    } 
+}<code> </code></pre>
+<p>
+	More detail on the GSLoginDialog is available in section 4 of this document.</p>
+<h3>
+<a name="3.3.2"></a>3.3.2 isLoggedIn</h3>
+<p>
+	The CDK provides the isLoggedIn method so that a client can determine whether their current GsSession is logged into GenomeSpace.  This method returns true if the GsSession is logged into GenomeSpace and false otherwise:</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>GsSession session = new GsSession();<br/>
+	String username = "test";<br/>
+	String password = "password";<br/>
+	User user = session.login(username, password);<br/>
+	System.<em>out</em>.println("Logged in to GenomeSpace: " +<br/>
+	      session.isLoggedIn() + " as " + user.getUsername()); </code></div>
+<h3>
+	3.3.3 Logout</h3>
+<p>
+	To logout using the CDK, the client should call the logout method on their GsSession object:</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>GsSession session = <strong>new</strong> GsSession();<br/>
+	String username = "test";<br/>
+	String password = "password";<br/>
+	User user = session.login(username, password);<br/>
+	session.logout(); </code></div>
+<h3>
+	3.3.4 Register User</h3>
+<p>
+	The GsSession object provides the client with the ability to initiate registering a new user in GenomeSpace.  After this call is done, an email is sent to the user (using the email address passed) which contains a URL to a confirmation page.  This method requires a username, password, and e-mail address:</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>GsSession session = <strong>new</strong> GsSession();<br/>
+	User <font style="background-color:yellow;">newUser</font> = session.registerUser(“aUsername”,<br/>
+	     "aPassword", "test@noreply.org");</code></div>
+<h3>
+	3.3.5 Get All Usernames</h3>
+<p>
+	The client can get all GenomeSpace usernames. For security, a user login is required.  It may be any user.</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>GsSession session = <strong>new</strong> GsSession();<br/>
+	session.login(username, password);<br/>
+	UserManagerClient mgr = session.getUserManagerClient();<br/>
+	Collection&lt;String&gt; usernames = mgr.getAllUsernames(); </code></div>
+<h3>
+	3.3.6 Get User Information</h3>
+<p>
+	The client can get email and other details of a GenomeSpace user. For security, that user must be logged in.</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>GsSession session = <strong>new</strong> GsSession();<br/>
+	session.login(username, password);<br/>
+	UserManagerClient mgr = session.getUserManagerClient();<br/>
+	org.genomespace.client.User user = mgr.getUser(username); </code></div>
+<h3>
+	3.3.7 Change User Password</h3>
+<p>
+	The client can change the password of a GenomeSpace user. For security, that user must be logged in.</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>GsSession session = <strong>new</strong> GsSession();<br/>
+	session.login(username, oldPassword);<br/>
+	UserManagerClient mgr = session.getUserManagerClient();<br/>
+	mgr.updateUserPassword(username, newPassword); </code></div>
+<h3>
+	3.3.8 Change User Email</h3>
+<p>
+	The client can change the password of a GenomeSpace user. For security, that user must be logged in.</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>GsSession session = <strong>new</strong> GsSession();<br/>
+	session.login(username, password);<br/>
+	UserManagerClient mgr = session.getUserManagerClient();<br/>
+	mgr.updateUserEmail(username, emailAddress); </code></div>
+<h3>
+	3.3.9 Get Remaining Token Time</h3>
+<p>
+	The client can find out the number of milliseconds until the user must login again due to an expired token.<br/>
+	This version uses the token from the current login:</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>GsSession session = <strong>new</strong> GsSession();<br/>
+	UserManagerClient mgr = session.getUserManagerClient();<br/>
+	long mSec = mgr.getRemainingTokenTime(); </code></div>
+<p>
+	This version takes an explicit token:</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>GsSession session = <strong>new</strong> GsSession();<br/>
+	UserManagerClient mgr = session.getUserManagerClient();<br/>
+	String token = “k/IXjIuXriU+RHsloAGcFonvJPRBOFYy”;<br/>
+	long mSec = mgr.getRemainingTokenTime(token); </code></div>
+<h3>
+	3.3.10 Get Username from Token</h3>
+<p>
+	The client can find out the username from a token:</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>GsSession session = <strong>new</strong> GsSession();<br/>
+	UserManagerClient mgr = session.getUserManagerClient();<br/>
+	String token = “k/IXjIuXriU+RHsloAGcFonvJPRBOFYy”;<br/>
+	String username = mgr.getTokenUsername(token); </code></div>
+<h3>
+	3.3.11 Reset User Password</h3>
+<p>
+	The client can cause a temporary password to be assigned to a user and emailed to their email address on record.  The temporary password expires after one day or after the first successful login.  This operation does not affect the normal password, which may be changed when user logs in with the temporary.  Does not require a user to be logged in.</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>GsSession session = <strong>new</strong> GsSession();<br/>
+	UserManagerClient mgr = session.getUserManagerClient();<br/>
+	mgr.resetUserPassword(username); </code></div>
+<h3>
+	3.3.12 Remove User</h3>
+<p>
+	The client can remove a GenomeSpace user.  For security, that user must be logged in.</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>GsSession session = <strong>new</strong> GsSession();<br/>
+	session.login(username, password);<br/>
+	UserManagerClient mgr = session.getUserManagerClient();<br/>
+	mgr.deleteUser(username); </code></div>
+<h2>
+	3.4 Client Defined UserProfiles</h2>
+<p>
+	GenomeSpace provides persistent storage for data that a client may want to use in their application which is associated with a given user.  This is data for the client’s use, and is not used by GenomeSpace for any purpose.  Internal to GenomeSpace this data put in a UserProfile object, and the data must be presented as a String datatype.  Currently the size limit for one UserProfile is about 250KB, depending on the number of optional attributes put on the UserProfile (each one reduces size by 1KB).</p>
+<p>
+	The CDK has an API for storing and retrieving lists of strings in a UserProfile, and also an API for the raw UserProfile.  The difference is in the number of identifiers that the client wants to use.  The List API has two levels of identity, a “type” and an “identifier”, and has a fetch method for getting all UserProfiles of a given type, and by specific identifier.  The raw API simply exposes a Map of optionalAttributes that must be managed by the client.</p>
+<h3>
+	3.4.1 UserProfile List API</h3>
+<p>
+	The client can persist an arbitrary list of strings for a user in one UserProfile.  Multiple UserProfiles are allowed per user.  For security, the user associated with the UserProfile must be logged in.</p>
+<h4>
+	3.4.1.1 Create UserProfile List</h4>
+<p>
+	The client can create a UserProfile for storing a List of String. For security, the user associated with the UserProfile must be logged in.</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>// Define the client-defined identifiers<br/>
+	String namespace = this.getClass().getName();<br/>
+	String listType = "directory";<br/>
+	String listIdentifier = "local";<br/>
+<br/>
+	// The client-defined data<br/>
+	List&lt;String&gt; list = new ArrayList&lt;String&gt;();<br/>
+	list.add("/Users/jqp");<br/>
+	list.add("/Users/jqp/project2");<br/>
+<br/>
+	// To persist the list<br/>
+	GsSession session = new GsSession();<br/>
+	session.login(username, password);<br/>
+	UserManagerClient mgr = session.getUserManagerClient();<br/>
+<br/>
+	mgr.saveListToProfiles(username, namespace, listType, listIdentifier, list);</code></div>
+<h4>
+	3.4.1.2 Retrieve All UserProfile List having Type</h4>
+<p>
+	The client can retrieve all UserProfile lists for a user having the specified listType. For security, the user associated with the UserProfile must be logged in.</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>String namespace = this.getClass().getName();<br/>
+	String type = "directory";<br/>
+<br/>
+	GsSession session = new GsSession();<br/>
+	session.login(username, password);<br/>
+	UserManagerClient mgr = session.getUserManagerClient();<br/>
+<br/>
+	Map&lt;String, List&lt;String&gt;&gt; lists = mgr.fetchListFromProfiles(username, namespace, type);</code></div>
+<h4>
+	3.4.1.3 Retrieve One UserProfile List</h4>
+<p>
+	The client can retrieve one specific UserProfile list by giving both the type and the identifier. For security, the user associated with the UserProfile must be logged in.</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>String namespace = this.getClass().getName();<br/>
+	String type = "directory";<br/>
+	String id = "local";<br/>
+<br/>
+	GsSession session = new GsSession();<br/>
+	session.login(username, password);<br/>
+	UserManagerClient mgr = session.getUserManagerClient();<br/>
+<br/>
+	List&lt;String&gt; oneList = mgr.fetchListFromProfiles(username, namespace, type, id);</code></div>
+<h4>
+	3.4.1.4 Delete UserProfile List</h4>
+<p>
+	The client can delete a UserProfile.  For security, the user associated with the UserProfile must be logged in.</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>String namespace = this.getClass().getName();<br/>
+	String type = "directory";<br/>
+	String id = "local";<br/>
+<br/>
+	GsSession session = new GsSession();<br/>
+	session.login(username, password);<br/>
+	UserManagerClient mgr = session.getUserManagerClient();<br/>
+<br/>
+	mgr.deleteListFromProfiles(username, namespace, listType, listIdentifier);</code></div>
+<h3>
+	3.4.2 UserProfile Raw API</h3>
+<p>
+	The client can persist an arbitrary string for a user in one UserProfile, with arbitrary optional attributes used to identify the UserProfile.  Multiple UserProfiles are allowed per user.  For security, the user associated with the UserProfile must be logged in.</p>
+<h4>
+	3.4.2.1 Create UserProfile</h4>
+<p>
+	The client can create a UserProfile for storing a String. For security, the user associated with the UserProfile must be logged in.</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>String persistedValue = "some string, possibly a marshalled or serialized object";<br/>
+<br/>
+	// Creates profile with an optional attribute that you define<br/>
+	UserProfile userProfile = new UserProfile();<br/>
+	userProfile.setUsername(username);<br/>
+	userProfile.setValue(persistedValue);<br/>
+	userProfile.setModule(getClass().getName());<br/>
+	userProfile.addOptionalAttribute("objectId", "e5d95307-2c62-48bf-bb60-e162fd306483");<br/>
+<br/>
+	GsSession session = new GsSession();<br/>
+	session.login(username, password);<br/>
+	UserManagerClient mgr = session.getUserManagerClient();<br/>
+<br/>
+	String profileId = mgr.createProfile(userProfile);</code></div>
+<h4>
+	3.4.2.2 Retrieve UserProfile</h4>
+<p>
+	The client can retrieve UserProfiles for a user matching the specified optionalAttributes. For security, the user associated with the UserProfile must be logged in.</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>Map&lt;String, String&gt; optionalAttributes = new HashMap&lt;String, String&gt;();<br/>
+	optionalAttributes.put(UserConstants.PROFILE_MODULE, getClass().getName());<br/>
+	optionalAttributes.put("objectId", "e5d95307-2c62-48bf-bb60-e162fd306483");<br/>
+<br/>
+	GsSession session = new GsSession();<br/>
+	session.login(username, password);<br/>
+	UserManagerClient mgr = session.getUserManagerClient();<br/>
+<br/>
+	Collection&lt;UserProfile&gt; profiles = mgr.findProfiles(username, optionalAttributes);</code></div>
+<h4>
+	3.4.2.3 Retrieve One UserProfile</h4>
+<p>
+	The client can retrieve one specific UserProfile list by giving the profileId that was generated when the UserProfile was created. For security, the user associated with the UserProfile must be logged in.</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>GsSession session = new GsSession();<br/>
+	session.login(username, password);<br/>
+	UserManagerClient mgr = session.getUserManagerClient();<br/>
+<br/>
+	UserProfile profile = mgr.findProfile(username, profileId);</code></div>
+<h4>
+	3.4.2.4 Delete UserProfile</h4>
+<p>
+	The client can delete a UserProfile by profileId, which is needed for uniqueness.  For security, the user associated with the UserProfile must be logged in.</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>GsSession session = new GsSession();<br/>
+	session.login(username, password);<br/>
+	UserManagerClient mgr = session.getUserManagerClient();<br/>
+<br/>
+	mgr.deleteProfile(username, profileId);</code></div>
+<h2>
+	3.5 File Access Group Management</h2>
+<p>
+	GenomeSpace filesystem has access restricted by user and by group.  A group is a collection of users.  Use this API to create, lookup, update, and delete groups and group membership.  Applying access permissions to a group is handled by the DataManager and is described elsewhere.</p>
+<h3>
+	3.5.1 Create Group</h3>
+<p>
+	The client can create a group of GenomeSpace users.  Requires a user to be logged in.  If no explicit members are given, then the logged-in user becomes the first member and also the group’s administrator.  If members are given then those become the members.  There must be at least one member and at least one administrator for every group; the group will not be created otherwise.</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>GsSession session = new GsSession();<br/>
+	session.login(username, password);<br/>
+	GroupManagerClient mgr = session.getGroupManagerClient();<br/>
+<br/>
+	String groupName = "MGH_cancer_lab_6";<br/>
+	String description = "Share files with the 6th floor lab.";<br/>
+	boolean isSelfAdministered = false;<br/>
+	boolean isNonMemberReadable = false;<br/>
+	Collection&lt;GroupMember&gt; members;<br/>
+	members.add(new GroupMemeber("user0", true); // is group administrator<br/>
+	members.add(new GroupMemeber("user1", false);<br/>
+	members.add(new GroupMemeber("user2", false);<br/>
+<br/>
+	Group group = mgr.createGroup(groupName, description, isSelfAdministered, isNonMemberReadable, members);</code></div>
+<h3>
+	3.5.2 Find Group by Id</h3>
+<p>
+	The client can lookup a group of GenomeSpace users.  Requires a user to be logged in.  Any user will do, but group membership will be shown only if the user is a member of the group, or if the group is non-member readable.</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>GsSession session = new GsSession();<br/>
+	session.login(username, password);<br/>
+	GroupManagerClient mgr = session.getGroupManagerClient();<br/>
+	String groupId = "8c42ea16-4665-4c9f-815b-ea41a8ebb42e";<br/>
+	Group group = mgr.findGroup(groupId); </code></div>
+<h3>
+	3.5.3 Find Group by List of Id</h3>
+<p>
+	The client can lookup a group of GenomeSpace users.  Requires a user to be logged in.  Any user will do, but group membership will be shown only if the user is a member of the group, or if the group is non-member readable.  Returns the groupId and the Group.</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>GsSession session = new GsSession();<br/>
+	session.login(username, password);<br/>
+	GroupManagerClient mgr = session.getGroupManagerClient();<br/>
+<br/>
+	List&lt;String&gt; groupIds = new ArrayList&lt;String&gt;();<br/>
+	groupIds.add("c8604a55-0dd7-474d-b5a5-ce70ea0add97");<br/>
+	groupIds.add("8c42ea16-4665-4c9f-815b-ea41a8ebb42e");<br/>
+<br/>
+	Map&lt;String, Group&gt; idAndGroup = mgr.findGroups(groupIds);</code></div>
+<h3>
+	3.5.4 Find GroupIds for User</h3>
+<p>
+	The client can lookup groupIds of all groups that the user is a member of.  Requires a user to be logged in.  Any user will do.</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>GsSession session = new GsSession();<br/>
+	session.login(username, password);<br/>
+	GroupManagerClient mgr = session.getGroupManagerClient();<br/>
+	List&lt;String&gt; groupIds = mgr.findGroupIdsForUser(username); </code></div>
+<h3>
+	3.5.5 Find All Group Names and Ids</h3>
+<p>
+	The client can lookup all of the groups.  Requires a user to be logged in.  Any user will do.</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>GsSession session = new GsSession();<br/>
+	session.login(username, password);<br/>
+	GroupManagerClient mgr = session.getGroupManagerClient();<br/>
+	Map&lt;String, String&gt; idAndName = mgr.findAllGroups(); </code></div>
+<h3>
+	3.5.6 Delete Group</h3>
+<p>
+	The client can delete a group.  Requires a group administrator to be logged in.</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>GsSession session = new GsSession();<br/>
+	session.login(username, password);<br/>
+	GroupManagerClient mgr = session.getGroupManagerClient();<br/>
+	String groupId = "8c42ea16-4665-4c9f-815b-ea41a8ebb42e";<br/>
+	mgr.deleteGroup(groupId); </code></div>
+<h3>
+	3.5.7 Update Group</h3>
+<p>
+	The client can update a group.  Requires a group administrator to be logged in.</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>GsSession session = new GsSession();<br/>
+	session.login(username, password);<br/>
+	GroupManagerClient mgr = session.getGroupManagerClient();<br/>
+	Group group = findGroup(groupId);<br/>
+	… make change to the group…<br/>
+	mgr.updateGroup(group); </code></div>
+<h3>
+	3.5.8 Add Group Member</h3>
+<p>
+	The client can add a member to an existing group.  Requires a group administrator to be logged in, or a group member to be logged in AND the group to be self-administered.</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>GsSession session = new GsSession();<br/>
+	session.login(username, password);<br/>
+	GroupManagerClient mgr = session.getGroupManagerClient();<br/>
+	String groupName = “The name of my group”;<br/>
+	Boolean isAdmin = false;<br/>
+	mgr.addMember(groupName, newMemberUsername, isAdmin); </code></div>
+<h3>
+	3.5.9 Delete Group Member</h3>
+<p>
+	The client can delete a member from an existing group.  Requires a group administrator to be logged in, or a group member to be logged in AND the group to be self-administered.</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>GsSession session = new GsSession();<br/>
+	session.login(username, password);<br/>
+	GroupManagerClient mgr = session.getGroupManagerClient();<br/>
+	String groupName = “The name of my group”;<br/>
+	mgr.deleteMember(groupName, memberUsername); </code></div>
+<h2>
+	3.6 File Operations</h2>
+<p>
+	GenomeSpace provides each user with a private base directory in S3; the users only have access to their own GenomeSpace files.  The CDK allows users to:</p>
+<ul>
+<li>
+		Upload files</li>
+<li>
+		Download files</li>
+<li>
+		Download files in specific formats</li>
+<li>
+		Delete files</li>
+<li>
+		Create directory hierarchies</li>
+<li>
+		List directory contents</li>
+<li>
+		Move and rename files and directories</li>
+<li>
+		Copy files and directories</li>
+</ul>
+<p>
+	All the file system operation are defined by the interface:<br/>
+<code>org.genomespace.client.DataManagerClient </code></p>
+<h3>
+	3.6.1 Default Directory</h3>
+<p>
+	Every user has a personal directory assigned to them in the GenomeSpace file system. In this directory and all directories below it, the user is permitted all the supported file operations. The default file path to the personal directory is /Home/username (but you should depend on the API instead of /Home/username in your code).</p>
+<p>
+	To obtain a listing of the user’s personal directory:</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>DataManagerClient dmClient = gsSession.getDataManagerClient();<br/>
+	GSDirectoryListing homeDirInfo = dmClient.listPersonalDirectory();</code></div>
+<div>
+	 </div>
+<div>
+	The initial default directory for users is currently different from the personal directory. It includes the personal directory as well as directories shared with everyone and with the specific user. The default directory is /Home (but you should depend on the API instead of /Home in your code).</div>
+<div>
+	 </div>
+<div style="padding: 5px; border: 1px solid black;">
+<code>DataManagerClient dmClient = gsSession.getDataManagerClient();<br/>
+	GSDirectoryListing homeDirInfo = dmClient.listDefaultDirectory(); </code></div>
+<p>
+	The GSDirectoryListing is discussed below.</p>
+<h3>
+	3.6.2 Listing Directory Contents</h3>
+<p>
+	For a given directory file path:</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>String thePath = “/users/test”;<br/>
+	GSDirectoryListing dirContents = dmClient.list(fileDirPath); </code></div>
+<p>
+	GSDirectoryListing has a reference to the metadata (GSFileMetadata) of the target directory and a list of metadata objects corresponding to each child file and directory.</p>
+<p>
+	GSFileMetadata indicates whether a particular file system object is a file or directory, when it was last modified, the size in bytes, etc.</p>
+<p>
+	It also carries format information, including the format of the file (if Data Manager is able to recognize it) and the different data formats to which this file can be converted.</p>
+<p>
+	If you have the metadata object for the directory, the preferred way of getting a directory listing is:</p>
+<div style="padding: 5px; border: 1px solid black;">
+	GSDirectoryListing dirContents = dmClient.list(dirMetadata);</div>
+<h3>
+	3.6.3 Obtaining Metadata for a File System Object by its Path</h3>
+<p>
+	The file system metadata objects can be obtained indirectly through directory listings or at object creation time. They can also be obtained through their paths.</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>String objectFilePath = “/users/test/myFileOrDirName”;<br/>
+	GSFileMetadata objectMetadata = dmClient.getMetadata(objectFilePath); </code></div>
+<h3>
+	3.6.4 Creating Directories</h3>
+<p>
+	The CDK allows arbitrary directory levels. To create a directory, in this case, as the child of the home directory:</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>GSFileMetadata homeDirMeta = dmClient.listDefaultDirectory().getDirectory();<br/>
+	String newDirName = “MyNewDirectory”;<br/>
+	GSFileMetadata newDirMeta = dmClient.createDirectory(homeDirMeta,newDirName); </code></div>
+<h3>
+	3.6.5 Uploading Files</h3>
+<p>
+	The CDK supports two methods for this operation. The simplest, if you have the GenomeSpace target directory metadata and you want to upload a local file, preserves the same name remotely:</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>GSFileMetadata newDirMeta = dmClient.createDirectory(homeDirMeta,newDirName);<br/>
+	File theLocalFile = new File(“myFileToUpload.txt”);<br/>
+	GSFileMetadata uploadedFileMeta = uploadFile(theLocalFile,newDirMeta); </code></div>
+<p>
+	If you want to assign a different name to the uploaded remote file:</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>GSFileMetadata newDirMeta = dmClient.createDirectory(homeDirMeta,newDirName);<br/>
+	File localFile = new File(“myFileToUpload.txt”);<br/>
+	String remoteFileName = “theNewName.txt”;<br/>
+	GSFileMetadata uploadedFileMeta = uploadFile(localFile,newDirMeta.getPath(),remoteFileName); </code></div>
+<h3>
+	3.6.6 Downloading Files</h3>
+<p>
+	To download a file, you need to get the metadata object of the source remote file:</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>GSDirectoryListing dirListing = dmClient.listDefaultDirectory();<br/>
+	GSFileMetadata fileToDownload = dirListing.getContents().get(0);<br/>
+	File targetFile = new File(“theLocalTargetFile.txt”);<br/>
+	dmClient.downloadFile(fileToDownload, targetFile,true); </code></div>
+<p>
+	The Boolean argument overwriteIfExists will come in to play if the target file exists. An exception will be raised if flag is false and the target file already exists in the local file system.</p>
+<h3>
+	3.6.7 Downloading Files in a Specific Data Format/Perform a Conversion on a Remote File</h3>
+<p>
+	The Data Manager is able to perform format conversions on files. You can request a download in any of the formats listed in the GSFileMetadata object.</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>GSDirectoryListing dirListing = dmClient.listDefaultDirectory();<br/>
+	GSFileMetadata remoteFileMeta = dirListing.getContents().get(0);<br/>
+	//You should check for null<br/>
+	System.out.println(remoteFileMeta.getName()+” has format ”+(remoteFileMeta.getDataFormat().getName());<br/>
+	System.out.prinln(“Can be converted to:”);<br/>
+	for(GSDataFormat format : remoteFileMeta.getAvailableDataFormats()){<br/>
+	    System.out.println(format.getName()+” version:”+format.getVersion());<br/>
+	} </code></div>
+<p>
+	To download the file in a particular format, you will need to specify the format and the destination file or the destination directory.</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>GSDirectoryListing dirListing = dmClient.listDefaultDirectory();<br/>
+	GSFileMetadata remoteFileMeta = dirListing.getContents().get(0);<br/>
+	GSDataFormat gctFormat = null;<br/>
+	for(GSDataFormat format : remoteFileMeta.getAvailableDataFormats()){<br/>
+	    if(format.getName().equals(“gct”)){<br/>
+	        gctFormat = format;<br/>
+	    }<br/>
+	}<br/>
+	dmClient.downloadFile(remoteFileMeta,gctFormat,new File(“myNewFile.gct”),true); </code></div>
+<p>
+	You can also call the method <code>downloadFileToDir:</code></p>
+<p>
+<code>dmClient.downloadFileToDir(remoteFileMeta,gctFormat,new File(“MyLocalDir”),true);</code></p>
+<p>
+	In this case, the local file name will be determined by the Data Manager server. You just specify to what directory you want the file saved.</p>
+<p>
+	Finally, if you just want a <code>java.io.InputStream</code> for the original or converted file, then call:</p>
+<p>
+<code>dmClient.<font style="background-color:#ccc;">getInputStream(GSFileMetadata gsRemoteFile)</font> </code></p>
+<p>
+	or</p>
+<p>
+<code>dmClient.<font style="background-color:#ccc;">getInputStream(GSFileMetadata gsRemoteFile,GSDataFormat format)</font></code></p>
+<p>
+	For all the methods discussed above, leaving <code>GSDataFormat</code> as null or specifying the same <code>GSDataFormat</code> returned by the <code>getDataFormat()</code> method will download the original file.</p>
+<h3>
+	3.6.8 Obtaining a URL to Download Original or Converted Files</h3>
+<p>
+	You can obtain a URL that can be used by your application to access the original file or converted file directly, however your application will have will have to be able to deal with:</p>
+<ul>
+<li>
+		Handling HTTP Basic Authentication and be able to provide the user’s Genomespace credentials</li>
+<li>
+		URL redirection</li>
+</ul>
+<p>
+	You can use one of three methods:</p>
+<p>
+<code>getFileUrl(String remoteFileAbsolutePath);<br/>
+	getFileUrl(GSFileMetadata remoteFileMeta,GSDataFormat dataFormat);<br/>
+	getFileUrl(URL remoteFileUrl,URL dataFormatUrl);</code></p>
+<p>
+	The URLs for the remote files and for the data formats are available by calling getUrl() on GSFileMetadata and GSDataFormat.</p>
+<h3>
+	3.6.9 Deleting Files and Directories</h3>
+<p>
+	If the user owns the file or directory (i.e., the file or directory is under her home directory), delete files/directories using:</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>GSDirectoryListing dirListing = dmClient.listDefaultDirectory();<br/>
+	GSFileMetadata fileToDelete = dirListing.getContents().get(0);<br/>
+	dmClient.delete(fileToDelete); </code></div>
+<p>
+	The procedure is the same for files and directories. Only empty directories can be deleted.</p>
+<h3>
+	3.6.10 Copying Files and Directories</h3>
+<p>
+	Files and directories can be copied within the GenomeSpace file system without having to download them.</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>GSDirectoryListing dirList = dmClient.listDefaultDirectory();<br/>
+	GSFileMetadata fileToCopy = dirListing.getContents().get(0);<br/>
+	GSFileMetadata newParent Dir=dmClient.createDirectory(dirList.getDirectory(),”destDir”);<br/>
+	GSFileMetadata filedCopy = dmClient.copy(fileToCopy,newParentDir,”theNewFileName.txt”); </code></div>
+<p>
+	In the case of the directories, the procedure is the same. The Data Manager will recursively copy the directory to the source directory under the target parent directory with the newly assigned file name.</p>
+<p>
+	A null for new file name will keep the original file object name.</p>
+<h3>
+	3.6.11 Moving Files and Directories</h3>
+<p>
+	Same as the copy, but the source objects will be removed. As before, directory moves are recursive.</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>GSDirectoryListing dirList = dmClient.listDefaultDirectory();<br/>
+	GSFileMetadata fileToMove = dirListing.getContents().get(0);<br/>
+	GSFileMetadata newParent Dir=dmClient.createDirectory(dirList.getDirectory(),”destDir”);<br/>
+	GSFileMetadata movedFile = dmClient.move(fileToMove,newParentDir,”theNewFileName.txt”); </code></div>
+<h2>
+	3.7 File Permissions and Ownership</h2>
+<p align="left">
+	Ownership of files and directories is established by who is the owner of the top level directory. Any file and directory that is directly or indirectly under a user's home directory is owned by that user. As such, the owner user is able to read, write, delete, and grant permissions on any object below.<br/>
+<br/>
+<strong>Example:</strong><br/>
+<code>/users/fred</code> is home directory for a user named “fred”.<br/>
+	User fred is the owner of directory /users/fred as well as <code>/users/fred/dir1</code> and <code>/users/fred/dir1/myfile.txt</code> because the directory and the file are below the home directory.</p>
+<p align="left">
+	Data Manager supports sharing of files and directories through the use of access control lists (ACLs). The owner of a file or directory can grant read and write permissions to any other user or group. Each ACL points to the object with which it is associated and includes a list of access control entries (ACE) identifying the user or group (generically referred as a Security Identity [SID]) and the permission that has been granted.</p>
+<p align="left">
+	Read permission on a file means that its contents can be downloaded. Write permissions mean that the file can be either updated/replaced or deleted.</p>
+<p align="left">
+	On a directory, read permission mean that the grantee can list the contents of the directory. Write permission mean that they can upload new files and delete and update existing ones.</p>
+<p align="left">
+	ACL grants are inherited down the directory structure. So if you grant read permissions on a parent directory to another user, that user will be able read every file and directory below it in the hierarchy.<br/>
+<br/>
+<strong>Example:</strong><br/>
+	If user fred grants “read” permissions on directory <code>/users/fred/dir1</code> to user kathy, she will be able to get a listing of <code>/users/fred/dir1</code> and every directory below <code>dir1</code>, like <code>/users/fred/dir1/dir2</code>  and <code>/users/fred/dir1/dir2/dir3</code>. Kathy will also be able to download <code>/users/fred/dir1/myfile.txt</code> since the file inherited the read permission from its parent directory.<br/>
+<br/>
+	If fred also grants write permissions to kathy on <code>/users/fred/dir1</code>, then kathy will be able to create and delete new directories and files below <code>/users/fred/dir1</code>.</p>
+<h3>
+	3.7.1 Granting Permissions</h3>
+<p>
+	To grant permissions, the logged-in user needs to be the owner of the file (i.e., the file needs to be under the granter’s home directory).</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>//You will need to get a hold of the file or directory GSFileMetadata object.<br/>
+	//Many ways to this<br/>
+	GSDirectoryListing dirListing = dmClient.listDefaultDirectory();<br/>
+	GSFileMetadata fileToBeShared = dirListing.getContents().get(0);<br/>
+<br/>
+	//We have added a helper class to build SecurityIdentity<br/>
+	SecurityObjectBuilder securityBuilder = new SecurityObjectBuilderImpl();<br/>
+	SecurityIdentity granteeUser = securityBuilder.buildUser(“test1”);<br/>
+	SecurityIdentity granteeGroup = securityBuilder.buildGroup(“Group1”);<br/>
+	//Grants are straightforward. Just tack on the permissions at the end of the call<br/>
+	Acl fileAcl = dmClient.grant(fileToBeShared,granteeUser,Permission.READ,Permission.WRITE);<br/>
+<br/>
+	//Alternatively, you can construct the AccessControlEntry(s)<br/>
+	AccessControlEntry ace = securityBuilder.buildAccessControlEntry(granteeGroup,Permission.READ);<br/>
+	Collection&lt;AccessControlEntry&gt; aces = new ArrayList&lt;AccessControlEntry&gt;();<br/>
+	aces.add(ace);<br/>
+	fileAcl = dmClient.grant(fileToBeShared,aces);</code></div>
+<h3>
+	3.7.2 Listing and Checking Permissions on a File or Directory</h3>
+<p align="left">
+	If you just want to show the effective permissions on a file or directory, the easiest thing to do is get the effectiveAcl property from the file object GSFileMetadata. Keep in mind that this is not a “real” ACL object, but rather a synthetic ACL that captures permissions granted on the file directory, and that have been inherited from the directory structure and reflects ownership of the object. You cannot delete this ACL object or revoke the permissions listed here, but you will be able to know if you can list a directory, delete a file,etc.</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>//You will need to get a hold of the file or directory GSFileMetadata object.<br/>
+	//Many ways to this<br/>
+	GSDirectoryListing dirListing = dmClient.listDefaultDirectory();<br/>
+	GSFileMetadata theFileOrDir = dirListing.getContents().get(0);<br/>
+	Acl theAcl = theFileOrDir.getEffectiveAcl();</code><br/>
+<br/>
+<code>//We have added a helper class to build SecurityIdentity<br/>
+	SecurityObjectBuilder securityBuilder = new SecurityObjectBuilderImpl();<br/>
+	SecurityIdentity granteeUser = securityBuilder.buildUser(“test1”);<br/>
+	//Now we can check to see if we can delete or overwrite the file<br/>
+	boolean canDelete = theAcl.isGranted(Collections.singleton(Permission.Write),Collections.singleton(granteeUser));</code></div>
+<p align="left">
+	To get the “real” ACL objects, such as in the case where you want to enable editing permissions, you can use:</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>Acl theFileAcl = dmClient.getAcl(gsFileMetatadata); </code></div>
+<p align="left">
+	Perhaps even more useful is getting all the ACLs associated with a file object, both directly connected and inherited:</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>List&lt;Acl&gt; acls = dmClient.getAclHierarchy(gsFileMetadata); </code></div>
+<p align="left">
+	Each ACL has a method called getObjectId(), which returns the full file path of the file object that it is connected to.</p>
+<h3>
+	3.7.3 Revoking Permissions</h3>
+<p align="left">
+	You can revoke a permission that has been previously granted. Be aware though, that if a permission has been granted to a directory further up in the hierarchy, you cannot take away that permission from the object below. For example, if a directory is granted write permissions, you will not be able to revoke write permissions on a single file in the directory.</p>
+<p align="left">
+	Two ways to revoke, the first is similar to one of the grant methods presented above.</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>dmClient.revoke(gsFileMeta,securityIdentity,Permission.READ,Permission.WRITE); </code></div>
+<p align="left">
+	To reiterate, this will only work for permissions that are directly attached to the file or directory, not for inherited permissions.</p>
+<p align="left">
+	If you have the ACL object on hand, obtained via either the getAcl() or getAclHierarchy() calls, then you can get a hold of the access control entries. You can revoke a permission by deleting the associated access control entry (ACE).</p>
+<p align="left">
+	Here is a snippet that removes all permissions granted to a user on a file:</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>Acl  theAcl = dmClient.getAcl(gsFileMeta);<br/>
+	SecurityIdentity sid = (new SecurityObjectBuilderImpl()).buildUser(“test1”);<br/>
+	Set&lt;AccessControlEntry&gt; test1Aces = theAcl.entriesFor(sid);<br/>
+	for(AccessControlEntry ace : test1Aces){<br/>
+	    dmClient.delete(ace);<br/>
+	}</code></div>
+<h2>
+	3.8 Analysis Tool Operations</h2>
+<p>
+	The GenomeSpace CDK provides client the ability to:</p>
+<ul>
+<li>
+		List all web tools</li>
+<li>
+		Get a URL to launch a web tool</li>
+<li>
+		Retrieve a web tool by name</li>
+</ul>
+<p>
+	Later versions of the CDK will add additional functionality. The client must be logged into the CDK in order to use the Analysis Tool operations.</p>
+<h3>
+	3.8.1 List Web Tools</h3>
+<p>
+	The client can retrieve a list of web tools using the AnalysisToolManagerClient, which can be obtained from the GsSession object.  The getWebTools method returns a list of WebToolDescriptors.</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>AnalysisToolManagerClient client = gsSession.getAnalysisToolManagerClient();<br/>
+	List&lt;WebToolDescriptor&gt; webTools = client.getWebTools();<br/>
+	for (WebToolDescriptor tool : webTools) {<br/>
+	System.out.println("tool name: " + tool.getToolName());<br/>
+	    for (ToolParameter param : tool.getParams()) {<br/>
+	        System.out.println("param name: " + param.getParameterName());<br/>
+	       }<br/>
+	} </code></div>
+<h3>
+	3.8.2 Launch URL for a WebTool</h3>
+<p>
+	The CDK provides the client with the ability to retrieve a URL to launch a web tool, passing it GenomeSpace files as arguments.  Once the client has retrieved a list of web tools, the client can select the webtool of interest and obtain a launch URL for that web tool using the getWebToolLaunchUrl method.</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>DataManagerClient dmClient = gsSession.getDataManagerClient();<br/>
+	GSFileMetadata metadata = dmClient.getMetadata(ATM_TEST_TRANSLATE_FILE);<br/>
+	AnalysisToolManagerClient client =<br/>
+	    gsSession.getAnalysisToolManagerClient();<br/>
+	List&lt;WebToolDescriptor&gt; descriptors = client.getWebTools();<br/>
+	WebToolDescriptor genePattern = null;<br/>
+	FileParameterWrapper wrapper = null;<br/>
+<br/>
+	for (WebToolDescriptor descriptor : descriptors) {<br/>
+	    if ("GenePattern".equals(descriptor.getName())) {<br/>
+	        genePattern = descriptor;<br/>
+	        List&lt;FileParameter&gt; params = genePattern.getFileParameters();<br/>
+	        wrapper = new FileParameterWrapper(params.get(0), metadata);<br/>
+	    }<br/>
+	}<br/>
+<br/>
+	List&lt;FileParameterWrapper&gt; wrappers =<br/>
+	    new ArrayList&lt;FileParameterWrapper&gt;();<br/>
+	wrappers.add(wrapper);<br/>
+	URL url = client.getWebToolLaunchUrl(genePattern, wrappers)</code></div>
+<h3>
+	3.8.3 Get WebTool</h3>
+<p>
+	The CDK provides the client with the ability to retrieve a WebToolDescriptor by name.</p>
+<div style="padding: 5px; border: 1px solid black;">
+<code>AnalysisToolManagerClient client = gsSession.getAnalysisToolManagerClient();<br/>
+	WebToolDescriptor webTool = client.getWebTool(“IGV”);</code></div>
+<p>
+	 </p>
+<h1>
+	4. User Interface Elements of the CDK</h1>
+<p>
+	Some common user interface (UI) dialogs have been incorporated into the CDK for use by desktop applications.  These have been implemented using Java Swing and include a login dialog and a file browser suitable for selecting a file for download and for selecting a parent file path to be used to upload a new file to a particular directory.</p>
+<p>
+	These UI elements are in the CDK jar file in the java package </p>
+<pre style="margin-left: 40px;">
+org.genomespace.client.ui</pre>
+<h2>
+	4.1 GSLoginDialog</h2>
+<p>
+<img alt="" src="/uploaded/content_gslogindialog.png" style="width: 320px; height: 220px;"/></p>
+<p>
+	When using the GSLoginDialog, you should always use the isLoggedIn() method (see <a href="#3.3.2">section 3.2.2</a>) first to prevent showing the dialog when a cached reusable identity token already exists.</p>
+<pre style="padding: 5px; border: 1px solid black;">
+session = new GsSession();
+if (session.isLoggedIn()){
+    // if we were logged in by another app on this machine we can get the cached username
+    lblUsername.setText(session.getCachedUsernameForSSO());
+} else {
+    // open a GSLogin Dialog 
+    final GSLoginDialog loginDialog = new GSLoginDialog(null, Dialog.ModalityType.APPLICATION_MODAL);
+    loginDialog.setVisible(true);
+    final String userName = loginDialog.getUsername();
+    final String password = loginDialog.getPassword();
+    try {
+         session.login(userName, password);
+         return;
+    } catch (final AuthorizationException e) {
+         JOptionPane.showMessageDialog(null, "Invalid user name or password!","Login Error", 
+JOptionPane.ERROR_MESSAGE);
+    } 
+}<code> </code></pre>
+<p>
+	In the example above, we use a GsSession seperate from the login dialog.  It is also possible to get a GsSession back directly from the login dialog:</p>
+<pre style="padding: 5px; border: 1px solid black;">
+ GSLoginDialog loginDialog = new GSLoginDialog(null, Dialog.ModalityType.APPLICATION_MODAL);
+ loginDialog.setVisible(true);
+ GsSession session = loginDialog.getSession();</pre>
+<p>
+	The GSLoginDialog also includes a button to launch the GsRegistrationDialog.</p>
+<p>
+<img alt="" src="/uploaded/content_reg.png" style="width: 370px; height: 320px;"/></p>
+<p>
+	 </p>
+<h2>
+	4.2 GSFileBrowserDialog</h2>
+<p>
+<img alt="" src="/uploaded/content_files.png" style="width: 460px; height: 371px;"/></p>
+<p>
+	The GSFileBrowserDialog is a subclass of JDialog that allows a desktop application to browse through a tree representation of a logged-in user's GenomeSpace file system in the DataManager. </p>
+<pre style="padding: 5px; border: 1px solid black;">
+GSFileBrowserDialog fileBrowser = new GSFileBrowserDialog(null, session.getDataManagerClient(), 
+GSFileBrowserDialog.DialogType.FILE_SELECTION_DIALOG); 
+fileBrowser.show(); 
+GSFileMetadata selection = fileBrowser.getSelectedFileMetadata();
+// Do something with the selected file
+</pre>
+<p>
+	The GSFileBrowserDialog can be opened in one of three dialog types.  It can be a selection dialog, a save dialog, or a deletion dialog.  It is up to the application to perform the actual actions upon a file selection while the dialog types simply change the title of the dialog.</p>
+</td>
+</tr></table>
+</div>
+</div>
+<div id="footer">
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+	$(document).ready(function() {
+		$("a.toggle_link").click(function() {
+			var image = $(this).children("img");
+			$(image).attr("src", $(image).attr("src") == "/assets/plus.png" ? "/assets/minus.png" : "/assets/plus.png");
+		});
+	});
+
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54489169-1', 'auto');
+  ga('send', 'pageview');
+
+
+//]]>
+</script></div></body>
+</html>

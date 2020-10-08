@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>GenomeSpace: 
+	  	Tool Guide
+  </title>
+<link href="/assets/site.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/demo_table_jui.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/jquery-ui-1.8.4.custom.css" media="screen" rel="stylesheet" type="text/css"/>
+<script src="/assets/application.js" type="text/javascript"></script>
+<link href="/assets/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+<meta content="authenticity_token" name="csrf-param"/>
+<meta content="juu1x/Y+lXJl2V8CCluliX5Yp2eMVlnhgPqbCJTTPjM=" name="csrf-token"/>
+</head>
+<body>
+<div id="page_wrapper">
+<div id="page_content">
+<div id="logo"><a href="/"><img alt="Gslogo" src="/assets/gslogo.png"/></a></div>
+<div id="login_menu"><a href="https://gsui.genomespace.org/jsui/gsui.html">User Login</a>
+</div>
+<ul id="nav">
+<li id="what-is-genomespace"><a href="/what-is-genomespace">What is GenomeSpace?</a>
+</li>
+<li id="tools"><a href="/support/tools">Tools</a>
+</li>
+<li id="recipes"><a href="http://recipes.genomespace.org">Recipes</a></li>
+<li id="documentation"><a href="/documentation">Documentation</a>
+<ul>
+<li><a href="/support/guides/user-guide">User Guide</a>
+<p>Read the detailed guide to the user interface</p>
+</li>
+<li><a href="/support/guides/tool-guide">Tool Guide</a>
+<p>Learn how to access GenomeSpace functionality for each Tool</p>
+</li>
+<li><a href="/faq">FAQ</a>
+<p>See answers to frequently asked questions</p>
+</li>
+<li><a href="/presentations-and-videos">Presentations and Videos</a>
+<p>Access talks by the GenomeSpace community</p>
+</li>
+<li><a href="/support/guides/end-to-end-analyses">End-to-End Analyses</a>
+<p>Provides description for end-to-end analyses.</p>
+</li>
+</ul>
+</li>
+<li id="developers"><a href="/for-developers">Developers</a>
+<ul>
+<li><a href="/what-can-genomespace-do-for-tool-developers">What Can GenomeSpace Do For Tool Developers?</a>
+<p></p>
+</li>
+<li><a href="/adopters">Technical Documentation</a>
+<p></p>
+</li>
+<li><a href="/source-code">Source Code and Distributions</a>
+<p></p>
+</li>
+<li><a href="/developer-support-and-feedback">Developer Support and Feedback</a>
+<p></p>
+</li>
+</ul>
+</li>
+<li id="support"><a href="/support">Support</a>
+</li>
+<li id="about"><a href="/about">About</a>
+</li>
+<li class="search">
+<div id="search_box">
+<form accept-charset="UTF-8" action="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"/></div>
+<input class="search" id="search" name="search" type="text"/>
+<input class="searchBtn" type="submit"/>
+</form> </div>
+</li>
+</ul>
+<script type="text/javascript">
+//<![CDATA[
+
+		// grab page category and use to highlight correct menu item.  if none present, parse url to find where the user is.
+		var category = "";
+		if ( !category ){
+			url_parts = $(location).attr('pathname').split("/");
+			url_string = url_parts[1] + "/" + url_parts[2]
+			if (url_string == "support/tools"){
+				category = "tools"
+			}
+			else if (url_string == "support/guides"){
+				url_parts[3] == "recipes" ? category = "recipes" : category = "documentation"
+			}
+			else if (url_parts[1] == "genomespace-recipes")
+			{
+                category = "gsrecipes"
+            }
+			else if (url_string == "support/api"){
+				category = "developers"
+			}
+			else if ((url_string == "register/undefined") || (url_string == "request_invite/undefined")) {
+				category = "what-is-genomespace"
+			}
+			else if (url_string == "/undefined") {
+				category = ""
+			}
+			else if (url_string == "support/undefined") {
+				category = "support"
+			}
+		}
+		$("#" + category).addClass("current");
+
+
+//]]>
+</script>
+<div id="content_panel">
+<table width="100%"><tr>
+<td id="toc_wrapper">
+<div id="toc">
+<h3>Tool Guide</h3>
+<ol>
+<li class="" id="guide_section_1">
+<a href="/support/guides/tool-guide/sections/tool-guide-intro">Introduction</a>
+</li>
+<li class="" id="guide_section_2">
+<a href="/support/guides/tool-guide/sections/arrayexpress-GS-capabilities">ArrayExpress</a>
+</li>
+<li class="" id="guide_section_3">
+<a href="/support/guides/tool-guide/sections/cbioportal-GS-capabilities">cBioPortal</a>
+</li>
+<li class="" id="guide_section_4">
+<a href="/support/guides/tool-guide/sections/cistrome-GS-capabilities">Cistrome </a>
+</li>
+<li class="" id="guide_section_5">
+<a href="/support/guides/tool-guide/sections/cytoscape-GS-capabilities">Cytoscape</a>
+</li>
+<li class="" id="guide_section_6">
+<a href="/support/guides/tool-guide/sections/cytoscape_3-GS-capabilities">Cytoscape 3</a>
+</li>
+<li class="" id="guide_section_7">
+<a href="/support/guides/tool-guide/sections/firebrowse-GS-capabilities">FireBrowse</a>
+</li>
+<li class="" id="guide_section_8">
+<a href="/support/guides/tool-guide/sections/galaxy-GS-capabilities">Galaxy</a>
+</li>
+<li class="" id="guide_section_9">
+<a href="/support/guides/tool-guide/sections/genepattern-GS-capabilities">GenePattern</a>
+</li>
+<li class="" id="guide_section_10">
+<a href="/support/guides/tool-guide/sections/genomica-GS-capabilities">Genomica</a>
+</li>
+<li class="" id="guide_section_11">
+<a href="/support/guides/tool-guide/sections/geworkbench-GS-capabilities">geWorkbench</a>
+</li>
+<li class="" id="guide_section_12">
+<a href="/support/guides/tool-guide/sections/gitools-GS-capabilities">Gitools</a>
+</li>
+<li class="" id="guide_section_13">
+<a href="/support/guides/tool-guide/sections/igv-gs-capabilities">Integrative Genomics Viewer (IGV)</a>
+</li>
+<li class="" id="guide_section_14">
+<a href="/support/guides/tool-guide/sections/isacreator">ISAcreator</a>
+</li>
+<li class="" id="guide_section_15">
+<a href="/support/guides/tool-guide/sections/msigdb-online-tools">MSigDB Online Tools</a>
+</li>
+<li class="" id="guide_section_16">
+<a href="/support/guides/tool-guide/sections/ucsc_genome_browser-GS-capabilities">UCSC Table Browser</a>
+</li>
+<li class="" id="guide_section_17">
+<a href="/support/guides/tool-guide/sections/tool-term-glossary">Tool Term Glossary</a>
+</li>
+<li class="" id="guide_section_18">
+<a href="/support/guides/tool-guide/sections/trinity-GS-capabilities">Trinity</a>
+</li>
+</ol>
+</div>
+<p class="center"><a href="/support/guides/tool-guide/print"><img alt="Print_icon" src="/assets/print_icon.gif" title="Printer Friendly View"/></a></p>
+</td>
+<script type="text/javascript">
+//<![CDATA[
+
+		$(document).ready(function() {
+			var guide_section = "guide_section_9";
+			$("#" + guide_section + "> a").css("font-weight", "bold");
+			if ( 'Tool Guide' == "Recipes" ) {
+				$.each($("#toc a.toggle_link"), function() {
+					$(this).click();
+					var image = $(this).children("img");
+					$(image).attr("src", $(image).attr("src") == "/assets/plus.png" ? "/assets/minus.png" : "/assets/plus.png");
+				});
+			}
+		});
+
+//]]>
+</script>
+<td id="main_content">
+<div id="notice"></div>
+<div id="alert"></div>
+<h1>GenePattern
+	</h1>
+<p>
+	Project Website: <a href="http://www.genepattern.org">http://www.genepattern.org</a></p>
+<p>
+	GenePattern is a powerful genomic analysis platform that provides access to more than 150 tools for gene expression analysis, proteomics, SNP analysis, flow cytometry, RNA-seq analysis, and common data processing tasks. A web-based interface provides easy access to these modules and allows for the creation of multi-step analysis pipelines that enable reproducible <em>in silico</em> research.</p>
+<p>
+	A GenomeSpace-enabled GenePattern installation has a number of elements in it that help move data files from GenomeSpace and analysis results to GenomeSpace.</p>
+<h2>
+	Logging In</h2>
+<p>
+	When you launch GenePattern from GenomeSpace, GenePattern allows you to log in using your GenomeSpace account.  You will see the GenePattern login screen, and you can click <em>Sign in Using GenomeSpace</em>.</p>
+<p>
+<img alt="" src="/uploaded/content_gp1.png" style="width: 576px; height: 200px;"/></p>
+<p>
+	If your GenomeSpace username is not recognized as being associated with any GenePattern username, GenePattern gives you the opportunity to either:</p>
+<ul>
+<li>
+		associate your GenomeSpace account with your existing GenePattern account</li>
+<li>
+		generate a new GenePattern account that is associated with your GenomeSpace account</li>
+</ul>
+<h2>
+	Sending Files to GenePattern from GenomeSpace</h2>
+<p>
+	GenePattern receives your files and offers you a number of options of how you would like it to handle those files.</p>
+<p>
+<img alt="" src="/uploaded/content_gp2.png" style="width: 572px; height: 400px; border-width: 1px; border-style: solid;"/></p>
+<p>
+	Each file can be saved to the Upload Directory by simply clicking <em>Submit</em> next to the <em>Save a Copy</em> field.  Or you can opt to send the file to a module.  If the file can be converted by one of the GenomeSpace conversion scripts, you can opt for a conversion as you send it to the module of your choice.</p>
+<h2>
+	GenomeSpace Tab</h2>
+<p>
+	Within the GenePattern UI, the right side of the window is occupied with several tabs that provide access to recently run jobs, uploaded files, and, in GenomeSpace-enabled installations, your GenomeSpace directories.  You can navigate these directories.</p>
+<p>
+<img alt="" src="/uploaded/content_gp3.png" style="width: 343px; height: 250px;"/></p>
+<p>
+	To use one of your GenomeSpace files in a module, drag and drop the name of the file on the field box.</p>
+<p>
+	 </p>
+<h2>
+	Save To GenomeSpace</h2>
+<p>
+	Files in the<em> Job Results</em> and <em>Uploads</em> tabs, as well as on the Job Results page, can be sent directly to GenomeSpace. Click the file name to generate a navigation menu for the file.</p>
+<p>
+<img alt="" src="/uploaded/content_gp5_2.png" style="width: 643px; height: 500px;"/></p>
+<p>
+	Then, in the drop-down menu, select the location in your GenomeSpace cloud storage where you want to save the file and click <em>Save</em>.</p>
+<p>
+<img alt="" src="/uploaded/content_gp6.png" style="width: 506px; height: 230px;"/></p>
+<h2>
+	GenomeSpace Menu</h2>
+<p>
+	There is also a menu of GenomeSpace functionality, allowing you to log out of GenomeSpace, open GenomeSpace, or go to the GenomeSpace web site.</p>
+<p>
+<img alt="" src="/uploaded/content_gp4.png" style="width: 500px; height: 129px;"/></p>
+<p>
+	 </p>
+<p>
+	Learn how to <a href="http://genomespace.org/support/guides/moving-data/sections/send-data-from-genepattern-to-igv">send data from GenePattern to IGV using GenomeSpace</a>.</p>
+<p>
+	Learn how to <a href="http://genomespace.org/support/guides/moving-data/sections/send-data-from-genomica-to-genepattern">send data from Genomica to GenePattern using GenomeSpace</a>.</p>
+</td>
+<tr><td colspan="2">
+<p class="center">
+<a href="/support/guides/tool-guide/sections/galaxy-GS-capabilities">&lt;&lt; Galaxy</a>
+		| <a href="/support/guides/tool-guide/sections/tool-guide-intro">Up</a> |
+		<a href="/support/guides/tool-guide/sections/genomica-GS-capabilities">Genomica &gt;&gt;</a>
+</p>
+</td></tr>
+<script type="text/javascript">
+//<![CDATA[
+
+		if ( "Tool Guide" == "Recipes" && true ) {
+			$.each($("#main_content a.toggle_link"), function() {
+				$(this).click();
+				var image = $(this).children("img");
+				$(image).attr("src", $(image).attr("src") == "/assets/plus.png" ? "/assets/minus.png" : "/assets/plus.png");
+			});
+		}
+		$('.collapsed').toggle();
+
+//]]>
+</script>
+</tr></table>
+</div>
+</div>
+<div id="footer">
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+	$(document).ready(function() {
+		$("a.toggle_link").click(function() {
+			var image = $(this).children("img");
+			$(image).attr("src", $(image).attr("src") == "/assets/plus.png" ? "/assets/minus.png" : "/assets/plus.png");
+		});
+	});
+
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54489169-1', 'auto');
+  ga('send', 'pageview');
+
+
+//]]>
+</script></div></body>
+</html>

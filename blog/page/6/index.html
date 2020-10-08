@@ -1,0 +1,366 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>GenomeSpace: 
+	  	Blog
+  </title>
+<link href="/assets/site.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/demo_table_jui.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/jquery-ui-1.8.4.custom.css" media="screen" rel="stylesheet" type="text/css"/>
+<script src="/assets/application.js" type="text/javascript"></script>
+<link href="/assets/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+<meta content="authenticity_token" name="csrf-param"/>
+<meta content="hymCQFqe6VRVuSTeAs5XXH9123DCnPVS2WD5y/cULtU=" name="csrf-token"/>
+</head>
+<body>
+<div id="page_wrapper">
+<div id="page_content">
+<div id="logo"><a href="/"><img alt="Gslogo" src="/assets/gslogo.png"/></a></div>
+<div id="login_menu"><a href="https://gsui.genomespace.org/jsui/gsui.html">User Login</a>
+</div>
+<ul id="nav">
+<li id="what-is-genomespace"><a href="/what-is-genomespace">What is GenomeSpace?</a>
+</li>
+<li id="tools"><a href="/support/tools">Tools</a>
+</li>
+<li id="recipes"><a href="http://recipes.genomespace.org">Recipes</a></li>
+<li id="documentation"><a href="/documentation">Documentation</a>
+<ul>
+<li><a href="/support/guides/user-guide">User Guide</a>
+<p>Read the detailed guide to the user interface</p>
+</li>
+<li><a href="/support/guides/tool-guide">Tool Guide</a>
+<p>Learn how to access GenomeSpace functionality for each Tool</p>
+</li>
+<li><a href="/faq">FAQ</a>
+<p>See answers to frequently asked questions</p>
+</li>
+<li><a href="/presentations-and-videos">Presentations and Videos</a>
+<p>Access talks by the GenomeSpace community</p>
+</li>
+<li><a href="/support/guides/end-to-end-analyses">End-to-End Analyses</a>
+<p>Provides description for end-to-end analyses.</p>
+</li>
+</ul>
+</li>
+<li id="developers"><a href="/for-developers">Developers</a>
+<ul>
+<li><a href="/what-can-genomespace-do-for-tool-developers">What Can GenomeSpace Do For Tool Developers?</a>
+<p></p>
+</li>
+<li><a href="/adopters">Technical Documentation</a>
+<p></p>
+</li>
+<li><a href="/source-code">Source Code and Distributions</a>
+<p></p>
+</li>
+<li><a href="/developer-support-and-feedback">Developer Support and Feedback</a>
+<p></p>
+</li>
+</ul>
+</li>
+<li id="support"><a href="/support">Support</a>
+</li>
+<li id="about"><a href="/about">About</a>
+</li>
+<li class="search">
+<div id="search_box">
+<form accept-charset="UTF-8" action="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"/></div>
+<input class="search" id="search" name="search" type="text"/>
+<input class="searchBtn" type="submit"/>
+</form> </div>
+</li>
+</ul>
+<script type="text/javascript">
+//<![CDATA[
+
+		// grab page category and use to highlight correct menu item.  if none present, parse url to find where the user is.
+		var category = "";
+		if ( !category ){
+			url_parts = $(location).attr('pathname').split("/");
+			url_string = url_parts[1] + "/" + url_parts[2]
+			if (url_string == "support/tools"){
+				category = "tools"
+			}
+			else if (url_string == "support/guides"){
+				url_parts[3] == "recipes" ? category = "recipes" : category = "documentation"
+			}
+			else if (url_parts[1] == "genomespace-recipes")
+			{
+                category = "gsrecipes"
+            }
+			else if (url_string == "support/api"){
+				category = "developers"
+			}
+			else if ((url_string == "register/undefined") || (url_string == "request_invite/undefined")) {
+				category = "what-is-genomespace"
+			}
+			else if (url_string == "/undefined") {
+				category = ""
+			}
+			else if (url_string == "support/undefined") {
+				category = "support"
+			}
+		}
+		$("#" + category).addClass("current");
+
+
+//]]>
+</script>
+<div id="content_panel">
+<table width="100%"><tr>
+<td id="main_content">
+<div id="notice"></div>
+<div id="alert"></div>
+<h1>Public Data: Project Achilles</h1>
+<p class="byline">Posted by Ted Liefeld, Barbara Weir on Friday, September 21, 2012 at 07:36AM</p>
+<p>
+<span style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); display: inline !important; float: none; ">Project Achilles is a systematic effort aimed at identifying genetic vulnerabilities across hundreds of well characterized cancer cell lines.<span class="Apple-converted-space"> </span></span><span style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); "> </span><span style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); ">Large-scale functional screening of cancer cell lines provides a complementary approach to those studies that aim to characterize the molecular alterations (mutations, copy number alterations, etc.) of primary tumors, such as The Cancer Genome Atlas.<span> <span class="Apple-converted-space"> </span></span></span><span style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); ">This project<span class="Apple-converted-space"> </span></span><span style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); ">intends to identify genes essential for proliferation and survival using a genome-scale, systematic loss of function screen</span><span style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); ">.<span> <span class="Apple-converted-space"> </span></span></span><span style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); ">Each screen uses a lentivirally delivered pool of ~54K shRNAs targeting ~11K genes and identifies gene dependencies by comparing the population of shRNAs at the endpoint of the screen relative to the initial reference pool.<span> </span></span></p>
+<p>
+	Project Achilles data is available in /<a href="https://gsui.genomespace.org/jsui/gsui.html?pathOrUrl=/Public/SharedData/Datasets/Achilles%20Phase%202">Public/SharedData/Datasets/Achilles Phase 2</a>.  (This requires a GenomeSpace login.  If you don't have one, it's <a href="https://identity.genomespace.org:8444/identityServer/registration.html?openId.return_to=%27https://gsui.genomespace.org/jsui/openIdClient?is_cancel=true&amp;openid.rpnonce=2012-02-28T18%3A40%3A23Z0&amp;openid.rpsig=upskiGzwmYpAQd6cBIT%2FeLXunKMWkcoD6ca17n6kgbM%3D%27">easy to register</a>.)</p>
+<p>
+	For more information on Project Achilles, see<a href="http://www.broadinstitute.org/software/cprg/?q=node/10"> its page on the Broad Institute Cancer Program Resource Gateway</a>.</p>
+<h1>MSigDB has moved!</h1>
+<p class="byline">Posted by Ted Liefeld on Friday, September 21, 2012 at 07:01AM</p>
+<p>
+	For those of you who have been using the <a href="http://www.broadinstitute.org/gsea/msigdb/collections.jsp">MSigDB</a> gene lists in the /Public/SharedData folder, we would like to let you know that the paths to these data have been moved.  In preparation for adding more shared public datasets, we have changed the categorization of data to use the<strong> project names</strong> instead of the type of data provided, since many studies include data of multiple types.</p>
+<p>
+	As a result, the MSigDB datasets have moved from /Public/SharedData/GeneLists/MSigDB to a new home at <strong><a href="https://gsui.genomespace.org/jsui/?pathOrUrl=/Home/Public/SharedData/Datasets/MSigDB">/Public/SharedData/Datasets/MSigDB</a></strong>.</p>
+<p>
+	The same data are there as before, it's just a new address. We hope that this new organization will allow you to find the public datasets you are looking for more easily in the future. </p>
+<p>
+	Stay tuned: more shared datasets are coming in the next few months! </p>
+<h1>Opening the GSUI at a particular directory</h1>
+<p class="byline">Posted by Ted Liefeld on Wednesday, September 12, 2012 at 09:16AM</p>
+<br/><p class="byline">Last updated on Monday, November 02, 2015 at 11:50AM</p>
+<p>
+	For developers who would like to integrate the GenomeSpace UI (GSUI) into their web sites, there is a little-known feature you can use to open the GenomeSpace UI on a particular directory.</p>
+<p>
+	To do this you simply need to provide a parameter (<span style="color:#800080;">?pathOrUrl=</span>) to the GSUI launch URL telling it the path or the file that you want to open. For example,</p>
+<p style="margin-left: 40px;">
+<a href="https://gsui.genomespace.org/jsui/?pathOrUrl=/Home/Public/SharedData/">https://gsui.genomespace.org/jsui/?pathOrUrl=/Home/Public/SharedData/</a></p>
+<p>
+	This link will launch the GSUI, open at the directory path provided, in this case <strong><span style="color:#800080;">/Home/Public/SharedData/</span></strong>. </p>
+<p>
+	The limitation of this feature is that you need to provide a path that is visible to the GenomeSpace user opening the URL. For example, if I provide a path to one of my directories under<span style="font-family:courier new,courier,monospace;"> /Home/Ted/somedirectory</span>, then no one (other than me, user=Ted in this case) will be able to open the directory.  To work around this, <a href="http://genomespace.org/support/guides/user-guide/sections/share-data">share the directory</a> to the user or group you are giving the link to, and then use the path to the shared directory (as in the example above).</p>
+<p>
+	Also despite its name, path<strong>OrUrl</strong>, it does not yet take URLs.  As you may guess however, this is a feature that will be available in a future release...</p>
+<h3>
+<br/>
+	Update 11/17/2012</h3>
+<p>
+	As noted above, you have been able to specify a path to a file or directory in order to open GenomeSpace automatically at that file/directory as if you had navigated down through the directory structure, but now you can use the GenomeSpace URL to do the same.  For example, to open the TCGA Squamous Cell Dataset you can use either of these links:<br/>
+<br/>
+<a href="https://gsui.genomespace.org/jsui/gsui.html?pathOrUrl=/Public/SharedData/Datasets/TCGA/Squamous%20Cell%20Lung%20Cancer">https://gsui.genomespace.org/jsui/gsui.html?pathOrUrl=/Public/SharedData/Datasets/TCGA/Squamous%20Cell%20Lung%20Cancer</a><br/>
+<br/>
+<a href="https://gsui.genomespace.org/jsui/gsui.html?pathOrUrl=https://dm.genomespace.org/datamanager/v1.0/file/Home/Public/SharedData/Datasets/TCGA/Squamous%20Cell%20Lung%20Cancer">https://gsui.genomespace.org/jsui/gsui.html?pathOrUrl=https://dm.genomespace.org/datamanager/v1.0/file/Home/Public/SharedData/Datasets/TCGA/Squamous%20Cell%20Lung%20Cancer</a><br/>
+<br/>
+	Please note that the link URLs are available for all files by right-clicking on the file, and selecting View file link from the pop-up menu.        <br/>
+	 </p>
+<h1>Adding Private Tools</h1>
+<p class="byline">Posted by Ted Liefeld on Monday, August 27, 2012 at 11:51AM</p>
+<br/><p class="byline">Last updated on Thursday, August 30, 2012 at 10:07AM</p>
+<h3>
+	Introduction</h3>
+<p>
+	The GenomeSpace team is working on a new feature to allow you to add your own private tools to the GenomeSpace toolbar.  This will allow you to add your own versions of existing tools (e.g., your lab's GenePattern or Galaxy instance) or other tools that are not part of the public GenomeSpace installation into your toolbar.</p>
+<p>
+	For the first version of this feature, the GenomeSpace team must add the tools for you.  However, this will be followed shortly with an update to GenomeSpace that will let you add and remove tools yourself.</p>
+<p>
+<img alt="" src="/uploaded/content_privtool.jpg" style="width: 800px; height: 322px;"/></p>
+<p style="margin-left: 40px;">
+<span style="font-size:10px;">Image 1: Notice the 'Teds GenePattern' tool at the left edge of the toolbar</span></p>
+<h3>
+	Getting Started</h3>
+<p>
+	While it's no problem to add a tool as-is with no GenomeSpace features added, we recommend as a minimum that you add the ability to transfer data between your tool and GenomeSpace. You can find instructions on how to do this on our <a href="http://www.genomespace.org/support/api/genomespace-enablement-of-tools">technical documentation</a> page. That page also shows you how to implement login and authentication, launch a tool on a file, and add other GenomeSpace functionality.</p>
+<p>
+	To have a tool added send an email to <a href="http://gs-help@broadinstitute.org">gs-help(at)broadinstitute.org</a> with a subject line  "<span style="color:#008000;">Add a private tool to GenomeSpace</span>".  The body of the message should include the following information:</p>
+<ul>
+<li>
+		Tool name, e.g., "GenePattern"</li>
+<li>
+		Author/organization - who provided the tool, e.g., "GenePattern team from the Broad Instittute"</li>
+<li>
+		Short description - what the tool can do, e.g., "Performs a variety of genomic analyses"</li>
+<li>
+		Base URL - The URL to launch the tool, meaning either its web address or the address of a JNLP launcher for desktop applications, e.g., http://tedsserver.broadinstitute.org:8080/gp/receiveFile.jsf</li>
+<li>
+		(optional) Input file parameter - if the tool can be launched on a file, this is the parameter that should precede input file URLs
+		<ul>
+<li>
+				(optional) Allowable file formats for the input files
+				<ul>
+<li>
+						include extension, name, and a brief description</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+		(optional) <a href="http://www.genomespace.org/support/api/re-launch-avoidance-jrac--beta-1-0">JRAC</a> launch port - the port that desktop applications implementing the <a href="http://www.genomespace.org/support/api/re-launch-avoidance-jrac--beta-1-0">Java Relaunch Avoidance Code (JRAC)</a> specification listens to</li>
+<li>
+		(optional) Tool icon (~128x128 pixels).</li>
+<li>
+		(optional) The name of the GenomeSpace user groups with whom you want to share the tool.  Members of these groups will also see the tool in their toolbar.</li>
+</ul>
+<p>
+	Shortly after your email is received, the GenomeSpace administrators will enter these details into the GenomeSpace database and the tool will become available for testing on your toolbar.</p>
+<h3>
+	Limitations</h3>
+<ol>
+<li>
+		All tools need to be web-launchable.  Desktop applications like Excel cannot be handled at this time. If your tool is a Java-based application, it must be implemented as a Java Web start jnlp file.</li>
+<li>
+		Tool icons may take a while to show up.  In the meantime, they will use the default GenomeSpace icon in the toolbar.</li>
+<li>
+		You may not share tools with the gs-public group via this mechanism.</li>
+<li>
+		You may only share tools to groups of which you are yourself a member.</li>
+<li>
+		If you are using a private tool and would like to see it use more GenomeSpace features, please let us know and we will try to work with the developers to have it added.</li>
+<li>
+		If GenomeSpace-enabled, the tool should point to the GenomeSpace production environment as detailed in the <a href="http://www.genomespace.org/adopters">technical documentation</a>.</li>
+</ol>
+<h3>
+	Conclusion</h3>
+<p>
+	That's it!  Once your tool has been added, you should be able to launch it from GenomeSpace.  In the months to come, we will be adding functionality to GenomeSpace so that you will be able to add tools easily yourself.</p>
+<h1>New Feature: Customizing Your Toolbar
+</h1>
+<p class="byline">Posted by Ted Liefeld on Friday, June 22, 2012 at 06:02AM</p>
+<br/><p class="byline">Last updated on Tuesday, August 28, 2012 at 09:30AM</p>
+<h3>
+	Customizing Your Toolbar</h3>
+<p>
+	As the number of tools in GenomeSpace continues to grow, you may want to control which tools appear in your toolbar and in what order they appear to personalize your GenomeSpace.  You can now do this through our new feature: the Customize toolbar dialog.</p>
+<p>
+	To use this new functionality, go to the menu bar and select <em>View&gt;Customize toolbar...</em></p>
+<p>
+<img alt="" src="/uploaded/content_custtoolbar_menu.png"/></p>
+<p>
+	You will see the Customize toolbar dialog, which allows you to reorder and show/hide the items on the toolbar.</p>
+<p>
+<img alt="" src="/uploaded/content_custtoolbar_dialog.png"/></p>
+<p>
+	To take a tool off of the toolbar, simply clear its checkbox.  To reorder the tools on your toolbar, drag and drop them into the order you prefer.</p>
+<p>
+<img alt="" src="/uploaded/content_custtoolbar_dialog2.png"/></p>
+<p>
+	When you have the tools and arrangement you want set up in the dialog, click <em>Save</em>.  This will reorganize your toolbar, and this arrangement will persist every time you log in (unless you change it again!)</p>
+<p>
+	To make all the tools visible again and order them alphabetically, click <em>Revert</em>.  (But remember that if you want this view, you'll have to click <em>Save</em>.)</p>
+<p>
+<img alt="" src="/uploaded/content_custtoolbar_after.png"/></p>
+<p>
+	That's it!</p>
+<p>
+	Coming attraction: We are working on a GenomeSpace feature that will allow you to add private tools to your toolbar (such as your own GenePattern or Galaxy server).  These tools will only be visible to you and optionally a group of users you want to share them with.  This feature is still in development, but if you have a tool you would like added, please contact <a href="mailto:%67%73-%68%65%6c%70@%62%72%6f%61%64%69%6e%73%74%69%74%75%74%65.%6f%72%67">gs-help@broadinstitute.org</a> and we'll work with you to add it.</p>
+<p>
+	 </p>
+<p>
+	 </p>
+<h1>Sharing Files in GenomeSpace</h1>
+<p class="byline">Posted by Ted Liefeld on Thursday, June 07, 2012 at 02:49PM</p>
+<p>
+	GenomeSpace makes it easy for you to share files or folders with your collaborators and co-workers, or even the public.</p>
+<p>
+	To share a file or folder, select it in GenomeSpace and select <em>File&gt;Sharing</em> in the menu bar (or right-click the file/folder and select <em>Sharing</em> from the pop-up menu).  This opens up the Sharing &amp; Permissions dialog that lets you see the other users or user groups you have already shared the file with.  You can then click the <em>Edit Sharing</em> button to change who you are sharing with.</p>
+<h3>
+	Where Shared Files Show Up</h3>
+<p>
+	Files that have been shared to you directly or to a group you are a member of will appear automatically in your <em>Shared to [User Name]</em> directory, in a folder with the GenomeSpace username of the person who shared them to you.  If you don't see a file that you think should have access to, refresh that directory by selecting <em>View&gt;Refresh Current Directory</em> in the menu bar or by clicking on another directory and then back.</p>
+<p>
+	Files shared to the public will show up in the <em>Public</em> folder, also named according to the name of the user who shared them. Publicly shared files are also available for download by any non-GenomeSpace user.  You can right-click on the file and select <em>View file link</em> in the pop-up menu to get a link that can be copied and sent to anyone (even non-GenomeSpace users).</p>
+<h3>
+	Granting Permissions</h3>
+<p>
+	To share a file or folder with another user:</p>
+<ol>
+<li>
+		Select the file/folder and select <em>File&gt;Sharing</em> in the menu bar.</li>
+<li>
+		Click <em>Edit Sharing</em>.</li>
+<li>
+		Enter the user's GenomeSpace username in the <em>Share with User</em> section of the Edit Sharing &amp; Permissions dialog.  You'll need to ask them for their username as GenomeSpace does not share username information between users at this time. </li>
+<li>
+		Choose between sharing the file read only (Read), or with full permissions (Read, Write &amp; Delete). If you give full permissions those people can also change or replace your file.</li>
+</ol>
+<p>
+	To share the file with a group of users, you can select  a group from the drop-down menu in the <em>Share with Group</em> section of the Edit Sharing &amp; Permissions dialog. Then select the level of permissions you would like to grant.  To create or manage groups, click on the blue tool icon next to the drop-down menu.</p>
+<p>
+	To share with the public at large, select the <em>Allow public access</em> checkbox on the right and select the permissions you want to grant.</p>
+<p>
+	Once you have added a user, a group, the public, or any combination of the three, click the <em>Grant Permissions</em> button and the files will become available as you have specified.</p>
+<h3>
+	Removing Permissions</h3>
+<p>
+	From within the edit sharing dialog box, click on the red <img alt="" src="/uploaded/content_gsug_delsharingperm.jpg" style="width: 12px; height: 13px;"/> next to the permission you wish to remove.  The permission will be removed immediately.  If you remove the read permission from a file, it will also remove the write and delete permission (since it makes no sense to let them write to a file they cannot see).</p>
+<h3>
+	Folders and Inherited Permissions</h3>
+<p>
+	If you grant permissions to a folder, all the files in that folder and its subfolders will inherit those permissions. So if you were to make your home directory writable by a colleague, then that person would be able to fully access any of your files (for better or worse). </p>
+<p>
+	For inherited permissions, they will show up in the dialog without the red <img alt="" src="/uploaded/content_gsug_delsharingperm.jpg" style="width: 12px; height: 13px;"/> to remove the permission.  If you want to eliminate this permission, you'll need to do it from the folder you originally applied it to.</p>
+<h1>GenomeSpace and Single Sign-On</h1>
+<p class="byline">Posted by GenomeSpace Development Team on Monday, May 14, 2012 at 03:04PM</p>
+<br/><p class="byline">Last updated on Tuesday, May 15, 2012 at 01:27PM</p>
+<p>
+	GenomeSpace attempts to minimize sign-ons but does not have true single sign on (yet).  Currently it's more of a dual-sign on system.  Web applications can sign on using the GenomeSpace OpenID provider.  Desktop applications can sign on using the<a href="http://www.genomespace.org/support/api/cdk"> Java CDK</a>. These two systems do not yet communicate with each other due to technical limitations.  Specifically, the OpenID protocol requires the ability for an OpenID provider to be able to establish a secure HTTP connection to a client.  For desktop applications this is frequently not possible due to organizational firewalls.  The CDK shares login via storage of a token (like a browser cookie) on the client machine. Web applications are prevented (rightly) by the browsers from accessing files on the client machine and therefore they can't use this mechanism either.  As a result the GenomeSpace tools use one of these two systems:</p>
+<ul>
+<li>
+		OpenID:  Galaxy, GenePattern, InSilico DB, GenomeSpace user interface</li>
+<li>
+		CDK:  Cytoscape, Genomica, the Integrative Genomics Viewer (IGV)</li>
+</ul>
+<p>
+	The UCSC Table Browser is different in that it is not using OpenID, instead relying on the same protocol as the CDK, but without the ability to share the token with other applications.  Therefore for the time being, users must log into UCSC separately.</p>
+<p>
+	Future posts will include updates on our efforts to establish a single sign-on across GenomeSpace tools.</p>
+<h1>Safari - Uploads are disabled</h1>
+<p class="byline">Posted by Ted Liefeld on Thursday, May 10, 2012 at 02:53PM</p>
+<br/><p class="byline">Last updated on Tuesday, May 15, 2012 at 01:27PM</p>
+<p>
+	The GenomeSpace File Uploader Applet is not working on the Safari browser on some Macs  due to changes made by Apple to prevent the Flashback trojan.  If this affects you, please update your Safari to the lates version or use Firefox or Chrome instead.</p>
+<p>
+	If you are still at version 5.0.5 or earlier, you can download 5.0.6 from here:<a href="http://support.apple.com/kb/DL1422" target="_blank"> http://support.apple.com/kb/DL1422</a></p>
+<p>
+	For Snow Leopard, Safari 5.1.7 is available here: <a href="http://support.apple.com/kb/DL1531" target="_blank">http://support.apple.com/kb/DL1531</a></p>
+<div class="center">Displaying results <strong>51 - 58</strong> of <strong>58</strong> in total<br/>
+<div class="pagination"><a class="previous_page" href="/blog/page/5" rel="prev">← Previous</a> <a href="/blog/" rel="start">1</a> <a href="/blog/page/2">2</a> <a href="/blog/page/3">3</a> <a href="/blog/page/4">4</a> <a href="/blog/page/5" rel="prev">5</a> <em class="current">6</em> <span class="next_page disabled">Next →</span></div></div>
+</td>
+</tr></table>
+</div>
+</div>
+<div id="footer">
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+	$(document).ready(function() {
+		$("a.toggle_link").click(function() {
+			var image = $(this).children("img");
+			$(image).attr("src", $(image).attr("src") == "/assets/plus.png" ? "/assets/minus.png" : "/assets/plus.png");
+		});
+	});
+
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54489169-1', 'auto');
+  ga('send', 'pageview');
+
+
+//]]>
+</script></div></body>
+</html>

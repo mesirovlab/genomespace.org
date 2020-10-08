@@ -1,0 +1,722 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom">
+  <id>tag:www.genomespace.org,2005:/system-status</id>
+  <link rel="alternate" type="text/html" href="http://www.genomespace.org"/>
+  <link rel="self" type="application/atom+xml" href="http://www.genomespace.org/system-status.atom"/>
+  <title>GenomeSpace System Status</title>
+  <updated>2019-11-15T09:46:55-05:00</updated>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/76</id>
+    <published>2019-11-15T09:46:55-05:00</published>
+    <updated>2019-11-18T18:02:31-05:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2019/11/15/14-46"/>
+    <title>GenomeSpace System Status as of 11.18.19 06:02PM, Priority: Urgent</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	&lt;span style="color: rgb(93, 157, 199); font-size: 20px;"&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;
+	&lt;font color="#ff0000"&gt;&lt;b&gt;With the discontinuation of NHGRI funding for GenomeSpace we have shut down the servers.&amp;nbsp;&lt;/b&gt;&lt;/font&gt;&lt;/h2&gt;
+&lt;p&gt;
+	&lt;span style="font-size:14px;"&gt;GenomeSpace Recipes can be found at&amp;nbsp; &lt;a href="http://recipes.genomespace.org/"&gt;http://recipes.genomespace.org/&lt;/a&gt; however data transfer through GenomeSpace will not be available.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;span style="font-size:14px;"&gt;More details can be found at&amp;nbsp; &lt;a href="http://www.genomespace.org/news/the-genomespace-project-is-ending"&gt;http://www.genomespace.org/news/the-genomespace-project-is-ending&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/75</id>
+    <published>2019-11-07T14:37:04-05:00</published>
+    <updated>2019-11-07T14:39:52-05:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2019/11/07/19-37"/>
+    <title>GenomeSpace System Status as of 11.07.19 02:39PM, Priority: Urgent</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;br/&gt;
+&lt;h2&gt;
+	.&lt;/h2&gt;
+&lt;h2&gt;
+	&lt;font color="red"&gt;&lt;strong&gt;Download your files and data soon!&lt;/strong&gt;&lt;/font&gt;&lt;/h2&gt;
+&lt;p&gt;
+	&lt;span style="font-size:18px;"&gt;&lt;strong&gt;The GenomeSpace project ends on November 15, 2019&lt;/strong&gt;&lt;/span&gt; due to expiration of its NHGRI funding. Please save any data from your GenomeSpace account by transferring it to your own storage before that date. More details at &lt;a href="http://The GenomeSpace project ends on November 15, 2019 due to expiration of its NHGRI funding. Please save any data from your GenomeSpace account by transferring it to your own storage before that date. More details at http://www.genomespace.org/news/the-genomespace-project-is-ending"&gt;http://www.genomespace.org/news/the-genomespace-project-is-ending&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/74</id>
+    <published>2019-09-22T16:29:07-04:00</published>
+    <updated>2019-09-22T16:29:07-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2019/09/22/20-29"/>
+    <title>GenomeSpace System Status as of 09.22.19 04:29PM, Priority: Urgent</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;"&gt;
+	&lt;span id="docs-internal-guid-4a85694d-7fff-c4aa-2319-a010c22948d1"&gt;&lt;span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; white-space: pre-wrap;"&gt;The GenomeSpace project ends on November 15, 2019 due to expiration of its NHGRI funding. Please save any data from your GenomeSpace account by transferring it to your own storage before that date. More details at &lt;a href="http://www.genomespace.org/news/the-genomespace-project-is-ending"&gt;http://www.genomespace.org/news/the-genomespace-project-is-ending&lt;/a&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;div&gt;
+	&amp;nbsp;&lt;/div&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/73</id>
+    <published>2019-04-03T18:51:22-04:00</published>
+    <updated>2019-04-04T15:04:11-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2019/04/03/22-51"/>
+    <title>GenomeSpace System Status as of 04.04.19 03:04PM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;div&gt;
+	&lt;strong&gt;Update&lt;/strong&gt;:&amp;nbsp; Galaxy developers are hoping to restore GenomeSpace connectivity later this month (April, 2019).&lt;/div&gt;
+&lt;div&gt;
+	&amp;nbsp;&lt;/div&gt;
+&lt;div&gt;
+	We just learned that Galaxy has deployed a new version which is not compatible with GenomeSpace. Because funding for the GenomeSpace project ends soon we will not be able to make the changes required to continue communication between Galaxy and GenomeSpace. We sincerely regret any inconvenience this may cause you.&amp;nbsp; However, we note that to the best of our knowledge all of the other GenomeSpace member tools remain accessible.&amp;nbsp;&lt;/div&gt;
+&lt;div&gt;
+	&amp;nbsp;&lt;/div&gt;
+&lt;div&gt;
+	Currently all systems are operating normally.&lt;/div&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/72</id>
+    <published>2018-11-26T15:02:12-05:00</published>
+    <updated>2018-12-06T12:38:41-05:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2018/11/26/20-02"/>
+    <title>GenomeSpace System Status as of 12.06.18 12:38PM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;div&gt;
+	The GenePattern server is moving to http://cloud.genepattern.org&amp;nbsp; This new home allows it to provide more flexible&amp;nbsp;compute&amp;nbsp;power &amp;amp; support the growing analysis needs of the genomics research&amp;nbsp;community,&amp;nbsp;while remaining a free resource to the community. This new GenePattern instance is available to be added to your GenomeSpace toolbars now, and the old one will be removed Wed November 28th at noon EST.&amp;nbsp; After that time the retiring GenePattern instance will be removed from the GenomeSpace toolbar, though you will still be able to export files to GenomeSpace from it.&lt;/div&gt;
+&lt;div&gt;
+	&amp;nbsp;&lt;/div&gt;
+&lt;div&gt;
+	Read more:&lt;a href="http://software.broadinstitute.org/cancer/software/genepattern/blog/2018/10/25/genepattern-is-moving-to-the-cloud"&gt;&amp;nbsp;on the GenePattern blog&lt;/a&gt;&lt;/div&gt;
+&lt;div&gt;
+	&amp;nbsp;&lt;/div&gt;
+&lt;div&gt;
+	Currently,&amp;nbsp;all systems are operating normally.&lt;/div&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/71</id>
+    <published>2018-10-30T14:37:41-04:00</published>
+    <updated>2018-10-30T14:39:52-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2018/10/30/18-37"/>
+    <title>GenomeSpace System Status as of 10.30.18 02:39PM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;div&gt;
+	The GenePattern server is moving to http://cloud.genepattern.org&amp;nbsp; This new home allows it to provide more flexible compute power &amp;amp; support the growing analysis needs of the genomics research community, while remaining a free resource to the community. This new GenePattern instance is available to be added to your GenomeSpace toolbars now, and the old one will be removed at the end of December.&lt;/div&gt;
+&lt;div&gt;
+	&amp;nbsp;&lt;/div&gt;
+&lt;div&gt;
+	Read more:&lt;a href="http://https://buff.ly/2O5dXd1"&gt;&amp;nbsp;https://buff.ly/2O5dXd1&lt;/a&gt;&lt;/div&gt;
+&lt;div&gt;
+	&amp;nbsp;&lt;/div&gt;
+&lt;div&gt;
+	Currently all systems are operating normally.&lt;/div&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/69</id>
+    <published>2017-04-11T21:09:02-04:00</published>
+    <updated>2017-04-11T21:09:02-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2017/04/12/01-09"/>
+    <title>GenomeSpace System Status as of 04.11.17 09:09PM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	Currently all systems are operating normally.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/67</id>
+    <published>2017-02-28T16:32:31-05:00</published>
+    <updated>2017-02-28T16:32:31-05:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2017/02/28/21-32"/>
+    <title>GenomeSpace System Status as of 02.28.17 04:32PM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	All systems are operating normally.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/66</id>
+    <published>2017-02-28T14:34:37-05:00</published>
+    <updated>2017-02-28T16:32:06-05:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2017/02/28/19-34"/>
+    <title>GenomeSpace System Status as of 02.28.17 04:32PM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	GenomeSpace is currently down do to the Amazon AWS S3 outage. &amp;nbsp;Engineers are working to remedy the problem.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/64</id>
+    <published>2016-07-26T12:29:59-04:00</published>
+    <updated>2016-07-26T12:29:59-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2016/07/26/16-29"/>
+    <title>GenomeSpace System Status as of 07.26.16 12:29PM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	&lt;span class="status"&gt;All systems are operating normally.&lt;/span&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/62</id>
+    <published>2015-10-01T15:43:01-04:00</published>
+    <updated>2016-07-18T07:00:10-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2016/07/18/07-00"/>
+    <title>GenomeSpace System Status as of 07.18.16 07:00AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	All systems are operating normally.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/60</id>
+    <published>2015-09-18T15:52:06-04:00</published>
+    <updated>2015-10-01T07:00:09-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2015/10/01/07-00"/>
+    <title>GenomeSpace System Status as of 10.01.15 07:00AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	All systems are operating normally.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/59</id>
+    <published>2015-09-18T09:54:38-04:00</published>
+    <updated>2015-09-18T15:51:46-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2015/09/18/09-54"/>
+    <title>GenomeSpace System Status as of 09.18.15 03:51PM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	The genomespace.org SSL certificate has expired. &amp;nbsp;We are working to correct this as quickly as possible. &amp;nbsp;In the meantime you may see errors accessing the GenomeSpace User interface and retrieving files from GenomeSpace. &amp;nbsp;No files or data have been lost and we will strive to make this outage as short as possible.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/56</id>
+    <published>2015-03-25T09:04:03-04:00</published>
+    <updated>2015-09-18T07:00:09-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2015/09/18/07-00"/>
+    <title>GenomeSpace System Status as of 09.18.15 07:00AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	All systems are operating normally.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/55</id>
+    <published>2015-03-24T07:49:37-04:00</published>
+    <updated>2015-03-24T07:49:37-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2015/03/24/07-49"/>
+    <title>GenomeSpace System Status as of 03.24.15 07:49AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	Due to server maintenance the GSUI will be periodically unable to display the GenomeSpace &amp;#39;Whats new&amp;#39; content and tool help pages today 3/24/2015&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/54</id>
+    <published>2014-09-18T06:29:36-04:00</published>
+    <updated>2015-03-24T07:00:11-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2015/03/24/07-00"/>
+    <title>GenomeSpace System Status as of 03.24.15 07:00AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	All systems are operating normally.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/53</id>
+    <published>2014-08-18T10:00:24-04:00</published>
+    <updated>2014-09-17T07:00:08-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2014/09/17/07-00"/>
+    <title>GenomeSpace System Status as of 09.17.14 07:00AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	All systems are operating normally.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/51</id>
+    <published>2014-08-15T15:43:39-04:00</published>
+    <updated>2014-08-21T10:42:32-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2014/08/15/15-43"/>
+    <title>GenomeSpace System Status as of 08.21.14 10:42AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	The GenomeSpace User Interface is experiencing problems and is temporarily offline. &amp;nbsp;We hope to have functionality restored shortly.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/52</id>
+    <published>2014-08-15T16:47:26-04:00</published>
+    <updated>2014-08-15T16:47:26-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2014/08/15/16-47"/>
+    <title>GenomeSpace System Status as of 08.15.14 04:47PM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	The issue with the GenomeSpace User Interface has been resolved. &amp;nbsp;All systems are operating normally.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/49</id>
+    <published>2014-05-09T09:29:38-04:00</published>
+    <updated>2014-08-15T07:00:09-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2014/08/15/07-00"/>
+    <title>GenomeSpace System Status as of 08.15.14 07:00AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	&lt;span style="background-color: rgb(241, 242, 242);"&gt;All systems are operating normally.&lt;/span&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/48</id>
+    <published>2014-05-08T14:18:09-04:00</published>
+    <updated>2014-05-09T09:29:28-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2014/05/08/14-18"/>
+    <title>GenomeSpace System Status as of 05.09.14 09:29AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	The GenomeSpace servers are currently experiencing an outage.&amp;nbsp; The GenomeSpace team is working on the issue.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/47</id>
+    <published>2014-04-09T13:14:09-04:00</published>
+    <updated>2014-05-08T07:00:14-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2014/05/08/07-00"/>
+    <title>GenomeSpace System Status as of 05.08.14 07:00AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	&lt;span style="background-color: rgb(241, 242, 242);"&gt;All systems are operating normally.&lt;/span&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/45</id>
+    <published>2013-09-16T08:32:58-04:00</published>
+    <updated>2014-04-08T07:00:15-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2014/04/08/07-00"/>
+    <title>GenomeSpace System Status as of 04.08.14 07:00AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	&lt;span style="background-color: rgb(241, 242, 242);"&gt;All systems are operating normally.&lt;/span&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/44</id>
+    <published>2013-09-13T11:29:49-04:00</published>
+    <updated>2013-09-13T14:02:54-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2013/09/13/11-29"/>
+    <title>GenomeSpace System Status as of 09.13.13 02:02PM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	Amazon is has resolved their problems with the US-east region which hosts GenomeSpace.&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	All systems are operating normally.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/43</id>
+    <published>2013-07-30T14:02:32-04:00</published>
+    <updated>2013-09-13T07:00:29-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2013/09/13/07-00"/>
+    <title>GenomeSpace System Status as of 09.13.13 07:00AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	All systems are operating normally.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/42</id>
+    <published>2013-05-14T15:46:07-04:00</published>
+    <updated>2013-07-30T07:00:35-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2013/07/30/07-00"/>
+    <title>GenomeSpace System Status as of 07.30.13 07:00AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	All systems are operating normally.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/41</id>
+    <published>2013-05-14T15:20:09-04:00</published>
+    <updated>2013-05-14T15:45:46-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2013/05/14/15-20"/>
+    <title>GenomeSpace System Status as of 05.14.13 03:45PM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	The recently released versions of firefox (20.0, 21.0)&amp;nbsp; cause the GenomeSpace User Interface page to reload when launching IGV on a file from that page.&amp;nbsp; We are working to resolve this problem.&amp;nbsp; As a workaround, use another browser (Chrome, Safari) or launch IGV then load files from GenomeSpace within IGV&amp;#39;s GenomeSpace menu&lt;/p&gt;
+&lt;p&gt;
+	All other systems are operating normally.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/40</id>
+    <published>2013-05-03T11:54:18-04:00</published>
+    <updated>2013-05-14T07:00:46-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2013/05/14/07-00"/>
+    <title>GenomeSpace System Status as of 05.14.13 07:00AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	All systems are operating normally.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/38</id>
+    <published>2013-03-04T06:33:50-05:00</published>
+    <updated>2013-04-22T07:00:49-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2013/04/22/07-00"/>
+    <title>GenomeSpace System Status as of 04.22.13 07:00AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	All systems are operating normally.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/37</id>
+    <published>2012-11-30T06:31:33-05:00</published>
+    <updated>2013-03-01T07:00:55-05:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2013/03/01/07-00"/>
+    <title>GenomeSpace System Status as of 03.01.13 07:00AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	All systems are operating normally.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/36</id>
+    <published>2012-11-29T12:44:35-05:00</published>
+    <updated>2012-11-30T06:31:11-05:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2012/11/29/12-44"/>
+    <title>GenomeSpace System Status as of 11.30.12 06:31AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	Following the recent maintenance there is a problem with file sharing in GenomeSpace.&amp;nbsp; 1. You cannot currently unshare a file you have shared to others.&amp;nbsp; Engineers are working on a fix.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/35</id>
+    <published>2012-11-28T13:22:23-05:00</published>
+    <updated>2012-11-30T06:30:57-05:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2012/11/28/13-22"/>
+    <title>GenomeSpace System Status as of 11.30.12 06:30AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	The GenomeSpace servers will be unavailable from 11:30 to 1:30 EST on Thursday November 29th, for maintenance.&lt;/p&gt;
+&lt;p&gt;
+	All systems are operating normally.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/34</id>
+    <published>2012-11-19T10:01:21-05:00</published>
+    <updated>2012-11-19T11:29:01-05:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2012/11/19/10-01"/>
+    <title>GenomeSpace System Status as of 11.19.12 11:29AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	GenomeSpace has transitioned to using GenePattern&amp;#39;s public server.&amp;nbsp; Full details are available at &lt;a href="http://www.genomespace.org/news/genomespace-moved-to-genepattern-s-production-servers"&gt;http://www.genomespace.org/news/genomespace-moved-to-genepattern-s-production-servers&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;
+	All systems are operating normally.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/33</id>
+    <published>2012-10-31T13:44:11-04:00</published>
+    <updated>2012-11-19T07:00:39-05:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2012/11/19/07-00"/>
+    <title>GenomeSpace System Status as of 11.19.12 07:00AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	All systems are operating normally.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/31</id>
+    <published>2012-10-22T09:51:33-04:00</published>
+    <updated>2012-10-25T10:15:01-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2012/10/22/09-51"/>
+    <title>GenomeSpace System Status as of 10.25.12 10:15AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	We will be transitioning the Galaxy instance used by GenomeSpace to the main Galaxy server at &lt;a href="http://main.g2.bx.psu.edu/" style="color: rgb(17, 85, 204); font-family: arial, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);" target="_blank"&gt;main.g2.bx.psu.edu&lt;/a&gt; at noon on Wednesday October 24th.&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;
+	Details are available at &lt;a href="http://www.genomespace.org/news/genomespace-moving-to-galaxy-s-production-servers"&gt;http://www.genomespace.org/news/genomespace-moving-to-galaxy-s-production-servers&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;
+	All systems are operating normally.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/30</id>
+    <published>2012-10-15T10:59:44-04:00</published>
+    <updated>2012-10-22T07:00:44-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2012/10/22/07-00"/>
+    <title>GenomeSpace System Status as of 10.22.12 07:00AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	All systems are operating normally.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/27</id>
+    <published>2012-09-03T08:38:27-04:00</published>
+    <updated>2012-10-15T07:00:39-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2012/10/15/07-00"/>
+    <title>GenomeSpace System Status as of 10.15.12 07:00AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	All systems are operating normally.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/26</id>
+    <published>2012-08-30T09:33:36-04:00</published>
+    <updated>2012-08-30T09:33:36-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2012/08/30/09-33"/>
+    <title>GenomeSpace System Status as of 08.30.12 09:33AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	Maintenance has been completed on the GenomeSpace servers. They now use the default https ports which should improve usability for those behind restrictive firewalls.&lt;/p&gt;
+&lt;p&gt;
+	All systems are operating normally.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/25</id>
+    <published>2012-08-28T10:39:29-04:00</published>
+    <updated>2012-08-30T09:32:44-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2012/08/28/10-39"/>
+    <title>GenomeSpace System Status as of 08.30.12 09:32AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	Service will be interrupted on Thursday August 30 between 9-11am EST as the GenomeSpace servers are updated.&lt;/p&gt;
+&lt;p&gt;
+	All systems are operating normally.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/24</id>
+    <published>2012-08-27T11:15:24-04:00</published>
+    <updated>2012-08-27T11:16:09-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2012/08/27/11-15"/>
+    <title>GenomeSpace System Status as of 08.27.12 11:16AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	Service will be interrupted on Tuesday August 28 between 9-11am EST as the GenomeSpace servers are updated.&lt;/p&gt;
+&lt;p&gt;
+	All systems are operating normally.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/23</id>
+    <published>2012-07-05T08:59:35-04:00</published>
+    <updated>2012-08-27T07:00:34-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2012/08/27/07-00"/>
+    <title>GenomeSpace System Status as of 08.27.12 07:00AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	All systems are operating normally.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/22</id>
+    <published>2012-07-03T06:45:35-04:00</published>
+    <updated>2012-07-03T07:07:37-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2012/07/03/06-45"/>
+    <title>GenomeSpace System Status as of 07.03.12 07:07AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	The file preview functionality in the GenomeSpace User Interface has been fixed.&lt;/p&gt;
+&lt;p&gt;
+	All systems are operating normally.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/21</id>
+    <published>2012-06-20T08:02:36-04:00</published>
+    <updated>2012-07-02T07:00:27-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2012/07/02/07-00"/>
+    <title>GenomeSpace System Status as of 07.02.12 07:00AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	All systems are operating normally.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/19</id>
+    <published>2012-06-15T08:12:54-04:00</published>
+    <updated>2012-06-15T08:12:54-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2012/06/15/08-12"/>
+    <title>GenomeSpace System Status as of 06.15.12 08:12AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	The issue with user folders has been corrected.&lt;/p&gt;
+&lt;p&gt;
+	All systems are operating normally.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/17</id>
+    <published>2012-06-08T08:46:09-04:00</published>
+    <updated>2012-06-14T07:00:33-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2012/06/14/07-00"/>
+    <title>GenomeSpace System Status as of 06.14.12 07:00AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	All systems are operating normally.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/16</id>
+    <published>2012-06-06T15:13:34-04:00</published>
+    <updated>2012-06-06T15:13:34-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2012/06/06/15-13"/>
+    <title>GenomeSpace System Status as of 06.06.12 03:13PM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	The GenomeSpace user interface has been updated to have more consistent menus.&amp;nbsp; A spurious authentication dialog seen when logging out and back in has been put to rest and several other minor bugs have been fixed.&lt;/p&gt;
+&lt;p&gt;
+	All systems are operating normally.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/15</id>
+    <published>2012-06-05T05:14:27-04:00</published>
+    <updated>2012-06-05T07:15:14-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2012/06/05/05-14"/>
+    <title>GenomeSpace System Status as of 06.05.12 07:15AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	The GenomeSpace User Interface has been updated with a new look and several bug fixes.&lt;/p&gt;
+&lt;p&gt;
+	The problem previewing files with spaces in the path has been resolved.&lt;/p&gt;
+&lt;p&gt;
+	All systems are otherwise operating normally.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/14</id>
+    <published>2012-05-31T10:11:49-04:00</published>
+    <updated>2012-05-31T10:11:49-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2012/05/31/10-11"/>
+    <title>GenomeSpace System Status as of 05.31.12 10:11AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	The JSUI has been updated to reduce or eliminate the warnings that a script is taking a long time to execute.&lt;/p&gt;
+&lt;p&gt;
+	All systems are currently operating normally.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/13</id>
+    <published>2012-05-28T11:13:30-04:00</published>
+    <updated>2012-05-28T11:13:30-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2012/05/28/11-13"/>
+    <title>GenomeSpace System Status as of 05.28.12 11:13AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	All systems are currently operating normally.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/11</id>
+    <published>2012-05-25T09:28:37-04:00</published>
+    <updated>2012-05-25T09:28:37-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2012/05/25/09-28"/>
+    <title>GenomeSpace System Status as of 05.25.12 09:28AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	All systems are currently operating normally.&lt;/p&gt;
+&lt;p&gt;
+	The GenomeSpace user interface was updated.&amp;nbsp;&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;
+		you can now view a preview of text files on the GenomeSpace servers&lt;/li&gt;
+	&lt;li&gt;
+		a gct/res (GenePattern) to .geneset.tab (Genomica) format converter was added&lt;/li&gt;
+	&lt;li&gt;
+		Launching desktop apps (IGV, Cytoscape, Genomica) no longer generates spurious blank windows on Safari&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+	&amp;nbsp;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/10</id>
+    <published>2012-05-24T07:40:11-04:00</published>
+    <updated>2012-05-24T07:40:11-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2012/05/24/07-40"/>
+    <title>GenomeSpace System Status as of 05.24.12 07:40AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	The GenomeSpace User Interface has been updated with several bug fixes.&lt;/p&gt;
+&lt;p&gt;
+	All systems are currently operating normally.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/9</id>
+    <published>2012-05-22T10:00:09-04:00</published>
+    <updated>2012-05-22T10:00:09-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2012/05/22/10-00"/>
+    <title>GenomeSpace System Status as of 05.22.12 10:00AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	All systems are operating normally&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/8</id>
+    <published>2012-05-21T11:57:45-04:00</published>
+    <updated>2012-05-21T11:58:21-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2012/05/21/11-57"/>
+    <title>GenomeSpace System Status as of 05.21.12 11:58AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	The GenomeSpace servers and User Interface have been updated.&amp;nbsp; Several minor bugs have been fixed.&lt;/p&gt;
+&lt;p&gt;
+	All systems are operating normally.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/6</id>
+    <published>2012-05-17T13:22:47-04:00</published>
+    <updated>2012-05-21T10:28:26-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2012/05/21/07-00"/>
+    <title>GenomeSpace System Status as of 05.21.12 10:28AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	All systems are operating normally.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/5</id>
+    <published>2012-05-14T09:17:00-04:00</published>
+    <updated>2012-05-14T09:53:30-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2012/05/14/09-17"/>
+    <title>GenomeSpace System Status as of 05.14.12 09:53AM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	The maintenance has been completed.&amp;nbsp; The GenomeSpace servers are again available for use.&lt;/p&gt;
+&lt;p&gt;
+	All systems are operating normally&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/4</id>
+    <published>2012-05-10T14:58:46-04:00</published>
+    <updated>2012-05-10T14:58:46-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2012/05/10/14-58"/>
+    <title>GenomeSpace System Status as of 05.10.12 02:58PM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	The GenomeSpace servers will be down for Maintenance from approximately 9am till 12 noon Monday May 14th.&lt;/p&gt;
+&lt;p&gt;
+	All systems are currently operating normally.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:www.genomespace.org,2005:SystemMessage/1</id>
+    <published>2012-05-03T14:56:46-04:00</published>
+    <updated>2012-05-03T14:56:46-04:00</updated>
+    <link rel="alternate" type="text/html" href="/system-status/2012/05/03/14-56"/>
+    <title>GenomeSpace System Status as of 05.03.12 02:56PM, Priority: General</title>
+    <author>The GenomeSpace Team</author>
+    <content type="html">&lt;p&gt;
+	All systems are operating normally.&lt;/p&gt;
+</content>
+  </entry>
+</feed>

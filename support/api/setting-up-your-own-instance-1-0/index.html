@@ -1,0 +1,661 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>GenomeSpace: 
+	  	Setting Up Your Own Instance (version beta 1.0)
+  </title>
+<link href="/assets/site.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/demo_table_jui.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="/assets/jquery-ui-1.8.4.custom.css" media="screen" rel="stylesheet" type="text/css"/>
+<script src="/assets/application.js" type="text/javascript"></script>
+<link href="/assets/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+<meta content="authenticity_token" name="csrf-param"/>
+<meta content="E3i3WMSRJoWAMzTT88oYuTwTfhhGwoTG+m3QRlFVxkA=" name="csrf-token"/>
+</head>
+<body>
+<div id="page_wrapper">
+<div id="page_content">
+<div id="logo"><a href="/"><img alt="Gslogo" src="/assets/gslogo.png"/></a></div>
+<div id="login_menu"><a href="https://gsui.genomespace.org/jsui/gsui.html">User Login</a>
+</div>
+<ul id="nav">
+<li id="what-is-genomespace"><a href="/what-is-genomespace">What is GenomeSpace?</a>
+</li>
+<li id="tools"><a href="/support/tools">Tools</a>
+</li>
+<li id="recipes"><a href="http://recipes.genomespace.org">Recipes</a></li>
+<li id="documentation"><a href="/documentation">Documentation</a>
+<ul>
+<li><a href="/support/guides/user-guide">User Guide</a>
+<p>Read the detailed guide to the user interface</p>
+</li>
+<li><a href="/support/guides/tool-guide">Tool Guide</a>
+<p>Learn how to access GenomeSpace functionality for each Tool</p>
+</li>
+<li><a href="/faq">FAQ</a>
+<p>See answers to frequently asked questions</p>
+</li>
+<li><a href="/presentations-and-videos">Presentations and Videos</a>
+<p>Access talks by the GenomeSpace community</p>
+</li>
+<li><a href="/support/guides/end-to-end-analyses">End-to-End Analyses</a>
+<p>Provides description for end-to-end analyses.</p>
+</li>
+</ul>
+</li>
+<li id="developers"><a href="/for-developers">Developers</a>
+<ul>
+<li><a href="/what-can-genomespace-do-for-tool-developers">What Can GenomeSpace Do For Tool Developers?</a>
+<p></p>
+</li>
+<li><a href="/adopters">Technical Documentation</a>
+<p></p>
+</li>
+<li><a href="/source-code">Source Code and Distributions</a>
+<p></p>
+</li>
+<li><a href="/developer-support-and-feedback">Developer Support and Feedback</a>
+<p></p>
+</li>
+</ul>
+</li>
+<li id="support"><a href="/support">Support</a>
+</li>
+<li id="about"><a href="/about">About</a>
+</li>
+<li class="search">
+<div id="search_box">
+<form accept-charset="UTF-8" action="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"/></div>
+<input class="search" id="search" name="search" type="text"/>
+<input class="searchBtn" type="submit"/>
+</form> </div>
+</li>
+</ul>
+<script type="text/javascript">
+//<![CDATA[
+
+		// grab page category and use to highlight correct menu item.  if none present, parse url to find where the user is.
+		var category = "";
+		if ( !category ){
+			url_parts = $(location).attr('pathname').split("/");
+			url_string = url_parts[1] + "/" + url_parts[2]
+			if (url_string == "support/tools"){
+				category = "tools"
+			}
+			else if (url_string == "support/guides"){
+				url_parts[3] == "recipes" ? category = "recipes" : category = "documentation"
+			}
+			else if (url_parts[1] == "genomespace-recipes")
+			{
+                category = "gsrecipes"
+            }
+			else if (url_string == "support/api"){
+				category = "developers"
+			}
+			else if ((url_string == "register/undefined") || (url_string == "request_invite/undefined")) {
+				category = "what-is-genomespace"
+			}
+			else if (url_string == "/undefined") {
+				category = ""
+			}
+			else if (url_string == "support/undefined") {
+				category = "support"
+			}
+		}
+		$("#" + category).addClass("current");
+
+
+//]]>
+</script>
+<div id="content_panel">
+<table width="100%"><tr>
+<td id="main_content">
+<div id="notice"></div>
+<div id="alert"></div>
+<form accept-charset="UTF-8" action="/support/api/setting-up-your-own-instance-1-0" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"/><input name="authenticity_token" type="hidden" value="E3i3WMSRJoWAMzTT88oYuTwTfhhGwoTG+m3QRlFVxkA="/></div>
+<span>
+<label class="inline" for="select_component">Select Version:</label>
+<select id="select_component" name="select[component]"><option selected="selected" value="setting-up-your-own-instance-1-0">beta 1.0</option>
+<option value="setting-up-your-own-instance-beta--">beta 0.1</option></select>
+<input class="inline" name="commit" type="submit" value="Display"/> | 
+	<p class="inline"><a href="/adopters">Back</a></p>
+</span>
+</form><hr/>
+<h1>Setting Up Your Own Instance (version beta 1.0)
+</h1>
+<h1>
+	Introduction</h1>
+<p>
+	This document describes how to set up your own instance of GenomeSpace services. </p>
+<p>
+	GenomeSpace is designed to run on Amazon Web Services. The basic steps involve launching our provided Amazon Machine Image and then customizing the settings to correspond to your own Amazon credentials, machine DNS name, email accounts, etc.</p>
+<p>
+	This document assumes the person installing the GenomeSpace instance has some familiarity with Amazon AWS and a basic understanding of HTTP and HTTPS security, and is also comfortable working on a Unix command line.</p>
+<h1>
+	Prerequisites</h1>
+<h2>
+	1. An Amazon Web Services account</h2>
+<p>
+	GenomeSpace currently runs on the Amazon Web Services cloud exclusively and makes extensive use of its APIs. If you do not have an account with Amazon, go to <a href="http://aws.amazon.com/">http://aws.amazon.com/</a>.</p>
+<h2>
+	2. A DNS entry for your server</h2>
+<p>
+	A DNS entry allows it to be accessed with a URL, such as https://genomespace.myinstitution.edu/jsui.</p>
+<h2>
+	3. A security certificate that matches the DNS entry</h2>
+<p>
+	All communications with the GenomeSpace servers occur via HTTPS, and thus require a security certificate, preferably from a well-known certificate authority. The public GenomeSpace instance uses a security certificate issued by <a href="http://www.networksolutions.com">Network Solutions</a> for domain *.genomespace.org (a “wildcard” certificate), but you can use whatever certificate source you prefer and the certificate can be specific to a server. We have included a dummy certificate so that you can start up the service.  However, there will be problems accessing the services without an “official” security certificate, such as not being able to upload files, security warnings from web browsers, etc. Using a self-issued certificate is likely to cause the same problems.</p>
+<h2>
+	4. An email account that can be used to send email notification to users during registration</h2>
+<p>
+	In addition to the email account address and password, the services need the SMTP host DNS address. We have been using GMail accounts for this purpose, and our info looks like this:</p>
+<ul>
+<li>
+		user email: <span style="font-family:courier new,courier,monospace;">genomespaceNotifier@gmail.com</span></li>
+<li>
+		host: <span style="font-family:courier new,courier,monospace;">smtp.gmail.com</span></li>
+<li>
+		port: <span style="font-family:courier new,courier,monospace;">465</span></li>
+<li>
+		password: <span style="font-family:courier new,courier,monospace;">aPrivatePassword</span></li>
+</ul>
+<h1>
+	Setup</h1>
+<h2>
+	1. Create a super-user for your account using the Amazon IAM service, and save its credentials.</h2>
+<p>
+	GenomeSpace will not run properly using the credentials for the Amazon account owner or “root account”  (i.e., the Amazon user associated directly with the Amazon account). Using the main Amazon account, you can create a new user that has sufficient privileges to access the Amazon buckets, SimpleDB domains, etc. To create the user:</p>
+<ol>
+<li>
+		Go to the IAM portion of the AWS Console: <a href="https://console.aws.amazon.com/iam/home#s=Users">https://console.aws.amazon.com/iam/home#s=Users</a></li>
+<li>
+		Click the <em>Create New Users</em> button.</li>
+<li>
+		Enter the name of your user.</li>
+<li>
+		Click the <em>Download Credentials</em> button in the confirmation dialog.</li>
+</ol>
+<p style="margin-left: 40px;">
+<strong>Important</strong>: When you create the user from the AWS Console, there will be a link to download the credentials. <strong>This is the only time that you will be able to do so for this user.</strong> Download the credentials and save them; they are required for the rest of the installation procedure.</p>
+<ol start="5">
+<li>
+		Assign permissions to the user; the simplest thing is to assign administrator access for the user:
+		<ol start="1" style="list-style-type: lower-alpha;">
+<li>
+				Select the user.</li>
+<li>
+				Click the <em>Permissions</em> tab.</li>
+<li>
+				Click <em>Attach User Policy</em>.</li>
+<li>
+				Select <em>Administrator Access</em>, then accept the generated policy.</li>
+</ol>
+</li>
+</ol>
+<p style="margin-left: 80px;">
+<img alt="" src="/uploaded/content_1_adminaccess.jpg" style="width: 742px; height: 594px;"/></p>
+<h2>
+	2. Create an S3 bucket and initialize it.</h2>
+<ol>
+<li>
+		The easiest way to do this is to log in into the AWS console at:  <a href="https://console.aws.amazon.com/s3/home">https://console.aws.amazon.com/s3/home</a></li>
+<li>
+		Click the <em>Create Bucket</em> button.</li>
+<li>
+		Complete the Create a Bucket form:
+		<ol start="1" style="list-style-type: lower-alpha;">
+<li>
+				Enter the name of the file bucket you want to use.</li>
+<li>
+				Select the best region for your server.</li>
+<li>
+				Click the <em>Create</em> button.</li>
+</ol>
+</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_2_createbuck.jpg" style="width: 506px; height: 483px;"/></p>
+<ol start="4">
+<li>
+		Click the <em>Create Folder</em> button and enter the name users.  Your AWS Console screen will look like this:</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_3_awsconsole.jpg" style="width: 502px; height: 282px;"/></p>
+<h2>
+	3. Create a security group for GenomeSpace</h2>
+<p>
+	The security group allows you to specify the network ports needed to access the GenomeSpace web services remotely.</p>
+<ol>
+<li>
+		Go to the EC2 console Security Groups page:  <a href="https://console.aws.amazon.com/ec2/home?#s=SecurityGroups">https://console.aws.amazon.com/ec2/home?#s=SecurityGroups</a></li>
+<li>
+		Click the<em> Create Security Group</em> button. Complete the Create Security Group dialog.</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_4_secgrp.jpg" style="width: 771px; height: 534px;"/></p>
+<ol start="6">
+<li>
+		Click <em>Yes, Create</em>.</li>
+<li>
+		Select your newly-created security group and click the <em>Inbound</em> tab in the bottom panel.</li>
+<li>
+		In <em>Create a new rule</em> drop-down:
+		<ol start="1" style="list-style-type: lower-alpha;">
+<li>
+				Select <em>SSH</em>, enter a definition, and click <em>Add Rule</em>.</li>
+<li>
+				Select <em>HTTP,</em> enter a definition, and click <em>Add Rule</em>.</li>
+<li>
+				Select <em>HTTPS</em>, enter a definition, and click <em>Add Rule</em>.</li>
+<li>
+				Select <em>Custom TCP rule</em> from the pull-down menu, enter 8080, and click <em>Add Rule</em>.</li>
+<li>
+				Select <em>Custom TCP rule</em> from the pull-down menu, enter 8444, and click <em>Add Rule</em>.</li>
+</ol>
+</li>
+</ol>
+<p>
+	When you're done, the <em>Inbound</em> tab for your new Security Group should look like this:</p>
+<p>
+<img alt="" src="/uploaded/content_5_secgrprules.jpg" style="width: 800px; height: 420px;"/></p>
+<p>
+	 </p>
+<h2>
+	4. Create a key pair for GenomeSpace.</h2>
+<p>
+	You need to generate a key pair with a corresponding SSH key file that will allow you to access your instance remotely.</p>
+<ol>
+<li>
+		Go to the Key Pairs window on the AWS Console: <a href="https://console.aws.amazon.com/ec2/home?#s=KeyPairs">https://console.aws.amazon.com/ec2/home?#s=KeyPairs</a></li>
+<li>
+		Click the <em>Create Key Pair</em> button.</li>
+<li>
+		Complete the Create Key Pair dialog and click <em>Create</em>.</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_6_keypair.jpg" style="width: 690px; height: 573px;"/></p>
+<ol start="4">
+<li>
+		As soon as you click the <em>Create</em> button, a file will be downloaded with the extension .pem. <strong>Save this file. </strong>This file allows you to log in remotely to your instance.</li>
+</ol>
+<h2>
+	5. Launch the GenomeSpace AMI</h2>
+<ol>
+<li>
+		Go to the AMIs window in the AWS Control Panel: <a href="https://console.aws.amazon.com/ec2/home?&amp;region=us-east-1#s=Images">https://console.aws.amazon.com/ec2/home?&amp;region=us-east-1#s=Images</a></li>
+<li>
+		Look up the GenomeSpace AMI by entering <span style="font-family:courier new,courier,monospace;">GS Public 1</span> in the search box and selecting <em>Public Images</em> from the first pull-down, as shown below.</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_7_launchami.jpg" style="width: 643px; height: 542px;"/></p>
+<ol start="3">
+<li>
+		Select the checkbox beside the AMI and click the <em>Launch</em> button.  This opens a wizard that will help you launch the AMI.</li>
+<li>
+		Select <em>Small (m1.small)</em> in the <em>Instance Type</em> pull-down and an <em>Availability Zone</em> that makes sense for your users.  Click <em>Continue</em>.</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_8_requestinstwiz.jpg" style="width: 679px; height: 454px;"/></p>
+<ol start="5">
+<li>
+		Accept the defaults on the next wizard screen by clicking the <em>Continue</em> button. </li>
+<li>
+		Enter a name that will let you recognize your new instance in the console and click <em>Continue</em>.</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_9_requestinstwiz.jpg" style="width: 678px; height: 459px;"/></p>
+<ol start="7">
+<li>
+		On the next page, select the key pair you created earlier.</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_10_requestinstwiz.jpg" style="width: 682px; height: 458px;"/></p>
+<ol start="8">
+<li>
+		On the next page, select the Security Group you created earlier in the process.</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_11_requestinstwiz.jpg" style="width: 684px; height: 465px;"/></p>
+<ol start="9">
+<li>
+		On the last screen, review your settings and click the <em>Launch </em>button at the bottom.</li>
+<li>
+		Return to the Instances page. The new instance is likely to take a few minutes to start.</li>
+</ol>
+<h2>
+	6. Associate an Elastic IP address with your new instance.</h2>
+<p>
+	Network addresses for EC2 instances are volatile and generally do not survive an instance restart. You can assign a stable IP address by using AWS Elastic IPs.</p>
+<ol>
+<li>
+		Go the Elastic IPs page in the AWS Console: <a href="https://console.aws.amazon.com/ec2/home?#s=Addresses">https://console.aws.amazon.com/ec2/home?#s=Addresses</a></li>
+<li>
+		Click the<em> Allocate New Address</em> button and click <em>Yes, Allocate.</em></li>
+<li>
+		Select the new Address and click<em> Associate Address</em>.</li>
+<li>
+		Select your GenomeSpace instance from the list and click <em>Yes, Associate</em>.</li>
+</ol>
+<h2>
+	7. Associate a network domain name with the IP address for your instance.</h2>
+<p>
+	Your network administrator should be able to update or create a DNS record where they can point a server name such  as <span style="font-family:courier new,courier,monospace;">genomespace.company.com</span> with the elastic IP address you just created.</p>
+<h2>
+	8. Remotely log into the new instance.</h2>
+<p>
+	The rest of the setup process must be performed via command line to the running instance. Access the instance via an SSH client.</p>
+<p>
+	Be sure to have access to:</p>
+<ul>
+<li>
+		the .pem file you downloaded when you created the Key Pairs</li>
+<li>
+		the DNS name for the machine; you can use the one set up by your network administrator or the one created automatically by AWS
+		<ul>
+<li>
+<strong>NOTE</strong>: To get the AWS DNS Name, click <em>Instances</em> in the Navigation panel, find your new instance, and click its row. The Description tab in the bottom panel will show its Public DNS:</li>
+</ul>
+</li>
+</ul>
+<p style="margin-left: 80px;">
+<img alt="" src="/uploaded/content_12_publicdns.jpg"/></p>
+<p>
+	From your local machine, execute the following command:</p>
+<p>
+<span style="font-family:courier new,courier,monospace;">ssh -i <strong>YOURKEYPAIRFILE</strong>.pem ec2-user@<strong>YOURINSTANCEPUBLICDNSENTRY</strong></span></p>
+<p>
+	where <span style="font-family:courier new,courier,monospace;"><strong>YOURKEYPAIRFILE</strong>.pem</span> is the key file downloaded when you created the security group and <strong><span style="font-family:courier new,courier,monospace;">YOURINSTANCEPUBLICDNSENTRY</span></strong> is the Public DNS address for the instance.</p>
+<p>
+<strong>Note</strong>: You might get an SSH error like the one below. If you do, it means you need to reduce the permissions on the .pem file. You can get past by this error on Mac or Linux with the chmod command:</p>
+<p style="margin-left: 40px;">
+<span style="font-family:courier new,courier,monospace;">chmod 400 genomespace.pem<br/>
+	@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br/>
+	@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @<br/>
+	@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br/>
+	Permissions 0644 for 'genomespace.pem' are too open.<br/>
+	It is recommended that your private key files are NOT accessible by others.<br/>
+	This private key will be ignored.<br/>
+	bad permissions: ignore key: /Users/test1/genomespace.pem<br/>
+	Permission denied (publickey).</span></p>
+<h2>
+	9. Customize configuration files.</h2>
+<ol>
+<li>
+		Copy the configuration template files to a new directory.</li>
+</ol>
+<p style="margin-left: 40px;">
+<span style="font-family:courier new,courier,monospace;">cd /tmp<br/>
+	mkdir gs-config<br/>
+	cd gs-config<br/>
+	cp -r ~/gs-config-files/* .</span></p>
+<ol start="2">
+<li>
+		Generate a secret key for your website and copy it to appropriate locations. This file will be used for encryption and decryption of security tokens.  Assuming you are still in <span style="font-family:courier new,courier,monospace;">/tmp/gs-config</span>, execute:</li>
+</ol>
+<p style="margin-left: 40px;">
+<span style="font-family:courier new,courier,monospace;">gengssecretkey.sh</span></p>
+<p style="margin-left: 40px;">
+	This creates a file called <span style="font-family:courier new,courier,monospace;">genomespace-secret.key</span>.</p>
+<ol start="3">
+<li>
+		Copy the secret key file:</li>
+</ol>
+<p style="margin-left: 40px;">
+<span style="font-family:courier new,courier,monospace;">cp ./genomespace-secret.key ./atm-properties/<br/>
+	cp ./genomespace-secret.key ./identityserver-properties/<br/>
+	cp ./genomespace-secret.key ./dm-properties/</span></p>
+<ol start="4">
+<li>
+		Edit the configuration file template copies to enter the correct server name, default bucket name, and namespaces.</li>
+<li>
+		Replace <span style="font-family:courier new,courier,monospace;">server.mydomain.edu</span> with your own server's DNS name by executing the following command (all one line):</li>
+</ol>
+<p style="margin-left: 40px;">
+<span style="font-family:courier new,courier,monospace;">find . -name  server.properties | xargs sed -i  's/theserver/server.mydomain.edu/'</span></p>
+<ol start="6">
+<li>
+		Set the bucket name. Replace <span style="font-family:courier new,courier,monospace;">my-gs-bucket-name</span> with your own bucket name:</li>
+</ol>
+<p style="margin-left: 40px;">
+<span style="font-family:courier new,courier,monospace;">find . -name  server.properties| xargs sed -i  's/thebucketname/my-gs-bucket-name/'</span></p>
+<ol start="7">
+<li>
+		Set the namespace used for the SimpleDB databases. Keep the namespace string to 3 or 4 characters. Replace <span style="font-family:courier new,courier,monospace;">gs1</span> with whatever you want to use:</li>
+</ol>
+<p style="margin-left: 40px;">
+<span style="font-family:courier new,courier,monospace;">find . -type f -name server.properties | xargs sed -i  's/gsnamespace/gs1/'</span></p>
+<ol start="8">
+<li>
+		Using your favorite text editor (such as emacs), open <span style="font-family:courier new,courier,monospace;">genomespace-aws.properties</span> and enter the Access Key ID and Secret Access Key for the Amazon user you created earlier. Also, include the email address for the email account that will be used to send registration notifications.</li>
+</ol>
+<p style="margin-left: 40px;">
+<span style="font-family:courier new,courier,monospace;">emacs genomespace-aws.properties</span></p>
+<ol start="9">
+<li>
+		Copy genomespace-aws.key into the sub directories.</li>
+</ol>
+<p style="margin-left: 40px;">
+<span style="font-family:courier new,courier,monospace;">cp ./genomespace-aws.properties ./identityserver-properties<br/>
+	cp ./genomespace-aws.properties ./atm-properties<br/>
+	cp ./genomespace-aws.properties ./dm-properties</span></p>
+<ol start="10">
+<li>
+		Create the jar files and copy them to the Virgo repository.</li>
+</ol>
+<p style="margin-left: 40px;">
+<span style="font-family:courier new,courier,monospace;">cd ../atm-properties/<br/>
+	zip -r atm-properties.jar *<br/>
+	cp atm-properties.jar /usr/share/virgo/repository/usr<br/>
+	cd ../dm-properties/</span></p>
+<ol start="11">
+<li>
+		Edit the <span style="font-family:courier new,courier,monospace;">server.properties</span> file and modify the properties labeled</li>
+</ol>
+<p style="margin-left: 40px;">
+<span style="font-family:courier new,courier,monospace;">org.genomespace.datamanager.groupManagementServer.username</span></p>
+<p style="margin-left: 40px;">
+	and</p>
+<p style="margin-left: 40px;">
+<span style="font-family:courier new,courier,monospace;">org.genomespace.datamanager.groupManagementServer.password</span></p>
+<p style="margin-left: 40px;">
+	Make a note of the assigned values to use later for registering a user.</p>
+<ol start="12">
+<li>
+		Continue creating the rest of the properties jars.</li>
+</ol>
+<p style="margin-left: 40px;">
+<span style="font-family:courier new,courier,monospace;">zip -r dm-properties.jar *<br/>
+	cp dm-properties.jar /usr/share/virgo/repository/usr<br/>
+<br/>
+	cd ../jsui-properties/<br/>
+	zip -r jsui-properties.jar *<br/>
+	cp jsui-properties.jar /usr/share/virgo/repository/usr<br/>
+<br/>
+	cd ../identityserver-properties/</span></p>
+<ol start="13">
+<li>
+		Edit the <span style="font-family:courier new,courier,monospace;">server.properties</span> for identity server to set the emailer properties for your environment.</li>
+</ol>
+<p style="margin-left: 40px;">
+<span style="font-family:courier new,courier,monospace;">zip -r identityserver-properties.jar *<br/>
+	cp identityserver-properties.jar /usr/share/virgo/repository/usr</span></p>
+<h3>
+	10. Initialize GenomeSpace databases.</h3>
+<p>
+	There are some Amazon SimpleDB databases that should be initialized with data for GenomeSpace to start normally, and so we provide seed data for you to load.</p>
+<ol>
+<li>
+		Create a directory and retrieve the database data files into that directory.</li>
+</ol>
+<p style="margin-left: 40px;">
+<span style="font-family:courier new,courier,monospace;">mkdir /tmp/dbfiles<br/>
+	cd /tmp/dbfiles<br/>
+	wget https://dm.genomespace.org/datamanager/file/Home/Public/mocana2/GenomeSpaceSetupData/0.9/prod_dataformat.db -O prod_dataformat.db<br/>
+	wget https://dm.genomespace.org/datamanager/file/Home/Public/mocana2/GenomeSpaceSetupData/0.9/prod_webtool.db -O prod_webtool.db</span></p>
+<ol start="2">
+<li>
+		Set up your environment with your Amazon credentials.</li>
+</ol>
+<p style="margin-left: 40px;">
+<span style="font-family:courier new,courier,monospace;">export AWS_ACCESS_KEY_ID=yourAwsSecretId<br/>
+	export AWS_SECRET_ACCESS_KEY=yourAwsSecretAccess</span></p>
+<ol start="3">
+<li>
+		Execute the script to load the data.</li>
+</ol>
+<p style="margin-left: 40px;">
+<span style="font-family:courier new,courier,monospace;">loadgsdata.sh theNameSpace</span></p>
+<p style="margin-left: 40px;">
+	where <span style="font-family:courier new,courier,monospace;">theNameSpace</span> is the same as what you set earlier in for the configuration files.</p>
+<h2>
+	11. Configure HTTPS.</h2>
+<p>
+	GenomeSpace runs in the Virgo Application Server, which in turn is built on top of the Apache Tomcat server.  Depending on the origin of the SSH certificate and what format it is in, you may have to configure the Virgo https support with different parameters and/or convert your certificate to a format that is amenable to the server.  For more information:</p>
+<p style="margin-left: 40px;">
+	Each vendor provides instructions on how to use the certificates they sell with Tomcat. Here are the Network Solutions instructions on how to use their certificates: <a href="http://www.networksolutions.com/support/installation-of-an-ev-ssl-certificate-for-tomcat-apache/">http://www.networksolutions.com/support/installation-of-an-ev-ssl-certificate-for-tomcat-apache/</a></p>
+<p style="margin-left: 40px;">
+	More information is available from Apache: <a href="http://tomcat.apache.org/tomcat-6.0-doc/ssl-howto.html">http://tomcat.apache.org/tomcat-6.0-doc/ssl-howto.html</a></p>
+<p>
+	The file to edit on the GenomeSpace application server is <span style="font-family:courier new,courier,monospace;">/usr/share/virgo/config/tomcat-server.xml</span></p>
+<p>
+	The relevant portion of the file:</p>
+<p style="margin-left: 40px;">
+<span style="font-family:courier new,courier,monospace;">&lt;Connector port="8444" protocol="HTTP/1.1"<br/>
+	                           scheme="https"<br/>
+	                           secure="true"<br/>
+	                           SSLEnabled="true"<br/>
+	                          </span></p>
+<p style="margin-left: 40px;">
+<span style="font-family:courier new,courier,monospace;">keystoreFile="config/wildcard.genomespace.org.p12"<br/>
+	                           keystoreType="PKCS12"<br/>
+	                           keyalias="tomcat"<br/>
+	                           maxThreads="150"<br/>
+	                           clientAuth="false"<br/>
+	                           connectionTimeout="20000"<br/>
+	                           redirectPort="8444"<br/>
+	                           sslProtocol="TLS" /&gt;</span></p>
+<p>
+	In the main GenomeSpace setup, we have placed the certificate file (<span style="font-family:courier new,courier,monospace;">wildcard.genomespace.org.p12</span>) in the<span style="font-family:courier new,courier,monospace;"> /usr/share/virgo/config</span> directory.</p>
+<h2>
+	12. Update the admin password for Virgo Console.</h2>
+<p>
+	The password for the admin user is set in the file: <span style="font-family:courier new,courier,monospace;">/usr/share/virgo/config/org.eclipse.virgo.kernel.users.properties</span></p>
+<p>
+	The property <span style="font-family:courier new,courier,monospace;">user.admin</span> is the admin password for the Virgo admin server application. For the best security, we recommend changing it.</p>
+<h2>
+	13. Register the user used by the Data Manager to communicate to the Group Management server.</h2>
+<ol>
+<li>
+		Start up the Virgo application server.</li>
+</ol>
+<p style="margin-left: 40px;">
+<span style="font-family:courier new,courier,monospace;">cd /usr/share/virgo/bin<br/>
+	nohup ./startup.sh &amp;</span></p>
+<ol start="2">
+<li>
+		Execute the following command to see boot-up progress:</li>
+</ol>
+<p style="margin-left: 40px;">
+<span style="font-family:courier new,courier,monospace;">tail -f /usr/share/virgo/serviceability/logs/virgo-server/log.log &amp;</span></p>
+<ol start="3">
+<li>
+		Wait for the startup process to complete.</li>
+<li>
+		From a web browser, go to the following URL (replacing<strong> </strong><span style="font-family:courier new,courier,monospace;"><strong>YOURSERVERNAME </strong></span>with your server name):</li>
+</ol>
+<p style="margin-left: 40px;">
+<span style="font-family:courier new,courier,monospace;">https://<strong>YOURSERVERNAME</strong>:8444/identityServer/registration.html</span></p>
+<p style="margin-left: 40px;">
+	A form like this one should appear:</p>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_13_form.jpg" style="width: 543px; height: 300px;"/></p>
+<ol start="5">
+<li>
+		Enter the <em>USERNAME</em> and <em>PASSWORD</em> you set earlier for:</li>
+</ol>
+<p style="margin-left: 40px;">
+<span style="font-family:courier new,courier,monospace;">org.genomespace.datamanager.groupManagementServer.username</span></p>
+<p style="margin-left: 40px;">
+	and</p>
+<p style="margin-left: 40px;">
+<span style="font-family:courier new,courier,monospace;">org.genomespace.datamanager.groupManagementServer.password</span></p>
+<ol start="6">
+<li>
+		For <em>EMAIL</em>, enter the an email address to which the person doing the installation has access.</li>
+<li>
+		Click <em>Sign Up.</em></li>
+<li>
+		That email account should receive an email message with a link. Click the link to complete the registration, and you should see this page:</li>
+</ol>
+<p style="margin-left: 40px;">
+<img alt="" src="/uploaded/content_14_confirm.jpg"/></p>
+<h2>
+	14. Start GenomeSpace.</h2>
+<ol>
+<li>
+		Shut down and restart the Virgo server.</li>
+</ol>
+<p style="margin-left: 40px;">
+<span style="font-family:courier new,courier,monospace;">cd /usr/share/virgo/bin<br/>
+	./shutdown.sh</span></p>
+<ol start="2">
+<li>
+		To make sure it is completely down, look for the Virgo server java process.</li>
+</ol>
+<p style="margin-left: 40px;">
+<span style="font-family:courier new,courier,monospace;">ps -ef | grep java</span></p>
+<p style="margin-left: 40px;">
+	If only the grep command returns, the server is completely down.</p>
+<p style="margin-left: 40px;">
+	If the Virgo java process is still active, wait a few more minutes, look for the process again.</p>
+<p style="margin-left: 40px;">
+	If it still running, <span style="font-family:courier new,courier,monospace;">kill</span> the process.</p>
+<ol start="3">
+<li>
+		Now start it up again.</li>
+</ol>
+<p style="margin-left: 40px;">
+<span style="font-family:courier new,courier,monospace;">nohup ./startup.sh &amp;</span></p>
+<ol start="4">
+<li>
+		Open a web browser and go to the main GenomeSpace UI.</li>
+</ol>
+<p style="margin-left: 40px;">
+<span style="font-family:courier new,courier,monospace;">https://YOURSERVERNAME:8444</span><br/>
+	 </p>
+</td>
+</tr></table>
+</div>
+</div>
+<div id="footer">
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+	$(document).ready(function() {
+		$("a.toggle_link").click(function() {
+			var image = $(this).children("img");
+			$(image).attr("src", $(image).attr("src") == "/assets/plus.png" ? "/assets/minus.png" : "/assets/plus.png");
+		});
+	});
+
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54489169-1', 'auto');
+  ga('send', 'pageview');
+
+
+//]]>
+</script></div></body>
+</html>
